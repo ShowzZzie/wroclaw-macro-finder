@@ -1,0 +1,17 @@
+Name,Macros available?,Macro table link,Macro table format,Notes,Menu
+HulThai,TRUE,https://hulthai.pl/sklad-i-alergeny/,plain text on this subpage,"Path: Main Page -> Header/top menu contains ""Ingredients and allergens""",https://hulthai.pl/hulthaiskie-menu/
+KFC,TRUE,https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/uploads/KFC_Wartosci_Odzywcze_Alergeny.pdf,pdf,"Path: Main Page -> Footer contains ""Wartości odżywcze i alergeny""",https://kfc.pl/menu/dostawa
+LUCA,TRUE,https://lucabakery.pl/produkty,n/a,"Macro of each product is available in its page. When looking at Product you click ""Zobacz więcej"", then ""Więcej informacji"" and kcal data appears in plain text. Usually macro data is per 100g, and it also contains information on how much a portion weighs in that same table.",https://lucabakery.pl/produkty
+MAX Burgers,TRUE,https://www.maxpremiumburgers.pl/jedzenie/wartoci-odywcze/,plain text on this subpage,"Path: Main Page -> Header/top menu contains ""Menu"" > ""Wartości odżywcze"" | menu is split into sections that need to be accessed separately",https://www.maxpremiumburgers.pl/jedzenie/nasze-menu/
+McDonald's,TRUE,https://cdn.mcdonalds.pl/uploads/20260331103636/352978-tabela-wo-8-11-2023-mop.pdf,pdf,"Path: Main Page -> Footer contains ""Tabela wartości odżywczych""",only through apps
+Pan Precel,TRUE,https://panprecel.pl/faq/,png,"Path: Main Page -> ""TABELA WARTOŚCI ODŻYWCZYCH""",https://panprecel.pl/menu/
+Pasibus,TRUE,https://pasibus.pl/wp-content/uploads/2025/05/jpg2pdf.pdf,pdf,"this table won't be updayed, it's from May '25. This will not need refreshing. This may be giving bad information the more time passes",
+Pizza Hut,TRUE,https://amrestcdn.azureedge.net/ph-web-ordering/Pizza_Hut_PL/2026/REGULAMINY/PHPL%20Nutrition%20Core%2010.2025.pdf,pdf,"Path: Main Page -> Footer contains ""Alergeny i wartości odżywcze"", under the ""Informacje"" section -> click the hyperlink of ""Wartości odżywcze - pobierz plik""",https://pizzahut.pl/menu-z-dostawa
+Pizzatopia,TRUE,only include the Protein Pizza,,,
+Popeye's,TRUE,https://cdn.sanity.io/files/czqk28jt/staging_plk_pl/708294e3fe4a4e35b7cbb1371f6b28795e02ac1d.pdf,pdf,"Path: Main Page -> Footer contains ""Właściwości Odżywcze"" -> need to click the hyper link within ""Kliknij tutaj""",https://www.popeyeschicken.pl/pl/menu
+Salad Story,TRUE,https://cs.cdn-upm.com/themes/56dd4e07-6f04-11e8-8513-525400841de1/assets-392/alergeny%20i%20wartosci%20na%20lokale%20wlasne%2026_02_2026_EMISJA.pdf,pdf,"Path: Main Page -> Footer contains ""Alergeny i wartości odżywcze""",https://www.saladstory.com/menu
+Shrimp House,TRUE,https://shrimp-house.pl/alergeny,images,"Path: Main Page -> Footer contains ""Alergeny i wartości odżywcze""",not available
+Subway,TRUE,https://mysubway.sk/pdf/pl/all.pdf,pdf,"Path: Main Page -> Header/top menu contains ""Menu"" > ""Informacje o produkcie""",https://mysubway.pl/menu
+Sushi Corner,TRUE,https://sushicorner.pl/wp-content/uploads/sites/7/2025/01/makro-05_01_2024.pdf,pdf,"Path: Main Page -> Footer contains ""Makro i alergeny"" -> button ""Tabela Makro""",https://wld.sushicorner.pl/
+Wrap Me!,TRUE,https://cs.cdn-upm.com/themes/ee2ff89e-20e6-11ea-915e-525400080321/assets-230/EMISJA%20A3%20Alergeny%20i%20Warto%C5%9Bci%20Wrapme%20Kebab.pdf,pdf,"Path: Main Page -> Footer contains ""Alergeny i wartości odżywcze""",https://www.wrapme.pl/menu
+Zahir Kebab,TRUE,https://zahirkebab.pl/tabela-wartosci-ozdywczych/,plain text in a formatted table,Path: available from product descriptions in menu,https://zahirkebab.pl/menu/
