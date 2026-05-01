@@ -15,7 +15,7 @@ def main():
         session_import.commit()
 
     with Session(engine) as session_find_food:
-        find_foods(
+        good_foods = find_foods(
             session=session_find_food,
             max_kcal=float(input("Maximum KCAL: ")),
             min_protein=float(input("Minimum PROTEIN: ")),
@@ -24,6 +24,7 @@ def main():
             low_kcal_included = bool(int(input("Include items ≤150 kcal (sauces/small add-ons)? 1=yes, 0=no: ").strip() or "0"))
         )
 
+    print(len(good_foods))
     print("Goodbye from Wrocław Macro Finder!")
 
 

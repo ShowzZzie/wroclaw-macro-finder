@@ -1,26 +1,11 @@
-"""
-find_foods(
-    session,
-    max_kcal,
-    min_protein,
-    optional restaurant filter,
-    sort mode
-)
-
----
-
-It should:
-
-ignore obsolete=True
-filter by kcal/protein
-sort by something simple first, like highest protein or best protein-per-kcal
-return matching Food rows  
-
-"""
-
 from sqlmodel import Session
 from app.db import engine, list_food, list_foods_single_restaurant
 from app.models import Food
+
+def protein_ratio(food: Food) -> float:
+    if food.kcal_in_portion <= 0:
+        return 0
+    return food.protein_in_portion / food.kcal_in_portion * 100
 
 def find_foods(
     session: Session,
@@ -41,13 +26,14 @@ def find_foods(
     else:
         kcal_protein_good_foods = [f for f in kcal_protein_good_foods if f.kcal_in_portion > 150]
     
-    if isinstance(restaurant_id, int):
-        restau_good_foods = [f for f in kcal_protein_good_foods if f.restaurant_id == restaurant_id]
-        print(restau_good_foods)
+    results = kcal_protein_good_foods
+
+    if restaurant_id is None:
+        pass
+    elif isinstance(restaurant_id, int):
+        results = [f for f in kcal_protein_good_foods if f.restaurant_id == restaurant_id]
     elif isinstance(restaurant_id, list) and all(isinstance(x, int) for x in restaurant_id):
         allowed = set(restaurant_id)
-        results = [f for f in results if f.restaurant_id in allowed]
-        print(restau_good_foods)
-    
-    
-    return 0
+        results = [f for f in kcal_protein_good_foods if f.restaurant_id in allowed]
+
+    return results
