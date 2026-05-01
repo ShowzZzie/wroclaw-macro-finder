@@ -13,3 +13,6 @@ wheels/
 .env
 
 .DS_Store
+
+data/main_database.db
+data/mcd.pdf
