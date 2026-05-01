@@ -9,6 +9,7 @@ def main():
     
     with Session(engine) as session:
         import_restaurants(session)
+        session.flush()
         import_foods(session)
         session.commit()
 
