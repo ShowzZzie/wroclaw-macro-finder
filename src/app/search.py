@@ -1,5 +1,5 @@
 from sqlmodel import Session
-from app.db import engine, list_food, list_foods_single_restaurant
+from app.db import list_food
 from app.models import Food
 
 def protein_ratio(food: Food) -> float:
@@ -7,23 +7,22 @@ def protein_ratio(food: Food) -> float:
         return 0
     return food.protein_in_portion / food.kcal_in_portion * 100
 
+def calc_and_sort_by_protein_ratio(foods: list[Food]) -> list[Food]:
+    # function meant to take in result (i.e. list of Foods), and order them by protein ratio
+    return 0
+
 def find_foods(
     session: Session,
     max_kcal: float,
     min_protein: float,
     restaurant_id: int | list[int] | None,
-    sort_type: int,
     low_kcal_included: bool
 ) -> list[Food]:
 
     foods = list_food(session)
     kcal_protein_good_foods = [f for f in foods if not f.obsolete and f.kcal_in_portion <= max_kcal and f.protein_in_portion >= min_protein]
-    print("[FOODS]", foods)
-    print("[K_P_G_FOODS]", kcal_protein_good_foods)
 
-    if low_kcal_included:
-        pass
-    else:
+    if not low_kcal_included:
         kcal_protein_good_foods = [f for f in kcal_protein_good_foods if f.kcal_in_portion > 150]
     
     results = kcal_protein_good_foods
