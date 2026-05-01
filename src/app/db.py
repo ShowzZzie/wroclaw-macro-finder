@@ -66,7 +66,7 @@ def get_update_create_restaurant(session: Session, name: str, macro_table_link: 
     else:
         return add_restaurant(session, name, macro_table_link, macro_table_format, notes, menu_link)
 
-def get_update_create_food(session: Session, food_name: str, size: str | None, restaurant_id: int, kcal: int, protein: int, fats: int, carbs: int):
+def get_update_create_food(session: Session, food_name: str, size: str | None, restaurant_id: int, kcal: float, protein: float, fats: float, carbs: float):
     query_result = session.exec(select(Food).where(Food.food_name == food_name, Food.restaurant_id == restaurant_id, Food.size == size)).first()
     if query_result:
         if (query_result.kcal_in_portion == kcal and query_result.protein_in_portion == protein and query_result.fats_in_portion == fats and query_result.carbs_in_portion == carbs):
