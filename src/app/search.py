@@ -8,7 +8,6 @@ def protein_ratio(food: Food) -> float:
     return food.protein_in_portion / food.kcal_in_portion * 100
 
 def calc_and_sort_by_protein_ratio(foods: list[Food]) -> list[Food]:
-    # function meant to take in result (i.e. list of Foods), and order them by protein ratio
     foods_sorted = sorted(foods, key=protein_ratio, reverse=True)
     return foods_sorted
 
@@ -38,6 +37,15 @@ def find_foods(
         allowed = set(restaurant_id)
         results = [f for f in kcal_protein_good_foods if f.restaurant_id in allowed]
 
-    sorted_results = calc_and_sort_by_protein_ratio(results)
+    sorted_results = None
+
+    if sort_by == "protein_desc":
+        sorted_results = sorted(results, key=lambda f: f.protein_in_portion, reverse=True)
+    elif sort_by == "kcal_asc":
+        sorted_results = sorted(results, key=lambda f: f.kcal_in_portion, reverse=False)
+    elif sort_by == "kcal_desc":
+        sorted_results = sorted(results, key=lambda f: f.kcal_in_portion, reverse=True)
+    else:
+        sorted_results = calc_and_sort_by_protein_ratio(results)
 
     return sorted_results[:limit]

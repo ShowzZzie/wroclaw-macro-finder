@@ -2,17 +2,20 @@ from app.db import create_db_and_tables, engine, list_restaurants
 from app.ingest import import_restaurants, import_foods
 from sqlmodel import Session
 from app.search import find_foods
+import argparse
 
-def main():
+def main(args):
     print("Hello from Wrocław Macro Finder!")
     
     create_db_and_tables()
     
-    with Session(engine) as session_import:
-        import_restaurants(session_import)
-        session_import.flush()
-        import_foods(session_import)
-        session_import.commit()
+    if args.reingest_database:
+        print("[LOGGER] Reingesting database")
+        with Session(engine) as session_import:
+            import_restaurants(session_import)
+            session_import.flush()
+            import_foods(session_import)
+            session_import.commit()
 
     with Session(engine) as session_find_food:
         good_foods = find_foods(
@@ -22,7 +25,7 @@ def main():
             restaurant_id = int(s) if (s := input("Any specific restaurant? (enter to skip): ").strip()) else None, # 📝 TO-DO: implement list of ints logic
             low_kcal_included = bool(int(input("Include items ≤150 kcal (sauces/small add-ons)? 1=yes, 0=no: ").strip() or "0")),
             limit = int(input("Show N results, n= ")),
-            sort_by = input("Sorting type (protein_ratio_desc, protein_desc, kcal_asc, kcal_desc, protein_asc): ")
+            sort_by = input("Sorting type (protein_ratio_desc, protein_desc, kcal_asc, kcal_desc): ")
         )
         restaurant_names = {r.id: r.name for r in list_restaurants(session_find_food)}
 
@@ -35,4 +38,7 @@ def main():
 
 
 if __name__ == "__main__": 
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--reingest-database", action="store_true", help="Use if you want to re-import CSVs into database")
+    args = parser.parse_args()
+    main(args)
