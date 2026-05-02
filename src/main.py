@@ -23,7 +23,8 @@ def main():
             low_kcal_included = bool(int(input("Include items ≤150 kcal (sauces/small add-ons)? 1=yes, 0=no: ").strip() or "0"))
         )
 
-    print(len(good_foods))
+    print(good_foods)
+    print("Items found:", len(good_foods))
     print("Goodbye from Wrocław Macro Finder!")
 
 

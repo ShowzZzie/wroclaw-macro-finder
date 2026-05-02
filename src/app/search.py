@@ -9,7 +9,8 @@ def protein_ratio(food: Food) -> float:
 
 def calc_and_sort_by_protein_ratio(foods: list[Food]) -> list[Food]:
     # function meant to take in result (i.e. list of Foods), and order them by protein ratio
-    return 0
+    foods_sorted = sorted(foods, key=protein_ratio, reverse=True)
+    return foods_sorted
 
 def find_foods(
     session: Session,
@@ -35,4 +36,6 @@ def find_foods(
         allowed = set(restaurant_id)
         results = [f for f in kcal_protein_good_foods if f.restaurant_id in allowed]
 
-    return results
+    sorted_results = calc_and_sort_by_protein_ratio(results)
+
+    return sorted_results[:20]

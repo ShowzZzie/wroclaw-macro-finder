@@ -134,7 +134,11 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
         popeye_prompt = prompt + """\n\n
         Popeye’s exception:
             - Extract from all categories/tables across the full document, not only the first section.
-            - Do not stop after wings/tenders/nuggets; continue through the entire PDF."""
+            - Do not stop after wings/tenders/nuggets; continue through the entire PDF
+            Energy (kcal vs kJ):
+                - Field kcal must be kilocalories per portion, not kilojoules.
+                - If the table shows energy per portion only in kJ, convert: kcal = kJ / 4.184.
+                - If both kJ and kcal appear for the portion, use the kcal value only."""
 
         response = client.responses.parse(
             model="gpt-5.4-mini",
