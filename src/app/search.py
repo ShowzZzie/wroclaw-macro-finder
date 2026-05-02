@@ -17,7 +17,8 @@ def find_foods(
     max_kcal: float,
     min_protein: float,
     restaurant_id: int | list[int] | None,
-    low_kcal_included: bool
+    low_kcal_included: bool,
+    limit: int
 ) -> list[Food]:
 
     foods = list_food(session)
@@ -38,4 +39,4 @@ def find_foods(
 
     sorted_results = calc_and_sort_by_protein_ratio(results)
 
-    return sorted_results[:20]
+    return sorted_results[:limit]
