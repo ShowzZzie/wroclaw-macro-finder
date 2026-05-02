@@ -24,7 +24,7 @@ def main(args):
             min_protein=float(input("Minimum PROTEIN: ")),
             restaurant_id = int(s) if (s := input("Any specific restaurant? (enter to skip): ").strip()) else None, # 📝 TO-DO: implement list of ints logic
             low_kcal_included = bool(int(input("Include items ≤150 kcal (sauces/small add-ons)? 1=yes, 0=no: ").strip() or "0")),
-            limit = int(input("Show N results (default: 10), n= ")),
+            limit = int(s) if (s:= input("Show N results (default: 10), n= ").strip()) else None,
             sort_by = input("Sorting type (protein_ratio_desc, protein_desc, kcal_asc, kcal_desc): ")
         )
         restaurant_names = {r.id: r.name for r in list_restaurants(session_find_food)}
