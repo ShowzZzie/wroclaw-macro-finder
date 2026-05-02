@@ -28,7 +28,7 @@ def list_restaurants(session: Session) -> list[Restaurant]:
     results = list(session.exec(statement).all())
     return results
 
-def add_food(session: Session, food_name: str, size: str | None, restaurant_id: int, kcal: int, protein: int, fats: int, carbs: int) -> Food:
+def add_food(session: Session, food_name: str, size: str | None, restaurant_id: int, kcal: float, protein: float, fats: float, carbs: float) -> Food:
     new_food = Food(
         food_name=food_name,
         size=size,
