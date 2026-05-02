@@ -18,7 +18,8 @@ def find_foods(
     min_protein: float,
     restaurant_id: int | list[int] | None,
     low_kcal_included: bool,
-    limit: int
+    limit: int,
+    sort_by: str
 ) -> list[Food]:
 
     foods = list_food(session)
