@@ -11,6 +11,7 @@ from pathlib import Path
 import csv
 from typing import Optional
 
+
 class FoodRow(BaseModel):
     restaurant_name: str
     food_name: str
@@ -20,9 +21,11 @@ class FoodRow(BaseModel):
     fats: float
     carbs: float
 
+
 class RestaurantExtraction(BaseModel):
     restaurant_name: str
     foods: list[FoodRow]
+
 
 load_dotenv()
 client = OpenAI(api_key=os.environ["OPENAI_SECRET_KEY"])
@@ -57,10 +60,7 @@ Rules:
 
 
 def extract_restaurant(row: dict) -> RestaurantExtraction:
-    prompt = build_prompt(
-        name=row["Name"],
-        notes=row.get("Notes", "") or ""
-    )
+    prompt = build_prompt(name=row["Name"], notes=row.get("Notes", "") or "")
 
     if row["Name"] == "McDonald's":
         mcd_file = Path(root / "data" / "mcd.pdf").resolve()
@@ -76,17 +76,16 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
                     "role": "user",
                     "content": [
                         {"type": "input_text", "text": prompt},
-                        {
-                            "type": "input_file",
-                            "file_id": mcd_file_uploaded.id
-                        }
-                    ]
+                        {"type": "input_file", "file_id": mcd_file_uploaded.id},
+                    ],
                 },
             ],
-            text_format=RestaurantExtraction
+            text_format=RestaurantExtraction,
         )
     elif row["Name"] == "KFC":
-        kfc_prompt = prompt + """\n\n
+        kfc_prompt = (
+            prompt
+            + """\n\n
             KFC (Poland PDF)
             - Read all pages/sections. Do not merge rows; same item text under different gray banner = separate rows.
             - kcal: only Energy [kcal] → porcja. Never Energy [kJ] → porcja for kcal.
@@ -94,7 +93,8 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
             - Gray banner Kentucky / Kawałki … → food_name "<item> (Kentucky)". Banner Hot&Spicy / H&S → "<item> (Hot&Spicy)". Else item text only, no suffix.
             - size: Średnia waga porcji (g) → "NNN g" when present.
             """
-            
+        )
+
         response = client.responses.parse(
             model="gpt-5.4",
             input=[
@@ -102,20 +102,23 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
                     "role": "user",
                     "content": [
                         {"type": "input_text", "text": kfc_prompt},
-                        {"type": "input_file", "file_url": row["Macro table link"]}
+                        {"type": "input_file", "file_url": row["Macro table link"]},
                     ],
                 },
             ],
-            text_format=RestaurantExtraction
+            text_format=RestaurantExtraction,
         )
     elif row["Name"] == "Pasibus":
-        pasi_prompt = prompt + """\n\n
+        pasi_prompt = (
+            prompt
+            + """\n\n
         Pasibus exception:
         - The provided PDF contains exactly 2 pages.
         - Extract nutrition rows from BOTH page 1 and page 2.
         - Do not return output after reading only one page.
         - Before finalizing, verify that rows were collected from both pages.
         - If an item appears on both pages, keep distinct variants/sizes as separate rows."""
+        )
 
         response = client.responses.parse(
             model="gpt-5.4-mini",
@@ -124,14 +127,16 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
                     "role": "user",
                     "content": [
                         {"type": "input_text", "text": pasi_prompt},
-                        {"type": "input_file", "file_url": row["Macro table link"]}
+                        {"type": "input_file", "file_url": row["Macro table link"]},
                     ],
                 },
             ],
-            text_format=RestaurantExtraction
+            text_format=RestaurantExtraction,
         )
     elif row["Name"] == "Popeye's":
-        popeye_prompt = prompt + """\n\n
+        popeye_prompt = (
+            prompt
+            + """\n\n
         Popeye’s exception:
             - Extract from all categories/tables across the full document, not only the first section.
             - Do not stop after wings/tenders/nuggets; continue through the entire PDF
@@ -139,25 +144,25 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
                 - Field kcal must be kilocalories per portion, not kilojoules.
                 - If the table shows energy per portion only in kJ, convert: kcal = kJ / 4.184.
                 - If both kJ and kcal appear for the portion, use the kcal value only."""
+        )
 
         response = client.responses.parse(
             model="gpt-5.4-mini",
             input=[
                 {
                     "role": "user",
-                    "content":[
+                    "content": [
                         {"type": "input_text", "text": popeye_prompt},
-                        {"type": "input_file", "file_url": row["Macro table link"]}
+                        {"type": "input_file", "file_url": row["Macro table link"]},
                     ],
                 },
             ],
-            text_format=RestaurantExtraction
+            text_format=RestaurantExtraction,
         )
     elif row["Name"] == "Pizza Hut":
         weight_pdf_link = "https://amrestcdn.azureedge.net/ph-web-ordering/Pizza_Hut_PL/2026/T_mobile/GRAMATURY.pdf"
         p_h_prompt = (
-            prompt
-            + "\n\nPizza Hut special instructions:\n"
+            prompt + "\n\nPizza Hut special instructions:\n"
             f"- Nutrition PDF (per 100g): {row['Macro table link']}\n"
             f"- Weights PDF (portion grams): {weight_pdf_link}\n"
             "- Match items between the two PDFs by name/variant.\n"
@@ -174,11 +179,11 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
                     "content": [
                         {"type": "input_text", "text": p_h_prompt},
                         {"type": "input_file", "file_url": weight_pdf_link},
-                        {"type": "input_file", "file_url": row["Macro table link"]}
-                    ]
+                        {"type": "input_file", "file_url": row["Macro table link"]},
+                    ],
                 }
             ],
-            text_format=RestaurantExtraction
+            text_format=RestaurantExtraction,
         )
     elif row["Macro table format"].lower() == "pdf":
         response = client.responses.parse(
@@ -188,14 +193,11 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
                     "role": "user",
                     "content": [
                         {"type": "input_text", "text": prompt},
-                        {
-                            "type": "input_file",
-                            "file_url": row["Macro table link"]
-                        },
+                        {"type": "input_file", "file_url": row["Macro table link"]},
                     ],
                 }
             ],
-            text_format=RestaurantExtraction
+            text_format=RestaurantExtraction,
         )
         print("[RESPONSE PRINTER]", response)
     elif row["Name"] == "Pizzatopia":
@@ -209,13 +211,18 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
                     kcal=972.0,
                     protein=74.0,
                     fats=21.0,
-                    carbs=119.0
+                    carbs=119.0,
                 )
-            ]
+            ],
         )
     else:
-        raise ValueError(f"Skipping non-PDF format: {row['Macro table format']} for {row['Name']}")
-    return response.output_parsed
+        raise ValueError(
+            f"Skipping non-PDF format: {row['Macro table format']} for {row['Name']}"
+        )
+    parsed = response.output_parsed
+    if parsed is None:
+        raise RuntimeError("Empty response.output_parsed")
+    return parsed
 
 
 def main() -> None:

@@ -1,5 +1,6 @@
 from sqlmodel import SQLModel, Field
 
+
 class Restaurant(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
     name: str = Field(unique=True)
@@ -18,4 +19,6 @@ class Food(SQLModel, table=True):
     protein_in_portion: float
     fats_in_portion: float
     carbs_in_portion: float
-    obsolete: bool = Field(default=False) # for the future, if the given position was removed by the restaurant
+    obsolete: bool = Field(
+        default=False
+    )  # for the future, if the given position was removed by the restaurant

@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class FoodSearchResult(BaseModel):
     restaurant_name: str
     food_name: str

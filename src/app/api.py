@@ -7,6 +7,7 @@ from sqlmodel import Session
 
 app = FastAPI()
 
+
 @app.get("/foods/search", response_model=list[FoodSearchResult])
 def get_foods(
     max_kcal: Annotated[float, Query(gt=0, le=3000)],
@@ -14,7 +15,9 @@ def get_foods(
     restaurant_id: Annotated[int | None, Query(gt=0)] = None,
     low_kcal_included: bool = False,
     limit: Annotated[int, Query(ge=1, le=250)] = 10,
-    sort_by: Literal["protein_ratio_desc", "protein_desc", "kcal_asc", "kcal_desc"] = "protein_ratio_desc"
+    sort_by: Literal[
+        "protein_ratio_desc", "protein_desc", "kcal_asc", "kcal_desc"
+    ] = "protein_ratio_desc",
 ):
     with Session(engine) as session:
         results_food = find_foods(
@@ -24,7 +27,7 @@ def get_foods(
             restaurant_id=restaurant_id,
             low_kcal_included=low_kcal_included,
             limit=limit,
-            sort_by=sort_by
+            sort_by=sort_by,
         )
 
         restaurant_names = {r.id: r.name for r in list_restaurants(session)}
@@ -38,9 +41,9 @@ def get_foods(
                 protein=item.protein_in_portion,
                 fats=item.fats_in_portion,
                 carbs=item.carbs_in_portion,
-                protein_per_100_kcal = round(protein_ratio(item), 2)
-            ) for item in results_food
+                protein_per_100_kcal=round(protein_ratio(item), 2),
+            )
+            for item in results_food
         ]
 
-    
     return results_fsr
