@@ -1,6 +1,8 @@
-from sqlmodel import SQLModel, create_engine, Session, select
 from pathlib import Path
-from app.models import Restaurant, Food
+
+from sqlmodel import Session, SQLModel, create_engine, select
+
+from app.models import Food, Restaurant
 
 root_path = Path(__file__).resolve().parents[2]
 database_name = "main_database.db"

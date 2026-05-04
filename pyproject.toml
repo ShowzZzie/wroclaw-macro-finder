@@ -19,3 +19,32 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[project.optional-dependencies]
+dev = ["ruff", "mypy", "pre-commit", "pytest"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88  # or 100 — your choice; default Black-like is 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]  # start minimal; add rules as you learn them (E/F = pycodestyle/pyflakes-ish, I = isort)
+
+[tool.ruff.lint.per-file-ignores]
+"src/app/api_pdfs.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = false   # tighten later if you want
+warn_return_any = true
+warn_unused_configs = true
+show_error_codes = true
+
+explicit_package_bases = true
+mypy_path = "src"
+
+files = ["src"]
+
+[[tool.mypy.overrides]]
+module = "openai.*"
+ignore_missing_imports = true

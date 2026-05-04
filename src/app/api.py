@@ -1,9 +1,11 @@
-from fastapi import FastAPI, Query
-from app.search import find_foods, protein_ratio
-from app.schemas import FoodSearchResult
-from app.db import engine, list_restaurants
 from typing import Annotated, Literal
+
+from fastapi import FastAPI, Query
 from sqlmodel import Session
+
+from app.db import engine, list_restaurants
+from app.schemas import FoodSearchResult
+from app.search import find_foods, protein_ratio
 
 app = FastAPI()
 

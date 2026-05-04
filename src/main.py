@@ -1,8 +1,10 @@
-from app.db import create_db_and_tables, engine, list_restaurants
-from app.ingest import import_restaurants, import_foods
-from sqlmodel import Session
-from app.search import find_foods
 import argparse
+
+from sqlmodel import Session
+
+from app.db import create_db_and_tables, engine, list_restaurants
+from app.ingest import import_foods, import_restaurants
+from app.search import find_foods
 
 
 def main(args):
@@ -38,15 +40,19 @@ def main(args):
             if (s := input("Show N results (default: 10), n= ").strip())
             else None,
             sort_by=input(
-                "Sorting type (protein_ratio_desc, protein_desc, kcal_asc, kcal_desc), default = protein_ratio_desc: "
+                "Sorting type "
+                "(protein_ratio_desc, protein_desc, kcal_asc, kcal_desc), "
+                "default = protein_ratio_desc: "
             ),
         )
         restaurant_names = {r.id: r.name for r in list_restaurants(session_find_food)}
 
     print("restaurant_name | food_name | size | kcal | protein | protein_per_100_kcal")
-    for item in good_foods:
+    for i in good_foods:
         print(
-            f"{restaurant_names[item.restaurant_id]} | {item.food_name} | {item.size} | {item.kcal_in_portion} | {item.protein_in_portion} | {round(item.protein_in_portion / item.kcal_in_portion * 100, 2)}"
+            f"{restaurant_names[i.restaurant_id]} | {i.food_name} | {i.size} | "
+            f"{i.kcal_in_portion} | {i.protein_in_portion} | "
+            f"{round(i.protein_in_portion / i.kcal_in_portion * 100, 2)}"
         )
     print("Items found:", len(good_foods))
     print("Goodbye from Wrocław Macro Finder!")

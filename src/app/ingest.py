@@ -1,11 +1,13 @@
 import csv
 from pathlib import Path
+
+from sqlmodel import Session
+
 from app.db import (
     get_update_create_food,
     get_update_create_restaurant,
     list_restaurants,
 )
-from sqlmodel import Session
 
 root = Path(__file__).resolve().parents[2]
 sources = Path(root / "data" / "sources.csv").resolve()

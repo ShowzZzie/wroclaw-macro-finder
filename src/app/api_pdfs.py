@@ -1,15 +1,11 @@
-# take sources.csv
-# take links and notes from each restaurant
-# send them to OpenAI API, parse the response and create macros.csv
-# only then import sources.csv and marcos.csv into a DB
-# keep sources.csv as the source of truth, create macros.csv from that file, then import both into DB
+import csv
+import os
+from pathlib import Path
+from typing import Optional
+
+from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel
-import os
-from dotenv import load_dotenv
-from pathlib import Path
-import csv
-from typing import Optional
 
 
 class FoodRow(BaseModel):

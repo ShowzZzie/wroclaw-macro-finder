@@ -1,4 +1,4 @@
-from sqlmodel import SQLModel, Field
+from sqlmodel import Field, SQLModel, UniqueConstraint
 
 
 class Restaurant(SQLModel, table=True):
@@ -11,6 +11,12 @@ class Restaurant(SQLModel, table=True):
 
 
 class Food(SQLModel, table=True):
+    __table_args__ = (
+        UniqueConstraint(
+            "restaurant_id", "food_name", "size", name="uq_food_restaurant_name_size"
+        ),
+    )
+
     id: int | None = Field(default=None, primary_key=True)
     food_name: str
     size: str | None = Field(default=None)
