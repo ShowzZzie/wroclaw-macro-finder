@@ -43,7 +43,7 @@ show_error_codes = true
 explicit_package_bases = true
 mypy_path = "src"
 
-files = ["src"]
+files = ["src", "tests"]
 
 [[tool.mypy.overrides]]
 module = "openai.*"

@@ -17,4 +17,5 @@ repos:
           - python-dotenv>=1.0.0
           - sqlmodel>=0.0.21
           - sqlalchemy>=2.0
+          - pytest>=9.0.3
         args: [--config-file=pyproject.toml]
