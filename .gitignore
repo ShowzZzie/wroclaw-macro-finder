@@ -14,5 +14,7 @@ wheels/
 
 .DS_Store
 
-#data/main_database.db
+# Intentionally tracked for MVP static deployment (pre-seeded DB for site data).
+# Remove comment to ignore DB in later production/hardened setup.
+# data/main_database.db
 data/mcd.pdf

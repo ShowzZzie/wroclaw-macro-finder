@@ -91,6 +91,22 @@ mypy src/
 
 Install **`pytest`** to run tests (e.g. under `tests/`) once you add or expand cases.
 
+
+## MVP Data Policy (SQLite in Git)
+
+For MVP deployment, `data/main_database.db` is **intentionally tracked in Git** so the static site can ship with pre-seeded data.
+
+### Why this is intentional
+- The current hosting setup needs a ready-to-use local SQLite file.
+- Keeping the DB in the repo makes MVP deployment simple and repeatable.
+
+### Temporary tradeoff
+This is an MVP-only decision. Before production hardening, we should move data storage out of Git (e.g. managed DB or external storage), then re-enable ignoring `data/main_database.db` in `.gitignore`.
+
+### Contributor note
+If you update `data/main_database.db`, make sure changes are expected for MVP data refreshes and do not include sensitive information.
+
+
 ## License / status
 
 Early-stage personal project; behavior and data coverage may change.
