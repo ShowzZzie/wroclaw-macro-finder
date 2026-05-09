@@ -8,7 +8,6 @@ from app.search import find_foods
 
 
 def main(args):
-    print("Hello from Wrocław Macro Finder!")
 
     create_db_and_tables()
 
@@ -55,7 +54,6 @@ def main(args):
             f"{round(i.protein_in_portion / i.kcal_in_portion * 100, 2)}"
         )
     print("Items found:", len(good_foods))
-    print("Goodbye from Wrocław Macro Finder!")
 
 
 if __name__ == "__main__":

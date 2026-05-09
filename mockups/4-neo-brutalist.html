@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMF — Neo-Brutalist</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Space Grotesk', sans-serif; background: #fffef5; color: #1a1a1a; min-height: 100vh; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+
+  /* Header */
+  header { border: 3px solid #1a1a1a; border-radius: 0; padding: 24px 28px; margin-bottom: 16px; background: #c6f542; box-shadow: 6px 6px 0 #1a1a1a; }
+  header h1 { font-size: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: -1px; line-height: 1; }
+  header p { font-size: 14px; font-weight: 500; margin-top: 4px; }
+
+  /* Filters */
+  .filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .filter-box {
+    border: 3px solid #1a1a1a; padding: 10px 14px; flex: 1; min-width: 150px;
+    display: flex; flex-direction: column; gap: 4px; box-shadow: 4px 4px 0 #1a1a1a;
+    background: white;
+  }
+  .filter-box label { font-size: 10px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
+  .filter-box input, .filter-box select {
+    border: 2px solid #1a1a1a; padding: 6px 8px; font-family: 'Space Mono', monospace;
+    font-size: 14px; font-weight: 700; background: transparent; outline: none;
+  }
+  .filter-box input:focus, .filter-box select:focus { border-color: #c6f542; background: rgba(198,245,66,0.1); }
+
+  .sort-bar { display: flex; gap: 0; margin-bottom: 16px; border: 3px solid #1a1a1a; box-shadow: 4px 4px 0 #1a1a1a; }
+  .sort-opt {
+    flex: 1; padding: 10px; text-align: center; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; border-right: 3px solid #1a1a1a;
+    transition: all 0.1s; background: white;
+  }
+  .sort-opt:last-child { border-right: none; }
+  .sort-opt:hover { background: #f0f0e0; }
+  .sort-opt.active { background: #1a1a1a; color: #c6f542; }
+
+  /* Results count */
+  .count-bar { display: flex; align-items: center; margin-bottom: 12px; gap: 8px; }
+  .count-num { font-family: 'Space Mono', monospace; font-size: 28px; font-weight: 700; background: #ff6b9d; color: white; padding: 2px 12px; border: 3px solid #1a1a1a; display: inline-block; }
+  .count-text { font-size: 14px; font-weight: 600; }
+
+  /* Result cards */
+  .results { display: flex; flex-direction: column; gap: 8px; }
+  .result-card {
+    border: 3px solid #1a1a1a; display: grid;
+    grid-template-columns: 50px 1fr auto; box-shadow: 4px 4px 0 #1a1a1a;
+    transition: transform 0.1s, box-shadow 0.1s; background: white;
+  }
+  .result-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1a1a1a; }
+
+  .result-rank-col { background: #1a1a1a; color: #c6f542; display: flex; align-items: center; justify-content: center; font-family: 'Space Mono', monospace; font-size: 18px; font-weight: 700; }
+
+  .result-main { padding: 12px 16px; border-right: 3px solid #1a1a1a; }
+  .result-name { font-size: 16px; font-weight: 700; }
+  .result-restaurant { font-size: 12px; color: #666; font-weight: 500; margin-top: 2px; }
+
+  .result-macros { display: flex; padding: 0; }
+  .macro-block { padding: 8px 14px; text-align: center; border-left: 3px solid #1a1a1a; display: flex; flex-direction: column; justify-content: center; min-width: 75px; }
+  .macro-block:first-child { border-left: none; }
+  .macro-block .num { font-family: 'Space Mono', monospace; font-size: 16px; font-weight: 700; }
+  .macro-block .unit { font-size: 8px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: #888; }
+
+  .macro-block.kcal { background: #fff0f0; }
+  .macro-block.kcal .num { color: #e11d48; }
+  .macro-block.protein { background: #c6f542; }
+  .macro-block.protein .num { color: #1a1a1a; }
+  .macro-block.fats { background: #fff7e0; }
+  .macro-block.fats .num { color: #d97706; }
+  .macro-block.carbs { background: #e0f2fe; }
+  .macro-block.carbs .num { color: #0369a1; }
+  .macro-block.ratio { background: #1a1a1a; }
+  .macro-block.ratio .num { color: #c6f542; font-size: 18px; }
+  .macro-block.ratio .unit { color: #888; }
+
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Wroclaw Macro Finder</h1>
+    <p>High-protein menu items, fast.</p>
+  </header>
+
+  <div class="filters">
+    <div class="filter-box">
+      <label>Max Kcal</label>
+      <input type="number" value="800" />
+    </div>
+    <div class="filter-box">
+      <label>Min Protein</label>
+      <input type="number" value="30" />
+    </div>
+    <div class="filter-box">
+      <label>Restaurant</label>
+      <select><option>All</option><option>KFC</option><option>McDonald's</option><option>Pasibus</option></select>
+    </div>
+    <div class="filter-box">
+      <label>Show</label>
+      <select><option>25</option><option>50</option><option>100</option></select>
+    </div>
+  </div>
+
+  <div class="sort-bar">
+    <div class="sort-opt active">Protein Ratio</div>
+    <div class="sort-opt">Most Protein</div>
+    <div class="sort-opt">Kcal &uarr;</div>
+    <div class="sort-opt">Kcal &darr;</div>
+  </div>
+
+  <div class="count-bar">
+    <div class="count-num">47</div>
+    <div class="count-text">items found</div>
+  </div>
+
+  <div class="results">
+    <div class="result-card">
+      <div class="result-rank-col">01</div>
+      <div class="result-main">
+        <div class="result-name">Grilled Chicken Breast</div>
+        <div class="result-restaurant">Salad Story &middot; 250g</div>
+      </div>
+      <div class="result-macros">
+        <div class="macro-block kcal"><div class="num">285</div><div class="unit">Kcal</div></div>
+        <div class="macro-block protein"><div class="num">48.2</div><div class="unit">Protein</div></div>
+        <div class="macro-block fats"><div class="num">8.1</div><div class="unit">Fats</div></div>
+        <div class="macro-block carbs"><div class="num">4.3</div><div class="unit">Carbs</div></div>
+        <div class="macro-block ratio"><div class="num">42.1</div><div class="unit">P/100</div></div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-rank-col">02</div>
+      <div class="result-main">
+        <div class="result-name">Protein Bowl</div>
+        <div class="result-restaurant">Salad Story &middot; 350g</div>
+      </div>
+      <div class="result-macros">
+        <div class="macro-block kcal"><div class="num">340</div><div class="unit">Kcal</div></div>
+        <div class="macro-block protein"><div class="num">44.5</div><div class="unit">Protein</div></div>
+        <div class="macro-block fats"><div class="num">10.2</div><div class="unit">Fats</div></div>
+        <div class="macro-block carbs"><div class="num">12.8</div><div class="unit">Carbs</div></div>
+        <div class="macro-block ratio"><div class="num">39.2</div><div class="unit">P/100</div></div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-rank-col">03</div>
+      <div class="result-main">
+        <div class="result-name">Strips 6 pcs</div>
+        <div class="result-restaurant">KFC &middot; Hot&Spicy</div>
+      </div>
+      <div class="result-macros">
+        <div class="macro-block kcal"><div class="num">450</div><div class="unit">Kcal</div></div>
+        <div class="macro-block protein"><div class="num">38.0</div><div class="unit">Protein</div></div>
+        <div class="macro-block fats"><div class="num">22.4</div><div class="unit">Fats</div></div>
+        <div class="macro-block carbs"><div class="num">24.1</div><div class="unit">Carbs</div></div>
+        <div class="macro-block ratio"><div class="num">25.3</div><div class="unit">P/100</div></div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-rank-col">04</div>
+      <div class="result-main">
+        <div class="result-name">McChicken</div>
+        <div class="result-restaurant">McDonald's</div>
+      </div>
+      <div class="result-macros">
+        <div class="macro-block kcal"><div class="num">388</div><div class="unit">Kcal</div></div>
+        <div class="macro-block protein"><div class="num">30.5</div><div class="unit">Protein</div></div>
+        <div class="macro-block fats"><div class="num">16.7</div><div class="unit">Fats</div></div>
+        <div class="macro-block carbs"><div class="num">31.0</div><div class="unit">Carbs</div></div>
+        <div class="macro-block ratio"><div class="num">23.6</div><div class="unit">P/100</div></div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-rank-col">05</div>
+      <div class="result-main">
+        <div class="result-name">Turkey Sub</div>
+        <div class="result-restaurant">Subway &middot; 30cm</div>
+      </div>
+      <div class="result-macros">
+        <div class="macro-block kcal"><div class="num">490</div><div class="unit">Kcal</div></div>
+        <div class="macro-block protein"><div class="num">34.1</div><div class="unit">Protein</div></div>
+        <div class="macro-block fats"><div class="num">12.3</div><div class="unit">Fats</div></div>
+        <div class="macro-block carbs"><div class="num">58.4</div><div class="unit">Carbs</div></div>
+        <div class="macro-block ratio"><div class="num">20.9</div><div class="unit">P/100</div></div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-rank-col">06</div>
+      <div class="result-main">
+        <div class="result-name">Classic Burger</div>
+        <div class="result-restaurant">Pasibus</div>
+      </div>
+      <div class="result-macros">
+        <div class="macro-block kcal"><div class="num">520</div><div class="unit">Kcal</div></div>
+        <div class="macro-block protein"><div class="num">35.8</div><div class="unit">Protein</div></div>
+        <div class="macro-block fats"><div class="num">26.0</div><div class="unit">Fats</div></div>
+        <div class="macro-block carbs"><div class="num">34.2</div><div class="unit">Carbs</div></div>
+        <div class="macro-block ratio"><div class="num">20.6</div><div class="unit">P/100</div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Wroclaw Macro Finder &middot; Data may not reflect current menus</footer>
+</div>
+</body>
+</html>

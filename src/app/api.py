@@ -1,13 +1,41 @@
 from typing import Annotated, Literal
 
 from fastapi import FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session
 
 from app.db import engine, list_restaurants
-from app.schemas import FoodSearchResult
+from app.schemas import FoodSearchResult, RestaurantOption
 from app.search import find_foods, protein_ratio
 
-app = FastAPI()
+app = FastAPI(title="Wrocław Macro Finder API")
+
+# Dev-only CORS: Vite dev server runs on :5173. In production the SPA is
+# served as static files from the same origin, so this is a no-op there.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
+
+
+@app.get("/restaurants", response_model=list[RestaurantOption])
+def get_restaurants():
+    with Session(engine) as session:
+        return [
+            RestaurantOption(
+                id=r.id,
+                name=r.name,
+                menu_link=r.menu_link or None,
+                macro_table_link=r.macro_table_link or None,
+            )
+            for r in list_restaurants(session)
+            if r.id is not None
+        ]
 
 
 @app.get("/foods/search", response_model=list[FoodSearchResult])

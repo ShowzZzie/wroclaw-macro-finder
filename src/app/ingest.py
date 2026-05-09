@@ -1,13 +1,14 @@
 import csv
 from pathlib import Path
 
-from sqlmodel import Session
+from sqlmodel import Session, delete
 
 from app.db import (
     get_update_create_food,
     get_update_create_restaurant,
     list_restaurants,
 )
+from app.models import Food
 
 root = Path(__file__).resolve().parents[2]
 sources = Path(root / "data" / "sources.csv").resolve()
@@ -29,6 +30,9 @@ def import_restaurants(session: Session) -> None:
 
 
 def import_foods(session: Session):
+    # Replace-all from CSV so removed/renamed items do not linger in SQLite.
+    session.exec(delete(Food))
+
     restaurants = list_restaurants(session)
     restaurant_ids = {r.name: rid for r in restaurants if (rid := r.id) is not None}
 

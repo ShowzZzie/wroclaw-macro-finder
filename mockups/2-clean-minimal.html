@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMF — Clean Minimal</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fafafa; color: #18181b; min-height: 100vh; }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header { padding: 48px 0 40px; text-align: center; }
+  header h1 { font-size: 22px; font-weight: 600; letter-spacing: -0.5px; color: #18181b; }
+  header p { font-size: 14px; color: #a1a1aa; margin-top: 4px; font-weight: 400; }
+
+  /* Filter bar */
+  .filter-bar { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: white; border: 1px solid #e4e4e7; border-radius: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+  .filter-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #71717a; }
+  .filter-item input[type="number"] {
+    width: 60px; border: 1px solid #e4e4e7; border-radius: 6px; padding: 5px 8px;
+    font-family: 'Inter', sans-serif; font-size: 13px; color: #18181b; outline: none;
+    transition: border-color 0.15s;
+  }
+  .filter-item input:focus { border-color: #22c55e; }
+  .filter-sep { width: 1px; height: 24px; background: #e4e4e7; }
+  .filter-select {
+    border: 1px solid #e4e4e7; border-radius: 6px; padding: 5px 10px;
+    font-family: 'Inter', sans-serif; font-size: 13px; color: #18181b;
+    background: white; outline: none; cursor: pointer;
+  }
+  .filter-select:focus { border-color: #22c55e; }
+  .filter-reset { margin-left: auto; font-size: 12px; color: #a1a1aa; cursor: pointer; border: none; background: none; }
+  .filter-reset:hover { color: #18181b; }
+
+  /* Results count */
+  .results-meta { font-size: 13px; color: #a1a1aa; margin-bottom: 16px; }
+  .results-meta span { color: #22c55e; font-weight: 500; }
+
+  /* Result list */
+  .result-list { display: flex; flex-direction: column; }
+  .result-item {
+    display: flex; align-items: center; padding: 16px 0;
+    border-bottom: 1px solid #f4f4f5; cursor: pointer; transition: background 0.12s;
+    gap: 16px;
+  }
+  .result-item:hover { background: #f9fafb; margin: 0 -16px; padding: 16px; border-radius: 10px; border-bottom-color: transparent; }
+  .result-rank { font-size: 12px; color: #d4d4d8; font-weight: 500; width: 24px; text-align: center; flex-shrink: 0; }
+  .result-info { flex: 1; min-width: 0; }
+  .result-name { font-size: 15px; font-weight: 500; color: #18181b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .result-sub { font-size: 12px; color: #a1a1aa; margin-top: 2px; display: flex; align-items: center; gap: 6px; }
+  .result-sub .dot { width: 4px; height: 4px; border-radius: 50%; background: #d4d4d8; }
+  .result-ratio {
+    font-size: 24px; font-weight: 700; color: #22c55e; letter-spacing: -1px;
+    flex-shrink: 0; width: 80px; text-align: right;
+  }
+  .result-ratio-unit { font-size: 11px; font-weight: 400; color: #a1a1aa; display: block; letter-spacing: 0; }
+
+  /* Expanded detail (shown on one item as example) */
+  .result-expanded { padding: 12px 0 4px 40px; }
+  .macro-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .macro-pill { font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 500; }
+  .macro-pill.kcal { background: #fef2f2; color: #dc2626; }
+  .macro-pill.protein { background: #f0fdf4; color: #16a34a; }
+  .macro-pill.fats { background: #fffbeb; color: #d97706; }
+  .macro-pill.carbs { background: #f0f9ff; color: #0284c7; }
+
+  /* Footer */
+  footer { text-align: center; padding: 48px 0 32px; font-size: 12px; color: #d4d4d8; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Wroclaw Macro Finder</h1>
+    <p>High-protein menu items, fast.</p>
+  </header>
+
+  <div class="filter-bar">
+    <div class="filter-item">
+      Max kcal
+      <input type="number" value="800" />
+    </div>
+    <div class="filter-sep"></div>
+    <div class="filter-item">
+      Min protein
+      <input type="number" value="30" />
+    </div>
+    <div class="filter-sep"></div>
+    <div class="filter-item">
+      <select class="filter-select">
+        <option>All restaurants</option>
+        <option>KFC</option>
+        <option>McDonald's</option>
+        <option>Pasibus</option>
+        <option>Subway</option>
+      </select>
+    </div>
+    <div class="filter-sep"></div>
+    <div class="filter-item">
+      <select class="filter-select">
+        <option>Best ratio</option>
+        <option>Most protein</option>
+        <option>Lowest kcal</option>
+      </select>
+    </div>
+    <button class="filter-reset">Reset</button>
+  </div>
+
+  <div class="results-meta"><span>47</span> items found</div>
+
+  <div class="result-list">
+    <div class="result-item">
+      <div class="result-rank">1</div>
+      <div class="result-info">
+        <div class="result-name">Grilled Chicken Breast</div>
+        <div class="result-sub">Salad Story <span class="dot"></span> 250g</div>
+      </div>
+      <div class="result-ratio">42.1<span class="result-ratio-unit">p/100kcal</span></div>
+    </div>
+    <div class="result-expanded">
+      <div class="macro-pills">
+        <span class="macro-pill kcal">285 kcal</span>
+        <span class="macro-pill protein">48.2g protein</span>
+        <span class="macro-pill fats">8.1g fats</span>
+        <span class="macro-pill carbs">4.3g carbs</span>
+      </div>
+    </div>
+
+    <div class="result-item">
+      <div class="result-rank">2</div>
+      <div class="result-info">
+        <div class="result-name">Protein Bowl</div>
+        <div class="result-sub">Salad Story <span class="dot"></span> 350g</div>
+      </div>
+      <div class="result-ratio">39.2<span class="result-ratio-unit">p/100kcal</span></div>
+    </div>
+
+    <div class="result-item">
+      <div class="result-rank">3</div>
+      <div class="result-info">
+        <div class="result-name">Strips 6 pcs</div>
+        <div class="result-sub">KFC <span class="dot"></span> Hot&Spicy</div>
+      </div>
+      <div class="result-ratio">25.3<span class="result-ratio-unit">p/100kcal</span></div>
+    </div>
+
+    <div class="result-item">
+      <div class="result-rank">4</div>
+      <div class="result-info">
+        <div class="result-name">McChicken</div>
+        <div class="result-sub">McDonald's</div>
+      </div>
+      <div class="result-ratio">23.6<span class="result-ratio-unit">p/100kcal</span></div>
+    </div>
+
+    <div class="result-item">
+      <div class="result-rank">5</div>
+      <div class="result-info">
+        <div class="result-name">Turkey Sub</div>
+        <div class="result-sub">Subway <span class="dot"></span> 30cm</div>
+      </div>
+      <div class="result-ratio">20.9<span class="result-ratio-unit">p/100kcal</span></div>
+    </div>
+
+    <div class="result-item">
+      <div class="result-rank">6</div>
+      <div class="result-info">
+        <div class="result-name">Classic Burger</div>
+        <div class="result-sub">Pasibus</div>
+      </div>
+      <div class="result-ratio">20.6<span class="result-ratio-unit">p/100kcal</span></div>
+    </div>
+
+    <div class="result-item">
+      <div class="result-rank">7</div>
+      <div class="result-info">
+        <div class="result-name">MAX Original</div>
+        <div class="result-sub">MAX Burgers <span class="dot"></span> Single</div>
+      </div>
+      <div class="result-ratio">16.7<span class="result-ratio-unit">p/100kcal</span></div>
+    </div>
+
+    <div class="result-item">
+      <div class="result-rank">8</div>
+      <div class="result-info">
+        <div class="result-name">Margherita</div>
+        <div class="result-sub">Pizza Hut <span class="dot"></span> Medium</div>
+      </div>
+      <div class="result-ratio">12.9<span class="result-ratio-unit">p/100kcal</span></div>
+    </div>
+  </div>
+
+  <footer>Wroclaw Macro Finder &middot; Data may not reflect current menus.</footer>
+</div>
+</body>
+</html>

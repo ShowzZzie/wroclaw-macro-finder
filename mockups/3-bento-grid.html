@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMF — Bento Grid</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #09090b; color: #fafafa; min-height: 100vh; padding: 24px; }
+
+  .page-header { text-align: center; padding: 32px 0 28px; }
+  .page-header h1 { font-size: 28px; font-weight: 800; letter-spacing: -1px; }
+  .page-header h1 span { background: linear-gradient(135deg, #22c55e, #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .page-header p { font-size: 14px; color: #71717a; margin-top: 4px; }
+
+  /* Bento grid */
+  .bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 1100px; margin: 0 auto; }
+
+  .tile {
+    background: #18181b; border: 1px solid #27272a; border-radius: 16px;
+    padding: 20px; overflow: hidden; position: relative;
+  }
+  .tile-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #52525b; margin-bottom: 12px; font-weight: 600; }
+
+  /* Span classes */
+  .span-2 { grid-column: span 2; }
+  .span-3 { grid-column: span 3; }
+  .span-4 { grid-column: span 4; }
+  .row-2 { grid-row: span 2; }
+
+  /* Filters tile */
+  .filters-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .filter-block label { font-size: 11px; color: #71717a; display: block; margin-bottom: 6px; }
+  .filter-block input, .filter-block select {
+    width: 100%; padding: 8px 10px; background: #09090b; border: 1px solid #27272a;
+    border-radius: 8px; color: #fafafa; font-family: 'Inter', sans-serif; font-size: 13px;
+    outline: none;
+  }
+  .filter-block input:focus, .filter-block select:focus { border-color: #22c55e; }
+  .sort-row { grid-column: span 2; display: flex; gap: 6px; margin-top: 4px; }
+  .sort-btn { flex: 1; padding: 6px; border-radius: 8px; border: 1px solid #27272a; background: #09090b; color: #71717a; font-size: 11px; cursor: pointer; text-align: center; font-family: 'Inter'; }
+  .sort-btn.active { background: rgba(34,197,94,0.1); border-color: #22c55e; color: #22c55e; }
+
+  /* Stat tiles */
+  .stat-value { font-size: 36px; font-weight: 800; letter-spacing: -2px; line-height: 1; }
+  .stat-value.green { color: #22c55e; }
+  .stat-value.amber { color: #f59e0b; }
+  .stat-value.blue { color: #38bdf8; }
+  .stat-value.white { color: #fafafa; }
+  .stat-sub { font-size: 12px; color: #52525b; margin-top: 4px; }
+
+  /* Spotlight tile */
+  .spotlight { display: flex; align-items: center; gap: 20px; }
+  .spotlight-badge { width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, #22c55e, #16a34a); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; color: white; flex-shrink: 0; }
+  .spotlight-info h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; }
+  .spotlight-info .sub { font-size: 13px; color: #71717a; margin-top: 2px; }
+  .spotlight-info .macros { display: flex; gap: 12px; margin-top: 8px; }
+  .spotlight-macro { font-size: 12px; color: #a1a1aa; }
+  .spotlight-macro span { font-weight: 600; }
+  .spotlight-macro span.g { color: #22c55e; }
+  .spotlight-macro span.a { color: #f59e0b; }
+  .spotlight-macro span.b { color: #38bdf8; }
+
+  /* Results tile */
+  .results-tile { padding: 16px; }
+  .result-row { display: grid; grid-template-columns: 28px 1fr 60px 60px 60px 60px 70px; align-items: center; padding: 10px 4px; border-bottom: 1px solid #1f1f23; font-size: 12px; gap: 8px; }
+  .result-row:last-child { border-bottom: none; }
+  .result-row:hover { background: rgba(34,197,94,0.04); border-radius: 8px; }
+  .result-row .rank { color: #3f3f46; font-weight: 500; text-align: center; }
+  .result-row .name { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .result-row .name small { color: #52525b; font-weight: 400; display: block; font-size: 10px; }
+  .result-row .val { text-align: right; color: #a1a1aa; }
+  .result-row .val.g { color: #22c55e; }
+  .result-row .ratio-badge { text-align: center; font-weight: 600; padding: 3px 0; border-radius: 6px; font-size: 11px; }
+  .ratio-hi { background: rgba(34,197,94,0.12); color: #22c55e; }
+  .ratio-md { background: rgba(245,158,11,0.12); color: #f59e0b; }
+  .ratio-lo { background: rgba(239,68,68,0.12); color: #ef4444; }
+  .results-header { display: grid; grid-template-columns: 28px 1fr 60px 60px 60px 60px 70px; padding: 0 4px 8px; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #3f3f46; border-bottom: 1px solid #27272a; gap: 8px; }
+  .results-header div:not(:nth-child(2)) { text-align: right; }
+  .results-header div:first-child { text-align: center; }
+
+  /* Restaurant quick-picks */
+  .restaurant-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .rest-chip { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 8px; border-radius: 10px; border: 1px solid #27272a; cursor: pointer; transition: all 0.15s; }
+  .rest-chip:hover { border-color: #22c55e; background: rgba(34,197,94,0.06); }
+  .rest-chip .icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; }
+  .rest-chip .rname { font-size: 10px; color: #71717a; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>Wroclaw <span>Macro</span> Finder</h1>
+    <p>High-protein menu items, fast.</p>
+  </div>
+
+  <div class="bento">
+    <!-- Filters -->
+    <div class="tile span-2 row-2">
+      <div class="tile-label">Filters</div>
+      <div class="filters-grid">
+        <div class="filter-block">
+          <label>Max Kcal</label>
+          <input type="number" value="800" />
+        </div>
+        <div class="filter-block">
+          <label>Min Protein (g)</label>
+          <input type="number" value="30" />
+        </div>
+        <div class="filter-block">
+          <label>Restaurant</label>
+          <select><option>All restaurants</option><option>KFC</option><option>McDonald's</option></select>
+        </div>
+        <div class="filter-block">
+          <label>Show</label>
+          <select><option>25 results</option><option>50 results</option><option>100 results</option></select>
+        </div>
+        <div class="sort-row">
+          <div class="sort-btn active">Ratio</div>
+          <div class="sort-btn">Protein</div>
+          <div class="sort-btn">Kcal &uarr;</div>
+          <div class="sort-btn">Kcal &darr;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat: results -->
+    <div class="tile">
+      <div class="tile-label">Results</div>
+      <div class="stat-value white">47</div>
+      <div class="stat-sub">items matching</div>
+    </div>
+
+    <!-- Stat: avg protein -->
+    <div class="tile">
+      <div class="tile-label">Avg Protein</div>
+      <div class="stat-value green">38.2g</div>
+      <div class="stat-sub">across results</div>
+    </div>
+
+    <!-- Stat: avg kcal -->
+    <div class="tile">
+      <div class="tile-label">Avg Kcal</div>
+      <div class="stat-value amber">412</div>
+      <div class="stat-sub">per portion</div>
+    </div>
+
+    <!-- Stat: best ratio -->
+    <div class="tile">
+      <div class="tile-label">Best Ratio</div>
+      <div class="stat-value blue">42.1</div>
+      <div class="stat-sub">g per 100 kcal</div>
+    </div>
+
+    <!-- Top result spotlight -->
+    <div class="tile span-2">
+      <div class="tile-label">Top Result</div>
+      <div class="spotlight">
+        <div class="spotlight-badge">SS</div>
+        <div class="spotlight-info">
+          <h3>Grilled Chicken Breast</h3>
+          <div class="sub">Salad Story &middot; 250g</div>
+          <div class="macros">
+            <div class="spotlight-macro"><span>285</span> kcal</div>
+            <div class="spotlight-macro"><span class="g">48.2g</span> protein</div>
+            <div class="spotlight-macro"><span class="a">8.1g</span> fats</div>
+            <div class="spotlight-macro"><span class="b">4.3g</span> carbs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Restaurant quick picks -->
+    <div class="tile span-2">
+      <div class="tile-label">Restaurants</div>
+      <div class="restaurant-grid">
+        <div class="rest-chip"><div class="icon" style="background:#ef4444">KFC</div><div class="rname">KFC</div></div>
+        <div class="rest-chip"><div class="icon" style="background:#f59e0b">MC</div><div class="rname">McDonald's</div></div>
+        <div class="rest-chip"><div class="icon" style="background:#8b5cf6">PB</div><div class="rname">Pasibus</div></div>
+        <div class="rest-chip"><div class="icon" style="background:#06b6d4">SW</div><div class="rname">Subway</div></div>
+        <div class="rest-chip"><div class="icon" style="background:#ec4899">SS</div><div class="rname">Salad Story</div></div>
+        <div class="rest-chip"><div class="icon" style="background:#14b8a6">MX</div><div class="rname">MAX</div></div>
+        <div class="rest-chip"><div class="icon" style="background:#f97316">PH</div><div class="rname">Pizza Hut</div></div>
+        <div class="rest-chip"><div class="icon" style="background:#84cc16">HT</div><div class="rname">HulThai</div></div>
+      </div>
+    </div>
+
+    <!-- Results list -->
+    <div class="tile span-4 results-tile">
+      <div class="tile-label">Results</div>
+      <div class="results-header">
+        <div>#</div><div>Food</div><div>Kcal</div><div>Protein</div><div>Fats</div><div>Carbs</div><div>P/100kcal</div>
+      </div>
+      <div class="result-row"><div class="rank">1</div><div class="name">Grilled Chicken Breast<small>Salad Story &middot; 250g</small></div><div class="val">285</div><div class="val g">48.2</div><div class="val">8.1</div><div class="val">4.3</div><div class="ratio-badge ratio-hi">42.1</div></div>
+      <div class="result-row"><div class="rank">2</div><div class="name">Protein Bowl<small>Salad Story &middot; 350g</small></div><div class="val">340</div><div class="val g">44.5</div><div class="val">10.2</div><div class="val">12.8</div><div class="ratio-badge ratio-hi">39.2</div></div>
+      <div class="result-row"><div class="rank">3</div><div class="name">Strips 6 pcs<small>KFC &middot; Hot&Spicy</small></div><div class="val">450</div><div class="val g">38.0</div><div class="val">22.4</div><div class="val">24.1</div><div class="ratio-badge ratio-md">25.3</div></div>
+      <div class="result-row"><div class="rank">4</div><div class="name">McChicken<small>McDonald's</small></div><div class="val">388</div><div class="val g">30.5</div><div class="val">16.7</div><div class="val">31.0</div><div class="ratio-badge ratio-md">23.6</div></div>
+      <div class="result-row"><div class="rank">5</div><div class="name">Turkey Sub<small>Subway &middot; 30cm</small></div><div class="val">490</div><div class="val g">34.1</div><div class="val">12.3</div><div class="val">58.4</div><div class="ratio-badge ratio-md">20.9</div></div>
+      <div class="result-row"><div class="rank">6</div><div class="name">Classic Burger<small>Pasibus</small></div><div class="val">520</div><div class="val g">35.8</div><div class="val">26.0</div><div class="val">34.2</div><div class="ratio-badge ratio-md">20.6</div></div>
+      <div class="result-row"><div class="rank">7</div><div class="name">MAX Original<small>MAX Burgers &middot; Single</small></div><div class="val">580</div><div class="val g">32.4</div><div class="val">28.1</div><div class="val">42.0</div><div class="ratio-badge ratio-lo">16.7</div></div>
+      <div class="result-row"><div class="rank">8</div><div class="name">Margherita<small>Pizza Hut &middot; Medium</small></div><div class="val">720</div><div class="val g">31.0</div><div class="val">24.5</div><div class="val">88.0</div><div class="ratio-badge ratio-lo">12.9</div></div>
+    </div>
+  </div>
+</body>
+</html>

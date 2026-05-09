@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMF — Frosted Glass</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif; color: #f0f0f5; min-height: 100vh;
+    background: #0c0c1a;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(34,197,94,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(99,102,241,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, rgba(14,165,233,0.08) 0%, transparent 50%);
+  }
+
+  .container { max-width: 920px; margin: 0 auto; padding: 32px 24px; }
+
+  /* Glass mixin */
+  .glass {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+  }
+  .glass-strong {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+  }
+
+  /* Header */
+  header { text-align: center; padding: 40px 0 32px; }
+  header h1 { font-size: 28px; font-weight: 700; letter-spacing: -1px; }
+  header h1 span { background: linear-gradient(135deg, #22c55e, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  header p { font-size: 14px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+
+  /* Filter panel */
+  .filter-panel { padding: 20px 24px; margin-bottom: 20px; }
+  .filter-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
+  .filter-group { flex: 1; min-width: 140px; }
+  .filter-group label { display: block; font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+  .filter-group input, .filter-group select {
+    width: 100%; padding: 10px 12px; border-radius: 10px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+    color: #f0f0f5; font-family: 'Inter', sans-serif; font-size: 14px; outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .filter-group input:focus, .filter-group select:focus {
+    border-color: rgba(34,197,94,0.5); box-shadow: 0 0 20px rgba(34,197,94,0.1);
+  }
+
+  .sort-row { display: flex; gap: 6px; margin-top: 16px; }
+  .sort-pill {
+    padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 500;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.2s;
+  }
+  .sort-pill:hover { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); }
+  .sort-pill.active {
+    background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.3);
+    color: #4ade80; box-shadow: 0 0 16px rgba(34,197,94,0.08);
+  }
+
+  /* Results meta */
+  .results-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding: 0 4px; }
+  .results-meta .count { font-size: 13px; color: rgba(255,255,255,0.35); }
+  .results-meta .count span { color: #4ade80; font-weight: 600; }
+
+  /* Result cards */
+  .result-list { display: flex; flex-direction: column; gap: 8px; }
+  .result-card {
+    padding: 16px 20px; display: flex; align-items: center; gap: 16px;
+    transition: all 0.2s; cursor: pointer; position: relative; overflow: hidden;
+  }
+  .result-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 0 2px 2px 0;
+    background: transparent; transition: background 0.2s;
+  }
+  .result-card:hover { background: rgba(255,255,255,0.06); }
+  .result-card:hover::before { background: linear-gradient(180deg, #22c55e, #38bdf8); }
+
+  /* Glow variants for top results */
+  .result-card.top-1 { box-shadow: 0 0 30px rgba(34,197,94,0.06), inset 0 0 30px rgba(34,197,94,0.02); }
+  .result-card.top-1::before { background: linear-gradient(180deg, #22c55e, #4ade80); }
+
+  /* Restaurant badge: logo with monogram fallback */
+  .result-badge {
+    width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .result-badge .badge-bg {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: white;
+  }
+  .result-badge img {
+    position: relative; z-index: 1; width: 28px; height: 28px; object-fit: contain;
+    image-rendering: auto; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+  }
+
+  .result-info { flex: 1; min-width: 0; }
+  .result-name { font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .result-sub { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 1px; }
+
+  /* Macro stats — more separation */
+  .result-macros { display: flex; gap: 4px; flex-shrink: 0; }
+  .macro-stat {
+    text-align: center; min-width: 56px;
+    padding: 6px 8px; border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+  }
+  .macro-stat .val { font-size: 14px; font-weight: 600; }
+  .macro-stat .lbl { font-size: 8px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 1px; }
+  .macro-stat.green .val { color: #4ade80; }
+  .macro-stat.amber .val { color: #fbbf24; }
+  .macro-stat.blue .val { color: #38bdf8; }
+  .macro-stat.red .val { color: #f87171; }
+
+  /* Ratio indicator — with label */
+  .result-ratio {
+    flex-shrink: 0; width: 72px; text-align: center;
+    padding: 8px 6px; border-radius: 12px;
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+  }
+  .result-ratio .ratio-val { font-size: 18px; font-weight: 700; line-height: 1; }
+  .result-ratio .ratio-label { font-size: 7px; text-transform: uppercase; letter-spacing: 0.8px; opacity: 0.55; line-height: 1; margin-top: 2px; }
+  .ratio-glow {
+    background: rgba(34,197,94,0.1); color: #4ade80;
+    box-shadow: 0 0 16px rgba(34,197,94,0.12);
+  }
+  .ratio-mid { background: rgba(251,191,36,0.08); color: #fbbf24; }
+  .ratio-low { background: rgba(248,113,113,0.08); color: #f87171; }
+
+  footer { text-align: center; padding: 40px 0 24px; font-size: 11px; color: rgba(255,255,255,0.15); }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Wroclaw <span>Macro Finder</span></h1>
+    <p>High-protein menu items, fast.</p>
+  </header>
+
+  <div class="filter-panel glass-strong">
+    <div class="filter-row">
+      <div class="filter-group"><label>Max Kcal</label><input type="number" value="800" /></div>
+      <div class="filter-group"><label>Min Protein</label><input type="number" value="30" /></div>
+      <div class="filter-group"><label>Restaurant</label><select><option>All restaurants</option><option>KFC</option><option>McDonald's</option><option>Pasibus</option></select></div>
+      <div class="filter-group"><label>Show</label><select><option>25</option><option>50</option><option>100</option></select></div>
+    </div>
+    <div class="sort-row">
+      <div class="sort-pill active">P/100kcal</div>
+      <div class="sort-pill">Protein</div>
+      <div class="sort-pill">Kcal &uarr;</div>
+      <div class="sort-pill">Kcal &darr;</div>
+    </div>
+  </div>
+
+  <div class="results-meta"><div class="count"><span>47</span> items found</div></div>
+
+  <div class="result-list">
+    <!-- Salad Story — Grilled Chicken Breast -->
+    <div class="result-card glass top-1">
+      <div class="result-badge" style="background:linear-gradient(135deg,#65a30d,#3f6212)">
+        <div class="badge-bg">SS</div>
+        <img src="https://www.google.com/s2/favicons?sz=128&domain=saladstory.com" alt="Salad Story" onerror="this.style.display='none'" />
+      </div>
+      <div class="result-info"><div class="result-name">Grilled Chicken Breast</div><div class="result-sub">Salad Story &middot; 250g</div></div>
+      <div class="result-macros">
+        <div class="macro-stat red"><div class="val">285</div><div class="lbl">kcal</div></div>
+        <div class="macro-stat green"><div class="val">48.2</div><div class="lbl">protein</div></div>
+        <div class="macro-stat amber"><div class="val">8.1</div><div class="lbl">fats</div></div>
+        <div class="macro-stat blue"><div class="val">4.3</div><div class="lbl">carbs</div></div>
+      </div>
+      <div class="result-ratio ratio-glow"><div class="ratio-val">42.1</div><div class="ratio-label">P / 100kcal</div></div>
+    </div>
+
+    <!-- Salad Story — Protein Bowl -->
+    <div class="result-card glass">
+      <div class="result-badge" style="background:linear-gradient(135deg,#65a30d,#3f6212)">
+        <div class="badge-bg">SS</div>
+        <img src="https://www.google.com/s2/favicons?sz=128&domain=saladstory.com" alt="Salad Story" onerror="this.style.display='none'" />
+      </div>
+      <div class="result-info"><div class="result-name">Protein Bowl</div><div class="result-sub">Salad Story &middot; 350g</div></div>
+      <div class="result-macros">
+        <div class="macro-stat red"><div class="val">340</div><div class="lbl">kcal</div></div>
+        <div class="macro-stat green"><div class="val">44.5</div><div class="lbl">protein</div></div>
+        <div class="macro-stat amber"><div class="val">10.2</div><div class="lbl">fats</div></div>
+        <div class="macro-stat blue"><div class="val">12.8</div><div class="lbl">carbs</div></div>
+      </div>
+      <div class="result-ratio ratio-glow"><div class="ratio-val">39.2</div><div class="ratio-label">P / 100kcal</div></div>
+    </div>
+
+    <!-- KFC — Strips -->
+    <div class="result-card glass">
+      <div class="result-badge" style="background:#e4002b">
+        <div class="badge-bg">KFC</div>
+        <img src="https://www.google.com/s2/favicons?sz=128&domain=kfc.pl" alt="KFC" onerror="this.style.display='none'" />
+      </div>
+      <div class="result-info"><div class="result-name">Strips 6 pcs</div><div class="result-sub">KFC &middot; Hot&Spicy</div></div>
+      <div class="result-macros">
+        <div class="macro-stat red"><div class="val">450</div><div class="lbl">kcal</div></div>
+        <div class="macro-stat green"><div class="val">38.0</div><div class="lbl">protein</div></div>
+        <div class="macro-stat amber"><div class="val">22.4</div><div class="lbl">fats</div></div>
+        <div class="macro-stat blue"><div class="val">24.1</div><div class="lbl">carbs</div></div>
+      </div>
+      <div class="result-ratio ratio-mid"><div class="ratio-val">25.3</div><div class="ratio-label">P / 100kcal</div></div>
+    </div>
+
+    <!-- McDonald's — McChicken -->
+    <div class="result-card glass">
+      <div class="result-badge" style="background:#da291c">
+        <div class="badge-bg" style="color:#ffc72c">M</div>
+        <img src="https://www.google.com/s2/favicons?sz=128&domain=mcdonalds.pl" alt="McDonald's" onerror="this.style.display='none'" />
+      </div>
+      <div class="result-info"><div class="result-name">McChicken</div><div class="result-sub">McDonald's</div></div>
+      <div class="result-macros">
+        <div class="macro-stat red"><div class="val">388</div><div class="lbl">kcal</div></div>
+        <div class="macro-stat green"><div class="val">30.5</div><div class="lbl">protein</div></div>
+        <div class="macro-stat amber"><div class="val">16.7</div><div class="lbl">fats</div></div>
+        <div class="macro-stat blue"><div class="val">31.0</div><div class="lbl">carbs</div></div>
+      </div>
+      <div class="result-ratio ratio-mid"><div class="ratio-val">23.6</div><div class="ratio-label">P / 100kcal</div></div>
+    </div>
+
+    <!-- Subway — Turkey Sub -->
+    <div class="result-card glass">
+      <div class="result-badge" style="background:#008c44">
+        <div class="badge-bg" style="color:#ffd400">Sub</div>
+        <img src="https://www.google.com/s2/favicons?sz=128&domain=subway.com" alt="Subway" onerror="this.style.display='none'" />
+      </div>
+      <div class="result-info"><div class="result-name">Turkey Sub</div><div class="result-sub">Subway &middot; 30cm</div></div>
+      <div class="result-macros">
+        <div class="macro-stat red"><div class="val">490</div><div class="lbl">kcal</div></div>
+        <div class="macro-stat green"><div class="val">34.1</div><div class="lbl">protein</div></div>
+        <div class="macro-stat amber"><div class="val">12.3</div><div class="lbl">fats</div></div>
+        <div class="macro-stat blue"><div class="val">58.4</div><div class="lbl">carbs</div></div>
+      </div>
+      <div class="result-ratio ratio-mid"><div class="ratio-val">20.9</div><div class="ratio-label">P / 100kcal</div></div>
+    </div>
+
+    <!-- Pasibus — Classic Burger -->
+    <div class="result-card glass">
+      <div class="result-badge" style="background:#111111; border: 1px solid rgba(255,255,255,0.18);">
+        <div class="badge-bg">Pa</div>
+        <img src="https://www.google.com/s2/favicons?sz=128&domain=pasibus.pl" alt="Pasibus" onerror="this.style.display='none'" />
+      </div>
+      <div class="result-info"><div class="result-name">Classic Burger</div><div class="result-sub">Pasibus</div></div>
+      <div class="result-macros">
+        <div class="macro-stat red"><div class="val">520</div><div class="lbl">kcal</div></div>
+        <div class="macro-stat green"><div class="val">35.8</div><div class="lbl">protein</div></div>
+        <div class="macro-stat amber"><div class="val">26.0</div><div class="lbl">fats</div></div>
+        <div class="macro-stat blue"><div class="val">34.2</div><div class="lbl">carbs</div></div>
+      </div>
+      <div class="result-ratio ratio-mid"><div class="ratio-val">20.6</div><div class="ratio-label">P / 100kcal</div></div>
+    </div>
+
+    <!-- MAX Burgers — MAX Original -->
+    <div class="result-card glass">
+      <div class="result-badge" style="background:#fbbf24">
+        <div class="badge-bg" style="color:#1c1917">MAX</div>
+        <img src="https://www.google.com/s2/favicons?sz=128&domain=maxpremiumburgers.pl" alt="MAX Burgers" onerror="this.style.display='none'" />
+      </div>
+      <div class="result-info"><div class="result-name">MAX Original</div><div class="result-sub">MAX Burgers &middot; Single</div></div>
+      <div class="result-macros">
+        <div class="macro-stat red"><div class="val">580</div><div class="lbl">kcal</div></div>
+        <div class="macro-stat green"><div class="val">32.4</div><div class="lbl">protein</div></div>
+        <div class="macro-stat amber"><div class="val">28.1</div><div class="lbl">fats</div></div>
+        <div class="macro-stat blue"><div class="val">42.0</div><div class="lbl">carbs</div></div>
+      </div>
+      <div class="result-ratio ratio-low"><div class="ratio-val">16.7</div><div class="ratio-label">P / 100kcal</div></div>
+    </div>
+  </div>
+
+  <footer>Wroclaw Macro Finder &middot; Data may not reflect current menus.</footer>
+</div>
+</body>
+</html>

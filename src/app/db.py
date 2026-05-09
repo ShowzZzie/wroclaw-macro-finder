@@ -1,12 +1,22 @@
+import os
 from pathlib import Path
 
 from sqlmodel import Session, SQLModel, create_engine, select
 
 from app.models import Food, Restaurant
 
-root_path = Path(__file__).resolve().parents[2]
 database_name = "main_database.db"
-database_location = (root_path / "data" / database_name).resolve()
+
+
+def _resolve_database_path() -> Path:
+    env = os.environ.get("DATABASE_PATH")
+    if env:
+        return Path(env).expanduser().resolve()
+    root_path = Path(__file__).resolve().parents[2]
+    return (root_path / "data" / database_name).resolve()
+
+
+database_location = _resolve_database_path()
 database_uri = f"sqlite:///{database_location}"
 
 engine = create_engine(database_uri)

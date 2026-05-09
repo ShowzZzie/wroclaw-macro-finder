@@ -10,3 +10,10 @@ class FoodSearchResult(BaseModel):
     fats: float
     carbs: float
     protein_per_100_kcal: float
+
+
+class RestaurantOption(BaseModel):
+    id: int
+    name: str
+    menu_link: str | None = None
+    macro_table_link: str | None = None

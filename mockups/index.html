@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMF — Design Directions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #09090b; color: #fafafa; min-height: 100vh; padding: 48px 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 32px; font-weight: 800; letter-spacing: -1px; text-align: center; margin-bottom: 4px; }
+  h1 span { background: linear-gradient(135deg, #22c55e, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .subtitle { text-align: center; color: #52525b; font-size: 14px; margin-bottom: 40px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card {
+    display: block; background: #18181b; border: 1px solid #27272a; border-radius: 14px;
+    padding: 24px; text-decoration: none; color: #fafafa; transition: all 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .card:hover { border-color: #22c55e; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,197,94,0.08); }
+  .card .num { font-size: 48px; font-weight: 800; color: rgba(255,255,255,0.04); position: absolute; top: 12px; right: 20px; line-height: 1; }
+  .card h2 { font-size: 17px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.3px; }
+  .card p { font-size: 12px; color: #71717a; line-height: 1.5; }
+  .card .tags { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+  .card .tag { font-size: 10px; padding: 3px 8px; border-radius: 4px; background: rgba(255,255,255,0.05); color: #52525b; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>WMF <span>Design Directions</span></h1>
+  <p class="subtitle">8 frontend mockups for Wroclaw Macro Finder. Click to preview.</p>
+
+  <div class="grid">
+    <a class="card" href="1-performance-dashboard.html">
+      <div class="num">01</div>
+      <h2>Performance Dashboard</h2>
+      <p>Dark data-dense layout with sidebar filters, summary stats, sortable grid, and spark bars. Built for power users who think in numbers.</p>
+      <div class="tags"><span class="tag">Dark</span><span class="tag">Data-dense</span><span class="tag">Sidebar</span></div>
+    </a>
+    <a class="card" href="2-clean-minimal.html">
+      <div class="num">02</div>
+      <h2>Clean Minimal</h2>
+      <p>Apple/Linear-inspired light design. Single column, generous whitespace, prominent protein ratio, expand-for-details pattern.</p>
+      <div class="tags"><span class="tag">Light</span><span class="tag">Minimal</span><span class="tag">Focused</span></div>
+    </a>
+    <a class="card" href="3-bento-grid.html">
+      <div class="num">03</div>
+      <h2>Bento Grid</h2>
+      <p>Apple WWDC-style tile layout. Filters, stats, spotlight, and results in self-contained tiles. Adapts well to any screen.</p>
+      <div class="tags"><span class="tag">Dark</span><span class="tag">Tiles</span><span class="tag">Modern</span></div>
+    </a>
+    <a class="card" href="4-neo-brutalist.html">
+      <div class="num">04</div>
+      <h2>Neo-Brutalist</h2>
+      <p>Thick borders, bold colors, offset shadows, geometric type. Instantly memorable and distinctive. Not for everyone.</p>
+      <div class="tags"><span class="tag">Light</span><span class="tag">Bold</span><span class="tag">Polarizing</span></div>
+    </a>
+    <a class="card" href="5-frosted-glass.html">
+      <div class="num">05</div>
+      <h2>Frosted Glass</h2>
+      <p>Deep dark background with mesh gradients and glass-morphism panels. Color-coded glow borders encode protein ratio quality.</p>
+      <div class="tags"><span class="tag">Dark</span><span class="tag">Glassmorphism</span><span class="tag">Premium</span></div>
+    </a>
+    <a class="card" href="6-data-table-pro.html">
+      <div class="num">06</div>
+      <h2>Data Table Pro</h2>
+      <p>Notion/Airtable-inspired full-width sortable table. Toolbar filters, ratio bars, density toggle, pagination. Maximum information density.</p>
+      <div class="tags"><span class="tag">Light</span><span class="tag">Table</span><span class="tag">Utilitarian</span></div>
+    </a>
+    <a class="card" href="7-card-stack.html">
+      <div class="num">07</div>
+      <h2>Card Stack + Meal Plan</h2>
+      <p>Large cards with macro proportion bars and a meal-plan sidebar for bookmarking items. Discovery-oriented browsing.</p>
+      <div class="tags"><span class="tag">Dark</span><span class="tag">Cards</span><span class="tag">Meal plan</span></div>
+    </a>
+    <a class="card" href="8-map-split.html">
+      <div class="num">08</div>
+      <h2>Map + List Split</h2>
+      <p>Two-panel layout with compact results list and Wroclaw map with restaurant pins. Spatial context for location-aware search.</p>
+      <div class="tags"><span class="tag">Light</span><span class="tag">Map</span><span class="tag">Location</span></div>
+    </a>
+  </div>
+</div>
+</body>
+</html>

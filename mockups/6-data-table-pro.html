@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMF — Data Table Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fafafa; color: #18181b; min-height: 100vh; }
+
+  /* Toolbar */
+  .toolbar { background: white; border-bottom: 1px solid #e4e4e7; padding: 12px 24px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 10; }
+  .toolbar .brand { font-weight: 700; font-size: 14px; color: #18181b; white-space: nowrap; display: flex; align-items: center; gap: 6px; }
+  .toolbar .brand svg { width: 18px; height: 18px; color: #22c55e; }
+  .toolbar-sep { width: 1px; height: 28px; background: #e4e4e7; }
+
+  .toolbar-input {
+    display: flex; align-items: center; gap: 4px; border: 1px solid #e4e4e7; border-radius: 6px;
+    padding: 5px 10px; font-size: 12px; color: #71717a; background: #fafafa;
+  }
+  .toolbar-input input, .toolbar-input select {
+    border: none; background: transparent; font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: #18181b; outline: none; width: 50px;
+  }
+  .toolbar-input select { width: auto; cursor: pointer; }
+
+  .filter-chip {
+    padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 500;
+    border: 1px solid #e4e4e7; background: white; color: #71717a; cursor: pointer;
+    transition: all 0.12s; white-space: nowrap;
+  }
+  .filter-chip:hover { border-color: #a1a1aa; color: #18181b; }
+  .filter-chip.active { background: #18181b; color: white; border-color: #18181b; }
+  .filter-chip .x { margin-left: 4px; opacity: 0.5; }
+
+  .toolbar-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .toolbar-btn {
+    padding: 5px 12px; border-radius: 6px; font-size: 11px; font-weight: 500;
+    border: 1px solid #e4e4e7; background: white; color: #71717a; cursor: pointer;
+  }
+  .toolbar-btn:hover { background: #f4f4f5; }
+  .result-count { font-size: 12px; color: #a1a1aa; font-family: 'JetBrains Mono', monospace; }
+  .result-count span { color: #22c55e; font-weight: 500; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead { position: sticky; top: 48px; z-index: 5; }
+  th {
+    padding: 10px 16px; text-align: left; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 1px; color: #a1a1aa; font-weight: 600; background: #f4f4f5;
+    border-bottom: 2px solid #e4e4e7; white-space: nowrap; cursor: pointer;
+    user-select: none; position: relative;
+  }
+  th:hover { color: #18181b; }
+  th.sorted { color: #18181b; }
+  th.sorted::after { content: ' \u2193'; color: #22c55e; }
+  th.num { text-align: right; }
+
+  td { padding: 10px 16px; border-bottom: 1px solid #f4f4f5; vertical-align: middle; }
+  tr:hover { background: #fafafa; }
+  tr:hover td { background: rgba(34,197,94,0.02); }
+
+  .td-food { font-weight: 500; max-width: 280px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .td-size { font-size: 11px; color: #a1a1aa; }
+  .td-restaurant { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+  .rest-pill { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; color: white; }
+  .td-num { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #52525b; }
+  .td-num.protein { color: #16a34a; font-weight: 500; }
+
+  .ratio-cell { text-align: right; }
+  .ratio-bar-wrap { display: inline-flex; align-items: center; gap: 6px; }
+  .ratio-bar { width: 48px; height: 6px; background: #f4f4f5; border-radius: 3px; overflow: hidden; }
+  .ratio-bar-fill { height: 100%; border-radius: 3px; }
+  .ratio-bar-fill.hi { background: #22c55e; }
+  .ratio-bar-fill.md { background: #f59e0b; }
+  .ratio-bar-fill.lo { background: #ef4444; }
+  .ratio-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; color: #52525b; min-width: 28px; text-align: right; }
+
+  /* Footer toolbar */
+  .table-footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; background: white; border-top: 1px solid #e4e4e7; position: sticky; bottom: 0; }
+  .table-footer .info { font-size: 12px; color: #a1a1aa; }
+  .page-btns { display: flex; gap: 4px; }
+  .page-btn {
+    width: 28px; height: 28px; border: 1px solid #e4e4e7; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center; font-size: 11px;
+    background: white; cursor: pointer; color: #71717a;
+  }
+  .page-btn.active { background: #18181b; color: white; border-color: #18181b; }
+  .page-btn:hover:not(.active) { background: #f4f4f5; }
+  .density-toggle { display: flex; border: 1px solid #e4e4e7; border-radius: 6px; overflow: hidden; }
+  .density-opt { padding: 4px 10px; font-size: 10px; cursor: pointer; background: white; color: #a1a1aa; border-right: 1px solid #e4e4e7; }
+  .density-opt:last-child { border-right: none; }
+  .density-opt.active { background: #18181b; color: white; }
+</style>
+</head>
+<body>
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      WMF
+    </div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-input">kcal &le; <input type="number" value="800" /></div>
+    <div class="toolbar-input">protein &ge; <input type="number" value="30" />g</div>
+    <div class="toolbar-input">
+      <select><option>All restaurants</option><option>KFC</option><option>McDonald's</option><option>Pasibus</option><option>Subway</option></select>
+    </div>
+    <div class="toolbar-sep"></div>
+    <div class="filter-chip">Include add-ons</div>
+    <div class="toolbar-right">
+      <div class="result-count"><span>47</span> results</div>
+      <div class="toolbar-btn">Export CSV</div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40px">#</th>
+          <th>Food</th>
+          <th>Restaurant</th>
+          <th class="num sorted">Kcal</th>
+          <th class="num">Protein</th>
+          <th class="num">Fats</th>
+          <th class="num">Carbs</th>
+          <th class="num" style="width:140px">P / 100 kcal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-num">1</td>
+          <td><span class="td-food">Grilled Chicken Breast</span><br><span class="td-size">250g</span></td>
+          <td><div class="td-restaurant"><span class="rest-pill" style="background:#ec4899">SS</span> Salad Story</div></td>
+          <td class="td-num">285</td>
+          <td class="td-num protein">48.2</td>
+          <td class="td-num">8.1</td>
+          <td class="td-num">4.3</td>
+          <td class="ratio-cell"><div class="ratio-bar-wrap"><div class="ratio-bar"><div class="ratio-bar-fill hi" style="width:100%"></div></div><span class="ratio-num">42.1</span></div></td>
+        </tr>
+        <tr>
+          <td class="td-num">2</td>
+          <td><span class="td-food">Protein Bowl</span><br><span class="td-size">350g</span></td>
+          <td><div class="td-restaurant"><span class="rest-pill" style="background:#ec4899">SS</span> Salad Story</div></td>
+          <td class="td-num">340</td>
+          <td class="td-num protein">44.5</td>
+          <td class="td-num">10.2</td>
+          <td class="td-num">12.8</td>
+          <td class="ratio-cell"><div class="ratio-bar-wrap"><div class="ratio-bar"><div class="ratio-bar-fill hi" style="width:93%"></div></div><span class="ratio-num">39.2</span></div></td>
+        </tr>
+        <tr>
+          <td class="td-num">3</td>
+          <td><span class="td-food">Strips 6 pcs</span><br><span class="td-size">Hot&Spicy</span></td>
+          <td><div class="td-restaurant"><span class="rest-pill" style="background:#ef4444">KFC</span> KFC</div></td>
+          <td class="td-num">450</td>
+          <td class="td-num protein">38.0</td>
+          <td class="td-num">22.4</td>
+          <td class="td-num">24.1</td>
+          <td class="ratio-cell"><div class="ratio-bar-wrap"><div class="ratio-bar"><div class="ratio-bar-fill md" style="width:60%"></div></div><span class="ratio-num">25.3</span></div></td>
+        </tr>
+        <tr>
+          <td class="td-num">4</td>
+          <td><span class="td-food">McChicken</span></td>
+          <td><div class="td-restaurant"><span class="rest-pill" style="background:#f59e0b">MC</span> McDonald's</div></td>
+          <td class="td-num">388</td>
+          <td class="td-num protein">30.5</td>
+          <td class="td-num">16.7</td>
+          <td class="td-num">31.0</td>
+          <td class="ratio-cell"><div class="ratio-bar-wrap"><div class="ratio-bar"><div class="ratio-bar-fill md" style="width:56%"></div></div><span class="ratio-num">23.6</span></div></td>
+        </tr>
+        <tr>
+          <td class="td-num">5</td>
+          <td><span class="td-food">Turkey Sub</span><br><span class="td-size">30cm</span></td>
+          <td><div class="td-restaurant"><span class="rest-pill" style="background:#06b6d4">SW</span> Subway</div></td>
+          <td class="td-num">490</td>
+          <td class="td-num protein">34.1</td>
+          <td class="td-num">12.3</td>
+          <td class="td-num">58.4</td>
+          <td class="ratio-cell"><div class="ratio-bar-wrap"><div class="ratio-bar"><div class="ratio-bar-fill md" style="width:50%"></div></div><span class="ratio-num">20.9</span></div></td>
+        </tr>
+        <tr>
+          <td class="td-num">6</td>
+          <td><span class="td-food">Classic Burger</span></td>
+          <td><div class="td-restaurant"><span class="rest-pill" style="background:#8b5cf6">PB</span> Pasibus</div></td>
+          <td class="td-num">520</td>
+          <td class="td-num protein">35.8</td>
+          <td class="td-num">26.0</td>
+          <td class="td-num">34.2</td>
+          <td class="ratio-cell"><div class="ratio-bar-wrap"><div class="ratio-bar"><div class="ratio-bar-fill md" style="width:49%"></div></div><span class="ratio-num">20.6</span></div></td>
+        </tr>
+        <tr>
+          <td class="td-num">7</td>
+          <td><span class="td-food">MAX Original</span><br><span class="td-size">Single</span></td>
+          <td><div class="td-restaurant"><span class="rest-pill" style="background:#14b8a6">MX</span> MAX Burgers</div></td>
+          <td class="td-num">580</td>
+          <td class="td-num protein">32.4</td>
+          <td class="td-num">28.1</td>
+          <td class="td-num">42.0</td>
+          <td class="ratio-cell"><div class="ratio-bar-wrap"><div class="ratio-bar"><div class="ratio-bar-fill lo" style="width:40%"></div></div><span class="ratio-num">16.7</span></div></td>
+        </tr>
+        <tr>
+          <td class="td-num">8</td>
+          <td><span class="td-food">Margherita</span><br><span class="td-size">Medium</span></td>
+          <td><div class="td-restaurant"><span class="rest-pill" style="background:#f97316">PH</span> Pizza Hut</div></td>
+          <td class="td-num">720</td>
+          <td class="td-num protein">31.0</td>
+          <td class="td-num">24.5</td>
+          <td class="td-num">88.0</td>
+          <td class="ratio-cell"><div class="ratio-bar-wrap"><div class="ratio-bar"><div class="ratio-bar-fill lo" style="width:31%"></div></div><span class="ratio-num">12.9</span></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div class="table-footer">
+    <div class="info">Showing 1 &ndash; 25 of 47</div>
+    <div class="density-toggle">
+      <div class="density-opt">Compact</div>
+      <div class="density-opt active">Default</div>
+      <div class="density-opt">Spacious</div>
+    </div>
+    <div class="page-btns">
+      <div class="page-btn active">1</div>
+      <div class="page-btn">2</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,33 +1,236 @@
-import csv
+import base64
+import io
 import os
 from pathlib import Path
-from typing import Optional
 
 from dotenv import load_dotenv
 from openai import OpenAI
-from pydantic import BaseModel
+
+from app.macro_extract.http_util import fetch_bytes
+from app.macro_schema import FoodRow, RestaurantExtraction
 
 
-class FoodRow(BaseModel):
-    restaurant_name: str
-    food_name: str
-    size: Optional[str] = None
-    kcal: float
-    protein: float
-    fats: float
-    carbs: float
+def _fix_pasibus_sauces(rows: list[FoodRow]) -> list[FoodRow]:
+    """Idempotent cleanup for Pasibus sauce rows.
+
+    The vision model sometimes misreads the PDF columns for sauce items,
+    producing rows where protein and fats are swapped, or emitting both
+    a per-100g row (no size) and a per-portion row (size = "35 g") for the
+    same sauce.
+
+    Rules applied:
+    1. If a sauce exists both WITH and WITHOUT a size, drop the unsized row
+       (it's typically a per-100g mis-extraction with wrong column mapping).
+    2. For any remaining unsized sauce where protein > fats, swap them —
+       mayo-based sauces always have more fat than protein.
+    """
+    sauce_names_with_size: set[str] = set()
+    for r in rows:
+        if r.food_name.strip().lower().startswith("sos") and r.size:
+            sauce_names_with_size.add(r.food_name.strip().casefold())
+
+    out: list[FoodRow] = []
+    for r in rows:
+        name_lower = r.food_name.strip().casefold()
+        is_sauce = name_lower.startswith("sos")
+
+        # Rule 1: drop unsized duplicate if sized version exists
+        if is_sauce and not r.size and name_lower in sauce_names_with_size:
+            print(f"  [Pasibus] dropping unsized sauce duplicate: {r.food_name}")
+            continue
+
+        # Rule 2: swap protein/fats if clearly reversed
+        if is_sauce and not r.size and r.protein > r.fats:
+            print(
+                f"  [Pasibus] swapping protein/fats for {r.food_name}: "
+                f"{r.protein}↔{r.fats}"
+            )
+            r = FoodRow(
+                restaurant_name=r.restaurant_name,
+                food_name=r.food_name,
+                size=r.size,
+                kcal=r.kcal,
+                protein=r.fats,
+                fats=r.protein,
+                carbs=r.carbs,
+            )
+
+        out.append(r)
+    return out
 
 
-class RestaurantExtraction(BaseModel):
-    restaurant_name: str
-    foods: list[FoodRow]
+def _dedupe_food_rows(rows: list[FoodRow]) -> list[FoodRow]:
+    seen: set[tuple] = set()
+    out: list[FoodRow] = []
+    for r in rows:
+        size_key = (r.size or "").strip().casefold()
+        key = (
+            r.food_name.strip().casefold(),
+            size_key,
+            r.kcal,
+            r.protein,
+            r.fats,
+            r.carbs,
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(r)
+    return out
 
 
-load_dotenv()
-client = OpenAI(api_key=os.environ["OPENAI_SECRET_KEY"])
+def _extract_pasibus_openai(
+    row: dict, client: OpenAI, prompt: str
+) -> RestaurantExtraction:
+    """Two-page JPG scan: one structured parse per page so page 1 is not drowned out."""
+
+    pasibus_rules = """
+
+
+Pasibus (scanned JPG→PDF — no selectable text):
+- Each request attaches exactly ONE image: that image is ONE full PDF page, in order.
+- Extract EVERY menu item where you can read numeric kcal, protein (Białko), fats (Tłuszcz), and carbs (Węgle).
+- Do not skip the top or margin of the page; small text still counts.
+- Use size when the table shows a portion name (e.g. burger vs podwójny); else null.
+- restaurant_name must be exactly: Pasibus
+"""
+
+    pdf_bytes = fetch_bytes(row["Macro table link"])
+    page_pngs = pasibus_pdf_bytes_to_png_data_urls(pdf_bytes)
+
+    if not page_pngs:
+        fallback_prompt = (
+            prompt
+            + pasibus_rules
+            + "\n\n(Raster failed — fallback PDF attachment.) Read BOTH pages.\n"
+        )
+        resp = client.responses.parse(
+            model="gpt-5.4",
+            input=[
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "input_text", "text": fallback_prompt},
+                        {"type": "input_file", "file_url": row["Macro table link"]},
+                    ],
+                },
+            ],
+            text_format=RestaurantExtraction,
+        )
+        if resp.output_parsed is None:
+            raise RuntimeError("Empty response.output_parsed")
+        return resp.output_parsed
+
+    combined: list[FoodRow] = []
+    total_pages = len(page_pngs)
+
+    for idx, image_url in enumerate(page_pngs):
+        page_scope = (
+            f"\n\n=== PASIBUS SCAN — IMAGE {idx + 1} OF {total_pages} ONLY ===\n"
+            "Extract only rows visibly printed on THIS image. "
+            "If a row spans images, attach it to the image where its numbers appear.\n"
+        )
+        resp = client.responses.parse(
+            model="gpt-5.4",
+            max_output_tokens=16384,
+            input=[
+                {  # type: ignore[list-item,misc]
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "input_text",
+                            "text": prompt + pasibus_rules + page_scope,
+                        },
+                        {"type": "input_image", "image_url": image_url},
+                    ],
+                },
+            ],
+            text_format=RestaurantExtraction,
+        )
+        part = resp.output_parsed
+        if part is None:
+            raw_text = getattr(resp, "output_text", None) or "(no raw text)"
+            print(
+                f"  [Pasibus] WARNING: output_parsed is None on image "
+                f"{idx + 1}/{total_pages}. Raw output snippet: {raw_text[:300]}"
+            )
+            continue
+        print(
+            f"  [Pasibus] image {idx + 1}/{total_pages}: extracted {len(part.foods)} foods"
+        )
+        combined.extend(part.foods)
+
+    if not combined:
+        raise RuntimeError("Pasibus: no foods extracted from any page image")
+    cleaned = _fix_pasibus_sauces(combined)
+    return RestaurantExtraction(
+        restaurant_name="Pasibus",
+        foods=_dedupe_food_rows(cleaned),
+    )
+
+
+def pasibus_pdf_bytes_to_png_data_urls(
+    pdf_bytes: bytes,
+    *,
+    dpi_res: int = 300,
+) -> list[str] | None:
+    """Rasterize each PDF page — Pasibus JPG→PDF has no text layer; URL-only ingest skips page 1."""
+    try:
+        import pdfplumber  # optional; aligns with project's [extract] extra
+    except ImportError:
+        return None
+
+    urls: list[str] = []
+    buffer = io.BytesIO(pdf_bytes)
+    try:
+        with pdfplumber.open(buffer) as pdf:
+            for page_num, page in enumerate(pdf.pages, 1):
+                pil = page.to_image(resolution=dpi_res)
+                img = pil.original
+                w, h = img.size
+
+                # Portrait / dense pages: split into 3 overlapping vertical strips
+                if h > w:
+                    strips = [
+                        (0, int(0.40 * h)),
+                        (int(0.30 * h), int(0.70 * h)),
+                        (int(0.60 * h), h),
+                    ]
+                    print(
+                        f"  [Pasibus] page {page_num}: portrait {w}x{h}, splitting into {len(strips)} strips"
+                    )
+                    for s_idx, (y0, y1) in enumerate(strips):
+                        cropped = img.crop((0, y0, w, y1))
+                        out = io.BytesIO()
+                        cropped.save(out, format="PNG", optimize=True)
+                        b64 = base64.standard_b64encode(out.getvalue()).decode("ascii")
+                        urls.append(f"data:image/png;base64,{b64}")
+                        print(f"    strip {s_idx + 1}: rows {y0}–{y1}")
+                else:
+                    print(
+                        f"  [Pasibus] page {page_num}: landscape {w}x{h}, keeping as-is"
+                    )
+                    out = io.BytesIO()
+                    img.save(out, format="PNG", optimize=True)
+                    b64 = base64.standard_b64encode(out.getvalue()).decode("ascii")
+                    urls.append(f"data:image/png;base64,{b64}")
+    except Exception:
+        return None
+    return urls if urls else None
+
 
 root = Path(__file__).resolve().parents[2]
 sources = Path(root / "data" / "sources.csv").resolve()
+
+
+def get_openai_client() -> OpenAI:
+    key = os.environ.get("OPENAI_SECRET_KEY")
+    if not key:
+        raise RuntimeError(
+            "OPENAI_SECRET_KEY is not set. Add it to .env or the environment, "
+            "or run without --use-openai / MACRO_USE_OPENAI."
+        )
+    return OpenAI(api_key=key)
 
 
 def build_prompt(name: str, notes: str) -> str:
@@ -55,8 +258,10 @@ Rules:
 """.strip()
 
 
-def extract_restaurant(row: dict) -> RestaurantExtraction:
+def extract_restaurant_openai(row: dict, client: OpenAI) -> RestaurantExtraction:
     prompt = build_prompt(name=row["Name"], notes=row.get("Notes", "") or "")
+    fmt = (row.get("Macro table format") or "").strip().lower()
+    response = None
 
     if row["Name"] == "McDonald's":
         mcd_file = Path(root / "data" / "mcd.pdf").resolve()
@@ -105,30 +310,7 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
             text_format=RestaurantExtraction,
         )
     elif row["Name"] == "Pasibus":
-        pasi_prompt = (
-            prompt
-            + """\n\n
-        Pasibus exception:
-        - The provided PDF contains exactly 2 pages.
-        - Extract nutrition rows from BOTH page 1 and page 2.
-        - Do not return output after reading only one page.
-        - Before finalizing, verify that rows were collected from both pages.
-        - If an item appears on both pages, keep distinct variants/sizes as separate rows."""
-        )
-
-        response = client.responses.parse(
-            model="gpt-5.4-mini",
-            input=[
-                {
-                    "role": "user",
-                    "content": [
-                        {"type": "input_text", "text": pasi_prompt},
-                        {"type": "input_file", "file_url": row["Macro table link"]},
-                    ],
-                },
-            ],
-            text_format=RestaurantExtraction,
-        )
+        return _extract_pasibus_openai(row, client, prompt)
     elif row["Name"] == "Popeye's":
         popeye_prompt = (
             prompt
@@ -181,7 +363,7 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
             ],
             text_format=RestaurantExtraction,
         )
-    elif row["Macro table format"].lower() == "pdf":
+    elif fmt == "pdf":
         response = client.responses.parse(
             model="gpt-5.4-mini",
             input=[
@@ -213,8 +395,9 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
         )
     else:
         raise ValueError(
-            f"Skipping non-PDF format: {row['Macro table format']} for {row['Name']}"
+            f"OpenAI extractor: unsupported row {row['Name']} ({row.get('Macro table format')})"
         )
+
     parsed = response.output_parsed
     if parsed is None:
         raise RuntimeError("Empty response.output_parsed")
@@ -222,37 +405,20 @@ def extract_restaurant(row: dict) -> RestaurantExtraction:
 
 
 def main() -> None:
-    with open(sources, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        all_foods: list[FoodRow] = []
+    load_dotenv()
+    from app.extract_macros import run  # noqa: PLC0415
 
-        for row in reader:
-            print(f"Extracting: {row['Name']}")
-            try:
-                parsed = extract_restaurant(row)
-                all_foods.extend(parsed.foods)
-            except ValueError as e:
-                print(e)
-            except Exception as e:
-                print(f"Weird fail for {row['Name']}:", e)
-
-        out_path = root / "data" / "macros.csv"
-        with open(out_path, "w", newline="", encoding="utf-8") as out_file:
-            writer = csv.DictWriter(
-                out_file,
-                fieldnames=[
-                    "restaurant_name",
-                    "food_name",
-                    "size",
-                    "kcal",
-                    "protein",
-                    "fats",
-                    "carbs",
-                ],
-            )
-            writer.writeheader()
-            for food in all_foods:
-                writer.writerow(food.model_dump())
+    print(
+        "Note: Prefer `PYTHONPATH=src python -m app.extract_macros "
+        "--use-openai --no-merge` for explicit control."
+    )
+    run(
+        use_openai=True,
+        merge=False,
+        only=None,
+        sources_path=sources,
+        out_path=root / "data" / "macros.csv",
+    )
 
 
 if __name__ == "__main__":

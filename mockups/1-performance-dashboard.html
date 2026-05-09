@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMF — Performance Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a25;
+    --border: #2a2a3a;
+    --text: #e4e4e7;
+    --text-muted: #71717a;
+    --green: #22c55e;
+    --green-dim: rgba(34,197,94,0.15);
+    --amber: #f59e0b;
+    --amber-dim: rgba(245,158,11,0.12);
+    --blue: #38bdf8;
+    --blue-dim: rgba(56,189,248,0.12);
+    --red: #ef4444;
+    --red-dim: rgba(239,68,68,0.12);
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* Layout */
+  .layout { display: grid; grid-template-columns: 280px 1fr; grid-template-rows: 56px 1fr; min-height: 100vh; }
+  .topbar { grid-column: 1 / -1; background: var(--surface); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 24px; gap: 12px; }
+  .topbar .logo { color: var(--green); font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+  .topbar .logo svg { width: 20px; height: 20px; }
+  .topbar .tagline { color: var(--text-muted); font-size: 12px; margin-left: 4px; }
+  .topbar .right { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+  .topbar .stat-mini { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); }
+  .topbar .stat-mini span { color: var(--green); }
+
+  /* Sidebar */
+  .sidebar { background: var(--surface); border-right: 1px solid var(--border); padding: 20px 16px; overflow-y: auto; }
+  .sidebar h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 12px; font-weight: 600; }
+  .filter-group { margin-bottom: 24px; }
+  .filter-label { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .filter-value { color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  .slider-track { width: 100%; height: 4px; background: var(--surface2); border-radius: 2px; position: relative; margin-bottom: 16px; }
+  .slider-fill { height: 100%; background: var(--green); border-radius: 2px; }
+  .slider-fill.amber { background: var(--amber); }
+  .slider-thumb { width: 14px; height: 14px; background: var(--green); border-radius: 50%; position: absolute; top: -5px; right: -2px; box-shadow: 0 0 8px rgba(34,197,94,0.4); }
+  .slider-thumb.amber { background: var(--amber); box-shadow: 0 0 8px rgba(245,158,11,0.4); }
+
+  .restaurant-list { display: flex; flex-direction: column; gap: 4px; }
+  .restaurant-item { font-size: 12px; padding: 6px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s; }
+  .restaurant-item:hover { background: var(--surface2); }
+  .restaurant-item.active { background: var(--green-dim); color: var(--green); }
+  .restaurant-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  .sort-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip { font-size: 11px; padding: 4px 10px; border-radius: 20px; background: var(--surface2); border: 1px solid var(--border); color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
+  .chip.active { background: var(--green-dim); border-color: var(--green); color: var(--green); }
+
+  /* Main content */
+  .main { padding: 20px 24px; overflow-y: auto; }
+  .summary-bar { display: flex; gap: 12px; margin-bottom: 20px; }
+  .summary-card { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .summary-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 4px; }
+  .summary-card .value { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 600; }
+  .summary-card .value.green { color: var(--green); }
+  .summary-card .value.amber { color: var(--amber); }
+  .summary-card .value.blue { color: var(--blue); }
+  .summary-card .sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Data grid */
+  .grid-header { display: grid; grid-template-columns: 2fr 1.2fr 80px 80px 80px 80px 90px 50px; padding: 8px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); }
+  .grid-row { display: grid; grid-template-columns: 2fr 1.2fr 80px 80px 80px 80px 90px 50px; padding: 10px 12px; font-size: 13px; border-bottom: 1px solid rgba(42,42,58,0.5); align-items: center; transition: background 0.12s; }
+  .grid-row:hover { background: var(--surface); }
+  .food-name { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .food-size { font-size: 11px; color: var(--text-muted); }
+  .restaurant-cell { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); }
+  .restaurant-badge { width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: white; flex-shrink: 0; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-align: right; }
+  .mono.green { color: var(--green); }
+  .mono.amber { color: var(--amber); }
+  .mono.blue { color: var(--blue); }
+  .mono.red { color: var(--red); }
+
+  /* Spark bar */
+  .spark { display: flex; gap: 1px; height: 16px; align-items: flex-end; }
+  .spark-seg { border-radius: 1px; min-width: 3px; }
+
+  /* Ratio badge */
+  .ratio-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; text-align: center; }
+  .ratio-high { background: var(--green-dim); color: var(--green); }
+  .ratio-mid { background: var(--amber-dim); color: var(--amber); }
+  .ratio-low { background: var(--red-dim); color: var(--red); }
+
+  .result-count { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+  .result-count span { color: var(--green); font-family: 'JetBrains Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="layout">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Wroclaw Macro Finder
+    </div>
+    <span class="tagline">High-protein menu items, fast.</span>
+    <div class="right">
+      <span class="stat-mini"><span>1,237</span> items</span>
+      <span class="stat-mini"><span>14</span> restaurants</span>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="filter-group">
+      <h3>Filters</h3>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">Max Calories <span class="filter-value">800 kcal</span></div>
+      <div class="slider-track"><div class="slider-fill amber" style="width:32%"><div class="slider-thumb amber"></div></div></div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">Min Protein <span class="filter-value">30 g</span></div>
+      <div class="slider-track"><div class="slider-fill" style="width:55%"><div class="slider-thumb"></div></div></div>
+    </div>
+    <div class="filter-group">
+      <h3>Restaurant</h3>
+      <div class="restaurant-list">
+        <div class="restaurant-item active"><div class="restaurant-dot" style="background:var(--green)"></div> All restaurants</div>
+        <div class="restaurant-item"><div class="restaurant-dot" style="background:#ef4444"></div> KFC</div>
+        <div class="restaurant-item"><div class="restaurant-dot" style="background:#f59e0b"></div> McDonald's</div>
+        <div class="restaurant-item"><div class="restaurant-dot" style="background:#8b5cf6"></div> Pasibus</div>
+        <div class="restaurant-item"><div class="restaurant-dot" style="background:#06b6d4"></div> Subway</div>
+        <div class="restaurant-item"><div class="restaurant-dot" style="background:#ec4899"></div> Salad Story</div>
+        <div class="restaurant-item"><div class="restaurant-dot" style="background:#14b8a6"></div> MAX Burgers</div>
+        <div class="restaurant-item"><div class="restaurant-dot" style="background:#f97316"></div> Pizza Hut</div>
+      </div>
+    </div>
+    <div class="filter-group">
+      <h3>Sort by</h3>
+      <div class="sort-chips">
+        <div class="chip active">P/100kcal</div>
+        <div class="chip">Protein</div>
+        <div class="chip">Kcal &uarr;</div>
+        <div class="chip">Kcal &darr;</div>
+      </div>
+    </div>
+    <div class="filter-group">
+      <h3>Options</h3>
+      <div class="sort-chips">
+        <div class="chip active">Top 25</div>
+        <div class="chip">Top 50</div>
+        <div class="chip">Top 100</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="summary-bar">
+      <div class="summary-card">
+        <div class="label">Results</div>
+        <div class="value green">47</div>
+        <div class="sub">matching filters</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">Avg Protein</div>
+        <div class="value green">38.2g</div>
+        <div class="sub">across results</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">Avg Kcal</div>
+        <div class="value amber">412</div>
+        <div class="sub">per portion</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">Best Ratio</div>
+        <div class="value blue">42.1</div>
+        <div class="sub">g protein / 100 kcal</div>
+      </div>
+    </div>
+
+    <div class="result-count">Showing <span>25</span> of <span>47</span> results</div>
+
+    <div class="grid-header">
+      <div>Food</div>
+      <div>Restaurant</div>
+      <div style="text-align:right">Kcal</div>
+      <div style="text-align:right">Protein</div>
+      <div style="text-align:right">Fats</div>
+      <div style="text-align:right">Carbs</div>
+      <div style="text-align:center">P/100kcal</div>
+      <div style="text-align:center">Macro</div>
+    </div>
+
+    <div class="grid-row">
+      <div><span class="food-name">Grilled Chicken Breast</span><br><span class="food-size">250g</span></div>
+      <div class="restaurant-cell"><div class="restaurant-badge" style="background:#ec4899">SS</div> Salad Story</div>
+      <div class="mono red">285</div>
+      <div class="mono green">48.2</div>
+      <div class="mono amber">8.1</div>
+      <div class="mono blue">4.3</div>
+      <div><span class="ratio-badge ratio-high">42.1</span></div>
+      <div class="spark"><div class="spark-seg" style="background:var(--green);width:14px;height:16px"></div><div class="spark-seg" style="background:var(--amber);width:4px;height:6px"></div><div class="spark-seg" style="background:var(--blue);width:3px;height:4px"></div></div>
+    </div>
+    <div class="grid-row">
+      <div><span class="food-name">Protein Bowl</span><br><span class="food-size">350g</span></div>
+      <div class="restaurant-cell"><div class="restaurant-badge" style="background:#ec4899">SS</div> Salad Story</div>
+      <div class="mono red">340</div>
+      <div class="mono green">44.5</div>
+      <div class="mono amber">10.2</div>
+      <div class="mono blue">12.8</div>
+      <div><span class="ratio-badge ratio-high">39.2</span></div>
+      <div class="spark"><div class="spark-seg" style="background:var(--green);width:13px;height:16px"></div><div class="spark-seg" style="background:var(--amber);width:5px;height:7px"></div><div class="spark-seg" style="background:var(--blue);width:5px;height:5px"></div></div>
+    </div>
+    <div class="grid-row">
+      <div><span class="food-name">Strips 6 pcs</span><br><span class="food-size">Hot&Spicy</span></div>
+      <div class="restaurant-cell"><div class="restaurant-badge" style="background:#ef4444">KFC</div> KFC</div>
+      <div class="mono red">450</div>
+      <div class="mono green">38.0</div>
+      <div class="mono amber">22.4</div>
+      <div class="mono blue">24.1</div>
+      <div><span class="ratio-badge ratio-mid">25.3</span></div>
+      <div class="spark"><div class="spark-seg" style="background:var(--green);width:11px;height:16px"></div><div class="spark-seg" style="background:var(--amber);width:8px;height:11px"></div><div class="spark-seg" style="background:var(--blue);width:8px;height:10px"></div></div>
+    </div>
+    <div class="grid-row">
+      <div><span class="food-name">Classic Burger</span></div>
+      <div class="restaurant-cell"><div class="restaurant-badge" style="background:#8b5cf6">PB</div> Pasibus</div>
+      <div class="mono red">520</div>
+      <div class="mono green">35.8</div>
+      <div class="mono amber">26.0</div>
+      <div class="mono blue">34.2</div>
+      <div><span class="ratio-badge ratio-mid">20.6</span></div>
+      <div class="spark"><div class="spark-seg" style="background:var(--green);width:10px;height:16px"></div><div class="spark-seg" style="background:var(--amber);width:9px;height:13px"></div><div class="spark-seg" style="background:var(--blue);width:10px;height:14px"></div></div>
+    </div>
+    <div class="grid-row">
+      <div><span class="food-name">Turkey Sub</span><br><span class="food-size">30cm</span></div>
+      <div class="restaurant-cell"><div class="restaurant-badge" style="background:#06b6d4">SW</div> Subway</div>
+      <div class="mono red">490</div>
+      <div class="mono green">34.1</div>
+      <div class="mono amber">12.3</div>
+      <div class="mono blue">58.4</div>
+      <div><span class="ratio-badge ratio-mid">20.9</span></div>
+      <div class="spark"><div class="spark-seg" style="background:var(--green);width:10px;height:16px"></div><div class="spark-seg" style="background:var(--amber);width:5px;height:7px"></div><div class="spark-seg" style="background:var(--blue);width:14px;height:15px"></div></div>
+    </div>
+    <div class="grid-row">
+      <div><span class="food-name">McChicken</span></div>
+      <div class="restaurant-cell"><div class="restaurant-badge" style="background:#f59e0b">MC</div> McDonald's</div>
+      <div class="mono red">388</div>
+      <div class="mono green">30.5</div>
+      <div class="mono amber">16.7</div>
+      <div class="mono blue">31.0</div>
+      <div><span class="ratio-badge ratio-mid">23.6</span></div>
+      <div class="spark"><div class="spark-seg" style="background:var(--green);width:9px;height:16px"></div><div class="spark-seg" style="background:var(--amber);width:6px;height:10px"></div><div class="spark-seg" style="background:var(--blue);width:9px;height:12px"></div></div>
+    </div>
+    <div class="grid-row">
+      <div><span class="food-name">MAX Original</span><br><span class="food-size">Single</span></div>
+      <div class="restaurant-cell"><div class="restaurant-badge" style="background:#14b8a6">MX</div> MAX Burgers</div>
+      <div class="mono red">580</div>
+      <div class="mono green">32.4</div>
+      <div class="mono amber">28.1</div>
+      <div class="mono blue">42.0</div>
+      <div><span class="ratio-badge ratio-low">16.7</span></div>
+      <div class="spark"><div class="spark-seg" style="background:var(--green);width:9px;height:16px"></div><div class="spark-seg" style="background:var(--amber);width:9px;height:13px"></div><div class="spark-seg" style="background:var(--blue);width:12px;height:14px"></div></div>
+    </div>
+    <div class="grid-row">
+      <div><span class="food-name">Margherita</span><br><span class="food-size">Medium</span></div>
+      <div class="restaurant-cell"><div class="restaurant-badge" style="background:#f97316">PH</div> Pizza Hut</div>
+      <div class="mono red">720</div>
+      <div class="mono green">31.0</div>
+      <div class="mono amber">24.5</div>
+      <div class="mono blue">88.0</div>
+      <div><span class="ratio-badge ratio-low">12.9</span></div>
+      <div class="spark"><div class="spark-seg" style="background:var(--green);width:8px;height:12px"></div><div class="spark-seg" style="background:var(--amber);width:7px;height:10px"></div><div class="spark-seg" style="background:var(--blue);width:14px;height:16px"></div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

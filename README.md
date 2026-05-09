@@ -68,16 +68,50 @@ GET /foods/search?max_kcal=800&min_protein=40&limit=10&sort_by=protein_ratio_des
 
 Interactive docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
-## Extract macros from PDFs (OpenAI)
+The API also exposes `GET /restaurants` (returns `[{id, name}]`) which the frontend uses to populate the restaurant filter, and is CORS-enabled for `http://localhost:5173` (the Vite dev origin).
 
-Reads `data/sources.csv`, calls the OpenAI Responses API where configured, and writes **`data/macros.csv`**. Requires a valid **`OPENAI_SECRET_KEY`**.
+## Run the frontend
+
+A modern Vite + React + TypeScript SPA lives in `frontend/`. It talks to the FastAPI backend running on `127.0.0.1:8000` via a Vite dev proxy, so no CORS dance is needed in dev.
+
+Requirements: **Node.js 20+** and **npm**.
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Then open [http://localhost:5173](http://localhost:5173). Make sure the FastAPI server (above) is running in another terminal.
+
+Production build:
+
+```bash
+cd frontend
+npm run build      # outputs static files to frontend/dist/
+npm run preview    # preview the built bundle locally
+```
+
+For a single-deployable setup, you can later mount the build directly inside FastAPI with `app.mount("/", StaticFiles(directory="frontend/dist", html=True))`.
+
+## Extract macros (deterministic by default)
+
+Reads `data/sources.csv` and updates **`data/macros.csv`**. By default this uses **HTTP + HTML parsing** (no billable API) for chains like HulThai, MAX Burgers, LUCA, Pan Precel, Shrimp House, Pizzatopia; **merges** into the existing CSV so other restaurants are left untouched.
+
+```bash
+cd src
+python -m app.extract_macros --only "HulThai" "MAX Burgers"
+```
+
+- **`--no-merge`**: write only rows produced in this run (overwrites unrelated restaurants’ rows in the output file).
+- **`--use-openai`** or **`MACRO_USE_OPENAI=1`**: run the OpenAI Responses flow for supported PDFs (requires **`OPENAI_SECRET_KEY`**). Without this, PDF rows are skipped unless you extend `app.macro_extract.pdf_local`.
+
+Legacy PDF-only OpenAI run (full rewrite, no merge):
 
 ```bash
 cd src
 python -m app.api_pdfs
 ```
-
-Rows that are skipped or fail are printed; not every source format may be automated yet.
 
 ## Development
 
