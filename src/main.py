@@ -1,10 +1,9 @@
-"""Entrypoint: Vercel imports `app`; CLI runs `main()`."""
+"""CLI entrypoint for local interactive search."""
 
 import argparse
 
 from sqlmodel import Session
 
-from app.api import app  # noqa: F401 — Vercel FastAPI entrypoint
 from app.db import create_db_and_tables, engine, list_restaurants
 from app.ingest import import_foods, import_restaurants
 from app.search import find_foods

@@ -1,0 +1,9 @@
+{
+  "framework": null,
+  "buildCommand": "cd frontend && npm ci && npm run build",
+  "outputDirectory": "frontend/dist",
+  "rewrites": [
+    { "source": "/restaurants", "destination": "/api/restaurants" },
+    { "source": "/foods/:path*", "destination": "/api/foods/:path*" }
+  ]
+}
