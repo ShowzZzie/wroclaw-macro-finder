@@ -143,32 +143,14 @@ const DOMAIN_OVERRIDES: Record<string, string> = {
   "zahir kebab": "zahirkebab.pl",
 };
 
-function extractHost(rawUrl: string | null | undefined): string | null {
-  if (!rawUrl) return null;
-  try {
-    const u = new URL(rawUrl);
-    return u.hostname.replace(/^www\./, "");
-  } catch {
-    return null;
-  }
-}
-
 /**
- * Resolve a logo URL for a restaurant. Order of preference:
- *   1. Hand-curated domain override → Google S2 favicon (sz=128).
- *   2. menu_link hostname → Google S2 favicon.
- *   3. macro_table_link hostname → Google S2 favicon.
- *   4. null → caller falls back to monogram.
+ * Resolve a logo URL for a restaurant via hand-curated domain
+ * overrides → Google S2 favicon (sz=128). Returns null (monogram
+ * fallback) for chains without a clean favicon.
  */
-export function getLogoUrl(
-  name: string,
-  menuLink?: string | null,
-  macroTableLink?: string | null,
-): string | null {
+export function getLogoUrl(name: string): string | null {
   const key = name.trim().toLowerCase();
-  const override = DOMAIN_OVERRIDES[key];
-  const host =
-    override ?? extractHost(menuLink) ?? extractHost(macroTableLink);
+  const host = DOMAIN_OVERRIDES[key];
   if (!host) return null;
   return `https://www.google.com/s2/favicons?sz=128&domain=${encodeURIComponent(host)}`;
 }

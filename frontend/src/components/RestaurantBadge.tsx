@@ -1,7 +1,5 @@
-import { useMemo, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 
-import { listRestaurants } from "@/api/client";
 import { cn } from "@/lib/utils";
 import { getBrand, getLogoUrl } from "@/lib/restaurantBrand";
 
@@ -28,19 +26,7 @@ export function RestaurantBadge({
   const sizes = sizeMap[size];
   const [imgFailed, setImgFailed] = useState(false);
 
-  const restaurantsQuery = useQuery({
-    queryKey: ["restaurants"],
-    queryFn: ({ signal }) => listRestaurants(signal),
-    staleTime: 5 * 60_000,
-  });
-
-  const logoUrl = useMemo(() => {
-    const match = restaurantsQuery.data?.find(
-      (r) => r.name.toLowerCase() === name.toLowerCase(),
-    );
-    return getLogoUrl(name, match?.menu_link, match?.macro_table_link);
-  }, [restaurantsQuery.data, name]);
-
+  const logoUrl = getLogoUrl(name);
   const showImage = logoUrl && !imgFailed;
 
   return (

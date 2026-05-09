@@ -18,8 +18,6 @@ export interface FoodSearchResult {
 export interface Restaurant {
   id: number;
   name: string;
-  menu_link?: string | null;
-  macro_table_link?: string | null;
 }
 
 export interface SearchParams {
@@ -31,66 +29,99 @@ export interface SearchParams {
   sort_by?: SortBy;
 }
 
-class ApiError extends Error {
-  status: number;
-  detail?: unknown;
-  constructor(message: string, status: number, detail?: unknown) {
-    super(message);
-    this.name = "ApiError";
-    this.status = status;
-    this.detail = detail;
-  }
+// ── Raw shape coming from the static JSON ──────────────────────
+interface RawFood {
+  restaurant_name: string;
+  food_name: string;
+  size: string | null;
+  kcal: number;
+  protein: number;
+  fats: number;
+  carbs: number;
 }
 
-async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(path, {
-    headers: { Accept: "application/json" },
-    ...init,
-  });
-  if (!res.ok) {
-    let detail: unknown;
-    try {
-      detail = await res.json();
-    } catch {
-      detail = await res.text().catch(() => undefined);
-    }
-    const message =
-      typeof detail === "object" && detail && "detail" in detail
-        ? String((detail as { detail: unknown }).detail)
-        : `Request failed (${res.status})`;
-    throw new ApiError(message, res.status, detail);
-  }
-  return (await res.json()) as T;
+// ── Singleton data cache ───────────────────────────────────────
+let _cache: RawFood[] | null = null;
+
+async function loadFoods(signal?: AbortSignal): Promise<RawFood[]> {
+  if (_cache) return _cache;
+  const res = await fetch("/data/foods.json", { signal });
+  if (!res.ok) throw new Error(`Failed to load data (${res.status})`);
+  _cache = (await res.json()) as RawFood[];
+  return _cache;
 }
+
+function proteinPer100(kcal: number, protein: number): number {
+  return kcal > 0 ? (protein / kcal) * 100 : 0;
+}
+
+// ── Public API (same signatures the UI already calls) ──────────
 
 export async function searchFoods(
   params: SearchParams,
   signal?: AbortSignal,
 ): Promise<FoodSearchResult[]> {
-  const search = new URLSearchParams();
-  search.set("max_kcal", String(params.max_kcal));
-  search.set("min_protein", String(params.min_protein));
+  const foods = await loadFoods(signal);
+
+  // Filter
+  let filtered = foods.filter(
+    (f) =>
+      f.kcal <= params.max_kcal &&
+      f.protein >= params.min_protein,
+  );
+
+  if (!params.low_kcal_included) {
+    filtered = filtered.filter((f) => f.kcal > 150);
+  }
+
   if (params.restaurant_id != null) {
-    search.set("restaurant_id", String(params.restaurant_id));
+    // restaurant_id in the new model is index-based from the
+    // unique sorted restaurant list the UI builds.
+    const restaurants = uniqueRestaurants(foods);
+    const name = restaurants[params.restaurant_id - 1]?.name;
+    if (name) {
+      filtered = filtered.filter((f) => f.restaurant_name === name);
+    }
   }
-  if (params.low_kcal_included !== undefined) {
-    search.set("low_kcal_included", params.low_kcal_included ? "true" : "false");
+
+  // Sort
+  const sortBy = params.sort_by ?? "protein_ratio_desc";
+  switch (sortBy) {
+    case "protein_desc":
+      filtered.sort((a, b) => b.protein - a.protein);
+      break;
+    case "kcal_asc":
+      filtered.sort((a, b) => a.kcal - b.kcal);
+      break;
+    case "kcal_desc":
+      filtered.sort((a, b) => b.kcal - a.kcal);
+      break;
+    default: // protein_ratio_desc
+      filtered.sort(
+        (a, b) =>
+          proteinPer100(b.kcal, b.protein) -
+          proteinPer100(a.kcal, a.protein),
+      );
   }
-  if (params.limit !== undefined) {
-    search.set("limit", String(params.limit));
-  }
-  if (params.sort_by) {
-    search.set("sort_by", params.sort_by);
-  }
-  return request<FoodSearchResult[]>(`/api/foods/search?${search.toString()}`, {
-    signal,
-  });
+
+  // Limit
+  const limit = params.limit ?? 10;
+  const sliced = filtered.slice(0, limit);
+
+  return sliced.map((f) => ({
+    ...f,
+    protein_per_100_kcal: Math.round(proteinPer100(f.kcal, f.protein) * 100) / 100,
+  }));
+}
+
+function uniqueRestaurants(foods: RawFood[]): Restaurant[] {
+  const names = [...new Set(foods.map((f) => f.restaurant_name))].sort();
+  return names.map((name, i) => ({ id: i + 1, name }));
 }
 
 export async function listRestaurants(
   signal?: AbortSignal,
 ): Promise<Restaurant[]> {
-  return request<Restaurant[]>("/api/restaurants", { signal });
+  const foods = await loadFoods(signal);
+  return uniqueRestaurants(foods);
 }
-
-export { ApiError };
