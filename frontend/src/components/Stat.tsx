@@ -8,16 +8,16 @@ const tile = cva(
   {
     variants: {
       tone: {
-        neutral: "bg-red-50 dark:bg-red-950/30",
+        neutral: "bg-red-50 dark:bg-red-950/80",
         protein: "bg-primary",
-        fats: "bg-amber-100 dark:bg-amber-950/30",
-        carbs: "bg-sky-100 dark:bg-sky-950/30",
+        fats: "bg-amber-100 dark:bg-amber-950/80",
+        carbs: "bg-sky-100 dark:bg-sky-950/80",
         primary:
           "bg-foreground text-primary",
       },
       size: {
-        md: "w-[52px] py-1.5 md:w-[68px] md:py-2",
-        lg: "w-[60px] py-2 md:w-[76px] md:py-2.5",
+        md: "min-w-0 flex-1 py-1.5 md:flex-none md:w-[68px] md:py-2",
+        lg: "min-w-0 flex-1 py-2 md:flex-none md:w-[76px] md:py-2.5",
       },
     },
     defaultVariants: { tone: "neutral", size: "md" },

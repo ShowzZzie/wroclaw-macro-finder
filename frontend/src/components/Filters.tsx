@@ -15,26 +15,19 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { listRestaurants, type SortBy } from "@/api/client";
 import { cn } from "@/lib/utils";
 import { RestaurantBadge } from "@/components/RestaurantBadge";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export interface FilterValues {
   maxKcal: number;
   minProtein: number;
   restaurantId: number | null;
   lowKcalIncluded: boolean;
-  limit: number;
   sortBy: SortBy;
 }
 
@@ -43,7 +36,6 @@ export const DEFAULT_FILTERS: FilterValues = {
   minProtein: 30,
   restaurantId: null,
   lowKcalIncluded: false,
-  limit: 25,
   sortBy: "protein_ratio_desc",
 };
 
@@ -72,7 +64,7 @@ export function Filters({ values, onChange, className }: FiltersProps) {
   return (
     <div className={cn("space-y-3", className)}>
       {/* Filter boxes */}
-      <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
+      <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3">
         <FilterBox label="Max Kcal">
           <NumberWithSlider
             suffix="kcal"
@@ -103,28 +95,10 @@ export function Filters({ values, onChange, className }: FiltersProps) {
             onSelect={(id) => update("restaurantId", id)}
           />
         </FilterBox>
-
-        <FilterBox label="Show">
-          <Select
-            value={String(values.limit)}
-            onValueChange={(v) => update("limit", Number(v))}
-          >
-            <SelectTrigger className="brutal-border h-9 font-mono text-sm font-bold">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {[10, 25, 50, 100, 250].map((n) => (
-                <SelectItem key={n} value={String(n)}>
-                  {n}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </FilterBox>
       </div>
 
       {/* Sort bar + controls */}
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center gap-3">
         <div className="brutal-border brutal-shadow flex flex-wrap overflow-hidden">
           {(
             [
@@ -164,12 +138,14 @@ export function Filters({ values, onChange, className }: FiltersProps) {
         <Button
           variant="ghost"
           size="sm"
-          className="text-muted-foreground hover:text-foreground"
+          className="ml-1 text-muted-foreground hover:text-foreground"
           onClick={() => onChange(DEFAULT_FILTERS)}
         >
           <RotateCcw className="h-3.5 w-3.5" />
           Reset
         </Button>
+
+        <ThemeToggle />
       </div>
     </div>
   );

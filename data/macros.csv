@@ -1,69 +1,157 @@
 restaurant_name,food_name,size,kcal,protein,fats,carbs
-HulThai,Pad Thai — TOFU,,792.0,30.0,17.0,127.0
-HulThai,Pad Thai — KURCZAK,,837.0,42.0,17.0,127.0
-HulThai,Pad Thai — KREWETA,,740.0,25.0,14.0,127.0
-HulThai,Pad Thai — WOŁOWINA,,901.0,48.0,21.0,127.0
-HulThai,Pad Thai Królewski — KRÓLEWSKI,,1221.0,81.0,42.0,128.0
-HulThai,Stir Fry W czosnku — SOJCZAK,,746.0,23.0,11.0,135.0
-HulThai,Stir Fry W czosnku — KURCZAK,,777.0,51.0,13.0,112.0
-HulThai,Stir Fry W czosnku — WOŁOWINA,,912.0,63.0,21.0,112.0
-HulThai,Bangkok Noodles — TOFU,,1025.0,27.0,48.0,120.0
-HulThai,Bangkok Noodles — KURCZAK,,1070.0,38.0,48.0,120.0
 HulThai,Bangkok Noodles — KREWETKA,,1004.0,28.0,45.0,120.0
-HulThai,Smażony Ryż — TOFU,,1025.0,35.0,36.0,141.0
-HulThai,Smażony Ryż — KURCZAK,,1069.0,46.0,36.0,141.0
-HulThai,Smażony Ryż — KREWETA,,1024.0,41.0,33.0,141.0
-HulThai,Smażony Ryż — WOŁOWINA,,1133.0,52.0,40.0,141.0
-HulThai,Hulthaiski Bowl — SOJCZAK,,746.0,23.0,11.0,135.0
-HulThai,Hulthaiski Bowl — KURCZAK,,777.0,51.0,13.0,112.0
+HulThai,Bangkok Noodles — KURCZAK,,1070.0,38.0,48.0,120.0
+HulThai,Bangkok Noodles — TOFU,,1025.0,27.0,48.0,120.0
 HulThai,Hulthaiski Bowl — KREWETKA,,912.0,63.0,21.0,112.0
-HulThai,Huthaiski Ramen — TOFU,,493.0,20.0,24.0,54.0
-HulThai,Huthaiski Ramen — KURCZAK,,513.0,28.0,23.0,53.0
+HulThai,Hulthaiski Bowl — KURCZAK,,777.0,51.0,13.0,112.0
+HulThai,Hulthaiski Bowl — SOJCZAK,,746.0,23.0,11.0,135.0
 HulThai,Huthaiski Ramen — KREWETKA,,496.0,25.0,22.0,53.0
-KFC,Nóżka (Kentucky),69 g,169.0,15.0,10.0,6.1
-KFC,Pierś (Kentucky),100 g,236.0,27.0,11.0,7.3
-KFC,Żebro (Kentucky),150 g,310.0,40.0,14.0,7.6
-KFC,Udko (Kentucky),111 g,276.0,23.0,17.0,6.4
-KFC,Skrzydło (Kentucky),65 g,189.0,16.0,11.0,7.2
-KFC,Nóżka (Hot&Spicy),89 g,205.0,19.0,12.0,6.0
-KFC,Pierś (Hot&Spicy),126 g,302.0,30.0,21.0,8.7
-KFC,Żebro (Hot&Spicy),203 g,466.0,36.0,33.0,26.0
-KFC,Udko (Hot&Spicy),139 g,397.0,25.0,33.0,12.0
-KFC,Skrzydełko (Hot&Spicy),74 g,234.0,16.0,16.0,6.9
-KFC,Hot & Spicy Strips/ pikantne polędwiczki kurczaka,32 g,92.0,6.6,5.0,3.2
-KFC,Hot Wings/ pikantne skrzydełka,36 g,114.0,7.0,7.4,5.0
-KFC,Hot & Spicy Bites/Chrupiące Bites,90 g,291.0,17.0,18.0,14.0
-KFC,Zinger Burger,170 g,445.0,25.0,22.0,36.0
-KFC,Zinger Max,240 g,590.0,41.0,29.0,41.0
-KFC,Zinger Ser&Bekon / Cheese&Bacon,200 g,524.0,30.0,26.0,40.0
+HulThai,Huthaiski Ramen — KURCZAK,,513.0,28.0,23.0,53.0
+HulThai,Huthaiski Ramen — TOFU,,493.0,20.0,24.0,54.0
+HulThai,Pad Thai Królewski — KRÓLEWSKI,,1221.0,81.0,42.0,128.0
+HulThai,Pad Thai — KREWETA,,740.0,25.0,14.0,127.0
+HulThai,Pad Thai — KURCZAK,,837.0,42.0,17.0,127.0
+HulThai,Pad Thai — TOFU,,792.0,30.0,17.0,127.0
+HulThai,Pad Thai — WOŁOWINA,,901.0,48.0,21.0,127.0
+HulThai,Smażony Ryż — KREWETA,,1024.0,41.0,33.0,141.0
+HulThai,Smażony Ryż — KURCZAK,,1069.0,46.0,36.0,141.0
+HulThai,Smażony Ryż — TOFU,,1025.0,35.0,36.0,141.0
+HulThai,Smażony Ryż — WOŁOWINA,,1133.0,52.0,40.0,141.0
+HulThai,Stir Fry W czosnku — KURCZAK,,777.0,51.0,13.0,112.0
+HulThai,Stir Fry W czosnku — SOJCZAK,,746.0,23.0,11.0,135.0
+HulThai,Stir Fry W czosnku — WOŁOWINA,,912.0,63.0,21.0,112.0
+KFC,7UP Free Wielka Dolewka XL / 7UP Free Refill XL,500 g,5.0,0.0,0.0,0.0
+KFC,7UP Free Wielka Dolewka/ 7UP Free Refill,350 g,4.0,0.0,0.0,0.0
+KFC,7UP Wielka Dolewka XL / 7UP Refill XL,500 g,215.0,0.0,0.0,56.0
+KFC,7UP Wielka Dolewka/ 7UP Refill,350 g,151.0,0.0,0.0,39.0
+KFC,Bajgiel śniadaniowy,240 g,638.0,29.0,26.0,70.0
+KFC,Bites Orientalny Teriyaki Grande,307 g,967.0,47.0,58.0,67.0
+KFC,Bites Orientalny Teriyaki Standard,180 g,567.0,28.0,34.0,39.0
+KFC,Bites z sosem Słodkie Chilli Grande/ Bites Sweet Chilli Grande,307 g,946.0,46.0,58.0,62.0
+KFC,Bites z sosem Słodkie Chilli Standard/ Bites Sweet Chilli Standard,182 g,561.0,27.0,34.0,37.0
+KFC,Brioszka śniadaniowa/ Breakfast bagiel,250 g,680.0,30.0,33.0,68.0
+KFC,Bubble Tea Mango 180 m,150 g,63.0,0.0,0.0,17.0
+KFC,Bubble Tea Mango 180 ml ( na bazie Ice Tea Green Zero),150 g,35.0,0.0,0.0,8.1
+KFC,Bubble Tea Mango 300 ml ( na bazie Ice Tea Green Zero),230 g,53.0,0.0,0.0,12.0
+KFC,Bubble Tea Mango 500 ml ( na bazie Ice Tea Green Zero),450 g,104.0,0.0,0.0,24.0
+KFC,Bubble Tea Pink Grapefruit 180 ml,150 g,63.0,0.0,0.0,17.0
+KFC,Bubble Tea Pink Grapefruit 180 ml (na bazie Ice Tea Green Zero),150 g,35.0,0.0,0.0,8.1
+KFC,Bubble Tea Pink Grapefruit 300 ml,230 g,97.0,1.0,0.0,25.0
+KFC,Bubble Tea Pink Grapefruit 300 ml (na bazie Ice Tea Green Zero),230 g,53.0,0.0,0.0,12.0
+KFC,Bubble Tea Pink Grapefruit 500 ml,450 g,189.0,1.0,0.0,50.0
+KFC,Bubble tea Mango 300 ml ( na bazie Ice Tea Green Zero),230 g,97.0,1.0,0.0,25.0
+KFC,Bubble tea Mango 500 ml ( na bazie Ice Tea Green Zero),450 g,189.0,1.0,0.0,50.0
+KFC,Bubble tea Pink Grapefruit 500 ml (na bazie Ice Tea Green Zero),450 g,104.0,0.0,0.0,24.0
+KFC,Caffe Mocchca 400 ml,400 g,368.0,11.0,9.0,60.0
+KFC,Cezar Poke/ Caesar Poke,240 g,696.0,31.0,53.0,24.0
+KFC,CheeseBurger,125 g,309.0,17.0,9.0,40.0
+KFC,Cheezy Crunch Burger Tatarski/ Cheezy Crunch Tatar Burger,331 g,1032.0,40.0,64.0,75.0
+KFC,Cheezy Crunch Burger Żurawinowy/ Cheesy Crunch Cranberry Burger,331 g,925.0,40.0,45.0,89.0
+KFC,Cheezy Double Down,370 g,1017.0,57.0,59.0,68.5
+KFC,Cheezy Double Down Gold,370 g,1094.0,63.0,68.0,56.8
+KFC,Cheezy PaPy,90 g,314.0,6.0,21.0,25.0
+KFC,Churros bez sosu/ churros without sauce,40 g,132.0,2.6,5.0,18.0
+KFC,Coffe Moccha 200 ml,200 g,184.0,6.0,5.0,30.0
+KFC,Coleslaw/ Coleslaw salad,140 g,147.0,2.0,10.0,15.0
+KFC,Creamies Czekolada / chocolate,150 g,276.0,6.0,11.0,39.0
+KFC,Creamies Krówka/ fudge,150 g,282.0,5.0,11.0,41.0
+KFC,Creamies Truskawka / strawberry,150 g,359.0,5.7,11.0,32.0
+KFC,Double Down,270 g,678.0,49.0,37.0,41.9
+KFC,Double Down Gold,270 g,732.0,55.0,46.0,30.5
+KFC,Duże Frytki / French fries large,115 g,290.0,4.0,12.0,43.0
+KFC,Duże Frytki XL/ Big Fries XL,150 g,378.0,5.0,12.0,56.0
+KFC,Frytki / French fries,80 g,202.0,3.0,8.0,30.0
+KFC,Gorąca czekolada 200 ml (bez mleka) / Hot chocolate 200 ml(without milk),200 g,102.0,6.0,2.0,19.0
+KFC,Gorąca czekolada 400 ml (bez mleka) / Hot chocolate 400 ml(without milk),400 g,204.0,16.0,4.0,38.0
+KFC,Gorąca czekolada z mlekiem 200 ml,200 g,202.0,7.0,5.0,32.0
+KFC,Gorąca czekolada z mlekiem 400 ml,400 g,404.0,13.0,11.0,64.0
 KFC,Grander Burger,300 g,756.0,37.0,38.0,61.0
 KFC,Grander Double Burger,415 g,1075.0,60.0,56.0,81.0
-KFC,Longer,127 g,309.0,15.0,8.0,43.0
-KFC,CheeseBurger,125 g,309.0,17.0,9.0,40.0
-KFC,iTwist,132 g,350.0,11.0,18.0,38.0
-KFC,Twister,226 g,579.0,23.0,30.0,57.0
-KFC,Mega pocket,287 g,715.0,30.0,37.0,62.0
-KFC,Qurrito Grande,320 g,1078.0,46.0,64.0,80.0
-KFC,Qurrito,230 g,692.0,35.0,38.0,53.0
 KFC,Grander Kentucky Gold Burger,320 g,842.0,36.0,45.0,78.0
-KFC,Kentucky Gold Wrapper,350 g,1197.0,42.0,77.0,91.0
 KFC,Halloumi Vege Burger,280 g,708.0,31.0,39.0,55.0
-KFC,Twister Halloumi Vege,260 g,697.0,28.0,44.0,44.0
-KFC,Qurrito Śniadaniowe/Breakfast Qurrito,220 g,548.0,30.0,35.0,25.0
-KFC,Tost z jajkiem i serem/ Toast with egg and cheese,150 g,368.0,17.0,20.0,31.0
-KFC,Brioszka śniadaniowa/ Breakfast bagiel,250 g,680.0,30.0,33.0,68.0
-KFC,"Podwójny toast z jajkiem, serem i bekonem/ Doubledecker toast with egg, cheese and bacon",300 g,738.0,35.0,41.0,55.0
-KFC,Bajgiel śniadaniowy,240 g,638.0,29.0,26.0,70.0
+KFC,Herbata / Tea,200 g,2.0,0.0,0.0,0.0
+KFC,Hot & Spicy Bites/Chrupiące Bites,90 g,291.0,17.0,18.0,14.0
+KFC,Hot & Spicy Strips/ pikantne polędwiczki kurczaka,32 g,92.0,6.6,5.0,3.2
+KFC,Hot Wings/ pikantne skrzydełka,36 g,114.0,7.0,7.4,5.0
+KFC,Ice Cream Deluxe Lody Czekoladowe/ Ice Cream Deluxe Chocolate 150ml,101 g,213.0,2.6,8.0,30.0
+KFC,Ice Cream Deluxe Lody Czekoladowe/ Ice Cream Deluxe Chocolate 460 ml,294 g,623.0,8.0,27.0,85.0
+KFC,Ice Cream Deluxe Lody Karmelowe / Ice Cream Delux Caramel 150 ml,95 g,229.0,3.0,10.0,30.0
+KFC,Ice Cream Deluxe Lody Karmelowe / Ice Cream Delux Caramel 460 ml,294 g,694.0,9.0,32.0,91.0
+KFC,Ice Cream Deluxe Lody Truskawkowe / Ice Cream Deluxe Strawberry 150 ml,101 g,206.0,2.6,8.0,30.0
+KFC,Ice Cream Deluxe Lody Truskawkowe / Ice Cream Deluxe Strawberry 460 ml,294 g,612.0,9.0,26.0,85.0
+KFC,Iced LaPe Klasyczna,300 g,111.0,7.0,5.0,11.0
+KFC,Kawa Americano/Coffe Americano 200 ml,200 g,4.0,0.0,0.0,0.5
+KFC,Kawa Americano/Coffe Americano 400 ml,400 g,8.0,0.0,0.0,1.1
+KFC,Kawa Cappuccino/ Coffe Cappuccino 200 ml,200 g,68.0,5.0,2.0,7.4
+KFC,Kawa Cappuccino/ Coffe Cappuccino 400 ml,400 g,136.0,10.0,4.0,14.8
+KFC,Kawa Espresso 50 ml,50 g,1.0,0.0,0.0,0.1
+KFC,Kawa Espresso Doppio 100ml,100 g,2.0,0.0,0.0,0.3
+KFC,Kawa Flat white 200 ml,200 g,68.0,5.0,2.0,7.8
+KFC,Kawa Flat white 400 ml,400 g,136.0,10.0,4.0,16.0
+KFC,Kawa LaPe Macchiato/Coffe LaPe Macchiato 200 ml,200 g,72.0,5.0,2.0,8.0
+KFC,Kawa LaPe Macchiato/Coffe LaPe Macchiato 400 ml,400 g,144.0,11.0,4.0,16.0
+KFC,Kawa LaPe/Coffe LaPe 200 ml,200 g,66.0,5.0,2.0,7.4
+KFC,Kawa LaPe/Coffe LaPe 400 ml,400 g,132.0,10.0,4.0,15.0
+KFC,Kawa z mlekiem 200 ml,200 g,28.0,2.0,1.0,3.0
+KFC,Kawa z mlekiem 400 ml,400 g,56.0,5.0,1.0,6.0
+KFC,Kentucky Gold Fries,155 g,473.0,6.0,26.0,49.6
+KFC,Kentucky Gold Orient Box,180 g,631.0,27.0,44.0,32.0
+KFC,Kentucky Gold Orient Box Rice,260 g,653.0,47.0,35.0,40.3
+KFC,Kentucky Gold Wrapper,350 g,1197.0,42.0,77.0,91.0
+KFC,Ketchup,12 g,15.0,0.0,0.0,3.0
+KFC,Krążki cebulowe/ Onion rings (6 szt.),90 g,288.0,5.0,14.0,38.0
+KFC,Kubełek Frytek/ French fries bucket,240 g,605.0,9.0,26.0,89.0
+KFC,Kukurydza z masłem/ Corn cob with buPer,125 g,168.0,5.0,2.0,31.0
+KFC,"Lech Free 0,0% Limonka Puszka 0,5l",500 g,140.0,0.0,0.0,37.0
+KFC,"Lech Free 0,0% Puszka 0,5l",500 g,95.0,0.0,0.0,25.0
+KFC,Lipton Ice Tea Lemon Wielka Dolewka XL / Lipton Ice Tea Lemon Refill XL,500 g,150.0,0.0,0.0,35.0
+KFC,Lipton Ice Tea Lemon Wielka Dolewka/ Lipton Ice Tea Lemon Refill,350 g,105.0,0.0,0.0,24.0
+KFC,Lipton Ice tea Green Wielka Dolewka XL / Lipton Ice tea Green Refill XL,500 g,150.0,0.0,0.0,35.0
+KFC,Lipton Ice tea Green Wielka Dolewka/ Lipton Ice tea Green Refill,350 g,105.0,0.0,0.0,25.0
+KFC,Lody waniliowe-mała porcja / Vanilla ice cream small,74 g,280.0,6.6,9.0,43.0
+KFC,Longer,127 g,309.0,15.0,8.0,43.0
+KFC,MAFIA IRL BUBBLE DRINK ( 7UP BoPle),230 g,106.0,1.0,0.0,26.0
+KFC,"MAFIA IRL BUBBLE DRINK (7UP ""0"" Bib)",230 g,62.0,1.0,0.0,16.0
+KFC,"MAFIA IRL BUBBLE DRINK SMALL ( 7UP ""0"" Bib)",150 g,41.0,0.0,0.0,10.0
+KFC,MAFIA IRL BUBBLE DRINK SMALL ( 7UP BoPle),150 g,69.0,0.0,0.0,17.0
+KFC,"MAFIA IRL BUBBLE DRINK XL ( 7UP ""0"" Bib)",450 g,122.0,1.0,0.0,31.0
+KFC,MAFIA IRL BUBBLE DRINK XL ( 7UP BoPle),450 g,207.0,1.0,0.0,52.0
+KFC,MAFIA IRL BURGER,230 g,522.0,38.0,32.0,50.0
+KFC,MAFIA IRL CHEEZY SNACK ( 4 pcs),70 g,215.0,7.0,14.0,17.0
+KFC,MAFIA IRL QURRITO,250 g,818.0,40.0,45.0,65.0
+KFC,MAFIA IRL SHAKE SMALL,170 g,265.0,5.0,6.0,35.0
+KFC,MAFIA IRL TWISTER,200 g,436.0,21.0,16.0,54.0
+KFC,Mega pocket,287 g,715.0,30.0,37.0,62.0
+KFC,Mirinda Free Wielka Dolewka XL / Mirinda Free Refill XL,500 g,5.0,0.0,0.0,0.0
+KFC,Mirinda Free Wielka Dolewka/ Mirinda Free Refill,350 g,4.0,0.0,0.0,0.0
+KFC,Mirinda Wielka Dolewka XL / Mirinda Refill XL,500 g,240.0,0.0,0.0,65.0
+KFC,Mirinda Wielka Dolewka/ Mirinda Refill,350 g,168.0,0.0,0.0,45.0
+KFC,Nóżka (Hot&Spicy),89 g,205.0,19.0,12.0,6.0
+KFC,Nóżka (Kentucky),69 g,169.0,15.0,10.0,6.1
+KFC,Pancakes (2 szt.) z sosem o smaku czekoladowym i bitą śmietaną/Pancakes (2 pcs) with chocolate flavor sauce and whipped cream,140 g,518.0,6.7,28.1,61.0
+KFC,Pancakes (2 szt.) z sosem o smaku czekoladowym/Pancakes (2 pcs) with chocolate flavor sauce,130 g,463.0,6.3,25.4,50.0
+KFC,Pancakes (2 szt.) z sosem o smaku karmelowym i bitą śmietaną /Pancakes (2 pcs) with caramel flavour sauce and whipped cream,140 g,512.0,6.0,26.9,65.0
+KFC,Pancakes (2 szt.) z sosem o smaku karmelowym/Pancakes (2 pcs) with caramel flavour sauce,130 g,464.0,5.9,23.9,55.0
+KFC,Pancakes (2 szt.) z sosem truskawkowym i bitą śmietaną /Pancakes (2 pcs) with strawberry sauce and whipped cream,140 g,473.0,5.7,25.1,57.0
+KFC,Pancakes (2 szt.) z sosem truskawkowym/ Pancakes (2 pcs) with strawberry sauce,130 g,414.0,5.5,22.1,47.0
+KFC,Pancakes (3 szt.) z sosem o smaku czekoladowym /Pancakes (3 pcs) with chocolate flavor sauce,180 g,893.0,12.3,50.0,94.0
+KFC,Pancakes (3 szt.) z sosem o smaku czekoladowym i bitą śmietaną /Pancakes (3 pcs) with chocolate flavor sauce and whipped cream,190 g,692.0,8.9,38.0,79.0
+KFC,Pancakes (3 szt.) z sosem o smaku karmelowym/Pancakes (3 pcs) with caramel flavour sauce,180 g,940.0,12.4,51.0,105.0
+KFC,Pancakes (3 szt.) z sosem o smaku karmelowymi bitą śmietaną/Pancakes (3 pcs) with caramel flavour sauce and whipped cream,190 g,692.0,8.4,37.0,82.0
+KFC,Pancakes (3 szt.) z sosem truskawkowym i bitą śmietaną/ Pancakes (3 pcs) with strawberry sauce and whipped cream,190 g,667.0,8.3,37.0,76.0
+KFC,Pancakes (3 szt.) z sosem truskawkowym/ Pancakes (3 pcs) with strawberry sauce,180 g,825.0,11.3,46.0,89.0
+KFC,Pancakes (bez sosu) / Pancakes (without sauce),180 g,695.0,9.1,40.0,72.0
 KFC,Pepperoni 3 plasterki / Pepperoni 3 slices,5 g,26.0,1.1,2.4,0.0
 KFC,Pepperoni 5 plasterków/ Pepperoni 5 slices,10 g,51.0,2.1,4.8,0.0
-KFC,Ryż i bites z sosem słodkie chilli Standard / Sweet chili rice and bites Standard,260 g,697.0,19.0,16.0,120.0
-KFC,Ryż i bites z sosem słodkie chilli Grande/ Sweet chilli rice and bites Grande,330 g,884.0,24.0,20.0,152.0
-KFC,Ryż i Bites Orientalny Teriyaki Standard/ Teriyaki rice and bites Standard,260 g,476.0,14.0,15.0,73.0
-KFC,Ryż i Bites Orientalny Teriyaki Grande/ Teriyaki rice and bites Grande,330 g,604.0,17.0,19.0,92.0
-KFC,Bites z sosem Słodkie Chilli Standard/ Bites Sweet Chilli Standard,182 g,561.0,27.0,34.0,37.0
-KFC,Bites z sosem Słodkie Chilli Grande/ Bites Sweet Chilli Grande,307 g,946.0,46.0,58.0,62.0
-KFC,Bites Orientalny Teriyaki Standard,180 g,567.0,28.0,34.0,39.0
-KFC,Bites Orientalny Teriyaki Grande,307 g,967.0,47.0,58.0,67.0
+KFC,Pepsi MAX Wielka Dolewka XL / Pepsi MAX Refill,500 g,1.0,0.0,0.0,0.0
+KFC,Pepsi MAX Wielka Dolewka/ Pepsi MAX Refill,350 g,1.0,0.0,0.0,0.0
+KFC,Pepsi Wielka Dolewka XL / Pepsi Refill,500 g,140.0,0.0,0.0,35.0
+KFC,Pepsi Wielka Dolewka/ Pepsi Refill,350 g,98.0,0.0,0.0,25.0
+KFC,Pierś (Hot&Spicy),126 g,302.0,30.0,21.0,8.7
+KFC,Pierś (Kentucky),100 g,236.0,27.0,11.0,7.3
+KFC,Podwójny Cheezy Crunch Burger Tatarski/ Double Cheezy Crunch Tatar Burger,420 g,1344.0,46.0,84.0,100.0
+KFC,Podwójny Cheezy Crunch Burger Żurawinowy/Double Cheesy Crunch Cranberry Burger,421 g,1238.0,46.0,66.0,115.0
+KFC,"Podwójny toast z jajkiem, serem i bekonem/ Doubledecker toast with egg, cheese and bacon",300 g,738.0,35.0,41.0,55.0
 KFC,Poke Bowl California Sun z ryżem i bitesami,362 g,478.0,18.0,21.0,58.0
 KFC,Poke Bowl California Sun z ryżem i halloumi,372 g,409.0,23.0,16.0,48.0
 KFC,Poke Bowl California Sun z sałatą i bitesami,282 g,347.0,17.0,17.0,34.0
@@ -72,762 +160,839 @@ KFC,Poke Bowl Sweetest Chilli z ryżem i bitesami,332 g,435.0,23.0,16.0,52.0
 KFC,Poke Bowl Sweetest Chilli z ryżem i halloumi,342 g,407.0,21.0,16.0,50.0
 KFC,Poke Bowl Sweetest Chilli z sałatą i bitesami,252 g,315.0,22.0,17.0,20.0
 KFC,Poke Bowl Sweetest Chilli z sałatą i halloumi,262 g,286.0,18.0,17.0,17.0
-KFC,Cezar Poke/ Caesar Poke,240 g,696.0,31.0,53.0,24.0
-KFC,Frytki / French fries,80 g,202.0,3.0,8.0,30.0
-KFC,Duże Frytki / French fries large,115 g,290.0,4.0,12.0,43.0
-KFC,Duże Frytki XL/ Big Fries XL,150 g,378.0,5.0,12.0,56.0
-KFC,Kubełek Frytek/ French fries bucket,240 g,605.0,9.0,26.0,89.0
-KFC,Kukurydza z masłem/ Corn cob with buPer,125 g,168.0,5.0,2.0,31.0
-KFC,Krążki cebulowe/ Onion rings (6 szt.),90 g,288.0,5.0,14.0,38.0
-KFC,Coleslaw/ Coleslaw salad,140 g,147.0,2.0,10.0,15.0
-KFC,Sos Kentucky Gold/Kentucky Gold sauce dip,25 g,108.0,0.0,9.0,6.5
-KFC,Sos Sweet Chili/Sweet chili sauce,25 g,43.0,0.0,0.0,11.0
-KFC,Sos BBQ/ BBQ sauce,25 g,26.0,0.0,0.0,5.8
-KFC,Sos majonezowo - czosnkowy / Mayonnaise - Garlic sauce dip,25 g,108.0,1.0,11.0,2.0
-KFC,Sos Majonezowy/ Mayo sauce,25 g,109.0,0.0,11.0,1.7
-KFC,Ketchup,12 g,15.0,0.0,0.0,3.0
-KFC,Sos Mango Bango/ Mango Bango sauce,25 g,34.0,0.0,0.0,8.3
-KFC,Sos Wasabi Mayo/ Wasabi Mayo Sauce,20 g,92.0,0.0,9.0,2.0
-KFC,Sos Extra Spicy ( Carolina sauce),25 g,23.0,0.0,0.0,5.0
-KFC,Cheezy PaPy,90 g,314.0,6.0,21.0,25.0
-KFC,Kentucky Gold Fries,155 g,473.0,6.0,26.0,49.6
-KFC,Sos o smaku czekoladowym / Chocolate flavor sauce,30 g,97.0,1.1,3.3,15.0
-KFC,Sos truskawkowy / Strawberry sauce,30 g,49.0,0.2,0.0,12.0
-KFC,Sos o smaku karmelowym (krówkowym)/ caramel flavor sauce,30 g,99.0,0.7,1.8,20.0
-KFC,Pancakes (bez sosu) / Pancakes (without sauce),180 g,695.0,9.1,40.0,72.0
-KFC,Pancakes (2 szt.) z sosem o smaku czekoladowym/Pancakes (2 pcs) with chocolate flavor sauce,130 g,463.0,6.3,25.4,50.0
-KFC,Pancakes (3 szt.) z sosem o smaku czekoladowym /Pancakes (3 pcs) with chocolate flavor sauce,180 g,893.0,12.3,50.0,94.0
-KFC,Pancakes (2 szt.) z sosem truskawkowym/ Pancakes (2 pcs) with strawberry sauce,130 g,414.0,5.5,22.1,47.0
-KFC,Pancakes (3 szt.) z sosem truskawkowym/ Pancakes (3 pcs) with strawberry sauce,180 g,825.0,11.3,46.0,89.0
-KFC,Pancakes (2 szt.) z sosem o smaku karmelowym/Pancakes (2 pcs) with caramel flavour sauce,130 g,464.0,5.9,23.9,55.0
-KFC,Pancakes (3 szt.) z sosem o smaku karmelowym/Pancakes (3 pcs) with caramel flavour sauce,180 g,940.0,12.4,51.0,105.0
-KFC,Pancakes (2 szt.) z sosem o smaku czekoladowym i bitą śmietaną/Pancakes (2 pcs) with chocolate flavor sauce and whipped cream,140 g,518.0,6.7,28.1,61.0
-KFC,Pancakes (3 szt.) z sosem o smaku czekoladowym i bitą śmietaną /Pancakes (3 pcs) with chocolate flavor sauce and whipped cream,190 g,692.0,8.9,38.0,79.0
-KFC,Pancakes (2 szt.) z sosem truskawkowym i bitą śmietaną /Pancakes (2 pcs) with strawberry sauce and whipped cream,140 g,473.0,5.7,25.1,57.0
-KFC,Pancakes (3 szt.) z sosem truskawkowym i bitą śmietaną/ Pancakes (3 pcs) with strawberry sauce and whipped cream,190 g,667.0,8.3,37.0,76.0
-KFC,Pancakes (2 szt.) z sosem o smaku karmelowym i bitą śmietaną /Pancakes (2 pcs) with caramel flavour sauce and whipped cream,140 g,512.0,6.0,26.9,65.0
-KFC,Pancakes (3 szt.) z sosem o smaku karmelowymi bitą śmietaną/Pancakes (3 pcs) with caramel flavour sauce and whipped cream,190 g,692.0,8.4,37.0,82.0
-KFC,Topping bita śmietana / Topping: whipped cream,18 g,52.0,0.4,4.7,2.0
-KFC,Topping: bita śmietana+ sos o smaku karmelowym/ Topping: whipped cream + caramel flavour sauce,28 g,192.0,0.6,5.3,9.0
-KFC,Topping: bita śmietana+ pianki / Topping: whipped cream + marshmallow,28 g,85.0,0.8,4.8,10.0
-KFC,Shake Wanilia /Vanilla Shake 180 ml,180 g,216.0,5.6,6.3,36.0
-KFC,Shake Mocno waniliowy / Strongly Vanilla Shake 300 ml,300 g,324.0,8.4,9.5,54.0
-KFC,Shake Mocno waniliowy / Strongly Vanilla Shake 500 ml,500 g,480.0,12.0,14.0,80.0
-KFC,Shake Truskawka/Strawberry Shake 180 ml,180 g,234.0,5.0,5.0,42.0
-KFC,Shake Truskawka/Strawberry Shake 300 ml,300 g,351.0,7.6,7.6,65.0
-KFC,Shake Truskawka/Strawberry Shake 500 ml,500 g,533.0,11.0,11.0,98.0
+KFC,Qurrito,230 g,692.0,35.0,38.0,53.0
+KFC,Qurrito Grande,320 g,1078.0,46.0,64.0,80.0
+KFC,Qurrito Śniadaniowe/Breakfast Qurrito,220 g,548.0,30.0,35.0,25.0
+KFC,Ryż i Bites Orientalny Teriyaki Grande/ Teriyaki rice and bites Grande,330 g,604.0,17.0,19.0,92.0
+KFC,Ryż i Bites Orientalny Teriyaki Standard/ Teriyaki rice and bites Standard,260 g,476.0,14.0,15.0,73.0
+KFC,Ryż i bites z sosem słodkie chilli Grande/ Sweet chilli rice and bites Grande,330 g,884.0,24.0,20.0,152.0
+KFC,Ryż i bites z sosem słodkie chilli Standard / Sweet chili rice and bites Standard,260 g,697.0,19.0,16.0,120.0
+KFC,Shake Coffee Frappe 180 ml,180 g,184.0,5.6,6.0,29.0
+KFC,Shake Coffee Frappe 300 ml,300 g,270.0,8.2,8.0,41.0
+KFC,Shake Coffee Frappe 500 ml,500 g,418.0,13.0,13.0,66.0
 KFC,Shake Czekolada/Chocolate Shake 180 ml,180 g,326.0,6.5,10.0,52.0
 KFC,Shake Czekolada/Chocolate Shake 300 ml,300 g,480.0,9.6,15.0,76.0
 KFC,Shake Czekolada/Chocolate Shake 500 ml,500 g,742.0,15.0,24.0,118.0
 KFC,Shake Krówka/Shake Fudge 180 ml,180 g,279.0,5.2,6.5,50.0
 KFC,Shake Krówka/Shake Fudge 300 ml,300 g,411.0,7.6,10.0,74.0
 KFC,Shake Krówka/Shake Fudge 500 ml,500 g,636.0,12.0,15.0,114.0
-KFC,Shake Peanut BuPer(Masło orzechowe) 180 ml,180 g,311.0,12.0,15.0,33.0
+KFC,Shake Mocno waniliowy / Strongly Vanilla Shake 300 ml,300 g,324.0,8.4,9.5,54.0
+KFC,Shake Mocno waniliowy / Strongly Vanilla Shake 500 ml,500 g,480.0,12.0,14.0,80.0
 KFC,Shake Peanut BuPer (Masło orzechowe) 300 ml,300 g,424.0,17.0,21.0,43.0
 KFC,Shake Peanut BuPer (Masło orzechowe) 500 ml,500 g,675.0,27.0,33.0,70.0
-KFC,Shake Coffee Frappe 180 ml,180 g,184.0,5.6,6.0,29.0
-KFC,Shake Coffee Frappe 300 ml,300 g,270.0,8.2,8.0,41.0
-KFC,Shake Coffee Frappe 500 ml,500 g,418.0,13.0,13.0,66.0
+KFC,Shake Peanut BuPer(Masło orzechowe) 180 ml,180 g,311.0,12.0,15.0,33.0
+KFC,Shake Protein Vanilla 500 ml,400 g,528.0,36.0,14.0,63.0
+KFC,Shake Truskawka/Strawberry Shake 180 ml,180 g,234.0,5.0,5.0,42.0
+KFC,Shake Truskawka/Strawberry Shake 300 ml,300 g,351.0,7.6,7.6,65.0
+KFC,Shake Truskawka/Strawberry Shake 500 ml,500 g,533.0,11.0,11.0,98.0
+KFC,Shake Wanilia /Vanilla Shake 180 ml,180 g,216.0,5.6,6.3,36.0
 KFC,Shake Wanilia z piankami marshmallow/ Shake Vanilla marshmallow 180 ml,180 g,468.0,5.6,11.0,43.0
 KFC,Shake Wanilia z piankami marshmallow/ Shake Vanilla marshmallow 300 ml,300 g,780.0,9.3,18.0,72.0
 KFC,Shake Wanilia z piankami marshmallow/ Shake Vanilla marshmallow 500 ml,500 g,1118.0,13.0,26.0,103.0
-KFC,Churros bez sosu/ churros without sauce,40 g,132.0,2.6,5.0,18.0
+KFC,Skrzydełko (Hot&Spicy),74 g,234.0,16.0,16.0,6.9
+KFC,Skrzydło (Kentucky),65 g,189.0,16.0,11.0,7.2
+KFC,Sos BBQ/ BBQ sauce,25 g,26.0,0.0,0.0,5.8
+KFC,Sos Extra Spicy ( Carolina sauce),25 g,23.0,0.0,0.0,5.0
+KFC,Sos Kentucky Gold/Kentucky Gold sauce dip,25 g,108.0,0.0,9.0,6.5
+KFC,Sos Majonezowy/ Mayo sauce,25 g,109.0,0.0,11.0,1.7
+KFC,Sos Mango Bango/ Mango Bango sauce,25 g,34.0,0.0,0.0,8.3
+KFC,Sos Sweet Chili/Sweet chili sauce,25 g,43.0,0.0,0.0,11.0
+KFC,Sos Wasabi Mayo/ Wasabi Mayo Sauce,20 g,92.0,0.0,9.0,2.0
+KFC,Sos majonezowo - czosnkowy / Mayonnaise - Garlic sauce dip,25 g,108.0,1.0,11.0,2.0
+KFC,Sos o smaku czekoladowym / Chocolate flavor sauce,30 g,97.0,1.1,3.3,15.0
 KFC,"Sos o smaku czekoladowym dodatek do churros / Chocolate-flavored sauce, an addiHon to churros",30 g,97.0,1.0,3.0,15.0
-KFC,Sos truskawkowy dodatek do churros / Strawberry sauce an addiHon to churros,30 g,49.0,0.2,0.0,12.0
 KFC,Sos o smaku karmelowm ( krówkowym) dodatek do churros / Fudge sauce an addiHon to churros,30 g,99.0,1.0,2.0,20.0
+KFC,Sos o smaku karmelowym (krówkowym)/ caramel flavor sauce,30 g,99.0,0.7,1.8,20.0
+KFC,Sos truskawkowy / Strawberry sauce,30 g,49.0,0.2,0.0,12.0
+KFC,Sos truskawkowy dodatek do churros / Strawberry sauce an addiHon to churros,30 g,49.0,0.2,0.0,12.0
+KFC,Sweet Chilli Orient Box,180 g,554.0,27.0,34.0,36.4
+KFC,Sweet Chilli Orient Box Rice,260 g,697.0,19.0,16.0,119.6
+KFC,Syrop o smaku słonego karmelu/ Salted caramel syrup,10 g,33.0,0.0,0.0,8.0
+KFC,Syrop o smaku waniliowym/ Vanilla syrup,10 g,34.0,0.0,0.0,8.4
+KFC,Teriyaki Orient Box,180 g,567.0,28.0,34.0,39.1
+KFC,Teriyaki Orient Box Rice,260 g,476.0,14.0,15.0,72.8
+KFC,Topping bita śmietana / Topping: whipped cream,18 g,52.0,0.4,4.7,2.0
 KFC,Topping bita śmietana do lodów w kubeczkach / Topping whipped cream for ice cream in cups,15 g,44.0,0.3,4.0,2.0
 KFC,Topping marshmallow do lodów w kubeczkach / Marshmallow topping for ice cream in cups,10 g,33.0,0.0,0.0,8.0
-KFC,Lody waniliowe-mała porcja / Vanilla ice cream small,74 g,280.0,6.6,9.0,43.0
-KFC,Creamies Krówka/ fudge,150 g,282.0,5.0,11.0,41.0
-KFC,Creamies Truskawka / strawberry,150 g,359.0,5.7,11.0,32.0
-KFC,Creamies Czekolada / chocolate,150 g,276.0,6.0,11.0,39.0
-KFC,Ice Cream Deluxe Lody Czekoladowe/ Ice Cream Deluxe Chocolate 150ml,101 g,213.0,2.6,8.0,30.0
-KFC,Ice Cream Deluxe Lody Czekoladowe/ Ice Cream Deluxe Chocolate 460 ml,294 g,623.0,8.0,27.0,85.0
-KFC,Ice Cream Deluxe Lody Truskawkowe / Ice Cream Deluxe Strawberry 150 ml,101 g,206.0,2.6,8.0,30.0
-KFC,Ice Cream Deluxe Lody Truskawkowe / Ice Cream Deluxe Strawberry 460 ml,294 g,612.0,9.0,26.0,85.0
-KFC,Ice Cream Deluxe Lody Karmelowe / Ice Cream Delux Caramel 150 ml,95 g,229.0,3.0,10.0,30.0
-KFC,Ice Cream Deluxe Lody Karmelowe / Ice Cream Delux Caramel 460 ml,294 g,694.0,9.0,32.0,91.0
-KFC,Kawa Espresso Doppio 100ml,100 g,2.0,0.0,0.0,0.3
-KFC,Kawa Espresso 50 ml,50 g,1.0,0.0,0.0,0.1
-KFC,Kawa Americano/Coffe Americano 200 ml,200 g,4.0,0.0,0.0,0.5
-KFC,Kawa Americano/Coffe Americano 400 ml,400 g,8.0,0.0,0.0,1.1
-KFC,Kawa z mlekiem 200 ml,200 g,28.0,2.0,1.0,3.0
-KFC,Kawa z mlekiem 400 ml,400 g,56.0,5.0,1.0,6.0
-KFC,Kawa LaPe/Coffe LaPe 200 ml,200 g,66.0,5.0,2.0,7.4
-KFC,Kawa LaPe/Coffe LaPe 400 ml,400 g,132.0,10.0,4.0,15.0
-KFC,Kawa Cappuccino/ Coffe Cappuccino 200 ml,200 g,68.0,5.0,2.0,7.4
-KFC,Kawa Cappuccino/ Coffe Cappuccino 400 ml,400 g,136.0,10.0,4.0,14.8
-KFC,Kawa Flat white 200 ml,200 g,68.0,5.0,2.0,7.8
-KFC,Kawa Flat white 400 ml,400 g,136.0,10.0,4.0,16.0
-KFC,Kawa LaPe Macchiato/Coffe LaPe Macchiato 200 ml,200 g,72.0,5.0,2.0,8.0
-KFC,Kawa LaPe Macchiato/Coffe LaPe Macchiato 400 ml,400 g,144.0,11.0,4.0,16.0
-KFC,Coffe Moccha 200 ml,200 g,184.0,6.0,5.0,30.0
-KFC,Caffe Mocchca 400 ml,400 g,368.0,11.0,9.0,60.0
-KFC,Gorąca czekolada z mlekiem 200 ml,200 g,202.0,7.0,5.0,32.0
-KFC,Gorąca czekolada z mlekiem 400 ml,400 g,404.0,13.0,11.0,64.0
-KFC,Syrop o smaku waniliowym/ Vanilla syrup,10 g,34.0,0.0,0.0,8.4
-KFC,Syrop o smaku słonego karmelu/ Salted caramel syrup,10 g,33.0,0.0,0.0,8.0
-KFC,Iced LaPe Klasyczna,300 g,111.0,7.0,5.0,11.0
-KFC,Gorąca czekolada 200 ml (bez mleka) / Hot chocolate 200 ml(without milk),200 g,102.0,6.0,2.0,19.0
-KFC,Gorąca czekolada 400 ml (bez mleka) / Hot chocolate 400 ml(without milk),400 g,204.0,16.0,4.0,38.0
-KFC,Pepsi Wielka Dolewka/ Pepsi Refill,350 g,98.0,0.0,0.0,25.0
-KFC,Pepsi Wielka Dolewka XL / Pepsi Refill,500 g,140.0,0.0,0.0,35.0
-KFC,Pepsi MAX Wielka Dolewka/ Pepsi MAX Refill,350 g,1.0,0.0,0.0,0.0
-KFC,Pepsi MAX Wielka Dolewka XL / Pepsi MAX Refill,500 g,1.0,0.0,0.0,0.0
-KFC,Lipton Ice tea Green Wielka Dolewka/ Lipton Ice tea Green Refill,350 g,105.0,0.0,0.0,25.0
-KFC,Lipton Ice tea Green Wielka Dolewka XL / Lipton Ice tea Green Refill XL,500 g,150.0,0.0,0.0,35.0
-KFC,Lipton Ice Tea Lemon Wielka Dolewka/ Lipton Ice Tea Lemon Refill,350 g,105.0,0.0,0.0,24.0
-KFC,Lipton Ice Tea Lemon Wielka Dolewka XL / Lipton Ice Tea Lemon Refill XL,500 g,150.0,0.0,0.0,35.0
-KFC,Mirinda Wielka Dolewka/ Mirinda Refill,350 g,168.0,0.0,0.0,45.0
-KFC,Mirinda Wielka Dolewka XL / Mirinda Refill XL,500 g,240.0,0.0,0.0,65.0
-KFC,Mirinda Free Wielka Dolewka/ Mirinda Free Refill,350 g,4.0,0.0,0.0,0.0
-KFC,Mirinda Free Wielka Dolewka XL / Mirinda Free Refill XL,500 g,5.0,0.0,0.0,0.0
-KFC,7UP Wielka Dolewka/ 7UP Refill,350 g,151.0,0.0,0.0,39.0
-KFC,7UP Wielka Dolewka XL / 7UP Refill XL,500 g,215.0,0.0,0.0,56.0
-KFC,7UP Free Wielka Dolewka/ 7UP Free Refill,350 g,4.0,0.0,0.0,0.0
-KFC,7UP Free Wielka Dolewka XL / 7UP Free Refill XL,500 g,5.0,0.0,0.0,0.0
-KFC,Herbata / Tea,200 g,2.0,0.0,0.0,0.0
+KFC,Topping: bita śmietana+ pianki / Topping: whipped cream + marshmallow,28 g,85.0,0.8,4.8,10.0
+KFC,Topping: bita śmietana+ sos o smaku karmelowym/ Topping: whipped cream + caramel flavour sauce,28 g,192.0,0.6,5.3,9.0
+KFC,Tost z jajkiem i serem/ Toast with egg and cheese,150 g,368.0,17.0,20.0,31.0
+KFC,Twister,226 g,579.0,23.0,30.0,57.0
+KFC,Twister Halloumi Vege,260 g,697.0,28.0,44.0,44.0
+KFC,Udko (Hot&Spicy),139 g,397.0,25.0,33.0,12.0
+KFC,Udko (Kentucky),111 g,276.0,23.0,17.0,6.4
 KFC,Zimowy drink/ Winter drink,380 g,129.0,0.0,0.0,30.0
-KFC,Bubble Tea Mango 180 m,150 g,63.0,0.0,0.0,17.0
-KFC,Bubble tea Mango 300 ml ( na bazie Ice Tea Green Zero),230 g,97.0,1.0,0.0,25.0
-KFC,Bubble tea Mango 500 ml ( na bazie Ice Tea Green Zero),450 g,189.0,1.0,0.0,50.0
-KFC,Bubble Tea Mango 180 ml ( na bazie Ice Tea Green Zero),150 g,35.0,0.0,0.0,8.1
-KFC,Bubble Tea Mango 300 ml ( na bazie Ice Tea Green Zero),230 g,53.0,0.0,0.0,12.0
-KFC,Bubble Tea Mango 500 ml ( na bazie Ice Tea Green Zero),450 g,104.0,0.0,0.0,24.0
-KFC,Bubble Tea Pink Grapefruit 180 ml,150 g,63.0,0.0,0.0,17.0
-KFC,Bubble Tea Pink Grapefruit 300 ml,230 g,97.0,1.0,0.0,25.0
-KFC,Bubble Tea Pink Grapefruit 500 ml,450 g,189.0,1.0,0.0,50.0
-KFC,Bubble Tea Pink Grapefruit 180 ml (na bazie Ice Tea Green Zero),150 g,35.0,0.0,0.0,8.1
-KFC,Bubble Tea Pink Grapefruit 300 ml (na bazie Ice Tea Green Zero),230 g,53.0,0.0,0.0,12.0
-KFC,Bubble tea Pink Grapefruit 500 ml (na bazie Ice Tea Green Zero),450 g,104.0,0.0,0.0,24.0
-KFC,"Lech Free 0,0% Puszka 0,5l",500 g,95.0,0.0,0.0,25.0
-KFC,"Lech Free 0,0% Limonka Puszka 0,5l",500 g,140.0,0.0,0.0,37.0
-KFC,Cheezy Crunch Burger Żurawinowy/ Cheesy Crunch Cranberry Burger,331 g,925.0,40.0,45.0,89.0
-KFC,Cheezy Crunch Burger Tatarski/ Cheezy Crunch Tatar Burger,331 g,1032.0,40.0,64.0,75.0
-KFC,Podwójny Cheezy Crunch Burger Żurawinowy/Double Cheesy Crunch Cranberry Burger,421 g,1238.0,46.0,66.0,115.0
-KFC,Podwójny Cheezy Crunch Burger Tatarski/ Double Cheezy Crunch Tatar Burger,420 g,1344.0,46.0,84.0,100.0
-KFC,MAFIA IRL BURGER,230 g,522.0,38.0,32.0,50.0
-KFC,MAFIA IRL TWISTER,200 g,436.0,21.0,16.0,54.0
-KFC,MAFIA IRL QURRITO,250 g,818.0,40.0,45.0,65.0
-KFC,MAFIA IRL CHEEZY SNACK ( 4 pcs),70 g,215.0,7.0,14.0,17.0
-KFC,"MAFIA IRL BUBBLE DRINK SMALL ( 7UP ""0"" Bib)",150 g,41.0,0.0,0.0,10.0
-KFC,MAFIA IRL BUBBLE DRINK SMALL ( 7UP BoPle),150 g,69.0,0.0,0.0,17.0
-KFC,"MAFIA IRL BUBBLE DRINK (7UP ""0"" Bib)",230 g,62.0,1.0,0.0,16.0
-KFC,MAFIA IRL BUBBLE DRINK ( 7UP BoPle),230 g,106.0,1.0,0.0,26.0
-KFC,"MAFIA IRL BUBBLE DRINK XL ( 7UP ""0"" Bib)",450 g,122.0,1.0,0.0,31.0
-KFC,MAFIA IRL BUBBLE DRINK XL ( 7UP BoPle),450 g,207.0,1.0,0.0,52.0
-KFC,MAFIA IRL SHAKE SMALL,170 g,265.0,5.0,6.0,35.0
-KFC,Double Down,270 g,678.0,49.0,37.0,41.9
-KFC,Double Down Gold,270 g,732.0,55.0,46.0,30.5
-KFC,Cheezy Double Down,370 g,1017.0,57.0,59.0,68.5
-KFC,Cheezy Double Down Gold,370 g,1094.0,63.0,68.0,56.8
-KFC,Teriyaki Orient Box Rice,260 g,476.0,14.0,15.0,72.8
-KFC,Sweet Chilli Orient Box Rice,260 g,697.0,19.0,16.0,119.6
-KFC,Kentucky Gold Orient Box Rice,260 g,653.0,47.0,35.0,40.3
-KFC,Teriyaki Orient Box,180 g,567.0,28.0,34.0,39.1
-KFC,Sweet Chilli Orient Box,180 g,554.0,27.0,34.0,36.4
-KFC,Kentucky Gold Orient Box,180 g,631.0,27.0,44.0,32.0
-KFC,Shake Protein Vanilla 500 ml,400 g,528.0,36.0,14.0,63.0
-MAX Burgers,Crispy Green Nuggets - Crispy Green Nuggets 4 szt.,60 g,177.6,7.8,12.0,9.0
-MAX Burgers,Crispy Green Nuggets - Crispy Green Nuggets 6 szt.,90 g,266.4,11.7,18.0,13.5
-MAX Burgers,Spicy Avocado Plant Beef,272.5 g,724.47,28.06,45.07,51.43
-MAX Burgers,Spicy Avocado Maxoumi,284.5 g,787.53,32.23,54.43,43.75
-MAX Burgers,Spicy Avocado Crispy Supreme,276.5 g,716.96,20.53,45.69,54.2
-MAX Burgers,Burger Rywala Plant Beef,315 g,923.68,40.5,52.2,72.47
-MAX Burgers,Mung Bean Burger,258.5 g,594.95,16.58,26.37,68.97
-MAX Burgers,Crispy Supreme Sandwich,212.5 g,633.6,19.08,38.36,53.75
-MAX Burgers,Crispy Supreme Buffalo,244 g,679.37,19.44,42.74,55.26
-MAX Burgers,Crispy Supreme Parmesan,250.5 g,733.16,24.77,47.08,53.96
-MAX Burgers,Maxoumi,217 g,503.77,19.37,27.21,45.53
-MAX Burgers,Double Maxoumi,284 g,764.99,33.45,49.97,45.42
-MAX Burgers,Delivery Cheezy Crispy Supreme,250 g,736.75,26.29,44.25,58.21
-MAX Burgers,Delivery Cheezy Plant Beef,372 g,1017.23,50.39,61.45,65.6
-MAX Burgers,Plant Beef Burger,252.5 g,605.17,24.18,34.14,51.2
-MAX Burgers,Salad Wrap Plant Beef,338 g,729.04,42.85,52.08,25.24
-MAX Burgers,Frisco Cheese Plant Beef,224 g,630.43,29.32,36.48,47.29
-MAX Burgers,Spicy Avocado Beef,276.5 g,716.96,20.53,45.69,54.2
-MAX Burgers,Double Frisco Pepper Jack 'n' Bacon,333.5 g,880.72,11.49,60.81,42.09
+KFC,Zinger Burger,170 g,445.0,25.0,22.0,36.0
+KFC,Zinger Max,240 g,590.0,41.0,29.0,41.0
+KFC,Zinger Ser&Bekon / Cheese&Bacon,200 g,524.0,30.0,26.0,40.0
+KFC,iTwist,132 g,350.0,11.0,18.0,38.0
+KFC,Żebro (Hot&Spicy),203 g,466.0,36.0,33.0,26.0
+KFC,Żebro (Kentucky),150 g,310.0,40.0,14.0,7.6
+LUCA,A delicacy with delicate vanilla cream,135 g,398.25,6.08,21.6,47.25
+LUCA,Bagel with apple and cinnamon filling,110 g,279.4,6.27,5.28,51.7
+LUCA,Butter and cinnamon spiral,110 g,397.1,6.93,16.5,55.0
+LUCA,Cheese-filled pretzel,85 g,255.0,8.5,8.42,35.7
+LUCA,Cherry-filled pretzel,110 g,291.5,6.27,5.28,55.0
+LUCA,Combo (Nutella pretzel + Pizza Campus slice),,851.85,25.69,29.86,120.25
+LUCA,CovriLUCA,120 g,322.8,11.4,13.2,39.6
+LUCA,Happy LUCA,150 g,406.5,18.0,19.5,40.5
+LUCA,"LUCA Croissant with cocoa filling and forest nuts, chocolate flakes",75 g,348.0,6.15,18.75,36.75
+LUCA,LUCA Haiducesc,120 g,427.2,9.84,19.2,55.2
+LUCA,LUCA Spicy,140 g,414.4,10.5,23.8,39.2
+LUCA,LUCA Traditional,120 g,300.0,13.2,9.96,39.6
+LUCA,LUCA sandwich with chicken (spicy sauce),270 g,540.0,27.0,22.14,56.7
+LUCA,LUCA sandwich with chicken (sweet sauce),270 g,526.5,27.0,20.52,56.7
+LUCA,LUCA sandwich with schnitzel,290 g,580.0,34.8,23.2,58.0
+LUCA,LUCA strudel with cinnamon apple filling,90 g,225.0,3.24,10.8,29.7
+LUCA,LUCA strudel with creamy yogurt filling,90 g,246.6,3.87,12.6,31.5
+LUCA,LUCA strudel with sour cherry filling,90 g,219.6,3.06,10.8,28.8
+LUCA,LUCA strudel with sweet cheese and raisins,90 g,233.1,7.74,10.8,26.1
+LUCA,Merdenea LUCA,135 g,382.05,9.99,22.95,35.1
+LUCA,Pizza Campus (slice),140 g,345.8,15.4,12.46,43.4
+LUCA,Pizza Campus (whole pizza),1100 g,2717.0,121.0,97.9,341.0
+LUCA,Pizza LUCA (40 cm),950 g,2422.5,104.5,104.5,275.5
+LUCA,Pizza LUCA (slice),140 g,357.0,15.4,15.4,40.6
+LUCA,Pizza LUCA Margherita,120 g,307.2,14.4,11.64,37.2
+LUCA,Pizza z Salami,120 g,320.4,15.6,14.4,32.4
+LUCA,Pizza z Szynką i Pieczarkami,120 g,276.0,14.4,11.88,28.8
+LUCA,Poppy Seed pretzel,110 g,401.5,11.0,7.59,70.4
+LUCA,Pretzel with Nutella,145 g,506.05,10.29,17.4,76.85
+LUCA,Sesame seeds pretzel,110 g,410.3,12.1,10.23,66.0
+LUCA,Sunflower seed pretzel,110 g,447.7,12.1,15.4,63.8
+LUCA,Sweet Cheese and Butter Pie,120 g,372.0,10.2,16.8,44.4
+LUCA,Vanilla Cream Crown,85 g,322.15,4.84,21.25,27.2
+MAX Burgers,Apple Bites,80 g,40.0,0.32,0.32,9.68
+MAX Burgers,Breakfast burger,153.5 g,372.24,15.75,21.95,27.32
+MAX Burgers,Brunch burger,116.9 g,417.74,12.19,29.48,25.65
 MAX Burgers,Burger Rywala Beef and Bacon,374 g,1054.33,51.77,65.15,64.93
-MAX Burgers,Classic '68 Cheese,274.5 g,657.06,30.11,39.35,43.23
-MAX Burgers,DeliVery Cheezy Beef,346 g,857.59,35.87,55.89,48.71
-MAX Burgers,Cheese 'n' Bacon,293 g,738.69,31.25,49.44,41.92
-MAX Burgers,Salad Wrap Burger,278 g,496.24,23.23,42.12,7.06
-MAX Burgers,Double Frisco,337 g,852.54,40.36,57.27,41.58
-MAX Burgers,Double Original,335 g,811.49,35.27,54.05,43.47
-MAX Burgers,Frisco,242 g,597.02,25.39,37.01,39.95
-MAX Burgers,Original,240 g,555.97,20.3,33.79,41.83
-MAX Burgers,Double Cheeseburger,163 g,449.95,19.02,28.62,27.6
-MAX Burgers,Classic '68 Cheese Jr,131.5 g,285.49,11.77,13.31,27.55
-MAX Burgers,Cheeseburger,113.5 g,315.14,11.14,17.92,26.71
-MAX Burgers,Hamburger,102 g,276.84,8.95,14.81,26.3
-MAX Burgers,Double Tatarski,297 g,804.09,34.74,52.66,44.39
-MAX Burgers,Tatarski,202 g,539.09,19.44,31.79,42.2
-MAX Burgers,Tatarski Jr,119 g,330.15,11.05,18.74,28.43
-MAX Burgers,Chleb hamburgerowy bezglutenowy,80 g,236.0,2.16,5.76,42.4
-MAX Burgers,Frisco Cheese,212 g,553.42,22.19,33.86,39.05
-MAX Burgers,Chicken Nuggets - 4 szt.,80 g,160.0,8.8,8.0,12.8
-MAX Burgers,Spicy Avocado Grand Chicken,317 g,726.02,30.8,1.99,62.13
-MAX Burgers,Grand Chicken Parmesan,291.5 g,693.54,32.17,36.63,59.08
-MAX Burgers,Grand Chicken Sandwich,253.5 g,607.98,26.6,28.91,58.88
-MAX Burgers,Grand Chicken Buffalo,328.5 g,659.87,27.55,33.38,61.6
-MAX Burgers,Grand Chicken 'n' Bacon,292 g,695.34,32.12,36.89,59.13
-MAX Burgers,DeliVery Cheezy Grand Chicken,302 g,709.53,33.87,34.36,64.95
 MAX Burgers,Burger Rywala Crispy Chicken,320 g,834.61,34.8,43.51,73.45
-MAX Burgers,Crispy Chicken 'n' Cheese​,239.5 g,544.85,20.39,26.68,54.15
-MAX Burgers,Grilled Chicken Sandwich,229.5 g,455.31,26.09,20.11,41.52
-MAX Burgers,Grilled Chicken Buffalo,264.5 g,501.61,26.48,24.5,43.07
-MAX Burgers,Grilled Chicken Parmesan,267.5 g,540.88,31.67,27.84,41.71
-MAX Burgers,Chicken Jr,126.5 g,302.57,11.37,13.35,34.14
-MAX Burgers,Chicken Wings - 3 szt.,124.5 g,273.9,18.68,18.68,7.35
-MAX Burgers,Chicken Wings - 5 szt,207.5 g,456.5,31.12,31.12,12.24
-MAX Burgers,Chicken Wings - 10 szt.,415 g,913.0,62.25,62.25,24.49
-MAX Burgers,Chicken Nuggets - 6 szt.,120 g,240.0,13.2,12.0,19.2
-MAX Burgers,Red Hot Nuggets - 6 szt.,108 g,279.72,16.96,15.34,18.58
-MAX Burgers,Chicken Nuggets - 9 szt.,180 g,360.0,19.8,18.0,28.8
-MAX Burgers,Red Hot Nuggets - 9 szt.,162 g,419.58,25.43,23.0,27.86
-MAX Burgers,Red Hot Nuggets - 4 szt.,72 g,186.48,11.3,10.22,12.38
-MAX Burgers,Green Kale Caesar Bowl,425 g,735.15,35.11,41.09,58.86
-MAX Burgers,Sesame & Ginger Bowl,412 g,610.21,29.23,26.79,64.4
-MAX Burgers,Cookie Dough,372.5 g,622.23,12.82,42.43,92.43
-MAX Burgers,Mango Passion,369 g,559.18,12.08,20.7,82.42
-MAX Burgers,Pink Peach,480 g,253.8,1.33,0.7,57.85
-MAX Burgers,Mucho Mango,450 g,244.5,1.8,2.25,55.0
-MAX Burgers,Very Berry,450 g,210.5,1.2,1.25,46.6
-MAX Burgers,Green Boost,450 g,252.5,4.0,6.25,41.0
-MAX Burgers,Vanilla,320 g,453.4,11.24,17.58,63.9
-MAX Burgers,Espresso Caramel,370 g,506.0,12.46,19.54,71.99
-MAX Burgers,Chocolate,380 g,710.0,13.46,39.46,85.9
-MAX Burgers,Strawberry,375 g,474.57,11.41,17.65,68.85
-MAX Burgers,Choco Churros - 3,54 g,201.96,2.54,11.88,19.98
-MAX Burgers,Choco Churros - 5,90 g,336.6,4.23,19.8,33.3
-MAX Burgers,Choco Churros - 9,162 g,605.88,7.61,35.64,59.94
-MAX Burgers,Ice Cream Truskawka,165 g,285.3,5.42,7.54,49.45
-MAX Burgers,Ice Cream Czekolada,165 g,312.1,6.1,7.86,54.65
-MAX Burgers,Ice Cream Karmel,165 g,323.3,6.66,9.54,53.45
-MAX Burgers,Chocolate Lava Cake,70 g,280.7,4.27,15.61,29.61
-MAX Burgers,Chocolate Lava Cake z lodami,120 g,357.7,6.42,18.61,40.11
-MAX Burgers,Raspberry Pie,100 g,266.0,3.7,14.0,32.0
-MAX Burgers,Raspberry Pie z lodami,150 g,343.0,5.85,17.0,42.5
-MAX Burgers,Sugar Donut,50 g,99.0,1.65,4.85,12.0
-MAX Burgers,Choco Churros Deluxe,193 g,457.67,7.8,18.94,63.02
-MAX Burgers,Iced Latte,294 g,126.0,9.8,4.2,13.72
-MAX Burgers,Iced Chocolate Latte,359 g,331.27,10.5,4.55,63.27
-MAX Burgers,Iced Caramel Latte,359 g,342.19,11.05,1.72,62.1
-MAX Burgers,Iced vanilla latte,320 g,214.66,9.8,4.2,35.58
-MAX Burgers,Pink Sparkle,306 g,154.12,0.7,0.23,35.11
-MAX Burgers,Strawberry Breeze,298 g,159.2,0.7,0.7,36.64
-MAX Burgers,Fizzy Apple,298 g,188.46,0.7,0.7,43.23
-MAX Burgers,Passion Pop,298 g,186.84,0.73,0.7,43.4
-MAX Burgers,FuzeTea O smaku Borówki i Lawendy BEZ CUKRU,520 g,5.1,0.0,0.0,0.0
-MAX Burgers,FuzeTea O smaku Brzoskwini i Hibiskusa,520 g,93.6,0.0,0.0,21.84
+MAX Burgers,Burger Rywala Plant Beef,315 g,923.68,40.5,52.2,72.47
 MAX Burgers,Cappy Lemonade Lemon & Mint,330 g,76.0,0.0,0.0,17.2
 MAX Burgers,Cappy Multiwitamina,330 g,145.2,0.0,0.0,34.65
 MAX Burgers,Cappy sok jabłkowy,330 g,148.5,0.0,0.0,35.64
 MAX Burgers,Cappy sok pomarańczowy,330 g,141.9,0.0,0.0,33.0
+MAX Burgers,Cheese 'n' Bacon,293 g,738.69,31.25,49.44,41.92
+MAX Burgers,Cheese Fries - Large,285 g,769.45,7.45,42.32,84.77
+MAX Burgers,Cheese Fries - Medium,236 g,615.56,5.73,36.17,61.99
+MAX Burgers,Cheeseburger,113.5 g,315.14,11.14,17.92,26.71
+MAX Burgers,Cheesy Toast,77 g,262.84,7.57,14.1,25.89
+MAX Burgers,Cheesy Toast Bacon,87.5 g,304.84,10.72,17.35,25.94
+MAX Burgers,Chicken Jr,126.5 g,302.57,11.37,13.35,34.14
+MAX Burgers,Chicken Nuggets - 4 szt.,80 g,160.0,8.8,8.0,12.8
+MAX Burgers,Chicken Nuggets - 6 szt.,120 g,240.0,13.2,12.0,19.2
+MAX Burgers,Chicken Nuggets - 9 szt.,180 g,360.0,19.8,18.0,28.8
+MAX Burgers,Chicken Wings - 10 szt.,415 g,913.0,62.25,62.25,24.49
+MAX Burgers,Chicken Wings - 3 szt.,124.5 g,273.9,18.68,18.68,7.35
+MAX Burgers,Chicken Wings - 5 szt,207.5 g,456.5,31.12,31.12,12.24
+MAX Burgers,Chili Cheese - Chili Cheese 4 szt.,80 g,217.2,7.2,12.8,17.6
+MAX Burgers,Chili Cheese - Chili Cheese 6 szt.,120 g,326.4,10.8,19.2,26.4
+MAX Burgers,Chleb hamburgerowy bezglutenowy,80 g,236.0,2.16,5.76,42.4
+MAX Burgers,Choco Churros - 3,54 g,201.96,2.54,11.88,19.98
+MAX Burgers,Choco Churros - 5,90 g,336.6,4.23,19.8,33.3
+MAX Burgers,Choco Churros - 9,162 g,605.88,7.61,35.64,59.94
+MAX Burgers,Choco Churros Deluxe,193 g,457.67,7.8,18.94,63.02
+MAX Burgers,Chocolate,380 g,710.0,13.46,39.46,85.9
+MAX Burgers,Chocolate Lava Cake,70 g,280.7,4.27,15.61,29.61
+MAX Burgers,Chocolate Lava Cake z lodami,120 g,357.7,6.42,18.61,40.11
+MAX Burgers,Classic '68 Cheese,274.5 g,657.06,30.11,39.35,43.23
+MAX Burgers,Classic '68 Cheese Jr,131.5 g,285.49,11.77,13.31,27.55
 MAX Burgers,Cola Zero Zero,500 g,5.0,0.0,0.0,0.0
+MAX Burgers,Cookie Dough,372.5 g,622.23,12.82,42.43,92.43
 MAX Burgers,Corona Zero,330 g,18.51,19.8,0.0,43.56
 MAX Burgers,Creole Fries - large,254 g,729.15,6.89,41.9,79.32
-MAX Burgers,Cheese Fries - Large,285 g,769.45,7.45,42.32,84.77
-MAX Burgers,Tatarski fries - Large,285 g,718.45,7.3,35.72,86.03
-MAX Burgers,Mozarella Sticks - Mozarella Sticks 5 szt,110 g,343.2,15.18,18.26,29.48
-MAX Burgers,Cheese Fries - Medium,236 g,615.56,5.73,36.17,61.99
-MAX Burgers,Mozarella Sticks - Mozarella Sticks 3 szt,66 g,205.92,9.11,10.96,17.69
-MAX Burgers,Tatarski fries - Medium,235 g,561.95,5.55,29.42,62.98
-MAX Burgers,Sourcream & Pepper,35 g,157.5,0.63,16.45,2.38
-MAX Burgers,Dip Tatarski,40 g,132.0,0.28,12.4,5.2
-MAX Burgers,Sweet Potato Fries,130 g,448.5,2.86,20.54,62.79
-MAX Burgers,Apple Bites,80 g,40.0,0.32,0.32,9.68
+MAX Burgers,Crispy Chicken 'n' Cheese​,239.5 g,544.85,20.39,26.68,54.15
+MAX Burgers,Crispy Green Nuggets - Crispy Green Nuggets 4 szt.,60 g,177.6,7.8,12.0,9.0
+MAX Burgers,Crispy Green Nuggets - Crispy Green Nuggets 6 szt.,90 g,266.4,11.7,18.0,13.5
+MAX Burgers,Crispy Supreme Buffalo,244 g,679.37,19.44,42.74,55.26
+MAX Burgers,Crispy Supreme Parmesan,250.5 g,733.16,24.77,47.08,53.96
+MAX Burgers,Crispy Supreme Sandwich,212.5 g,633.6,19.08,38.36,53.75
+MAX Burgers,Crispy fries - Duże,165 g,516.45,5.78,20.79,76.07
 MAX Burgers,Crispy fries - Małe,55 g,172.15,1.93,6.93,25.36
 MAX Burgers,Crispy fries - Średnie,125 g,391.25,4.38,15.75,57.63
-MAX Burgers,Crispy fries - Duże,165 g,516.45,5.78,20.79,76.07
+MAX Burgers,DeliVery Cheezy Beef,346 g,857.59,35.87,55.89,48.71
+MAX Burgers,DeliVery Cheezy Grand Chicken,302 g,709.53,33.87,34.36,64.95
+MAX Burgers,Delivery Cheezy Crispy Supreme,250 g,736.75,26.29,44.25,58.21
+MAX Burgers,Delivery Cheezy Plant Beef,372 g,1017.23,50.39,61.45,65.6
+MAX Burgers,Dip Tatarski,40 g,132.0,0.28,12.4,5.2
+MAX Burgers,Double Cheeseburger,163 g,449.95,19.02,28.62,27.6
+MAX Burgers,Double Frisco,337 g,852.54,40.36,57.27,41.58
+MAX Burgers,Double Frisco Pepper Jack 'n' Bacon,333.5 g,880.72,11.49,60.81,42.09
+MAX Burgers,Double Maxoumi,284 g,764.99,33.45,49.97,45.42
+MAX Burgers,Double Original,335 g,811.49,35.27,54.05,43.47
+MAX Burgers,Double Tatarski,297 g,804.09,34.74,52.66,44.39
+MAX Burgers,Espresso Caramel,370 g,506.0,12.46,19.54,71.99
+MAX Burgers,Fizzy Apple,298 g,188.46,0.7,0.7,43.23
+MAX Burgers,Frisco,242 g,597.02,25.39,37.01,39.95
+MAX Burgers,Frisco Cheese,212 g,553.42,22.19,33.86,39.05
+MAX Burgers,Frisco Cheese Plant Beef,224 g,630.43,29.32,36.48,47.29
+MAX Burgers,FuzeTea O smaku Borówki i Lawendy BEZ CUKRU,520 g,5.1,0.0,0.0,0.0
+MAX Burgers,FuzeTea O smaku Brzoskwini i Hibiskusa,520 g,93.6,0.0,0.0,21.84
+MAX Burgers,Grand Chicken 'n' Bacon,292 g,695.34,32.12,36.89,59.13
+MAX Burgers,Grand Chicken Buffalo,328.5 g,659.87,27.55,33.38,61.6
+MAX Burgers,Grand Chicken Parmesan,291.5 g,693.54,32.17,36.63,59.08
+MAX Burgers,Grand Chicken Sandwich,253.5 g,607.98,26.6,28.91,58.88
+MAX Burgers,Green Boost,450 g,252.5,4.0,6.25,41.0
+MAX Burgers,Green Kale Caesar Bowl,425 g,735.15,35.11,41.09,58.86
+MAX Burgers,Grilled Chicken Buffalo,264.5 g,501.61,26.48,24.5,43.07
+MAX Burgers,Grilled Chicken Parmesan,267.5 g,540.88,31.67,27.84,41.71
+MAX Burgers,Grilled Chicken Sandwich,229.5 g,455.31,26.09,20.11,41.52
+MAX Burgers,Hamburger,102 g,276.84,8.95,14.81,26.3
+MAX Burgers,Ice Cream Czekolada,165 g,312.1,6.1,7.86,54.65
+MAX Burgers,Ice Cream Karmel,165 g,323.3,6.66,9.54,53.45
+MAX Burgers,Ice Cream Truskawka,165 g,285.3,5.42,7.54,49.45
+MAX Burgers,Iced Caramel Latte,359 g,342.19,11.05,1.72,62.1
+MAX Burgers,Iced Chocolate Latte,359 g,331.27,10.5,4.55,63.27
+MAX Burgers,Iced Latte,294 g,126.0,9.8,4.2,13.72
+MAX Burgers,Iced vanilla latte,320 g,214.66,9.8,4.2,35.58
+MAX Burgers,Mango Passion,369 g,559.18,12.08,20.7,82.42
+MAX Burgers,Maxoumi,217 g,503.77,19.37,27.21,45.53
+MAX Burgers,Morning Wrap Omelette & Bacon,236 g,430.54,19.61,19.84,43.79
+MAX Burgers,Morning Wrap Omelette & Beef,260 g,471.06,21.11,23.1,44.21
+MAX Burgers,Morning Wrap Omelette & Cheese,222 g,374.54,15.41,15.5,43.72
+MAX Burgers,Mozarella Sticks - Mozarella Sticks 3 szt,66 g,205.92,9.11,10.96,17.69
+MAX Burgers,Mozarella Sticks - Mozarella Sticks 5 szt,110 g,343.2,15.18,18.26,29.48
+MAX Burgers,Mucho Mango,450 g,244.5,1.8,2.25,55.0
+MAX Burgers,Muffin 'n' Egg Benedict,135 g,336.6,10.34,20.46,27.56
+MAX Burgers,Muffin 'n' Egg Benedict Bacon,145.5 g,378.6,13.48,23.71,27.62
+MAX Burgers,Muffin 'n' Egg Cheddar,131.5 g,291.53,3.2,13.75,28.14
+MAX Burgers,Muffin 'n' Egg Cheddar & Bacon,142 g,333.53,15.58,17.01,28.2
+MAX Burgers,Muffin 'n' Egg Cheddar & Beef,169.5 g,388.05,18.13,21.35,28.64
+MAX Burgers,Mung Bean Burger,258.5 g,594.95,16.58,26.37,68.97
 MAX Burgers,Onion Rings - Onion Rings 4 szt.,64 g,150.4,1.73,8.32,16.64
 MAX Burgers,Onion Rings - Onion Rings 6 szt.,96 g,225.6,2.59,12.48,24.96
 MAX Burgers,Onion Rings - Onion Rings 9 szt.,144 g,338.4,3.89,18.72,37.44
-MAX Burgers,Chili Cheese - Chili Cheese 4 szt.,80 g,217.2,7.2,12.8,17.6
-MAX Burgers,Chili Cheese - Chili Cheese 6 szt.,120 g,326.4,10.8,19.2,26.4
-MAX Burgers,Cheesy Toast,77 g,262.84,7.57,14.1,25.89
-MAX Burgers,Cheesy Toast Bacon,87.5 g,304.84,10.72,17.35,25.94
-MAX Burgers,Muffin 'n' Egg Cheddar,131.5 g,291.53,3.2,13.75,28.14
-MAX Burgers,Muffin 'n' Egg Cheddar & Beef,169.5 g,388.05,18.13,21.35,28.64
-MAX Burgers,Muffin 'n' Egg Cheddar & Bacon,142 g,333.53,15.58,17.01,28.2
-MAX Burgers,Muffin 'n' Egg Benedict,135 g,336.6,10.34,20.46,27.56
-MAX Burgers,Muffin 'n' Egg Benedict Bacon,145.5 g,378.6,13.48,23.71,27.62
-MAX Burgers,Breakfast burger,153.5 g,372.24,15.75,21.95,27.32
-MAX Burgers,Brunch burger,116.9 g,417.74,12.19,29.48,25.65
-MAX Burgers,Morning Wrap Omelette & Beef,260 g,471.06,21.11,23.1,44.21
-MAX Burgers,Morning Wrap Omelette & Cheese,222 g,374.54,15.41,15.5,43.72
-MAX Burgers,Morning Wrap Omelette & Bacon,236 g,430.54,19.61,19.84,43.79
-McDonald's,Snack Wrap,,294.0,15.0,8.3,26.0
+MAX Burgers,Original,240 g,555.97,20.3,33.79,41.83
+MAX Burgers,Passion Pop,298 g,186.84,0.73,0.7,43.4
+MAX Burgers,Pink Peach,480 g,253.8,1.33,0.7,57.85
+MAX Burgers,Pink Sparkle,306 g,154.12,0.7,0.23,35.11
+MAX Burgers,Plant Beef Burger,252.5 g,605.17,24.18,34.14,51.2
+MAX Burgers,Raspberry Pie,100 g,266.0,3.7,14.0,32.0
+MAX Burgers,Raspberry Pie z lodami,150 g,343.0,5.85,17.0,42.5
+MAX Burgers,Red Hot Nuggets - 4 szt.,72 g,186.48,11.3,10.22,12.38
+MAX Burgers,Red Hot Nuggets - 6 szt.,108 g,279.72,16.96,15.34,18.58
+MAX Burgers,Red Hot Nuggets - 9 szt.,162 g,419.58,25.43,23.0,27.86
+MAX Burgers,Salad Wrap Burger,278 g,496.24,23.23,42.12,7.06
+MAX Burgers,Salad Wrap Plant Beef,338 g,729.04,42.85,52.08,25.24
+MAX Burgers,Sesame & Ginger Bowl,412 g,610.21,29.23,26.79,64.4
+MAX Burgers,Sourcream & Pepper,35 g,157.5,0.63,16.45,2.38
+MAX Burgers,Spicy Avocado Beef,276.5 g,716.96,20.53,45.69,54.2
+MAX Burgers,Spicy Avocado Crispy Supreme,276.5 g,716.96,20.53,45.69,54.2
+MAX Burgers,Spicy Avocado Grand Chicken,317 g,726.02,30.8,1.99,62.13
+MAX Burgers,Spicy Avocado Maxoumi,284.5 g,787.53,32.23,54.43,43.75
+MAX Burgers,Spicy Avocado Plant Beef,272.5 g,724.47,28.06,45.07,51.43
+MAX Burgers,Strawberry,375 g,474.57,11.41,17.65,68.85
+MAX Burgers,Strawberry Breeze,298 g,159.2,0.7,0.7,36.64
+MAX Burgers,Sugar Donut,50 g,99.0,1.65,4.85,12.0
+MAX Burgers,Sweet Potato Fries,130 g,448.5,2.86,20.54,62.79
+MAX Burgers,Tatarski,202 g,539.09,19.44,31.79,42.2
+MAX Burgers,Tatarski Jr,119 g,330.15,11.05,18.74,28.43
+MAX Burgers,Tatarski fries - Large,285 g,718.45,7.3,35.72,86.03
+MAX Burgers,Tatarski fries - Medium,235 g,561.95,5.55,29.42,62.98
+MAX Burgers,Vanilla,320 g,453.4,11.24,17.58,63.9
+MAX Burgers,Very Berry,450 g,210.5,1.2,1.25,46.6
+McDonald's,20 McNuggets®,,873.0,44.0,11.0,68.0
+McDonald's,4 McNuggets®,,175.0,9.0,11.0,14.0
+McDonald's,6 McNuggets®,,262.0,13.0,11.0,21.0
+McDonald's,9 McNuggets®,,393.0,20.0,11.0,31.0
+McDonald's,Bekon,,51.0,3.0,36.0,0.4
 McDonald's,Big Arch®,,1039.0,52.0,17.0,96.0
-McDonald's,Urban Fries,,333.0,17.0,12.0,23.0
-McDonald's,Gouda Donuts 3 szt.,,268.0,13.0,22.0,18.0
-McDonald's,Maestro Grand Classic,,711.0,35.0,12.0,53.0
-McDonald's,Maestro Bacon & Cheddar,,762.0,38.0,12.0,56.0
-McDonald's,Sos Monica’s Marinara*,,41.0,2.0,0.5,9.4
-McDonald's,McCrispy® Bacon Supreme,,609.0,30.0,10.0,38.0
-McDonald's,Spicy McCrispy®,,560.0,28.0,11.0,35.0
-McDonald's,McCrispy®,,550.0,27.0,10.0,33.0
+McDonald's,Big Mac®,,544.0,27.0,12.0,42.0
+McDonald's,Burger wołowy 4:1,,254.0,13.0,20.0,21.0
+McDonald's,Cebula czerwona,,3.7,0.0,0.1,0.7
+McDonald's,Cebula świeża,,2.2,0.0,0.2,0.3
+McDonald's,Cheeseburger,,306.0,15.0,11.0,30.0
 McDonald's,Chicken Tenders 1 szt.**,,122.0,6.0,14.0,9.0
 McDonald's,Chicken Tenders 2 szt.**,,244.0,12.0,14.0,18.0
 McDonald's,Chicken Tenders 3 szt.,,366.0,18.0,14.0,27.0
 McDonald's,Chicken Tenders 5 szt.,,610.0,30.0,14.0,45.0
 McDonald's,Chicken Tenders 6 szt.,,732.0,37.0,14.0,54.0
-McDonald's,Veggie Burger**,,558.0,28.0,11.0,41.0
-McDonald's,Veggie McWrap**,,598.0,30.0,11.0,45.0
-McDonald's,Ciastko Mango & Marakuja,,291.0,15.0,17.0,20.0
-McDonald's,Grimace Shake,,406.0,20.0,2.2,11.0
-McDonald's,Grimace Shake z bitą śmietanką,,459.0,23.0,3.3,17.0
-McDonald's,McFlurry® Pistacjowe,,363.0,18.0,9.5,21.0
-McDonald's,Lody o smaku waniliowym z polewą pistacjową,(w waflu),285.0,14.0,9.2,16.0
-McDonald's,Lody o smaku waniliowym z polewą pistacjową,(w kubku),250.0,13.0,9.4,16.0
-McDonald's,Lody o smaku waniliowym z polewą o smaku czekoladowym,,280.0,14.0,5.3,12.0
-McDonald's,Lody o smaku waniliowym z polewą truskawkową,,229.0,11.0,2.8,6.0
-McDonald's,Lody o smaku waniliowym z polewą karmelową,,288.0,14.0,4.0,9.0
-McDonald's,Lody o smaku waniliowym z polewą o smaku czekoladowym,(w waflu),313.0,16.0,5.2,12.0
-McDonald's,Lody o smaku waniliowym z polewą truskawkową,(w waflu),265.0,13.0,3.0,7.0
-McDonald's,Lody o smaku waniliowym z polewą karmelową,(w waflu),324.0,16.0,4.1,10.0
-McDonald's,McFlurry® Lion®,,275.0,14.0,5.3,12.0
-McDonald's,McFlurry® Lion® z polewą o smaku czekoladowym,,398.0,20.0,6.2,17.0
-McDonald's,McFlurry® Lion® z polewą karmelową,,408.0,20.0,5.3,15.0
-McDonald's,McFlurry® Lion® z polewą truskawkową,,347.0,17.0,4.3,12.0
-McDonald's,McFlurry® KitKat®,,298.0,15.0,6.2,15.0
-McDonald's,McFlurry® KitKat® z polewą o smaku czekoladowym,,420.0,21.0,6.9,20.0
-McDonald's,McFlurry® KitKat® z polewą karmelową,,431.0,22.0,6.0,17.0
-McDonald's,McFlurry® KitKat® z polewą truskawkową,,372.0,19.0,5.1,15.0
-McDonald's,Shake z kawą,,400.0,20.0,2.0,11.0
-McDonald's,Shake o smaku czekoladowym,"0,25l",204.0,10.0,2.3,6.0
-McDonald's,Shake o smaku czekoladowym z bitą śmietanką,"0,25l",313.0,16.0,3.9,14.0
-McDonald's,Shake o smaku czekoladowym,"0,4l",326.0,16.0,2.3,9.0
-McDonald's,Shake o smaku czekoladowym z bitą śmietanką,"0,4l",457.0,23.0,3.4,19.0
-McDonald's,Shake o smaku waniliowym,"0,25l",199.0,10.0,2.1,5.0
-McDonald's,Shake o smaku waniliowym z bitą śmietanką,"0,25l",310.0,16.0,3.8,14.0
-McDonald's,Shake o smaku waniliowym,"0,4l",319.0,16.0,2.1,8.0
-McDonald's,Shake o smaku waniliowym z bitą śmietanką,"0,4l",452.0,23.0,3.3,17.0
-McDonald's,Shake o smaku truskawkowym,"0,25l",203.0,10.0,2.1,5.0
-McDonald's,Shake o smaku truskawkowym z bitą śmietanką,"0,25l",308.0,15.0,3.8,14.0
-McDonald's,Shake o smaku truskawkowym,"0,4l",324.0,16.0,2.1,8.0
-McDonald's,Shake o smaku truskawkowym z bitą śmietanką,"0,4l",449.0,22.0,3.3,17.0
-McDonald's,Hamburger,,258.0,13.0,8.9,27.0
-McDonald's,Cheeseburger,,306.0,15.0,11.0,30.0
-McDonald's,Big Mac®,,544.0,27.0,12.0,42.0
-McDonald's,McRoyal®,,547.0,27.0,13.0,38.0
-McDonald's,WieśMac®,,607.0,30.0,16.0,35.0
-McDonald's,McChicken®,,433.0,22.0,9.0,48.0
-McDonald's,Jalapeño Burger,,303.0,15.0,12.0,28.0
 McDonald's,Chikker®,,407.0,20.0,12.0,45.0
-McDonald's,Red Chikker®,,342.0,17.0,6.1,49.0
-McDonald's,McDouble®,,408.0,20.0,13.0,30.0
-McDonald's,McRoyal® Podwójny,,798.0,40.0,16.0,38.0
-McDonald's,WieśMac® Podwójny,,967.0,48.0,19.0,36.0
-McDonald's,McWrap® Chrupiący Klasyczny,,572.0,29.0,8.5,64.0
-McDonald's,McWrap® Chrupiący Bekon Deluxe,,648.0,32.0,13.0,59.0
-McDonald's,Sałatka,,39.0,2.0,0.3,5.4
-McDonald's,Sałatka Kurczak Premium,,329.0,16.0,6.7,19.0
-McDonald's,Oliwa z Oliwek,,150.0,8.0,91.0,17.0
-McDonald's,Sos 1000 Wysp,,82.0,4.0,19.0,2.7
-McDonald's,Sos Vinegret,,187.0,9.0,52.0,1.1
-McDonald's,Sos Jogurtowo-Koperkowy,,26.0,1.0,1.4,4.4
-McDonald's,4 McNuggets®,,175.0,9.0,11.0,14.0
-McDonald's,6 McNuggets®,,262.0,13.0,11.0,21.0
-McDonald's,9 McNuggets®,,393.0,20.0,11.0,31.0
-McDonald's,20 McNuggets®,,873.0,44.0,11.0,68.0
 McDonald's,Chrupiące marcheweczki,,35.0,2.0,0.2,3.3
-McDonald's,Soczyste jabłuszka,,44.0,2.0,0.2,7.3
-McDonald's,McTost® Pieczarki i Ser,,285.0,14.0,13.0,28.0
-McDonald's,McTost® Bekon i Ser,,272.0,14.0,14.0,28.0
-McDonald's,McTost® Ser,,189.0,9.0,8.6,27.0
-McDonald's,McMuffin® Avocado,,283.0,14.0,9.0,27.0
-McDonald's,McMuffin® Jajko,,266.0,13.0,10.0,25.0
-McDonald's,McMuffin® Jajko i Bekon,,301.0,15.0,12.0,25.0
-McDonald's,McMuffin® Wieprzowy z Jajkiem,,410.0,20.0,14.0,26.0
-McDonald's,McMuffin® Farmerski,,376.0,19.0,18.0,26.0
-McDonald's,McMuffin® Twarożek i Rzodkiewka,,275.0,14.0,11.0,26.0
-McDonald's,Pszenna Kajzerka Kurczak Premium,,444.0,22.0,7.6,53.0
-McDonald's,Wieloziarnista Kajzerka Kurczak Premium,,462.0,23.0,9.3,50.0
-McDonald's,Pszenna Podwójna Kajzerka Wieprzowa DeLuxe,,623.0,31.0,17.0,41.0
-McDonald's,Wieloziarnista Podwójna Kajzerka Wieprzowa DeLuxe,,641.0,32.0,18.0,37.0
-McDonald's,Pszenna Kajzerka Jajko i Pieczarki,,436.0,22.0,12.0,41.0
-McDonald's,Wieloziarnista Kajzerka Jajko i Pieczarki,,454.0,23.0,13.0,37.0
-McDonald's,Śniadaniowy McWrap® z Jajecznicą i Bekonem,,356.0,18.0,6.9,38.0
-McDonald's,Śniadaniowy McWrap® z Jajecznicą i Pieczarkami,,369.0,18.0,7.2,38.0
-McDonald's,Śniadaniowy McWrap® z Jajecznicą i Wieprzowiną,,464.0,23.0,9.4,38.0
-McDonald's,Frytki Małe,,229.0,11.0,14.0,29.0
-McDonald's,Frytki Średnie,,327.0,16.0,14.0,41.0
-McDonald's,Frytki Duże,,430.0,22.0,14.0,54.0
-McDonald's,Ketchup,,14.0,1.0,0.0,3.1
-McDonald's,Sos Słodko-Kwaśny,,51.0,3.0,1.3,12.0
-McDonald's,Sos Barbeque,,44.0,2.0,1.2,10.0
-McDonald's,Sos Czosnkowy,,168.0,8.0,77.0,0.9
-McDonald's,Sos Śmietanowy,,108.0,5.0,43.0,2.3
-McDonald's,Sos Sriracha Mayo,,66.0,3.0,19.0,4.5
-McDonald's,Grzanki w saszetce,,58.0,3.0,8.2,10.0
-McDonald's,Cebula świeża,,2.2,0.0,0.2,0.3
-McDonald's,Cebula czerwona,,3.7,0.0,0.1,0.7
-McDonald's,Pomidor,,3.1,0.0,0.2,0.4
-McDonald's,Pikle,,0.3,0.0,0.0,0.0
-McDonald's,Papryczki jalapeño 6 szt.,,2.2,0.0,0.2,0.3
-McDonald's,Rukola,,1.7,0.0,0.7,0.2
-McDonald's,Sałata lodowa krojona,,3.2,0.0,0.2,0.4
-McDonald's,Ser cheddar topiony,,48.0,2.0,26.0,1.1
-McDonald's,Jajko sadzone,,63.0,3.0,9.7,0.3
-McDonald's,Bekon,,51.0,3.0,36.0,0.4
-McDonald's,Mięso wieprzowe,,144.0,7.0,25.0,0.8
-McDonald's,Burger wołowy 4:1,,254.0,13.0,20.0,21.0
-McDonald's,Kurczak panierowany,,202.0,10.0,12.0,13.0
-McDonald's,Musztarda,,0.5,0.0,4.2,0.0
-McDonald's,Sos majonezowy,,48.0,2.0,21.0,2.4
-McDonald's,Sos pikantny z zielonym sosem chili,,61.0,3.0,28.0,1.8
-McDonald's,Sos musztardowo-chrzanowy,,117.0,6.0,67.0,0.7
-McDonald's,Sos pomidorowy z cebulą,,32.0,2.0,0.9,6.9
+McDonald's,Ciastko Mango & Marakuja,,291.0,15.0,17.0,20.0
 McDonald's,Coca-Cola®,"0,25l",109.0,5.0,0.0,26.0
 McDonald's,Coca-Cola®,"0,4l",174.0,9.0,0.0,44.0
 McDonald's,Coca-Cola®,"0,5l",218.0,11.0,0.0,55.0
 McDonald's,Fanta®,"0,25l",109.0,5.0,0.0,27.0
 McDonald's,Fanta®,"0,4l",174.0,9.0,0.0,43.0
 McDonald's,Fanta®,"0,5l",218.0,11.0,0.0,53.0
-McDonald's,Sprite®,"0,25l",92.0,5.0,0.0,23.0
-McDonald's,Sprite®,"0,4l",148.0,7.0,0.0,36.0
-McDonald's,Sprite®,"0,5l",185.0,9.0,0.0,45.0
+McDonald's,Frytki Duże,,430.0,22.0,14.0,54.0
+McDonald's,Frytki Małe,,229.0,11.0,14.0,29.0
+McDonald's,Frytki Średnie,,327.0,16.0,14.0,41.0
+McDonald's,Gouda Donuts 3 szt.,,268.0,13.0,22.0,18.0
+McDonald's,Grimace Shake,,406.0,20.0,2.2,11.0
+McDonald's,Grimace Shake z bitą śmietanką,,459.0,23.0,3.3,17.0
+McDonald's,Grzanki w saszetce,,58.0,3.0,8.2,10.0
+McDonald's,Hamburger,,258.0,13.0,8.9,27.0
+McDonald's,Jajko sadzone,,63.0,3.0,9.7,0.3
+McDonald's,Jalapeño Burger,,303.0,15.0,12.0,28.0
+McDonald's,Ketchup,,14.0,1.0,0.0,3.1
+McDonald's,Kubuś Mus,,46.0,2.0,0.5,9.6
+McDonald's,Kurczak panierowany,,202.0,10.0,12.0,13.0
 McDonald's,Lipton® Ice Tea Lemon,"0,25l",45.0,2.0,0.5,11.0
 McDonald's,Lipton® Ice Tea Lemon,"0,4l",72.0,4.0,0.5,18.0
 McDonald's,Lipton® Ice Tea Lemon,"0,5l",90.0,5.0,0.5,22.0
-McDonald's,Woda gazowana / Woda niegazowana,"0,5l",0.0,0.0,0.0,0.0
-McDonald's,Sok pomarańczowy,,90.0,4.0,0.0,19.0
+McDonald's,Lody o smaku waniliowym z polewą karmelową,,288.0,14.0,4.0,9.0
+McDonald's,Lody o smaku waniliowym z polewą karmelową,(w waflu),324.0,16.0,4.1,10.0
+McDonald's,Lody o smaku waniliowym z polewą o smaku czekoladowym,,280.0,14.0,5.3,12.0
+McDonald's,Lody o smaku waniliowym z polewą o smaku czekoladowym,(w waflu),313.0,16.0,5.2,12.0
+McDonald's,Lody o smaku waniliowym z polewą pistacjową,(w kubku),250.0,13.0,9.4,16.0
+McDonald's,Lody o smaku waniliowym z polewą pistacjową,(w waflu),285.0,14.0,9.2,16.0
+McDonald's,Lody o smaku waniliowym z polewą truskawkową,,229.0,11.0,2.8,6.0
+McDonald's,Lody o smaku waniliowym z polewą truskawkową,(w waflu),265.0,13.0,3.0,7.0
+McDonald's,Maestro Bacon & Cheddar,,762.0,38.0,12.0,56.0
+McDonald's,Maestro Grand Classic,,711.0,35.0,12.0,53.0
+McDonald's,McChicken®,,433.0,22.0,9.0,48.0
+McDonald's,McCrispy®,,550.0,27.0,10.0,33.0
+McDonald's,McCrispy® Bacon Supreme,,609.0,30.0,10.0,38.0
+McDonald's,McDouble®,,408.0,20.0,13.0,30.0
+McDonald's,McFlurry® KitKat®,,298.0,15.0,6.2,15.0
+McDonald's,McFlurry® KitKat® z polewą karmelową,,431.0,22.0,6.0,17.0
+McDonald's,McFlurry® KitKat® z polewą o smaku czekoladowym,,420.0,21.0,6.9,20.0
+McDonald's,McFlurry® KitKat® z polewą truskawkową,,372.0,19.0,5.1,15.0
+McDonald's,McFlurry® Lion®,,275.0,14.0,5.3,12.0
+McDonald's,McFlurry® Lion® z polewą karmelową,,408.0,20.0,5.3,15.0
+McDonald's,McFlurry® Lion® z polewą o smaku czekoladowym,,398.0,20.0,6.2,17.0
+McDonald's,McFlurry® Lion® z polewą truskawkową,,347.0,17.0,4.3,12.0
+McDonald's,McFlurry® Pistacjowe,,363.0,18.0,9.5,21.0
+McDonald's,McMuffin® Avocado,,283.0,14.0,9.0,27.0
+McDonald's,McMuffin® Farmerski,,376.0,19.0,18.0,26.0
+McDonald's,McMuffin® Jajko,,266.0,13.0,10.0,25.0
+McDonald's,McMuffin® Jajko i Bekon,,301.0,15.0,12.0,25.0
+McDonald's,McMuffin® Twarożek i Rzodkiewka,,275.0,14.0,11.0,26.0
+McDonald's,McMuffin® Wieprzowy z Jajkiem,,410.0,20.0,14.0,26.0
+McDonald's,McRoyal®,,547.0,27.0,13.0,38.0
+McDonald's,McRoyal® Podwójny,,798.0,40.0,16.0,38.0
+McDonald's,McTost® Bekon i Ser,,272.0,14.0,14.0,28.0
+McDonald's,McTost® Pieczarki i Ser,,285.0,14.0,13.0,28.0
+McDonald's,McTost® Ser,,189.0,9.0,8.6,27.0
+McDonald's,McWrap® Chrupiący Bekon Deluxe,,648.0,32.0,13.0,59.0
+McDonald's,McWrap® Chrupiący Klasyczny,,572.0,29.0,8.5,64.0
+McDonald's,Mięso wieprzowe,,144.0,7.0,25.0,0.8
+McDonald's,Musztarda,,0.5,0.0,4.2,0.0
+McDonald's,Oliwa z Oliwek,,150.0,8.0,91.0,17.0
+McDonald's,Papryczki jalapeño 6 szt.,,2.2,0.0,0.2,0.3
+McDonald's,Pikle,,0.3,0.0,0.0,0.0
+McDonald's,Pomidor,,3.1,0.0,0.2,0.4
+McDonald's,Pszenna Kajzerka Jajko i Pieczarki,,436.0,22.0,12.0,41.0
+McDonald's,Pszenna Kajzerka Kurczak Premium,,444.0,22.0,7.6,53.0
+McDonald's,Pszenna Podwójna Kajzerka Wieprzowa DeLuxe,,623.0,31.0,17.0,41.0
+McDonald's,Red Chikker®,,342.0,17.0,6.1,49.0
+McDonald's,Rukola,,1.7,0.0,0.7,0.2
+McDonald's,Sałata lodowa krojona,,3.2,0.0,0.2,0.4
+McDonald's,Sałatka,,39.0,2.0,0.3,5.4
+McDonald's,Sałatka Kurczak Premium,,329.0,16.0,6.7,19.0
+McDonald's,Ser cheddar topiony,,48.0,2.0,26.0,1.1
+McDonald's,Shake o smaku czekoladowym,"0,25l",204.0,10.0,2.3,6.0
+McDonald's,Shake o smaku czekoladowym,"0,4l",326.0,16.0,2.3,9.0
+McDonald's,Shake o smaku czekoladowym z bitą śmietanką,"0,25l",313.0,16.0,3.9,14.0
+McDonald's,Shake o smaku czekoladowym z bitą śmietanką,"0,4l",457.0,23.0,3.4,19.0
+McDonald's,Shake o smaku truskawkowym,"0,25l",203.0,10.0,2.1,5.0
+McDonald's,Shake o smaku truskawkowym,"0,4l",324.0,16.0,2.1,8.0
+McDonald's,Shake o smaku truskawkowym z bitą śmietanką,"0,25l",308.0,15.0,3.8,14.0
+McDonald's,Shake o smaku truskawkowym z bitą śmietanką,"0,4l",449.0,22.0,3.3,17.0
+McDonald's,Shake o smaku waniliowym,"0,25l",199.0,10.0,2.1,5.0
+McDonald's,Shake o smaku waniliowym,"0,4l",319.0,16.0,2.1,8.0
+McDonald's,Shake o smaku waniliowym z bitą śmietanką,"0,25l",310.0,16.0,3.8,14.0
+McDonald's,Shake o smaku waniliowym z bitą śmietanką,"0,4l",452.0,23.0,3.3,17.0
+McDonald's,Shake z kawą,,400.0,20.0,2.0,11.0
+McDonald's,Snack Wrap,,294.0,15.0,8.3,26.0
+McDonald's,Soczyste jabłuszka,,44.0,2.0,0.2,7.3
 McDonald's,Sok jabłkowy,,88.0,4.0,0.0,20.0
-McDonald's,Kubuś Mus,,46.0,2.0,0.5,9.6
-Pan Precel,Z MAKIEM,,318.0,0.0,0.0,55.0
-Pan Precel,FRANCUSKI,,463.0,0.0,0.0,54.0
-Pan Precel,Z SEZAMEM,,322.0,0.0,0.0,55.0
-Pan Precel,FRANCUSKI WEGA,,459.0,0.0,0.0,53.0
-Pan Precel,Z SOLĄ,,265.0,0.0,0.0,52.0
-Pan Precel,GRECKI Z PAPRYKĄ,,390.0,0.0,0.0,54.0
+McDonald's,Sok pomarańczowy,,90.0,4.0,0.0,19.0
+McDonald's,Sos 1000 Wysp,,82.0,4.0,19.0,2.7
+McDonald's,Sos Barbeque,,44.0,2.0,1.2,10.0
+McDonald's,Sos Czosnkowy,,168.0,8.0,77.0,0.9
+McDonald's,Sos Jogurtowo-Koperkowy,,26.0,1.0,1.4,4.4
+McDonald's,Sos Monica’s Marinara*,,41.0,2.0,0.5,9.4
+McDonald's,Sos Sriracha Mayo,,66.0,3.0,19.0,4.5
+McDonald's,Sos Słodko-Kwaśny,,51.0,3.0,1.3,12.0
+McDonald's,Sos Vinegret,,187.0,9.0,52.0,1.1
+McDonald's,Sos majonezowy,,48.0,2.0,21.0,2.4
+McDonald's,Sos musztardowo-chrzanowy,,117.0,6.0,67.0,0.7
+McDonald's,Sos pikantny z zielonym sosem chili,,61.0,3.0,28.0,1.8
+McDonald's,Sos pomidorowy z cebulą,,32.0,2.0,0.9,6.9
+McDonald's,Sos Śmietanowy,,108.0,5.0,43.0,2.3
+McDonald's,Spicy McCrispy®,,560.0,28.0,11.0,35.0
+McDonald's,Sprite®,"0,25l",92.0,5.0,0.0,23.0
+McDonald's,Sprite®,"0,4l",148.0,7.0,0.0,36.0
+McDonald's,Sprite®,"0,5l",185.0,9.0,0.0,45.0
+McDonald's,Urban Fries,,333.0,17.0,12.0,23.0
+McDonald's,Veggie Burger**,,558.0,28.0,11.0,41.0
+McDonald's,Veggie McWrap**,,598.0,30.0,11.0,45.0
+McDonald's,Wieloziarnista Kajzerka Jajko i Pieczarki,,454.0,23.0,13.0,37.0
+McDonald's,Wieloziarnista Kajzerka Kurczak Premium,,462.0,23.0,9.3,50.0
+McDonald's,Wieloziarnista Podwójna Kajzerka Wieprzowa DeLuxe,,641.0,32.0,18.0,37.0
+McDonald's,WieśMac®,,607.0,30.0,16.0,35.0
+McDonald's,WieśMac® Podwójny,,967.0,48.0,19.0,36.0
+McDonald's,Woda gazowana / Woda niegazowana,"0,5l",0.0,0.0,0.0,0.0
+McDonald's,Śniadaniowy McWrap® z Jajecznicą i Bekonem,,356.0,18.0,6.9,38.0
+McDonald's,Śniadaniowy McWrap® z Jajecznicą i Pieczarkami,,369.0,18.0,7.2,38.0
+McDonald's,Śniadaniowy McWrap® z Jajecznicą i Wieprzowiną,,464.0,23.0,9.4,38.0
+Pan Precel,AMERYKANSKI,,466.0,0.0,0.0,55.0
 Pan Precel,BEZ POSYPKI,,265.0,0.0,0.0,52.0
-Pan Precel,GRECKI Z POMIDORAMI,,438.0,0.0,0.0,59.0
-Pan Precel,MIX NASION,,367.0,0.0,0.0,57.0
-Pan Precel,GRECKI NA WYPASIE,,432.0,0.0,0.0,56.0
-Pan Precel,KINDER,,544.0,0.0,0.0,79.0
-Pan Precel,HAWAJSKI,,410.0,0.0,0.0,55.0
-Pan Precel,KRÓWKA,,567.0,0.0,0.0,80.0
-Pan Precel,KURCZAK Z PIECZARKAMI,,418.0,0.0,0.0,54.0
-Pan Precel,MUSZTARDOWO-MIODOWY,,429.0,0.0,0.0,54.0
-Pan Precel,Z MLECZNĄ CZEKOLADĄ KURCZAK NA SŁODKO,,424.0,0.0,0.0,56.0
-Pan Precel,KURCZAK PO WŁOSKU,,452.0,0.0,0.0,54.0
-Pan Precel,kon CZEKOLADA | „2 6 KURCZAK PESTO,,455.0,0.0,0.0,54.0
-Pan Precel,SINE RAGE EERE a KURCZAK LIMONKOWO-OSTRY,,462.0,0.0,0.0,54.0
-Pan Precel,Z CYNAMONEM = 62 PIECZARKA NA OSTRO,,422.0,0.0,0.0,54.0
-Pan Precel,KURCZAK KOPERKOWO- POMIDORO NA WYPASIE,,443.0,0.0,0.0,56.0
-Pan Precel,ZIOLOWY,,456.0,0.0,0.0,54.0
-Pan Precel,RUMCAJS,,434.0,0.0,0.0,54.0
-Pan Precel,SUPREME OO = SALAMI PLUS HOT,,466.0,0.0,0.0,53.0
-Pan Precel,SALAMI PLUS „a 5 SZPINAK NA WYPASIE,,417.0,0.0,0.0,53.0
+Pan Precel,BROCCOLI,,429.0,0.0,0.0,56.0
+Pan Precel,CAPRICOSO,,391.0,0.0,0.0,53.0
+Pan Precel,CARBONARA,,403.0,0.0,0.0,54.0
+Pan Precel,CHEESE-CRUNCHY,,488.0,0.0,0.0,58.0
+Pan Precel,DRWAL,,438.0,0.0,0.0,54.0
 Pan Precel,ETEN 287 eh SUPREME CRUNCHY,,436.0,0.0,0.0,57.0
+Pan Precel,FARMERSKI,,448.0,0.0,0.0,55.0
+Pan Precel,FIRMOWY,,473.0,0.0,0.0,54.0
+Pan Precel,FRANCUSKI,,463.0,0.0,0.0,54.0
+Pan Precel,FRANCUSKI WEGA,,459.0,0.0,0.0,53.0
+Pan Precel,GRECKI NA WYPASIE,,432.0,0.0,0.0,56.0
+Pan Precel,GRECKI Z PAPRYKĄ,,390.0,0.0,0.0,54.0
+Pan Precel,GRECKI Z POMIDORAMI,,438.0,0.0,0.0,59.0
+Pan Precel,HAWAJSKI,,410.0,0.0,0.0,55.0
+Pan Precel,KINDER,,544.0,0.0,0.0,79.0
+Pan Precel,KRÓWKA,,567.0,0.0,0.0,80.0
+Pan Precel,KURCZAK KOPERKOWO- POMIDORO NA WYPASIE,,443.0,0.0,0.0,56.0
+Pan Precel,KURCZAK PO WŁOSKU,,452.0,0.0,0.0,54.0
+Pan Precel,KURCZAK Z PIECZARKAMI,,418.0,0.0,0.0,54.0
+Pan Precel,MIX NASION,,367.0,0.0,0.0,57.0
+Pan Precel,MUSZTARDOWO-MIODOWY,,429.0,0.0,0.0,54.0
+Pan Precel,"Moar a"" SUPREME WYPASIONY",,410.0,0.0,0.0,54.0
+Pan Precel,RUMCAJS,,434.0,0.0,0.0,54.0
+Pan Precel,SALAMI PLUS „a 5 SZPINAK NA WYPASIE,,417.0,0.0,0.0,53.0
+Pan Precel,SINE RAGE EERE a KURCZAK LIMONKOWO-OSTRY,,462.0,0.0,0.0,54.0
 Pan Precel,SPINACIO,,300.0,0.0,0.0,55.0
+Pan Precel,SUPREME OO = SALAMI PLUS HOT,,466.0,0.0,0.0,53.0
 Pan Precel,SUPREME PESTO,,478.0,0.0,0.0,57.0
 Pan Precel,SUPREME PLUS,,405.0,0.0,0.0,53.0
-Pan Precel,"Moar a"" SUPREME WYPASIONY",,410.0,0.0,0.0,54.0
-Pan Precel,AMERYKANSKI,,466.0,0.0,0.0,55.0
 Pan Precel,SZCZYPIOR,,423.0,0.0,0.0,55.0
-Pan Precel,BROCCOLI,,429.0,0.0,0.0,56.0
 Pan Precel,WEGA,,390.0,0.0,0.0,55.0
-Pan Precel,CAPRICOSO,,391.0,0.0,0.0,53.0
 Pan Precel,WIOSENNY,,415.0,0.0,0.0,54.0
-Pan Precel,CARBONARA,,403.0,0.0,0.0,54.0
 Pan Precel,WIOSENNY NA WYPASIE,,421.0,0.0,0.0,53.0
-Pan Precel,CHEESE-CRUNCHY,,488.0,0.0,0.0,58.0
-Pan Precel,WŁOSKI WEGA,,390.0,0.0,0.0,57.0
-Pan Precel,DRWAL,,438.0,0.0,0.0,54.0
 Pan Precel,WYKWINTNY,,512.0,0.0,0.0,59.0
-Pan Precel,FARMERSKI,,448.0,0.0,0.0,55.0
+Pan Precel,WŁOSKI WEGA,,390.0,0.0,0.0,57.0
+Pan Precel,Z CYNAMONEM = 62 PIECZARKA NA OSTRO,,422.0,0.0,0.0,54.0
+Pan Precel,Z MAKIEM,,318.0,0.0,0.0,55.0
+Pan Precel,Z MLECZNĄ CZEKOLADĄ KURCZAK NA SŁODKO,,424.0,0.0,0.0,56.0
+Pan Precel,Z SEZAMEM,,322.0,0.0,0.0,55.0
+Pan Precel,Z SOLĄ,,265.0,0.0,0.0,52.0
 Pan Precel,ZBÓJNICKI,,428.0,0.0,0.0,53.0
-Pan Precel,FIRMOWY,,473.0,0.0,0.0,54.0
 Pan Precel,ZBÓJNICKI CRUNCHY,,479.0,0.0,0.0,56.0
-Pizza Hut,Pieczywo czosnkowe z serem,2 szt,246.5,9.8,16.3,14.4
-Pizza Hut,Pieczywo czosnkowe bez sera,2 szt,180.3,3.1,9.8,19.6
-Pizza Hut,Wingsy z kurczaka,6 szt,376.2,36.7,23.2,4.4
-Pizza Hut,Rollsy z szynką,,556.1,24.1,36.0,32.0
-Pizza Hut,Frytki z pieca,,191.0,3.2,6.0,27.9
-Pizza Hut,Nacho Cheese,,263.3,7.2,15.7,23.0
-Pizza Hut,Loaded Wedges Nacho Cheese Z Bekonem I Szczypiorkiem,,404.5,9.0,21.6,46.1
-Pizza Hut,Loaded Doritos,,317.4,11.6,17.6,37.3
-Pizza Hut,Lekka Sałatka,,143.3,9.1,10.8,3.2
-Pizza Hut,Miodowo – musztardowy,,70.0,1.9,5.6,3.8
-Pizza Hut,Pomidorowy,,8.4,0.3,0.4,0.7
-Pizza Hut,Ostry z posypką chili,,7.0,0.3,0.3,0.5
-Pizza Hut,Pomidorowy cups (FaC),,6.0,0.2,0.2,0.7
+Pan Precel,ZIOLOWY,,456.0,0.0,0.0,54.0
+Pan Precel,kon CZEKOLADA | „2 6 KURCZAK PESTO,,455.0,0.0,0.0,54.0
+Pasibus,Americano,,3.0,0.0,0.0,0.0
+Pasibus,Americano White,,91.0,1.0,5.0,2.0
+Pasibus,Ave Cezar Chicken,burger podwójne z kurczakiem,1212.0,54.0,82.0,65.0
+Pasibus,Ave Cezar Chicken,burger z kurczakiem,1012.0,34.0,71.0,58.0
+Pasibus,Awokadus,burger podwójne z wołowiną,1295.0,57.0,96.0,48.0
+Pasibus,Awokadus,burger z wołowiną,1003.0,37.0,73.0,48.0
+Pasibus,BBQ Chicken Pasik,,416.0,21.0,3.0,38.0
+Pasibus,BBQ Chicken Pasik,wypasik,416.0,19.0,21.0,38.0
+Pasibus,BBQ Pasik,,452.0,28.0,10.0,34.0
+Pasibus,BBQ Pasik,wypasik,452.0,17.0,28.0,34.0
+Pasibus,Barney Chicken,burger podwójne z kurczakiem,988.0,53.0,59.0,68.0
+Pasibus,Barney Chicken,burger z kurczakiem,788.0,33.0,49.0,61.0
+Pasibus,Bataty,,439.0,28.0,3.0,39.0
+Pasibus,Bebek,burger podwójne z wołowiną,1174.0,56.0,82.0,53.0
+Pasibus,Bebek,burger z wołowiną,882.0,36.0,58.0,53.0
+Pasibus,Boczuś,,612.0,41.0,18.0,35.0
+Pasibus,Bubble Lemo jagodowe,,192.0,0.0,0.0,43.0
+Pasibus,Bubble Lemo marakuja,,360.0,0.0,0.0,43.0
+Pasibus,Bubble Tea jagodowe,,260.0,0.0,0.0,62.0
+Pasibus,Bubble Tea marakuja,,284.0,0.0,0.0,26.0
+Pasibus,Bułka maślana,burger,239.0,6.0,8.0,58.0
+Pasibus,Bułka maślana,wypasik,155.0,4.0,8.0,55.0
+Pasibus,Bułka sezam,burger,225.0,5.0,7.0,54.0
+Pasibus,Bułka typu brioche,smash,155.0,4.0,9.0,57.0
+Pasibus,Cappuccino,,133.0,2.0,7.0,4.0
+Pasibus,Cheese Boss,burger podwójne z wołowiną,1743.0,79.0,126.0,70.0
+Pasibus,Cheese Boss Wege,burger wege,890.0,27.0,65.0,50.0
+Pasibus,Cheese Pasik,,516.0,37.0,11.0,28.0
+Pasibus,Cheese Pasik,wypasik,516.0,17.0,37.0,28.0
+Pasibus,Chesse Boss,burger z wołowiną,1451.0,59.0,103.0,70.0
+Pasibus,Czeko Pączki,,316.0,13.0,3.0,45.0
+Pasibus,Czerwona Surówka,,28.0,0.0,0.0,7.0
+Pasibus,Cziks,,357.0,19.0,3.0,32.0
+Pasibus,Dip Majo Sriracha,,197.0,0.0,21.0,2.0
+Pasibus,Dip Mango Chili,,24.0,0.0,1.0,4.0
+Pasibus,Duże Frytki,,519.0,28.0,2.0,59.0
+Pasibus,Espresso,,1.0,0.0,0.0,0.0
+Pasibus,Extra Grana Padano,,60.0,4.0,3.0,0.0
+Pasibus,Extra Grana Padano,,60.0,18.0,4.0,0.0
+Pasibus,Extra boczek,,79.0,6.0,3.0,0.0
+Pasibus,Extra boczek,,79.0,25.0,6.0,3.0
+Pasibus,Extra cheddar,,37.0,3.0,2.0,0.0
+Pasibus,Extra cheddar,,37.0,18.0,3.0,2.0
+Pasibus,Extra czerwona cebula pikla,,42.0,0.0,0.0,8.0
+Pasibus,Extra czerwona cebula pikla,,42.0,0.0,0.0,17.0
+Pasibus,Extra grzanki zioł.-czosnk.,,39.0,1.0,1.0,67.0
+Pasibus,Extra jajo,,119.0,10.0,2.0,0.0
+Pasibus,Extra jajo,,119.0,3.0,10.0,0.0
+Pasibus,Extra nachosy,,99.0,3.0,5.0,57.0
+Pasibus,Extra ogórek pikla,,13.0,0.0,0.0,3.0
+Pasibus,Extra ogórek pikla,,13.0,0.0,0.0,9.0
+Pasibus,Extra relish ogórkowy,,58.0,4.0,1.0,6.0
+Pasibus,Extra relish ogórkowy,,58.0,1.0,4.0,16.0
+Pasibus,Flat White,,109.0,1.0,6.0,3.0
+Pasibus,Gonzales,burger podwójne z wołowiną,1146.0,47.0,78.0,59.0
+Pasibus,Gonzales,burger z wołowiną,854.0,27.0,55.0,59.0
+Pasibus,Gonzo Wrap,wrapy,491.0,22.0,15.0,49.0
+Pasibus,Gonzo Włap,,491.0,15.0,4.0,49.0
+Pasibus,Guacamole,,65.0,6.0,1.0,2.0
+Pasibus,Guacamole,,65.0,2.0,6.0,5.0
+Pasibus,Honey Chicken Pasik,,497.0,29.0,4.0,38.0
+Pasibus,Honey Chicken Pasik,wypasik,497.0,19.0,29.0,38.0
+Pasibus,Ice Latte,,91.0,2.0,5.0,4.0
+Pasibus,Ice Latte Caramel,,119.0,2.0,5.0,7.0
+Pasibus,Jalapeno Pasik,,458.0,16.0,8.0,29.0
+Pasibus,Jalapeno Pasik,wypasik,458.0,14.0,16.0,29.0
+Pasibus,Klasyk,burger podwójne z wołowiną,908.0,49.0,56.0,50.0
+Pasibus,Klasyk,burger z wołowiną,616.0,29.0,33.0,50.0
+Pasibus,Kotlet wege,burger,164.0,1.0,9.0,14.0
+Pasibus,Kotlet wege,wypasik/wrap,127.0,1.0,7.0,14.0
+Pasibus,Kotlet wołowy,burger,292.0,13.0,23.0,0.0
+Pasibus,Kotlet wołowy,smash,97.0,13.0,8.0,0.0
+Pasibus,Kotlet wołowy,wypasik,146.0,13.0,12.0,0.0
+Pasibus,Kroks 1 szt.,,67.0,3.0,2.0,6.0
+Pasibus,Kulki ostre 4szt.,,277.0,20.0,11.0,10.0
+Pasibus,Kulki serowe 4szt.,,302.0,22.0,13.0,8.0
+Pasibus,Kurczak,burger,200.0,1.0,10.0,7.0
+Pasibus,Kurczak,wypasik/wrap,152.0,1.0,8.0,7.0
+Pasibus,Latte,,156.0,2.0,8.0,4.0
+Pasibus,Mangoczi Bataty,,573.0,3.0,43.0,42.0
+Pasibus,Mangoczi Burger,burger,853.0,29.0,57.0,54.0
+Pasibus,Mangoczi Burger,burger podwójny,1203.0,55.0,84.0,55.0
+Pasibus,Mangoczi Frytki,,731.0,6.0,47.0,69.0
+Pasibus,Mangoczi Wrap,wrap,469.0,21.0,27.0,36.0
+Pasibus,Małe Frytki,,238.0,13.0,1.0,27.0
+Pasibus,Nachosy,,397.0,20.0,2.0,45.0
+Pasibus,Original Chicken,burger podwójne z kurczakiem,838.0,47.0,45.0,60.0
+Pasibus,Original Chicken,burger z kurczakiem,638.0,27.0,35.0,53.0
+Pasibus,Pasi Ice-Tea,Mała,45.0,0.0,0.0,11.0
+Pasibus,Pasi Ice-tea,Duża,71.0,0.0,0.0,17.0
+Pasibus,Pasi Lemoniada,Duża,156.0,0.0,0.0,38.0
+Pasibus,Pasi Lemoniada,Mała,98.0,0.0,0.0,25.0
+Pasibus,Popsy 3 szt.,,123.0,7.0,1.0,7.0
+Pasibus,Potrójny Smash BBQ,,736.0,45.0,19.0,47.0
+Pasibus,Potrójny Smash BBQ,potrójne smashe,736.0,33.0,45.0,47.0
+Pasibus,Potrójny Smash Cheese,potrójne smashe,665.0,33.0,37.0,45.0
+Pasibus,Potrójny Smash Classic,potrójne smashe,777.0,32.0,51.0,43.0
+Pasibus,Potrójny Smash Truflowy,,800.0,53.0,19.0,44.0
+Pasibus,Potrójny Smash Truflowy,potrójne smashe,800.0,33.0,53.0,44.0
+Pasibus,Sałatka Cezar,,730.0,58.0,10.0,19.0
+Pasibus,Seruś,,482.0,13.0,32.0,17.0
+Pasibus,Smash,,375.0,23.0,8.0,28.0
+Pasibus,Sos BBQ,,55.0,0.0,0.0,13.0
+Pasibus,Sos biały,,163.0,1.0,17.0,2.0
+Pasibus,Sos cezar,,205.0,2.0,21.0,1.0
+Pasibus,Sos cezar,,205.0,6.0,21.0,4.0
+Pasibus,Sos jalapeno-majo,,179.0,1.0,19.0,0.0
+Pasibus,Sos jalapeno-majo,,179.0,4.0,19.0,1.0
+Pasibus,Sos majo chili limonka,,198.0,1.0,20.0,5.0
+Pasibus,Sos majo chili limonka,,198.0,4.0,20.0,15.0
+Pasibus,Sos majo truflowy,,198.0,2.0,21.0,1.0
+Pasibus,Sos majo truflowy,,198.0,6.0,21.0,4.0
+Pasibus,Sos musztardowo-miodowy,,201.0,1.0,19.0,6.0
+Pasibus,Sos musztardowo-miodowy,,201.0,4.0,19.0,17.0
+Pasibus,Sos różowy,,93.0,1.0,8.0,5.0
+Pasibus,Standard,burger podwójne z wołowiną,1081.0,52.0,76.0,47.0
+Pasibus,Standard,burger z wołowiną,789.0,32.0,52.0,47.0
+Pasibus,Standard Wrap,wrapy,449.0,22.0,23.0,37.0
+Pasibus,Standard Włap,,449.0,23.0,5.0,37.0
+Pasibus,Stripsy z frytkami,,495.0,31.0,4.0,32.0
+Pasibus,Sunset Chicken,burger podwójne z kurczakiem,990.0,47.0,59.0,67.0
+Pasibus,Sunset Chicken,burger z kurczakiem,790.0,27.0,49.0,60.0
+Pasibus,Wege Burger,burger wege,617.0,14.0,33.0,63.0
+Pasibus,Wege Pasik,,479.0,29.0,3.0,44.0
+Pasibus,Wege Pasik,wypasik,479.0,9.0,29.0,44.0
+Pasibus,Włap Boczuś,,550.0,34.0,9.0,38.0
+Pasibus,Włap Świeżak,,435.0,23.0,6.0,40.0
+Pasibus,Właps,,278.0,13.0,3.0,28.0
+Pasibus,Włoski Pastuch,burger podwójne z wołowiną,1212.0,57.0,83.0,47.0
+Pasibus,Włoski Pastuch,burger z wołowiną,920.0,37.0,59.0,47.0
+Pasibus,Średnie Frytki,,356.0,19.0,2.0,40.0
+Pasibus,Świeżak,,410.0,17.0,7.0,35.0
 Pizza Hut,BBQ,,10.5,0.3,0.0,2.2
 Pizza Hut,BBQ cups (FaC),,7.5,0.2,0.0,1.6
+Pizza Hut,Cebulka prażona Crunch,,40.8,2.2,1.9,4.2
+Pizza Hut,Cheddar Crunch,,40.8,2.2,1.9,4.2
+Pizza Hut,Cheeseburger,,82.6,3.5,4.5,8.0
+Pizza Hut,Cheesy Margherita,,58.9,2.6,2.8,5.5
+Pizza Hut,Ciasto San Francisco,,0.0,0.0,0.0,0.0
 Pizza Hut,Czosnkowy,,56.0,1.1,4.2,3.2
 Pizza Hut,Czosnkowy cups/saszetka XXL (FaC),25 g / 45 g,14.0,0.3,1.1,0.8
-Pizza Hut,Majonezowo-musztardowy,,105.0,0.0,9.1,4.2
-Pizza Hut,Ketchup,,7.0,0.2,0.0,1.7
-Pizza Hut,Pomidorowy z Tabasco,,8.4,0.3,0.4,0.7
-Pizza Hut,Sweet chilli (DI),,11.2,0.2,0.0,2.5
-Pizza Hut,Sweet chili (FCD),,11.2,0.2,0.0,2.5
-Pizza Hut,Serowy,,117.7,3.3,9.5,1.0
 Pizza Hut,Dark Garlic,,72.8,1.7,5.6,4.2
-Pizza Hut,Cheddar Crunch,,40.8,2.2,1.9,4.2
-Pizza Hut,Pepperoni Crunch,,40.8,2.2,1.9,4.2
-Pizza Hut,Cebulka prażona Crunch,,40.8,2.2,1.9,4.2
-Pizza Hut,Doritos Crunch,,40.8,2.2,1.9,4.2
-Pizza Hut,Krem pomidorowy,,53.0,1.8,2.2,5.8
-Pizza Hut,Pepperoni,,124.2,7.5,9.0,1.7
-Pizza Hut,Farmerski,,84.7,4.6,2.5,5.1
-Pizza Hut,Super Supreme,,64.5,3.1,3.2,3.1
-Pizza Hut,Cheesy Margherita,,58.9,2.6,2.8,5.5
-Pizza Hut,Cheeseburger,,82.6,3.5,4.5,8.0
 Pizza Hut,Dodatek Jalapeno,,3.1,0.7,0.1,0.7
-Pizza Hut,Dodatek sera,,48.4,7.7,5.0,0.0
 Pizza Hut,Dodatek cebuli prażonej,,23.7,1.0,1.7,2.1
-Pizza Hut,Dodatek pepperoni,,59.8,2.1,4.2,0.0
 Pizza Hut,Dodatek mięs,,79.8,5.0,5.5,0.9
+Pizza Hut,Dodatek pepperoni,,59.8,2.1,4.2,0.0
+Pizza Hut,Dodatek sera,,48.4,7.7,5.0,0.0
+Pizza Hut,Doritos Crunch,,40.8,2.2,1.9,4.2
+Pizza Hut,Farmerski,,84.7,4.6,2.5,5.1
+Pizza Hut,Frytki z pieca,,191.0,3.2,6.0,27.9
+Pizza Hut,Ketchup,,7.0,0.2,0.0,1.7
+Pizza Hut,Krem pomidorowy,,53.0,1.8,2.2,5.8
 Pizza Hut,Kurczak BBQ,,459.3,29.7,24.8,5.3
 Pizza Hut,Kurczak Orientalny,,431.8,23.8,20.6,6.8
-Pizza Hut,Vege Nacho Cheese,,502.3,19.9,37.3,24.4
+Pizza Hut,Lekka Sałatka,,143.3,9.1,10.8,3.2
+Pizza Hut,Loaded Doritos,,317.4,11.6,17.6,37.3
+Pizza Hut,Loaded Wedges Nacho Cheese Z Bekonem I Szczypiorkiem,,404.5,9.0,21.6,46.1
+Pizza Hut,Majonezowo-musztardowy,,105.0,0.0,9.1,4.2
 Pizza Hut,Meat the Cheese,,690.0,35.3,39.5,51.8
+Pizza Hut,Miodowo – musztardowy,,70.0,1.9,5.6,3.8
+Pizza Hut,Nacho Cheese,,263.3,7.2,15.7,23.0
+Pizza Hut,Ostry z posypką chili,,7.0,0.3,0.3,0.5
+Pizza Hut,Pepperoni,,124.2,7.5,9.0,1.7
 Pizza Hut,Pepperoni,,931.4,43.7,50.2,96.0
-Pizza Hut,Ciasto San Francisco,,0.0,0.0,0.0,0.0
+Pizza Hut,Pepperoni Crunch,,40.8,2.2,1.9,4.2
+Pizza Hut,Pieczywo czosnkowe bez sera,2 szt,180.3,3.1,9.8,19.6
+Pizza Hut,Pieczywo czosnkowe z serem,2 szt,246.5,9.8,16.3,14.4
+Pizza Hut,Pomidorowy,,8.4,0.3,0.4,0.7
+Pizza Hut,Pomidorowy cups (FaC),,6.0,0.2,0.2,0.7
+Pizza Hut,Pomidorowy z Tabasco,,8.4,0.3,0.4,0.7
+Pizza Hut,Rollsy z szynką,,556.1,24.1,36.0,32.0
+Pizza Hut,Serowy,,117.7,3.3,9.5,1.0
+Pizza Hut,Super Supreme,,64.5,3.1,3.2,3.1
+Pizza Hut,Sweet chili (FCD),,11.2,0.2,0.0,2.5
+Pizza Hut,Sweet chilli (DI),,11.2,0.2,0.0,2.5
+Pizza Hut,Vege Nacho Cheese,,502.3,19.9,37.3,24.4
+Pizza Hut,Wingsy z kurczaka,6 szt,376.2,36.7,23.2,4.4
 Pizzatopia,High Protein Pizza,,972.0,74.0,21.0,119.0
-Popeye's,3 Skrzydełek Classic/3 pc's Classic Wings,3 pc's,440.0,31.0,30.0,10.0
-Popeye's,5 Skrzydełek Classic/5 pc's Classic Wings,5 pc's,733.0,51.0,50.0,17.0
-Popeye's,8 Skrzydełek Classic/8 pc's Classic Wings,8 pc's,1172.0,82.0,79.0,28.0
 Popeye's,15 Skrzydełek Classic/15 pc's Classic Wings,15 pc's,2198.0,153.0,149.0,52.0
-Popeye's,3 Skrzydełka Classic z sosem Voodoo/3 pc's Voodoo Wings,3 pc's,546.0,28.0,34.0,12.0
-Popeye's,5 Skrzydełek Classic z sosem Voodoo/5 pc's Voodoo Wings,5 pc's,910.0,47.0,56.0,20.0
-Popeye's,8 Skrzydełek Classic z sosem Voodoo/8 pc's Voodoo Wings,8 pc's,1456.0,76.0,90.0,32.0
-Popeye's,3 Skrzydełka Classic z sosem Bold BBQ/3 pc's Bold BBQ Wings,3 pc's,466.0,29.0,27.0,9.4
-Popeye's,5 Skrzydełek Classic z sosem Bold BBQ/5 pc's Bold BBQ Wings,5 pc's,777.0,49.0,46.0,16.0
-Popeye's,8 Skrzydełek Classic z sosem Bold BBQ/8 pc's Bold BBQ Wings,8 pc's,1243.0,78.0,73.0,25.0
-Popeye's,3 Skrzydełka Classic z sosem Garlic & Parmesan/3 pc's Garlic & Parmesan Wings,3 pc's,603.0,31.0,47.0,12.0
-Popeye's,5 Skrzydełek Classic z sosem Garlic & Parmesan/5 pc's Garlic & Parmesan Wings,5 pc's,1005.0,51.0,78.0,20.0
-Popeye's,8 Skrzydełek Classic z sosem Garlic & Parmesan/8 pc's Garlic & Parmesan Wings,8 pc's,1608.0,82.0,125.0,32.0
-Popeye's,3 Skrzydełka Classic z sosem Hot Lemon Pepper/5 pc's Hot Lemon Pepper Wings,5 pc's,488.0,31.0,30.0,10.0
-Popeye's,5 Skrzydełka Classic z sosem Hot Lemon Pepper/5 pc's Hot Lemon Pepper Wings,5 pc's,813.0,51.0,50.0,17.0
-Popeye's,8 Skrzydełek Classic z sosem Hot Lemon Pepper/8 pc's Hot Lemon Pepper Wings,8 pc's,1301.0,82.0,80.0,28.0
-Popeye's,3 Skrzydełka Classic z sosem Swing Onion/3 pc's Swing Onion Wings,3 pc's,630.0,31.0,50.0,12.0
-Popeye's,5 Skrzydełek Classic z sosem Swing Onion/5 pc's Swing Onion Wings,5 pc's,1050.0,51.0,84.0,20.0
-Popeye's,8 Skrzydełek Classic z sosem Swing Onion/8 pc's Swing Onion Wings,8 pc's,1680.0,82.0,134.0,32.0
-Popeye's,3 Polędwiczki z kurczaka Classic/3 pc's Classic Chicken Tenders,3 pc's,482.0,38.0,27.0,10.0
-Popeye's,5 Polędwiczek z kurczaka Classic/5 pc's Classic Chicken Tenders,5 pc's,803.0,63.0,45.0,17.0
-Popeye's,8 Polędwiczek z kurczaka Classic/8 pc's Classic Chicken Tenders,8 pc's,1285.0,100.0,73.0,28.0
-Popeye's,3 Polędwiczki z kurczaka Spicy/3 pc's Spicy Chicken Tenders,3 pc's,441.0,33.0,25.0,9.8
-Popeye's,5 Polędwiczek z kurczaka Spicy/5 pc's Spicy Chicken Tenders,5 pc's,734.0,54.0,42.0,16.0
-Popeye's,8 Polędwiczek z kurczaka Spicy/8 pc's Spicy Chicken Tenders,8 pc's,1175.0,87.0,67.0,26.0
-Popeye's,3 Nuggetsy z kurczaka/3 pc's Fillet Nugget,3 pc's,242.0,15.0,15.0,5.5
-Popeye's,5 Nuggetsów z kurczaka/5 pc's Fillet Nugget,5 pc's,404.0,26.0,24.0,9.2
-Popeye's,8 Nuggetsów z kurczaka/8 pc's Fillet Nugget,8 pc's,646.0,41.0,39.0,15.0
 Popeye's,20 nuggetsów z kurczaka/20 pc's Fillet Nugget,20 pc's,1615.0,103.0,97.0,37.0
-Popeye's,3 Nuggetsy z kurczaka z sosem Voodoo/ 3 pc's Voodoo Fillet Nugget,3 pc's,278.0,17.0,13.0,5.0
-Popeye's,5 Nuggetsów z kurczaka z sosem Voodoo/ 5 pc's Voodoo Fillet Nugget,5 pc's,496.0,30.0,24.0,9.0
-Popeye's,8 Nuggetsów z kurczaka z sosem Voodoo/ 8 pc's Voodoo Fillet Nugget,8 pc's,823.0,49.0,40.0,15.0
 Popeye's,3 Nuggetsy z kurczaka z sosem Bold BBQ/ 3 pc's Bold BBQ Fillet Nugget,3 pc's,241.0,12.0,12.0,4.8
-Popeye's,5 Nuggetsów z kurczaka z sosem Bold BBQ/ 5 pc's Bold BBQ Fillet Nugget,5 pc's,434.0,21.0,22.0,8.6
-Popeye's,8 Nuggetsów z kurczaka z sosem Bold BBQ/ 8 pc's Bold BBQ Fillet Nugget,8 pc's,723.0,36.0,37.0,14.0
 Popeye's,3 Nuggetsy z kurczaka z sosem Garlic & Parmesan/3 pc's Garlic & Parmesan Fillet Nugget,3 pc's,329.0,16.0,23.0,6.4
-Popeye's,5 Nuggetsów z kurczaka z sosem Garlic & Parmesan/5 pc's Garlic & Parmesan Fillet Nugget,5 pc's,591.0,28.0,41.0,12.0
-Popeye's,8 Nuggetsów z kurczaka z sosem Garlic & Parmesan/8 pc's Garlic & Parmesan Fillet Nugget,8 pc's,988.0,47.0,69.0,19.0
 Popeye's,3 Nuggetsy z kurczaka z sosem Hot Lemon Pepper/3 pc's Hot Lemon Pepper Fillet Nugget,3 pc's,268.0,16.0,15.0,6.4
-Popeye's,5 Nuggetsów z kurczaka z sosem Hot Lemon Pepper/5 pc's Hot Lemon Pepper Fillet Nugget,5 pc's,480.0,28.0,26.0,12.0
-Popeye's,8 Nuggetsów z kurczaka z sosem Hot Lemon Pepper/8 pc's Hot Lemon Pepper Fillet Nugget,8 pc's,803.0,47.0,44.0,19.0
-Popeye's,3 Nuggetsy z kurczaka z sosem Swing Onion/3 pc's Swing Onion Fillet Nugget,3 pc's,347.0,16.0,25.0,6.4
-Popeye's,5 Nuggetsów z kurczaka z sosem Swing Onion/5 pc's Swing Onion Fillet Nugget,5 pc's,622.0,28.0,45.0,12.0
-Popeye's,8 Nuggetsów z kurczaka z sosem Swing Onion/8 pc's Swing Onion Fillet Nugget,8 pc's,1041.0,47.0,75.0,19.0
-Popeye's,Kanapka Cruncher Mild/ Cruncher Mild Sandwich,150 g,456.0,17.0,27.0,5.0
-Popeye's,Kanapka Cruncher Spicy/ Cruncher Spicy Sandwich,150 g,462.0,17.0,28.0,6.0
-Popeye's,Kanapka Cruncher BBQ/ Cruncher BBQ Sandwich,150 g,365.0,14.0,14.0,5.0
-Popeye's,Kanapka Chicken Sandwich Classic/Chicken Sandwich,240 g,715.0,35.0,39.0,8.2
-Popeye's,Kanapka Chicken Sandwich Pikantna/Spicy Chicken Sandwich,240 g,713.0,33.0,43.0,8.4
-Popeye's,Kanapka Chicken Sandwich Deluxe Classic/Chicken Sandwich Deluxe,300 g,753.0,34.0,47.0,12.0
-Popeye's,Kanapka Chicken Sandwich Deluxe Pikantna/ Spicy Chicken Sandwich Deluxe,300 g,738.0,32.0,45.0,11.0
-Popeye's,Kanapka Coleslaw Chicken Sandwich Classic/Coleslaw Chicken Sandwich,280 g,647.0,29.0,38.0,7.0
-Popeye's,Kanapka Chicken Sandwich Coleslaw Pikantna/Coleslaw Chicken Sandwich Spicy,280 g,672.0,27.0,41.0,7.6
-Popeye's,Kanapka Voodoo Chicken Sandwich/Voodoo Chicken Sandwich,271 g,808.0,30.0,51.0,10.0
-Popeye's,Wrap Chicken Classic/Classic Chicken Wrap,250 g,703.0,27.0,43.0,7.8
-Popeye's,Wrap Chicken Pikantny/Spicy Chicken Wrap,250 g,663.0,24.0,40.0,7.4
-Popeye's,Mini Wrap Classic/Classic Mini Wrap,120 g,388.0,14.0,24.0,4.0
-Popeye's,Mini Wrap Pikantny/Spicy Mini Wrap,120 g,394.0,14.0,25.0,4.3
-Popeye's,Kanapka Red Hot Honey Classic/ Red Hot Honey Classic Sandwich,298 g,682.0,37.0,25.0,5.7
-Popeye's,Wrap Red Hot Honey Classic/ Red Hot Honey Classic Wrap,290 g,690.0,28.0,35.0,7.1
-Popeye's,3 Skrzydełka Classic z sosem Red Hot Honey/ 3 pc's Red Hot Honey Wings,3 pc's,470.0,28.0,26.0,9.3
-Popeye's,5 Skrzydełek Classic z sosem Red Hot Honey/ 5 pc's Red Hot Honey Wings,5 pc's,783.0,47.0,43.0,16.0
-Popeye's,8 Skrzydełek Classic Red Hot Honey / 8 pc's Red Hot Honey Wings,8 pc's,1253.0,74.0,68.0,25.0
 Popeye's,3 Nuggetsy z kurczaka z sosem Red Hot Honey / 3 pc's Red Hot Honey Fillet Nuggets,3 pc's,222.0,14.0,10.0,3.9
+Popeye's,3 Nuggetsy z kurczaka z sosem Swing Onion/3 pc's Swing Onion Fillet Nugget,3 pc's,347.0,16.0,25.0,6.4
+Popeye's,3 Nuggetsy z kurczaka z sosem Voodoo/ 3 pc's Voodoo Fillet Nugget,3 pc's,278.0,17.0,13.0,5.0
+Popeye's,3 Nuggetsy z kurczaka/3 pc's Fillet Nugget,3 pc's,242.0,15.0,15.0,5.5
+Popeye's,3 Polędwiczki z kurczaka Classic/3 pc's Classic Chicken Tenders,3 pc's,482.0,38.0,27.0,10.0
+Popeye's,3 Polędwiczki z kurczaka Spicy/3 pc's Spicy Chicken Tenders,3 pc's,441.0,33.0,25.0,9.8
+Popeye's,3 Skrzydełek Classic/3 pc's Classic Wings,3 pc's,440.0,31.0,30.0,10.0
+Popeye's,3 Skrzydełka Classic z sosem Bold BBQ/3 pc's Bold BBQ Wings,3 pc's,466.0,29.0,27.0,9.4
+Popeye's,3 Skrzydełka Classic z sosem Garlic & Parmesan/3 pc's Garlic & Parmesan Wings,3 pc's,603.0,31.0,47.0,12.0
+Popeye's,3 Skrzydełka Classic z sosem Hot Lemon Pepper/5 pc's Hot Lemon Pepper Wings,5 pc's,488.0,31.0,30.0,10.0
+Popeye's,3 Skrzydełka Classic z sosem Red Hot Honey/ 3 pc's Red Hot Honey Wings,3 pc's,470.0,28.0,26.0,9.3
+Popeye's,3 Skrzydełka Classic z sosem Swing Onion/3 pc's Swing Onion Wings,3 pc's,630.0,31.0,50.0,12.0
+Popeye's,3 Skrzydełka Classic z sosem Voodoo/3 pc's Voodoo Wings,3 pc's,546.0,28.0,34.0,12.0
+Popeye's,5 Nuggetsów z kurczaka z sosem Bold BBQ/ 5 pc's Bold BBQ Fillet Nugget,5 pc's,434.0,21.0,22.0,8.6
+Popeye's,5 Nuggetsów z kurczaka z sosem Garlic & Parmesan/5 pc's Garlic & Parmesan Fillet Nugget,5 pc's,591.0,28.0,41.0,12.0
+Popeye's,5 Nuggetsów z kurczaka z sosem Hot Lemon Pepper/5 pc's Hot Lemon Pepper Fillet Nugget,5 pc's,480.0,28.0,26.0,12.0
 Popeye's,5 Nuggetsów z kurczaka z sosem Red Hot Honey Classic/ 5 pc's Red Hot Honey Fillet Nuggets,5 pc's,398.0,25.0,17.0,7.0
+Popeye's,5 Nuggetsów z kurczaka z sosem Swing Onion/5 pc's Swing Onion Fillet Nugget,5 pc's,622.0,28.0,45.0,12.0
+Popeye's,5 Nuggetsów z kurczaka z sosem Voodoo/ 5 pc's Voodoo Fillet Nugget,5 pc's,496.0,30.0,24.0,9.0
+Popeye's,5 Nuggetsów z kurczaka/5 pc's Fillet Nugget,5 pc's,404.0,26.0,24.0,9.2
+Popeye's,5 Polędwiczek z kurczaka Classic/5 pc's Classic Chicken Tenders,5 pc's,803.0,63.0,45.0,17.0
+Popeye's,5 Polędwiczek z kurczaka Spicy/5 pc's Spicy Chicken Tenders,5 pc's,734.0,54.0,42.0,16.0
+Popeye's,5 Skrzydełek Classic z sosem Bold BBQ/5 pc's Bold BBQ Wings,5 pc's,777.0,49.0,46.0,16.0
+Popeye's,5 Skrzydełek Classic z sosem Garlic & Parmesan/5 pc's Garlic & Parmesan Wings,5 pc's,1005.0,51.0,78.0,20.0
+Popeye's,5 Skrzydełek Classic z sosem Red Hot Honey/ 5 pc's Red Hot Honey Wings,5 pc's,783.0,47.0,43.0,16.0
+Popeye's,5 Skrzydełek Classic z sosem Swing Onion/5 pc's Swing Onion Wings,5 pc's,1050.0,51.0,84.0,20.0
+Popeye's,5 Skrzydełek Classic z sosem Voodoo/5 pc's Voodoo Wings,5 pc's,910.0,47.0,56.0,20.0
+Popeye's,5 Skrzydełek Classic/5 pc's Classic Wings,5 pc's,733.0,51.0,50.0,17.0
+Popeye's,5 Skrzydełka Classic z sosem Hot Lemon Pepper/5 pc's Hot Lemon Pepper Wings,5 pc's,813.0,51.0,50.0,17.0
+Popeye's,7UP Zero Cukru Wielka Dolewka/ refill,400 ml,4.0,0.16,0.0,1.0
+Popeye's,8 Nuggetsów z kurczaka z sosem Bold BBQ/ 8 pc's Bold BBQ Fillet Nugget,8 pc's,723.0,36.0,37.0,14.0
+Popeye's,8 Nuggetsów z kurczaka z sosem Garlic & Parmesan/8 pc's Garlic & Parmesan Fillet Nugget,8 pc's,988.0,47.0,69.0,19.0
+Popeye's,8 Nuggetsów z kurczaka z sosem Hot Lemon Pepper/8 pc's Hot Lemon Pepper Fillet Nugget,8 pc's,803.0,47.0,44.0,19.0
 Popeye's,8 Nuggetsów z kurczaka z sosem Red Hot Honey/ 8 pc's Red Hot Honey Fillet Nuggets,8 pc's,665.0,41.0,29.0,12.0
-Popeye's,Frytki Classic Średnie/Fries Classic Medium,100 g,317.0,2.0,15.0,43.0
-Popeye's,Frytki Classic Duże/Fries Classic Large,140 g,444.0,2.8,21.0,60.0
-Popeye's,Frytki z przyprawą Cajun Średnie/Cajun Fries Medium,100 g,299.0,2.1,14.0,42.0
-Popeye's,Frytki z przyprawą Cajun Duże/Cajun Fries Large,140 g,419.0,2.9,20.0,58.0
-Popeye's,Frytki Supreme Cheese & Spring Onion/ Cheese & Spring Onion Supreme Fries,190 g,502.0,3.8,28.0,57.0
-Popeye's,Frytki Supreme Cheese & Bacon / Cheese & Bacon Supreme Fries,190 g,543.0,4.7,32.0,51.0
-Popeye's,Sałatka Coleslaw/Coleslaw,110 g,188.0,0.55,18.0,6.2
-Popeye's,"Śniadaniowy tost Cajun z bekonem, jajkiem i serem/ Cajun Breakfast Bacon&Egg&Cheese Toast",160 g,478.0,21.0,26.0,39.0
-Popeye's,Tost Cajun z bekonem i serem/ Cajun Bacon&Cheese Toast,100 g,359.0,12.0,17.0,38.0
-Popeye's,Wrap śniadaniowy Cajun/ Cajun Breakfast Wrap,180 g,574.0,24.0,38.0,32.0
-Popeye's,Deluxe śniadaniowa kanapka Cajun/ Cajun Deluxe Breakfast Sandwich,235 g,653.0,27.0,42.0,36.0
-Popeye's,Hashbrown Cajun/ Cajun Hashbrown,65 g,175.0,0.63,11.0,17.0
-Popeye's,Talerz śniadaniowy z tostem z serem/ Breakfast Plate With Cheese Toast,300 g,579.0,2.2,34.0,41.0
-Popeye's,Ciastka z kremem kakaowym z dodatkami (sos o smaku czekoladowym) (3 szt.) /New Orleans Beignets with additives (chocolate flavour sauce) (3 pc's),105 g,439.0,4.4,25.0,48.0
+Popeye's,8 Nuggetsów z kurczaka z sosem Swing Onion/8 pc's Swing Onion Fillet Nugget,8 pc's,1041.0,47.0,75.0,19.0
+Popeye's,8 Nuggetsów z kurczaka z sosem Voodoo/ 8 pc's Voodoo Fillet Nugget,8 pc's,823.0,49.0,40.0,15.0
+Popeye's,8 Nuggetsów z kurczaka/8 pc's Fillet Nugget,8 pc's,646.0,41.0,39.0,15.0
+Popeye's,8 Polędwiczek z kurczaka Classic/8 pc's Classic Chicken Tenders,8 pc's,1285.0,100.0,73.0,28.0
+Popeye's,8 Polędwiczek z kurczaka Spicy/8 pc's Spicy Chicken Tenders,8 pc's,1175.0,87.0,67.0,26.0
+Popeye's,8 Skrzydełek Classic Red Hot Honey / 8 pc's Red Hot Honey Wings,8 pc's,1253.0,74.0,68.0,25.0
+Popeye's,8 Skrzydełek Classic z sosem Bold BBQ/8 pc's Bold BBQ Wings,8 pc's,1243.0,78.0,73.0,25.0
+Popeye's,8 Skrzydełek Classic z sosem Garlic & Parmesan/8 pc's Garlic & Parmesan Wings,8 pc's,1608.0,82.0,125.0,32.0
+Popeye's,8 Skrzydełek Classic z sosem Hot Lemon Pepper/8 pc's Hot Lemon Pepper Wings,8 pc's,1301.0,82.0,80.0,28.0
+Popeye's,8 Skrzydełek Classic z sosem Swing Onion/8 pc's Swing Onion Wings,8 pc's,1680.0,82.0,134.0,32.0
+Popeye's,8 Skrzydełek Classic z sosem Voodoo/8 pc's Voodoo Wings,8 pc's,1456.0,76.0,90.0,32.0
+Popeye's,8 Skrzydełek Classic/8 pc's Classic Wings,8 pc's,1172.0,82.0,79.0,28.0
+Popeye's,Americano 200ml,200 ml,0.0,0.0,0.0,0.0
+Popeye's,Americano 400ml,400 ml,0.0,0.0,0.0,0.0
+Popeye's,Caffe Latte 200ml,200 ml,68.0,4.2,2.8,6.6
+Popeye's,Caffe Latte 400ml,400 ml,126.0,7.9,5.1,12.0
+Popeye's,Cappuccino 200ml,200 ml,49.0,2.9,2.0,4.7
+Popeye's,Cappuccino 400ml,400 ml,99.0,6.0,4.0,8.8
+Popeye's,Ciastka z kremem kakaowym (3 szt) /New Orleans Beignets (3 pc's),92 g,393.0,4.0,25.0,38.0
+Popeye's,Ciastka z kremem kakaowym (5 szt) /New Orleans Beignets (5 pc's),153 g,653.0,6.7,41.0,63.0
+Popeye's,Ciastka z kremem kakaowym (8 szt) /New Orleans Beignets (8 pc's),244 g,1042.0,11.0,66.0,100.0
 Popeye's,Ciastka z kremem kakaowym z dodatkami (baza truskawkowa) (3 szt.) /New Orleans Beignets with additives (strawberry base) (3 pc's),105 g,407.0,4.1,25.0,49.0
-Popeye's,Ciastka z kremem kakaowym z dodatkami (sos karmelowy) (3 szt.) /New Orleans Beignets with additives (carmel sauce) (3 pc's),105 g,440.0,4.4,25.0,49.0
-Popeye's,Ciastka z kremem kakaowym z dodatkami (sos o smaku czekoladowym) (5 szt.) /New Orleans Beignets with additives (chocolate flavour sauce) (5 pc's),175 g,732.0,7.4,42.0,80.0
 Popeye's,Ciastka z kremem kakaowym z dodatkami (baza truskawkowa) (5 szt.) /New Orleans Beignets with additives (strawberry base) (3 pc's),175 g,679.0,6.8,41.0,82.0
+Popeye's,Ciastka z kremem kakaowym z dodatkami (sos karmelowy) (3 szt.) /New Orleans Beignets with additives (carmel sauce) (3 pc's),105 g,440.0,4.4,25.0,49.0
 Popeye's,Ciastka z kremem kakaowym z dodatkami (sos karmelowy) (5 szt.) /New Orleans Beignets with additives (carmel sauce) (5 pc's),175 g,733.0,7.4,42.0,82.0
+Popeye's,Ciastka z kremem kakaowym z dodatkami (sos o smaku czekoladowym) (3 szt.) /New Orleans Beignets with additives (chocolate flavour sauce) (3 pc's),105 g,439.0,4.4,25.0,48.0
+Popeye's,Ciastka z kremem kakaowym z dodatkami (sos o smaku czekoladowym) (5 szt.) /New Orleans Beignets with additives (chocolate flavour sauce) (5 pc's),175 g,732.0,7.4,42.0,80.0
+Popeye's,Deluxe śniadaniowa kanapka Cajun/ Cajun Deluxe Breakfast Sandwich,235 g,653.0,27.0,42.0,36.0
 Popeye's,Dip Bayou Buffalo/Bayou Buffalo Dip,25 ml,22.0,0.1,1.3,2.1
 Popeye's,Dip Blackened Ranch/Blackened Runch Dip,25 ml,83.0,0.68,2.4,2.3
 Popeye's,Dip Bold BBQ/Bold BBQ Dip,25 ml,45.0,0.73,0.0,10.0
+Popeye's,Dip Czosnkowy/Garlic Dip,25 ml,85.0,0.33,2.5,1.3
 Popeye's,Dip Mardi Gras/Mardi Gras Dip,25 ml,88.0,0.45,2.1,4.3
 Popeye's,Dip Nola/Nola Dip,25 ml,83.0,0.5,2.1,4.3
-Popeye's,Dip Czosnkowy/Garlic Dip,25 ml,85.0,0.33,2.5,1.3
+Popeye's,Double Espresso,69 g,0.0,0.0,0.0,0.0
+Popeye's,Espresso,30 g,0.0,0.0,0.0,0.0
+Popeye's,Espresso Macchiato,78 g,28.0,1.7,1.1,2.7
+Popeye's,Flat White 200ml,200 ml,49.0,3.0,2.0,4.7
+Popeye's,Flat White 400ml,400 ml,79.0,4.9,3.2,7.5
+Popeye's,Frytki Classic Duże/Fries Classic Large,140 g,444.0,2.8,21.0,60.0
+Popeye's,Frytki Classic Średnie/Fries Classic Medium,100 g,317.0,2.0,15.0,43.0
+Popeye's,Frytki Supreme Cheese & Bacon / Cheese & Bacon Supreme Fries,190 g,543.0,4.7,32.0,51.0
+Popeye's,Frytki Supreme Cheese & Spring Onion/ Cheese & Spring Onion Supreme Fries,190 g,502.0,3.8,28.0,57.0
+Popeye's,Frytki z przyprawą Cajun Duże/Cajun Fries Large,140 g,419.0,2.9,20.0,58.0
+Popeye's,Frytki z przyprawą Cajun Średnie/Cajun Fries Medium,100 g,299.0,2.1,14.0,42.0
+Popeye's,Hashbrown Cajun/ Cajun Hashbrown,65 g,175.0,0.63,11.0,17.0
+Popeye's,Herbata czarna 400ml/ black tea 400ml,400 ml,0.0,0.0,0.0,0.0
+Popeye's,Kanapka Chicken Sandwich Classic/Chicken Sandwich,240 g,715.0,35.0,39.0,8.2
+Popeye's,Kanapka Chicken Sandwich Coleslaw Pikantna/Coleslaw Chicken Sandwich Spicy,280 g,672.0,27.0,41.0,7.6
+Popeye's,Kanapka Chicken Sandwich Deluxe Classic/Chicken Sandwich Deluxe,300 g,753.0,34.0,47.0,12.0
+Popeye's,Kanapka Chicken Sandwich Deluxe Pikantna/ Spicy Chicken Sandwich Deluxe,300 g,738.0,32.0,45.0,11.0
+Popeye's,Kanapka Chicken Sandwich Pikantna/Spicy Chicken Sandwich,240 g,713.0,33.0,43.0,8.4
+Popeye's,Kanapka Coleslaw Chicken Sandwich Classic/Coleslaw Chicken Sandwich,280 g,647.0,29.0,38.0,7.0
+Popeye's,Kanapka Cruncher BBQ/ Cruncher BBQ Sandwich,150 g,365.0,14.0,14.0,5.0
+Popeye's,Kanapka Cruncher Mild/ Cruncher Mild Sandwich,150 g,456.0,17.0,27.0,5.0
+Popeye's,Kanapka Cruncher Spicy/ Cruncher Spicy Sandwich,150 g,462.0,17.0,28.0,6.0
+Popeye's,Kanapka Red Hot Honey Classic/ Red Hot Honey Classic Sandwich,298 g,682.0,37.0,25.0,5.7
+Popeye's,Kanapka Voodoo Chicken Sandwich/Voodoo Chicken Sandwich,271 g,808.0,30.0,51.0,10.0
+Popeye's,Kawa z mlekiem 200ml/ coffee with milk 200ml,200 ml,40.0,2.4,1.6,3.8
+Popeye's,Kawa z mlekiem 400ml/ coffee with milk 400ml,400 ml,65.0,3.9,2.6,6.0
 Popeye's,Ketchup,10 ml,10.0,0.18,0.0,2.3
+Popeye's,Lemoniada Truskawkowa/Strawberry Lemonade,400 ml,136.0,0.06,0.0,34.0
+Popeye's,Lemoniada/ Lemonade,400 ml,72.0,0.01,0.0,18.0
+Popeye's,Lipton Green Tea Wielka Dolewka/ refill,400 ml,72.0,0.04,0.0,18.0
+Popeye's,Lipton Ice Tea Lemon Wielka Dolewka/ refill,400 ml,76.0,0.12,0.0,18.0
 Popeye's,Majonez/ Mayo,10 ml,66.0,0.14,7.2,3.0
-Popeye's,Sos Voodoo/Voodoo Sauce,200 g,398.0,6.4,0.0,96.0
-Popeye's,Sos Voodoo/Voodoo Sauce,500 g,995.0,16.0,0.0,240.0
+Popeye's,Mała Lemoniada Truskawkowa/Small Strawberry Lemonade,200 ml,68.0,0.03,0.0,17.0
+Popeye's,Mała Lemoniada/Small Lemonade,200 ml,36.0,0.07,0.0,8.8
+Popeye's,Mały Shake Czekoladowy/Chocolate Shake,200 ml,318.0,4.5,12.0,50.0
+Popeye's,Mały Shake Karmelowy/Caramel Shake,200 ml,324.0,4.4,12.0,51.0
+Popeye's,Mały Shake Truskawkowy/Small Strawberry Shake,200 ml,312.0,4.1,11.0,50.0
+Popeye's,Mały Shake Waniliowy/Small Vanilla Shake,200 ml,306.0,5.0,13.0,43.0
+Popeye's,Mały Shake o smaku jagody i orzeszków ziemnych/Small Blueberry & Peanut Premium Shake,200 ml,430.0,2.4,23.0,55.0
+Popeye's,Mały Shake o smaku truskawki i lemoniady/Small Strawberry & Lemon Premium Shake,200 ml,359.0,4.5,13.0,57.0
+Popeye's,Mały Shake z ciasteczkami Lotus/Small Lotus Biscoff Premium Shake,200 ml,398.0,5.0,17.0,58.0
+Popeye's,Mini Wrap Classic/Classic Mini Wrap,120 g,388.0,14.0,24.0,4.0
+Popeye's,Mini Wrap Pikantny/Spicy Mini Wrap,120 g,394.0,14.0,25.0,4.3
+Popeye's,Mirinda Zero Cukru Wielka Dolewka/ refill,400 ml,4.0,0.08,0.0,1.0
+Popeye's,Owocowa herbata 400ml/ fruit tea 400ml,400 ml,0.0,0.0,0.0,0.0
+Popeye's,Pepsi Wielka Dolewka/ refill,400 ml,112.0,0.03,0.0,28.0
+Popeye's,Pepsi Zero Cukru Wielka Dolewka/ refill,400 ml,4.0,0.08,0.0,1.0
+Popeye's,Sałatka Coleslaw/Coleslaw,110 g,188.0,0.55,18.0,6.2
+Popeye's,Shake Czekoladowy/Chocolate Shake,400 ml,636.0,9.0,24.0,100.0
+Popeye's,Shake Karmelowy/Caramel Shake,400 ml,648.0,8.8,23.0,102.0
+Popeye's,Shake Truskawkowy/Strawberry Shake,400 ml,624.0,8.2,22.0,101.0
+Popeye's,Shake Waniliowy/Small Vanilla Shake,400 ml,629.0,10.2,27.0,89.0
+Popeye's,Shake o smaku jagody i orzeszków ziemnych/Blueberry & Peanut Premium Shake,400 ml,879.0,5.0,47.0,112.0
+Popeye's,Shake o smaku truskawki i lemoniady/Strawberry & Lemon Premium Shake,400 ml,749.0,9.3,28.0,119.0
+Popeye's,Shake z ciasteczkami Lotus/Lotus Biscoff Premium Shake,400 ml,796.0,10.0,34.0,116.0
+Popeye's,Sos Ghost BBQ/ Ghost BBQ Sauce,200 g,300.0,5.0,0.6,72.0
+Popeye's,Sos Ghost BBQ/ Ghost BBQ Sauce,500 g,750.0,13.0,1.5,180.0
 Popeye's,Sos Ranch/Ranch Sauce,200 g,1144.0,4.2,122.0,10.0
 Popeye's,Sos Ranch/Ranch Sauce,500 g,2860.0,11.0,305.0,26.0
+Popeye's,Sos Red Hot Honey/ Red Hot Honey Sauce,200 g,406.0,6.2,0.0,100.0
+Popeye's,Sos Red Hot Honey/ Red Hot Honey Sauce,500 g,1015.0,16.0,0.0,250.0
 Popeye's,Sos Serowy/Cheese Sauce,200 g,476.0,5.6,36.0,26.0
 Popeye's,Sos Serowy/Cheese Sauce,500 g,1190.0,14.0,91.0,65.0
 Popeye's,Sos Swing Onion /Swing Onion Sauce,200 g,1264.0,4.2,130.0,11.0
 Popeye's,Sos Swing Onion /Swing Onion Sauce,500 g,3160.0,11.0,325.0,27.0
-Popeye's,Sos Ghost BBQ/ Ghost BBQ Sauce,200 g,300.0,5.0,0.6,72.0
-Popeye's,Sos Ghost BBQ/ Ghost BBQ Sauce,500 g,750.0,13.0,1.5,180.0
-Popeye's,Sos Red Hot Honey/ Red Hot Honey Sauce,200 g,406.0,6.2,0.0,100.0
-Popeye's,Sos Red Hot Honey/ Red Hot Honey Sauce,500 g,1015.0,16.0,0.0,250.0
-Popeye's,Mały Shake Waniliowy/Small Vanilla Shake,200 ml,306.0,5.0,13.0,43.0
-Popeye's,Shake Waniliowy/Small Vanilla Shake,400 ml,629.0,10.2,27.0,89.0
-Popeye's,Mały Shake Truskawkowy/Small Strawberry Shake,200 ml,312.0,4.1,11.0,50.0
-Popeye's,Shake Truskawkowy/Strawberry Shake,400 ml,624.0,8.2,22.0,101.0
-Popeye's,Mały Shake Karmelowy/Caramel Shake,200 ml,324.0,4.4,12.0,51.0
-Popeye's,Shake Karmelowy/Caramel Shake,400 ml,648.0,8.8,23.0,102.0
-Popeye's,Mały Shake Czekoladowy/Chocolate Shake,200 ml,318.0,4.5,12.0,50.0
-Popeye's,Shake Czekoladowy/Chocolate Shake,400 ml,636.0,9.0,24.0,100.0
-Popeye's,Mały Shake o smaku truskawki i lemoniady/Small Strawberry & Lemon Premium Shake,200 ml,359.0,4.5,13.0,57.0
-Popeye's,Shake o smaku truskawki i lemoniady/Strawberry & Lemon Premium Shake,400 ml,749.0,9.3,28.0,119.0
-Popeye's,Mały Shake z ciasteczkami Lotus/Small Lotus Biscoff Premium Shake,200 ml,398.0,5.0,17.0,58.0
-Popeye's,Shake z ciasteczkami Lotus/Lotus Biscoff Premium Shake,400 ml,796.0,10.0,34.0,116.0
-Popeye's,Mały Shake o smaku jagody i orzeszków ziemnych/Small Blueberry & Peanut Premium Shake,200 ml,430.0,2.4,23.0,55.0
-Popeye's,Shake o smaku jagody i orzeszków ziemnych/Blueberry & Peanut Premium Shake,400 ml,879.0,5.0,47.0,112.0
-Popeye's,Ciastka z kremem kakaowym (3 szt) /New Orleans Beignets (3 pc's),92 g,393.0,4.0,25.0,38.0
-Popeye's,Ciastka z kremem kakaowym (5 szt) /New Orleans Beignets (5 pc's),153 g,653.0,6.7,41.0,63.0
-Popeye's,Ciastka z kremem kakaowym (8 szt) /New Orleans Beignets (8 pc's),244 g,1042.0,11.0,66.0,100.0
-Popeye's,Espresso,30 g,0.0,0.0,0.0,0.0
-Popeye's,Double Espresso,69 g,0.0,0.0,0.0,0.0
-Popeye's,Espresso Macchiato,78 g,28.0,1.7,1.1,2.7
-Popeye's,Americano 200ml,200 ml,0.0,0.0,0.0,0.0
-Popeye's,Americano 400ml,400 ml,0.0,0.0,0.0,0.0
-Popeye's,Kawa z mlekiem 200ml/ coffee with milk 200ml,200 ml,40.0,2.4,1.6,3.8
-Popeye's,Kawa z mlekiem 400ml/ coffee with milk 400ml,400 ml,65.0,3.9,2.6,6.0
-Popeye's,Cappuccino 200ml,200 ml,49.0,2.9,2.0,4.7
-Popeye's,Cappuccino 400ml,400 ml,99.0,6.0,4.0,8.8
-Popeye's,Caffe Latte 200ml,200 ml,68.0,4.2,2.8,6.6
-Popeye's,Caffe Latte 400ml,400 ml,126.0,7.9,5.1,12.0
-Popeye's,Flat White 200ml,200 ml,49.0,3.0,2.0,4.7
-Popeye's,Flat White 400ml,400 ml,79.0,4.9,3.2,7.5
-Popeye's,Herbata czarna 400ml/ black tea 400ml,400 ml,0.0,0.0,0.0,0.0
+Popeye's,Sos Voodoo/Voodoo Sauce,200 g,398.0,6.4,0.0,96.0
+Popeye's,Sos Voodoo/Voodoo Sauce,500 g,995.0,16.0,0.0,240.0
+Popeye's,Talerz śniadaniowy z tostem z serem/ Breakfast Plate With Cheese Toast,300 g,579.0,2.2,34.0,41.0
+Popeye's,Tost Cajun z bekonem i serem/ Cajun Bacon&Cheese Toast,100 g,359.0,12.0,17.0,38.0
+Popeye's,Wrap Chicken Classic/Classic Chicken Wrap,250 g,703.0,27.0,43.0,7.8
+Popeye's,Wrap Chicken Pikantny/Spicy Chicken Wrap,250 g,663.0,24.0,40.0,7.4
+Popeye's,Wrap Red Hot Honey Classic/ Red Hot Honey Classic Wrap,290 g,690.0,28.0,35.0,7.1
+Popeye's,Wrap śniadaniowy Cajun/ Cajun Breakfast Wrap,180 g,574.0,24.0,38.0,32.0
 Popeye's,Zielona herbata 400ml/ green tea 400ml,400 ml,0.0,0.0,0.0,0.0
-Popeye's,Owocowa herbata 400ml/ fruit tea 400ml,400 ml,0.0,0.0,0.0,0.0
-Popeye's,Pepsi Wielka Dolewka/ refill,400 ml,112.0,0.03,0.0,28.0
-Popeye's,Pepsi Zero Cukru Wielka Dolewka/ refill,400 ml,4.0,0.08,0.0,1.0
-Popeye's,Mirinda Zero Cukru Wielka Dolewka/ refill,400 ml,4.0,0.08,0.0,1.0
-Popeye's,7UP Zero Cukru Wielka Dolewka/ refill,400 ml,4.0,0.16,0.0,1.0
-Popeye's,Lipton Green Tea Wielka Dolewka/ refill,400 ml,72.0,0.04,0.0,18.0
-Popeye's,Lipton Ice Tea Lemon Wielka Dolewka/ refill,400 ml,76.0,0.12,0.0,18.0
-Popeye's,Mała Lemoniada Truskawkowa/Small Strawberry Lemonade,200 ml,68.0,0.03,0.0,17.0
-Popeye's,Lemoniada Truskawkowa/Strawberry Lemonade,400 ml,136.0,0.06,0.0,34.0
-Popeye's,Mała Lemoniada/Small Lemonade,200 ml,36.0,0.07,0.0,8.8
-Popeye's,Lemoniada/ Lemonade,400 ml,72.0,0.01,0.0,18.0
+Popeye's,"Śniadaniowy tost Cajun z bekonem, jajkiem i serem/ Cajun Breakfast Bacon&Egg&Cheese Toast",160 g,478.0,21.0,26.0,39.0
+Salad Story,"Ananas, Mango/Pineapple, Mango",,144.0,0.0,0.0,37.0
+Salad Story,Avo Green Goddess,,118.0,0.0,8.0,9.0
 Salad Story,Awokado Kurczak,,313.0,19.0,13.0,20.0
 Salad Story,Awokado Kurczak,powiększona/larger portion,454.0,20.0,21.0,28.0
-Salad Story,Cezar,,363.0,18.0,17.0,18.0
-Salad Story,Cezar,powiększona/larger portion,431.0,24.0,21.0,24.0
-Salad Story,Cobb,,476.0,32.0,31.0,15.0
-Salad Story,Kurczak Batat,,306.0,18.0,5.0,34.0
-Salad Story,Kurczak Batat,powiększona/larger portion,476.0,22.0,10.0,37.0
-Salad Story,Mango Kurczak,,220.0,16.0,2.0,24.0
-Salad Story,Mango Kurczak,powiększona/larger portion,316.0,14.0,6.0,41.0
-Salad Story,Łosoś Quinoa,,317.0,20.0,13.0,26.0
-Salad Story,Łosoś Quinoa,powiększona/larger portion,417.0,22.0,5.0,34.0
-Salad Story,Tofu Mango,,275.0,12.0,12.0,27.0
-Salad Story,Tofu Mango,powiększona/larger portion,361.0,13.0,18.0,26.0
-Salad Story,Niceska/Nicoise,,250.0,12.0,17.0,17.0
-Salad Story,Niceska/Nicoise,powiększona/larger portion,347.0,13.0,9.0,23.0
-Salad Story,Wołowina Teriyaki/Beef Teriyaki,,411.0,18.0,20.0,26.0
-Salad Story,Wołowina Teriyaki/Beef Teriyaki,powiększona/larger portion,495.0,23.0,17.0,28.0
-Salad Story,Kurczak Teriyaki/Chicken Teriyaki,,504.0,33.0,8.0,60.0
-Salad Story,Meksykański z wołowiną/Mexican with beef,,478.0,31.0,6.0,52.0
-Salad Story,Pasta Mozzarella,,404.0,13.0,14.0,61.0
-Salad Story,Proteinowy kurczak,,438.0,33.0,9.0,37.0
+Salad Story,Bowl Jajecznica+Awokado/Scrambled Eggs and Avocado Bowl,,410.0,18.0,30.0,18.0
+Salad Story,Bowl Jajecznica+Bekon/Scrambled Eggs and Bacon Bowl,,415.0,23.0,30.0,15.0
+Salad Story,Bowl Jajecznica+Twarożek/Scrambled Eggs and Cottage Cheese Bowl,,385.0,25.0,17.0,24.0
+Salad Story,Bowl Jajecznica+Łosoś/Scrambled Eggs and Salmon Bowl,,394.0,23.0,21.0,17.0
+Salad Story,Box Jajecznica+Bekon/Box Scrambled Eggs with Bacon,,520.0,31.0,43.0,16.0
+Salad Story,Box Jajecznica+Łosoś/Box Scrambled Eggs and Salmon,,501.0,28.0,34.0,17.0
 Salad Story,Burrito Kurczak/Burrito Chicken,,384.0,35.0,13.0,34.0
 Salad Story,Burrito Kurczak/Burrito Chicken,powiększona/larger portion,693.0,36.0,34.0,51.0
 Salad Story,California Kurczak Bekon/California Chicken Bacon,,412.0,19.0,13.0,42.0
 Salad Story,California Kurczak Bekon/California Chicken Bacon,powiększona/larger portion,517.0,26.0,12.0,52.0
-Salad Story,Teriyaki,,651.0,33.0,31.0,35.0
-Salad Story,Teriyaki,powiększona/larger portion,679.0,42.0,17.0,49.0
-Salad Story,Wega Mango Seitan,,571.0,30.0,5.0,61.0
-Salad Story,Wega Mango Seitan,powiększona/larger portion,603.0,34.0,12.0,59.0
+Salad Story,Cezar,,363.0,18.0,17.0,18.0
+Salad Story,Cezar,powiększona/larger portion,431.0,24.0,21.0,24.0
+Salad Story,Chia/Chia dessert,,332.0,9.0,20.0,29.0
+Salad Story,Cobb,,476.0,32.0,31.0,15.0
+Salad Story,Dressing botwinkowy/Beetroot Leaf Dressing,,63.0,1.0,4.0,4.0
+Salad Story,Fistaszkowy/Peanut,,216.0,3.0,20.0,5.0
+Salad Story,Grecka Quesadilla Snack/Greek Quesadilla Snack,,287.0,10.0,10.0,31.0
+Salad Story,Iced Tea Brzoskwiniowa/Iced Tea Peach,,162.0,0.0,0.0,39.0
+Salad Story,Iced Tea Cytrynowa/Iced Tea Lemon,,145.0,0.0,0.0,32.0
+Salad Story,Jogurt z granolą/Yoghurt with granola,,373.0,4.0,6.0,53.0
+Salad Story,Jogurtowy/Yoghurt,,69.0,2.0,4.0,3.0
+Salad Story,Kurczak Batat,,306.0,18.0,5.0,34.0
+Salad Story,Kurczak Batat,powiększona/larger portion,476.0,22.0,10.0,37.0
+Salad Story,Kurczak Chili/Chicken Chili,,432.0,15.0,10.0,52.0
+Salad Story,Kurczak Teriyaki/Chicken Teriyaki,,504.0,33.0,8.0,60.0
+Salad Story,Lemoniada Kolagenowa Malinowa/Raspberry Lemonade with Collagen,,69.0,1.0,0.0,18.0
+Salad Story,Limonkowa Mex/Lime Mex,,93.0,0.0,0.0,19.0
+Salad Story,Mango Kurczak,,220.0,16.0,2.0,24.0
+Salad Story,Mango Kurczak,powiększona/larger portion,316.0,14.0,6.0,41.0
+Salad Story,Meksykański z wołowiną/Mexican with beef,,478.0,31.0,6.0,52.0
+Salad Story,Mozzarella Awokado/Mozzarella Avocado,,320.0,13.0,24.0,24.0
 Salad Story,Mozzarella Kurczak/Mozzarella Chicken,,540.0,35.0,25.0,25.0
 Salad Story,Mozzarella Kurczak/Mozzarella Chicken,powiększona/larger portion,560.0,31.0,12.0,56.0
-Salad Story,Santorini Kurczak/Santorini Chicken,,510.0,21.0,26.0,42.0
-Salad Story,Santorini Kurczak/Santorini Chicken,powiększona/larger portion,540.0,24.0,15.0,48.0
-Salad Story,Tajski Kurczak/Thai Chicken,,476.0,20.0,18.0,46.0
-Salad Story,Tajski Kurczak/Thai Chicken,powiększona/larger portion,460.0,25.0,16.0,54.0
-Salad Story,Tunczyk Awokado/Tuna Avocado,,464.0,30.0,21.0,34.0
-Salad Story,Tunczyk Awokado/Tuna Avocado,powiększona/larger portion,435.0,28.0,11.0,43.0
-Salad Story,Wołowina Bekon/Beef Bacon,,519.0,31.0,24.0,39.0
-Salad Story,Wołowina Bekon/Beef Bacon,powiększona/larger portion,550.0,39.0,15.0,38.0
-Salad Story,Orientalny Kurczak/Oriental Chicken,,207.0,10.0,12.0,20.0
-Salad Story,Mozzarella Awokado/Mozzarella Avocado,,320.0,13.0,24.0,24.0
-Salad Story,Urban Mix,,479.0,9.0,4.0,47.0
-Salad Story,Kurczak Chili/Chicken Chili,,432.0,15.0,10.0,52.0
-Salad Story,Quesadilla Snack,,216.0,8.0,6.0,27.0
+Salad Story,Musztardowo-Miodowy/Mustard and honey,,93.0,0.0,2.0,10.0
 Salad Story,Nachos,,193.0,2.0,10.0,22.0
+Salad Story,Niceska/Nicoise,,250.0,12.0,17.0,17.0
+Salad Story,Niceska/Nicoise,powiększona/larger portion,347.0,13.0,9.0,23.0
+Salad Story,Orientalne chili/Oriental chili,,74.0,0.0,1.0,12.0
+Salad Story,Orientalny Kurczak/Oriental Chicken,,207.0,10.0,12.0,20.0
+Salad Story,Owocowe Cudo/Fruity Miracle,,129.0,0.0,0.0,33.0
+Salad Story,Owsianka/Oatmeal,,426.0,9.0,11.0,53.0
+Salad Story,Paluch buraczkowy/beetroot bread,,141.0,5.0,4.0,24.0
+Salad Story,Paluch z ziarnami/Bread with seeds,,141.0,5.0,4.0,24.0
+Salad Story,Pasta Mozzarella,,404.0,13.0,14.0,61.0
 Salad Story,Pieczone Ziemniaki/Baked Potatoes,,127.0,3.0,1.0,17.0
 Salad Story,Pieczony batat/Baked sweet potato,,97.0,2.0,0.0,12.0
 Salad Story,Proteinowa/Protein,,128.0,10.0,1.0,11.0
-Salad Story,Avo Green Goddess,,118.0,0.0,8.0,9.0
-Salad Story,Fistaszkowy/Peanut,,216.0,3.0,20.0,5.0
-Salad Story,Jogurtowy/Yoghurt,,69.0,2.0,4.0,3.0
-Salad Story,Musztardowo-Miodowy/Mustard and honey,,93.0,0.0,2.0,10.0
-Salad Story,Orientalne chili/Oriental chili,,74.0,0.0,1.0,12.0
-Salad Story,Teriyaki,,139.0,0.0,2.0,27.0
-Salad Story,Vegan Aioli,,172.0,0.0,18.0,4.0
-Salad Story,Vinaigrette,,63.0,0.0,5.0,1.0
-Salad Story,"Ananas, Mango/Pineapple, Mango",,144.0,0.0,0.0,37.0
-Salad Story,Owocowe Cudo/Fruity Miracle,,129.0,0.0,0.0,33.0
-Salad Story,Warzywny Detoks/Vegetable Detox,,140.0,2.0,0.0,31.0
-Salad Story,Zielona Energia/Green Energy,,193.0,1.0,0.0,41.0
-Salad Story,Truskawkowa Margarita/Strawberry Margarita,,112.0,1.0,0.0,28.0
-Salad Story,Limonkowa Mex/Lime Mex,,93.0,0.0,0.0,19.0
-Salad Story,Iced Tea Brzoskwiniowa/Iced Tea Peach,,162.0,0.0,0.0,39.0
-Salad Story,Iced Tea Cytrynowa/Iced Tea Lemon,,145.0,0.0,0.0,32.0
-Salad Story,Toskański Krem Pomidorowy/Tuscan Tomato Cream Soup,,190.0,5.0,8.0,19.0
-Salad Story,Chia/Chia dessert,,332.0,9.0,20.0,29.0
-Salad Story,Jogurt z granolą/Yoghurt with granola,,373.0,4.0,6.0,53.0
-Salad Story,Owsianka/Oatmeal,,426.0,9.0,11.0,53.0
-Salad Story,Bowl Jajecznica+Awokado/Scrambled Eggs and Avocado Bowl,,410.0,18.0,30.0,18.0
-Salad Story,Bowl Jajecznica+Bekon/Scrambled Eggs and Bacon Bowl,,415.0,23.0,30.0,15.0
-Salad Story,Bowl Jajecznica+Łosoś/Scrambled Eggs and Salmon Bowl,,394.0,23.0,21.0,17.0
-Salad Story,Bowl Jajecznica+Twarożek/Scrambled Eggs and Cottage Cheese Bowl,,385.0,25.0,17.0,24.0
-Salad Story,Box Jajecznica+Bekon/Box Scrambled Eggs with Bacon,,520.0,31.0,43.0,16.0
-Salad Story,Box Jajecznica+Łosoś/Box Scrambled Eggs and Salmon,,501.0,28.0,34.0,17.0
-Salad Story,Wrap Jajecznica+Awokado/Wrap with Scrambled Eggs and Avocado,,565.0,24.0,34.0,24.0
-Salad Story,Wrap Jajecznica+Bekon/Wrap with Scrambled Eggs and Bacon,,653.0,26.0,50.0,18.0
-Salad Story,Wrap Jajecznica+Łosoś/Wrap with Scrambled Eggs and Salmon,,554.0,26.0,31.0,24.0
-Salad Story,Wrap Jajecznica+Twarożek/Wrap with Scrambled Eggs and Cottage Cheese,,534.0,24.0,31.0,17.0
-Salad Story,Paluch buraczkowy/beetroot bread,,141.0,5.0,4.0,24.0
-Salad Story,Paluch z ziarnami/Bread with seeds,,141.0,5.0,4.0,24.0
-Salad Story,Wrap Szparagi Bekon/Wrap Asparagus Bacon,,609.0,18.0,26.0,57.0
-Salad Story,Wrap Szparagi Bekon/Wrap Asparagus Bacon,z sosem/dressing,634.0,24.0,34.0,76.0
-Salad Story,Zupa z Botwinki/Beetroot Leaf Soup,,134.0,1.0,6.0,17.0
-Salad Story,Zupa Krem z Cukinii/Creamy Zucchini Soup,,104.0,5.0,6.0,9.0
-Salad Story,Grecka Quesadilla Snack/Greek Quesadilla Snack,,287.0,10.0,10.0,31.0
-Salad Story,Szparagowa Miska Mocy/Asparagus Power Bowl,,472.0,20.0,14.0,51.0
-Salad Story,Sałatka Wege Szparagi/Wege Asparagus Salad,,287.0,19.0,7.0,15.0
-Salad Story,Sałatka Wege Szparagi/Wege Asparagus Salad,bez dressing/without dressing,371.0,18.0,14.0,31.0
+Salad Story,Proteinowy kurczak,,438.0,33.0,9.0,37.0
+Salad Story,Quesadilla Snack,,216.0,8.0,6.0,27.0
+Salad Story,Santorini Kurczak/Santorini Chicken,,510.0,21.0,26.0,42.0
+Salad Story,Santorini Kurczak/Santorini Chicken,powiększona/larger portion,540.0,24.0,15.0,48.0
 Salad Story,Sałatka Cezar ze szparagami/Caesar with Asparagus Salad,,287.0,19.0,7.0,15.0
 Salad Story,Sałatka Cezar ze szparagami/Caesar with Asparagus Salad,bez dressing/without dressing,371.0,18.0,14.0,31.0
+Salad Story,Sałatka Wege Szparagi/Wege Asparagus Salad,,287.0,19.0,7.0,15.0
+Salad Story,Sałatka Wege Szparagi/Wege Asparagus Salad,bez dressing/without dressing,371.0,18.0,14.0,31.0
 Salad Story,Sok Wiosenne Przebudzenie/Spring Awakening Juice,,128.0,1.0,0.0,32.0
-Salad Story,Lemoniada Kolagenowa Malinowa/Raspberry Lemonade with Collagen,,69.0,1.0,0.0,18.0
-Salad Story,Dressing botwinkowy/Beetroot Leaf Dressing,,63.0,1.0,4.0,4.0
+Salad Story,Szparagowa Miska Mocy/Asparagus Power Bowl,,472.0,20.0,14.0,51.0
+Salad Story,Tajski Kurczak/Thai Chicken,,476.0,20.0,18.0,46.0
+Salad Story,Tajski Kurczak/Thai Chicken,powiększona/larger portion,460.0,25.0,16.0,54.0
+Salad Story,Teriyaki,,651.0,33.0,31.0,35.0
+Salad Story,Teriyaki,,139.0,0.0,2.0,27.0
+Salad Story,Teriyaki,powiększona/larger portion,679.0,42.0,17.0,49.0
+Salad Story,Tofu Mango,,275.0,12.0,12.0,27.0
+Salad Story,Tofu Mango,powiększona/larger portion,361.0,13.0,18.0,26.0
+Salad Story,Toskański Krem Pomidorowy/Tuscan Tomato Cream Soup,,190.0,5.0,8.0,19.0
+Salad Story,Truskawkowa Margarita/Strawberry Margarita,,112.0,1.0,0.0,28.0
+Salad Story,Tunczyk Awokado/Tuna Avocado,,464.0,30.0,21.0,34.0
+Salad Story,Tunczyk Awokado/Tuna Avocado,powiększona/larger portion,435.0,28.0,11.0,43.0
+Salad Story,Urban Mix,,479.0,9.0,4.0,47.0
+Salad Story,Vegan Aioli,,172.0,0.0,18.0,4.0
+Salad Story,Vinaigrette,,63.0,0.0,5.0,1.0
+Salad Story,Warzywny Detoks/Vegetable Detox,,140.0,2.0,0.0,31.0
+Salad Story,Wega Mango Seitan,,571.0,30.0,5.0,61.0
+Salad Story,Wega Mango Seitan,powiększona/larger portion,603.0,34.0,12.0,59.0
+Salad Story,Wołowina Bekon/Beef Bacon,,519.0,31.0,24.0,39.0
+Salad Story,Wołowina Bekon/Beef Bacon,powiększona/larger portion,550.0,39.0,15.0,38.0
+Salad Story,Wołowina Teriyaki/Beef Teriyaki,,411.0,18.0,20.0,26.0
+Salad Story,Wołowina Teriyaki/Beef Teriyaki,powiększona/larger portion,495.0,23.0,17.0,28.0
+Salad Story,Wrap Jajecznica+Awokado/Wrap with Scrambled Eggs and Avocado,,565.0,24.0,34.0,24.0
+Salad Story,Wrap Jajecznica+Bekon/Wrap with Scrambled Eggs and Bacon,,653.0,26.0,50.0,18.0
+Salad Story,Wrap Jajecznica+Twarożek/Wrap with Scrambled Eggs and Cottage Cheese,,534.0,24.0,31.0,17.0
+Salad Story,Wrap Jajecznica+Łosoś/Wrap with Scrambled Eggs and Salmon,,554.0,26.0,31.0,24.0
+Salad Story,Wrap Szparagi Bekon/Wrap Asparagus Bacon,,609.0,18.0,26.0,57.0
+Salad Story,Wrap Szparagi Bekon/Wrap Asparagus Bacon,z sosem/dressing,634.0,24.0,34.0,76.0
+Salad Story,Zielona Energia/Green Energy,,193.0,1.0,0.0,41.0
+Salad Story,Zupa Krem z Cukinii/Creamy Zucchini Soup,,104.0,5.0,6.0,9.0
+Salad Story,Zupa z Botwinki/Beetroot Leaf Soup,,134.0,1.0,6.0,17.0
+Salad Story,Łosoś Quinoa,,317.0,20.0,13.0,26.0
+Salad Story,Łosoś Quinoa,powiększona/larger portion,417.0,22.0,5.0,34.0
 Shrimp House,1/2 BUŁKI,45 g,114.97,3.4,0.4,23.0
 Shrimp House,BUFFALO z bułką,455 g,1875.06,30.4,42.4,61.0
 Shrimp House,BUFFALO z frytkami,660 g,2939.64,35.0,77.0,128.0
@@ -844,395 +1009,247 @@ Shrimp House,SWEET TEMPURA,610 g,849.12,36.0,32.0,97.0
 Shrimp House,SZASZŁYKI,362 g,271.86,33.0,36.0,42.0
 Shrimp House,TEMPURA z bułką,415 g,854.07,27.0,56.0,59.0
 Shrimp House,TEMPURA z frytkami,610 g,1460.95,31.0,90.0,125.0
-Subway,BBQ Chicken Sub,,312.0,20.0,3.0,49.0
-Subway,BBQ Ribs Sub,,419.0,18.0,12.0,56.0
-Subway,BBQ Rotisserie-Style Chicken Sub,,444.0,29.0,17.0,43.0
-Subway,Chicken Fajita,,377.0,24.0,12.0,42.0
-Subway,Ham Sub,,271.0,15.0,4.0,42.0
-Subway,"Ham, Egg & Cheese Sub",,382.0,22.0,15.0,42.0
-Subway,Honey Mustard Veggie,,259.0,11.0,8.0,36.0
-Subway,Italian B.M.T.® Sub,,400.0,20.0,16.0,42.0
-Subway,Oven Roasted Chicken Sub,,282.0,20.0,3.0,42.0
-Subway,Spicy Italian Sub,,414.0,17.0,19.0,42.0
-Subway,Steak & Cheese Sub,,336.0,21.0,7.0,47.0
-Subway,Chicken Teriyaki Sub,,296.0,20.0,3.0,45.0
-Subway,Taco Beef Fiesta,,527.0,19.0,30.0,53.0
-Subway,Tuna Sub,,365.0,19.0,13.0,43.0
-Subway,Turkey Breast Sub,,232.0,10.0,3.0,42.0
-Subway,Spicy Veggie Sub,,381.0,19.0,11.0,49.0
-Subway,Veggie Delite Sub,,221.0,9.0,3.0,40.0
-Subway,T.L.C.® Teriyaki Sub,,271.0,20.0,3.0,39.0
-Subway,Triple Cheese SubMelt,,384.0,18.0,15.0,45.0
-Subway,Master B.M.T.,,520.0,28.0,27.0,42.0
-Subway,Supreme Steak & Cheese,,441.0,24.0,18.0,45.0
-Subway,BBQ Chicken & Bacon SubMelt,,441.0,31.0,16.0,43.0
-Subway,Waffle Fries (80g),,147.0,2.2,6.6,18.0
-Subway,Waffle Fries (120g),,221.0,3.4,9.8,27.0
+Subway,BBQ Chicken & Bacon SubMelt,15cm,441.0,31.0,16.0,43.0
+Subway,BBQ Chicken & Bacon SubMelt,30cm,882.0,62.0,32.0,86.0
+Subway,BBQ Chicken Sub,15cm,312.0,20.0,3.0,49.0
+Subway,BBQ Chicken Sub,30cm,624.0,40.0,6.0,98.0
+Subway,BBQ Ribs Sub,15cm,419.0,18.0,12.0,56.0
+Subway,BBQ Ribs Sub,30cm,838.0,36.0,24.0,112.0
+Subway,BBQ Rotisserie-Style Chicken Sub,15cm,444.0,29.0,17.0,43.0
+Subway,BBQ Rotisserie-Style Chicken Sub,30cm,888.0,58.0,34.0,86.0
+Subway,Caesar Dressing,,54.0,0.0,5.0,1.0
+Subway,Cheesy Dipper,,450.0,13.0,9.4,50.0
+Subway,Chicken Bites (12),,540.0,32.0,26.0,42.0
 Subway,Chicken Bites (4),,180.0,11.0,8.5,14.0
 Subway,Chicken Bites (8),,360.0,21.0,17.0,28.0
-Subway,Chicken Bites (12),,540.0,32.0,26.0,42.0
-Subway,Loaded Nachos,,219.0,9.0,28.0,44.0
-Subway,Pepperoni and Cheese Dipper,,433.0,15.0,19.0,7.3
-Subway,Cheesy Dipper,,450.0,13.0,9.4,50.0
-Subway,Turkey and Cheese Dipper,,398.0,18.0,9.0,49.0
-Subway,Taco Beef Dipper,,430.0,15.0,17.0,53.0
+Subway,Chicken Fajita,,377.0,24.0,12.0,42.0
+Subway,Chicken Teriyaki Sub,15cm,296.0,20.0,3.0,45.0
+Subway,Chicken Teriyaki Sub,30cm,592.0,40.0,6.0,90.0
+Subway,Chipotle Southwest,,60.0,0.0,6.0,1.0
 Subway,Chocolate Chunk Cookie,,216.0,2.0,10.0,28.0
 Subway,Double Chocolate Vegan Cookie,,220.0,2.0,11.0,27.0
-Subway,Raspberry Cheesecake cookie,,208.0,2.0,10.0,27.0
-Subway,White chocolate chip Macadamia Nut Cookie,,213.0,2.0,10.0,28.0
-Subway,Caesar Dressing,,54.0,0.0,5.0,1.0
-Subway,Chipotle Southwest,,60.0,0.0,6.0,1.0
-Subway,Vegan Garlic Aioli,,53.0,0.0,5.0,2.0
-Subway,Honey & Wholegrain Mustard,,29.0,0.0,2.0,3.0
-Subway,Ketchup,,18.0,0.0,0.0,4.0
 Subway,H&H BBQ,,24.0,0.0,0.0,6.0
+Subway,Ham Sub,15cm,271.0,15.0,4.0,42.0
+Subway,Ham Sub,30cm,542.0,30.0,8.0,84.0
+Subway,"Ham, Egg & Cheese Sub",15cm,382.0,22.0,15.0,42.0
+Subway,"Ham, Egg & Cheese Sub",30cm,764.0,44.0,30.0,84.0
+Subway,Honey & Wholegrain Mustard,,29.0,0.0,2.0,3.0
+Subway,Honey Mustard Veggie,,259.0,11.0,8.0,36.0
+Subway,Italian B.M.T.® Sub,15cm,400.0,20.0,16.0,42.0
+Subway,Italian B.M.T.® Sub,30cm,800.0,40.0,32.0,84.0
+Subway,Ketchup,,18.0,0.0,0.0,4.0
 Subway,Light Mayo,,48.0,0.0,5.0,1.0
+Subway,Loaded Nachos,,219.0,9.0,28.0,44.0
+Subway,Master B.M.T.,,520.0,28.0,27.0,42.0
 Subway,Olive Oil,,124.0,0.0,14.0,0.0
+Subway,Oven Roasted Chicken Sub,15cm,282.0,20.0,3.0,42.0
+Subway,Oven Roasted Chicken Sub,30cm,564.0,40.0,6.0,84.0
+Subway,Pepperoni and Cheese Dipper,,433.0,15.0,19.0,7.3
+Subway,Raspberry Cheesecake cookie,,208.0,2.0,10.0,27.0
+Subway,Spicy Italian Sub,15cm,414.0,17.0,19.0,42.0
+Subway,Spicy Italian Sub,30cm,828.0,34.0,38.0,84.0
+Subway,Spicy Veggie Sub,15cm,381.0,19.0,11.0,49.0
+Subway,Spicy Veggie Sub,30cm,762.0,38.0,22.0,98.0
+Subway,Steak & Cheese Sub,15cm,336.0,21.0,7.0,47.0
+Subway,Steak & Cheese Sub,30cm,672.0,42.0,14.0,94.0
+Subway,Supreme Steak & Cheese,,441.0,24.0,18.0,45.0
 Subway,Sweet Onion,,30.0,0.0,0.0,7.0
+Subway,T.L.C.® Teriyaki Sub,15cm,271.0,20.0,3.0,39.0
+Subway,T.L.C.® Teriyaki Sub,30cm,542.0,40.0,6.0,78.0
+Subway,Taco Beef Dipper,,430.0,15.0,17.0,53.0
+Subway,Taco Beef Fiesta,,527.0,19.0,30.0,53.0
+Subway,Triple Cheese SubMelt,15cm,384.0,18.0,15.0,45.0
+Subway,Triple Cheese SubMelt,30cm,768.0,36.0,30.0,90.0
+Subway,Tuna Sub,15cm,365.0,19.0,13.0,43.0
+Subway,Tuna Sub,30cm,730.0,38.0,26.0,86.0
+Subway,Turkey Breast Sub,15cm,232.0,10.0,3.0,42.0
+Subway,Turkey Breast Sub,30cm,464.0,20.0,6.0,84.0
+Subway,Turkey and Cheese Dipper,,398.0,18.0,9.0,49.0
+Subway,Vegan Garlic Aioli,,53.0,0.0,5.0,2.0
+Subway,Veggie Delite Sub,15cm,221.0,9.0,3.0,40.0
+Subway,Veggie Delite Sub,30cm,442.0,18.0,6.0,80.0
+Subway,Waffle Fries (120g),,221.0,3.4,9.8,27.0
+Subway,Waffle Fries (80g),,147.0,2.2,6.6,18.0
+Subway,White chocolate chip Macadamia Nut Cookie,,213.0,2.0,10.0,28.0
 Sushi Corner,Akari,,1209.0,44.0,40.0,164.0
 Sushi Corner,Ama,,1636.0,73.0,42.0,234.0
-Sushi Corner,Bure,,1116.0,48.0,50.0,112.0
-Sushi Corner,Chodoi,,2083.0,83.0,79.0,250.0
-Sushi Corner,Hanzo,,1226.0,55.0,44.0,149.0
-Sushi Corner,Hatsu,,1609.0,48.0,54.0,224.0
-Sushi Corner,Izu,,2594.0,102.0,84.0,348.0
-Sushi Corner,Koko,,867.0,37.0,31.0,106.0
-Sushi Corner,Koko GF,,861.0,36.0,32.0,104.0
-Sushi Corner,Momo,,845.0,24.0,20.0,140.0
-Sushi Corner,Sho,,1688.0,61.0,60.0,218.0
-Sushi Corner,Tsuki,,2698.0,91.0,98.0,350.0
-Sushi Corner,Vege Set,,1264.0,27.0,26.0,225.0
-Sushi Corner,Vege Sugi,,777.0,18.0,19.0,129.0
-Sushi Corner,Zenbu,,5696.0,222.0,192.0,747.0
-Sushi Corner,Vege Ise GF,,727.0,14.0,20.0,120.0
-Sushi Corner,Hikone GF,,1282.0,55.0,39.0,173.0
+Sushi Corner,Awokado,,209.0,3.0,6.0,33.0
+Sushi Corner,Bento Karaage,,760.0,45.0,30.0,74.0
+Sushi Corner,Bento gyoza kurczak,,763.0,40.0,30.0,77.0
+Sushi Corner,Bento gyoza vege,,729.0,35.0,27.0,80.0
 Sushi Corner,Bluefin maki,,305.0,15.0,12.0,33.0
+Sushi Corner,Bowl Tofu Karaage,,688.0,36.0,12.0,146.0
+Sushi Corner,Box Karaage 300g,,566.0,51.0,36.0,11.0
+Sushi Corner,Bure,,1116.0,48.0,50.0,112.0
+Sushi Corner,California sezam,,269.0,5.0,12.0,33.0
+Sushi Corner,Chodoi,,2083.0,83.0,79.0,250.0
 Sushi Corner,Crispy salmon,,552.0,24.0,25.0,58.0
 Sushi Corner,Crispy yellowtail,,455.0,28.0,12.0,58.0
-Sushi Corner,Hotate,,404.0,27.0,15.0,41.0
-Sushi Corner,Ebi krewetka w tempurze,,373.0,12.0,10.0,57.0
-Sushi Corner,Ebi ten,,437.0,15.0,14.0,60.0
-Sushi Corner,Filadelfia,,333.0,14.0,13.0,40.0
-Sushi Corner,Gravlax z kalmarem,,420.0,12.0,12.0,62.0
-Sushi Corner,Krab,,324.0,8.0,8.0,54.0
-Sushi Corner,Łosoś w panko,,409.0,14.0,14.0,54.0
-Sushi Corner,Pieczony łosoś,,433.0,15.0,16.0,54.0
-Sushi Corner,Squid tempura,,326.0,7.0,7.0,57.0
-Sushi Corner,Szczepan,,378.0,13.0,17.0,42.0
-Sushi Corner,Tatar z łososia,,364.0,21.0,13.0,40.0
-Sushi Corner,Tatar z tuńczyka,,304.0,25.0,5.0,40.0
-Sushi Corner,Tuna x mango,,284.0,14.0,6.0,42.0
-Sushi Corner,Vege Inari,,267.0,6.0,5.0,49.0
-Sushi Corner,Vege Yasai,,240.0,4.0,2.0,51.0
-Sushi Corner,Węgorz z mango,,425.0,12.0,15.0,59.0
-Sushi Corner,Węgorz z tykwą w tempurze,,453.0,12.0,19.0,56.0
-Sushi Corner,Pieczony łosoś GF,,421.0,15.0,17.0,50.0
-Sushi Corner,Vege Mango x Awokado GF,,280.0,5.0,8.0,46.0
-Sushi Corner,Ebi GF,,244.0,12.0,4.0,40.0
-Sushi Corner,Tuna x mango GF,,291.0,14.0,6.0,44.0
-Sushi Corner,Łosoś w migdałach,,609.0,24.0,31.0,55.0
-Sushi Corner,Spicy Salmon,,549.0,23.0,22.0,59.0
-Sushi Corner,Vege tamagoyaki,,518.0,14.0,16.0,76.0
-Sushi Corner,Węgorz unagi kabayaki,,554.0,17.0,24.0,67.0
-Sushi Corner,California sezam,,269.0,5.0,12.0,33.0
-Sushi Corner,Ebi Tempura,,264.0,8.0,8.0,39.0
-Sushi Corner,Ebi tempura łosoś,,326.0,14.0,12.0,39.0
-Sushi Corner,Ebi tempura unagi,,365.0,13.0,13.0,47.0
-Sushi Corner,Tuna ebi tempura,,315.0,16.0,10.0,40.0
-Sushi Corner,Ebi tobiko,,209.0,9.0,4.0,33.0
-Sushi Corner,Łosoś pieczony,,272.0,10.0,8.0,38.0
-Sushi Corner,Łosoś surowy,,261.0,11.0,10.0,32.0
-Sushi Corner,Maguro zuke,,333.0,21.0,11.0,38.0
-Sushi Corner,Salmon California,,301.0,12.0,12.0,35.0
-Sushi Corner,Salmon California GF,,296.0,11.0,13.0,33.0
-Sushi Corner,Spicy gravlax,,340.0,12.0,10.0,47.0
-Sushi Corner,Tuna chilli-lime,,210.0,10.0,3.0,36.0
-Sushi Corner,Tuńczyk,,279.0,13.0,10.0,32.0
-Sushi Corner,Unagi awokado,,359.0,10.0,17.0,41.0
-Sushi Corner,Vege banana,,318.0,6.0,8.0,56.0
-Sushi Corner,Vege tamagoyaki awokado,,331.0,8.0,11.0,48.0
-Sushi Corner,Vege w naleśniku,,247.0,6.0,5.0,45.0
-Sushi Corner,Łosoś pieczony GF,,271.0,10.0,8.0,37.0
-Sushi Corner,Vege banana GF,,307.0,6.0,9.0,50.0
-Sushi Corner,Vege w naleśniku GF,,238.0,6.0,5.0,41.0
-Sushi Corner,Awokado,,209.0,3.0,6.0,33.0
 Sushi Corner,Ebi,,177.0,11.0,1.0,32.0
-Sushi Corner,Gravlax,,234.0,10.0,6.0,33.0
-Sushi Corner,Kappa,,179.0,4.0,3.0,33.0
-Sushi Corner,Łosoś,,232.0,11.0,6.0,32.0
-Sushi Corner,Oshinko,,148.0,3.0,0.0,32.0
-Sushi Corner,Shitake,,225.0,5.0,0.0,49.0
-Sushi Corner,Tuńczyk,,202.0,13.0,2.0,32.0
-Sushi Corner,Tuńczyk bluefin,,243.0,12.0,7.0,32.0
-Sushi Corner,Tykwa,,200.0,3.0,1.0,46.0
-Sushi Corner,Węgorz,,271.0,10.0,9.0,36.0
 Sushi Corner,Ebi,,48.0,3.0,0.0,8.0
-Sushi Corner,Gravlax,,59.0,2.0,1.0,8.0
-Sushi Corner,Łosoś,,75.0,4.0,3.0,8.0
-Sushi Corner,Tamago,,76.0,2.0,1.0,14.0
-Sushi Corner,Tuńczyk,,62.0,5.0,1.0,8.0
-Sushi Corner,Tuńczyk bluefin,,79.0,5.0,3.0,8.0
-Sushi Corner,Węgorz,,74.0,3.0,3.0,9.0
-Sushi Corner,Łosoś,,109.0,11.0,7.0,0.0
-Sushi Corner,Tuńczyk bluefin,,122.0,12.0,8.0,0.0
-Sushi Corner,Tuńczyk yellowtail,,73.0,13.0,2.0,0.0
+Sushi Corner,Ebi GF,,244.0,12.0,4.0,40.0
+Sushi Corner,Ebi Tempura,,264.0,8.0,8.0,39.0
+Sushi Corner,Ebi krewetka w tempurze,,373.0,12.0,10.0,57.0
+Sushi Corner,Ebi tempura unagi,,365.0,13.0,13.0,47.0
+Sushi Corner,Ebi tempura łosoś,,326.0,14.0,12.0,39.0
+Sushi Corner,Ebi ten,,437.0,15.0,14.0,60.0
+Sushi Corner,Ebi tobiko,,209.0,9.0,4.0,33.0
 Sushi Corner,Edamame,,218.0,18.0,11.0,5.0
-Sushi Corner,Goma wakame,,105.0,1.0,3.0,17.0
-Sushi Corner,Kimchi,,50.0,2.0,1.0,10.0
-Sushi Corner,Popcorn shrimps,,254.0,13.0,7.0,35.0
-Sushi Corner,Tatar z łososia,,265.0,23.0,18.0,3.0
-Sushi Corner,Tatar z tuńczyka,,193.0,27.0,8.0,3.0
-Sushi Corner,Warzywa Japońskie,,124.0,7.0,5.0,10.0
-Sushi Corner,Miso łosoś,,107.0,9.0,5.0,6.0
-Sushi Corner,Miso tofu,,94.0,10.0,3.0,21.0
-Sushi Corner,Tempura soba,,411.0,18.0,6.0,61.0
-Sushi Corner,Tom-yum,,433.0,11.0,23.0,32.0
-Sushi Corner,Gyoza kurczak 6 szt.,,290.0,14.0,10.0,36.0
-Sushi Corner,Gyoza vege 6 szt.,,249.0,8.0,6.0,40.0
-Sushi Corner,Tempura krewetki 6 szt.,,411.0,25.0,14.0,45.0
-Sushi Corner,Tempura vege,,287.0,7.0,10.0,41.0
+Sushi Corner,Filadelfia,,333.0,14.0,13.0,40.0
 Sushi Corner,Frytki z batata,,317.0,3.0,20.0,29.0
-Sushi Corner,Kurczak karaage,,297.0,22.0,18.0,11.0
-Sushi Corner,Makaron soba,,291.0,11.0,4.0,51.0
-Sushi Corner,Yaki udon,,406.0,13.0,2.0,82.0
+Sushi Corner,Goma wakame,,105.0,1.0,3.0,17.0
+Sushi Corner,Gravlax,,234.0,10.0,6.0,33.0
+Sushi Corner,Gravlax,,59.0,2.0,1.0,8.0
+Sushi Corner,Gravlax z kalmarem,,420.0,12.0,12.0,62.0
+Sushi Corner,Gyoza kurczak 3 szt.,,145.0,7.0,5.0,18.0
+Sushi Corner,Gyoza kurczak 6 szt.,,290.0,14.0,10.0,36.0
+Sushi Corner,Gyoza vege 3 szt.,,125.0,4.0,3.0,20.0
+Sushi Corner,Gyoza vege 6 szt.,,249.0,8.0,6.0,40.0
 Sushi Corner,Góra Fuji,,886.0,13.0,43.0,109.0
+Sushi Corner,Hanzo,,1226.0,55.0,44.0,149.0
+Sushi Corner,Hatsu,,1609.0,48.0,54.0,224.0
+Sushi Corner,Hikone GF,,1282.0,55.0,39.0,173.0
+Sushi Corner,Hotate,,404.0,27.0,15.0,41.0
+Sushi Corner,Imbir marynowany,30 g,2.0,0.0,0.0,0.0
+Sushi Corner,Inari krewetka,,431.0,17.0,21.0,45.0
+Sushi Corner,Inari kukurydza,,382.0,15.0,14.0,51.0
+Sushi Corner,Inari łosoś,,392.0,20.0,15.0,44.0
+Sushi Corner,Izu,,2594.0,102.0,84.0,348.0
+Sushi Corner,Kappa,,179.0,4.0,3.0,33.0
+Sushi Corner,Kimchi,,50.0,2.0,1.0,10.0
+Sushi Corner,Koko,,867.0,37.0,31.0,106.0
+Sushi Corner,Koko GF,,861.0,36.0,32.0,104.0
+Sushi Corner,Krab,,324.0,8.0,8.0,54.0
+Sushi Corner,Kurczak karaage,,297.0,22.0,18.0,11.0
 Sushi Corner,Lemon-yuzu curd,,387.0,2.0,7.0,17.0
+Sushi Corner,Lunch Set 1,,788.0,28.0,34.0,88.0
+Sushi Corner,Lunch Set 2,,582.0,15.0,17.0,90.0
+Sushi Corner,Lunch Set 3,,603.0,19.0,25.0,73.0
+Sushi Corner,Maguro zuke,,333.0,21.0,11.0,38.0
+Sushi Corner,Makaron soba,,291.0,11.0,4.0,51.0
+Sushi Corner,Miso tofu,,94.0,10.0,3.0,21.0
+Sushi Corner,Miso łosoś,,107.0,9.0,5.0,6.0
 Sushi Corner,Mochi kokosowe,,234.0,3.0,9.0,36.0
 Sushi Corner,Mochi mango i marakuja,,231.0,1.0,9.0,36.0
 Sushi Corner,Mochi yuzu,,212.0,1.0,8.0,35.0
 Sushi Corner,Mochi z czekoladą,,246.0,2.0,9.0,40.0
 Sushi Corner,Mochi zielona herbata,,209.0,3.0,6.0,36.0
-Sushi Corner,Bento gyoza kurczak,,763.0,40.0,30.0,77.0
-Sushi Corner,Bento gyoza vege,,729.0,35.0,27.0,80.0
-Sushi Corner,Bento Karaage,,760.0,45.0,30.0,74.0
-Sushi Corner,Sushi Bowl łosoś,,606.0,28.0,28.0,58.0
-Sushi Corner,Sushi Bowl ebi tempura,,651.0,23.0,15.0,100.0
-Sushi Corner,Bowl Tofu Karaage,,688.0,36.0,12.0,146.0
-Sushi Corner,Box Karaage 300g,,566.0,51.0,36.0,11.0
-Sushi Corner,Gyoza kurczak 3 szt.,,145.0,7.0,5.0,18.0
-Sushi Corner,Gyoza vege 3 szt.,,125.0,4.0,3.0,20.0
-Sushi Corner,Tempura krewetki 3 szt.,,206.0,12.0,7.0,22.0
+Sushi Corner,Momo,,845.0,24.0,20.0,140.0
+Sushi Corner,Onigiri tuńczyk,,373.0,13.0,7.0,64.0
+Sushi Corner,Onigiri łosoś,,356.0,11.0,5.0,64.0
+Sushi Corner,Onigiri łosoś pieczony,,390.0,11.0,7.0,69.0
+Sushi Corner,Oshinko,,148.0,3.0,0.0,32.0
+Sushi Corner,Pieczony łosoś,,433.0,15.0,16.0,54.0
+Sushi Corner,Pieczony łosoś GF,,421.0,15.0,17.0,50.0
+Sushi Corner,Popcorn shrimps,,254.0,13.0,7.0,35.0
+Sushi Corner,Salmon California,,301.0,12.0,12.0,35.0
+Sushi Corner,Salmon California GF,,296.0,11.0,13.0,33.0
+Sushi Corner,Shitake,,225.0,5.0,0.0,49.0
+Sushi Corner,Sho,,1688.0,61.0,60.0,218.0
+Sushi Corner,Sos do gyozy,30 ml,40.0,1.0,3.0,2.0
+Sushi Corner,Sos kabyaki,30 ml,133.0,1.0,0.0,30.0
+Sushi Corner,Sos sojowy,30 ml,26.0,3.0,0.0,2.0
+Sushi Corner,Sos sojowy GF,30 ml,17.0,3.0,0.0,1.0
+Sushi Corner,Sos spicy mayo,30 g,163.0,1.0,16.0,3.0
+Sushi Corner,Sos sweet chilli,30 g,53.0,0.0,0.0,12.0
+Sushi Corner,Spicy Salmon,,549.0,23.0,22.0,59.0
+Sushi Corner,Spicy gravlax,,340.0,12.0,10.0,47.0
+Sushi Corner,Squid tempura,,326.0,7.0,7.0,57.0
 Sushi Corner,Super Set 1,,723.0,31.0,29.0,81.0
 Sushi Corner,Super Set 2,,721.0,24.0,25.0,97.0
 Sushi Corner,Super Set 3,,617.0,27.0,19.0,82.0
-Sushi Corner,Lunch Set 1,,788.0,28.0,34.0,88.0
-Sushi Corner,Lunch Set 2,,582.0,15.0,17.0,90.0
-Sushi Corner,Lunch Set 3,,603.0,19.0,25.0,73.0
+Sushi Corner,Sushi Bowl ebi tempura,,651.0,23.0,15.0,100.0
+Sushi Corner,Sushi Bowl łosoś,,606.0,28.0,28.0,58.0
+Sushi Corner,Szczepan,,378.0,13.0,17.0,42.0
+Sushi Corner,Tamago,,76.0,2.0,1.0,14.0
+Sushi Corner,Tatar z tuńczyka,,304.0,25.0,5.0,40.0
+Sushi Corner,Tatar z tuńczyka,,193.0,27.0,8.0,3.0
+Sushi Corner,Tatar z łososia,,364.0,21.0,13.0,40.0
+Sushi Corner,Tatar z łososia,,265.0,23.0,18.0,3.0
+Sushi Corner,Tempura krewetki 3 szt.,,206.0,12.0,7.0,22.0
+Sushi Corner,Tempura krewetki 6 szt.,,411.0,25.0,14.0,45.0
+Sushi Corner,Tempura soba,,411.0,18.0,6.0,61.0
+Sushi Corner,Tempura vege,,287.0,7.0,10.0,41.0
+Sushi Corner,Tom-yum,,433.0,11.0,23.0,32.0
+Sushi Corner,Tsuki,,2698.0,91.0,98.0,350.0
+Sushi Corner,Tuna chilli-lime,,210.0,10.0,3.0,36.0
+Sushi Corner,Tuna ebi tempura,,315.0,16.0,10.0,40.0
+Sushi Corner,Tuna x mango,,284.0,14.0,6.0,42.0
+Sushi Corner,Tuna x mango GF,,291.0,14.0,6.0,44.0
+Sushi Corner,Tuńczyk,,279.0,13.0,10.0,32.0
+Sushi Corner,Tuńczyk,,202.0,13.0,2.0,32.0
+Sushi Corner,Tuńczyk,,62.0,5.0,1.0,8.0
+Sushi Corner,Tuńczyk bluefin,,243.0,12.0,7.0,32.0
+Sushi Corner,Tuńczyk bluefin,,79.0,5.0,3.0,8.0
+Sushi Corner,Tuńczyk bluefin,,122.0,12.0,8.0,0.0
+Sushi Corner,Tuńczyk yellowtail,,73.0,13.0,2.0,0.0
+Sushi Corner,Tykwa,,200.0,3.0,1.0,46.0
+Sushi Corner,Unagi awokado,,359.0,10.0,17.0,41.0
+Sushi Corner,Vege Inari,,267.0,6.0,5.0,49.0
+Sushi Corner,Vege Ise GF,,727.0,14.0,20.0,120.0
+Sushi Corner,Vege Mango x Awokado GF,,280.0,5.0,8.0,46.0
+Sushi Corner,Vege Set,,1264.0,27.0,26.0,225.0
+Sushi Corner,Vege Sugi,,777.0,18.0,19.0,129.0
 Sushi Corner,Vege Sushi Set,,598.0,14.0,16.0,96.0
-Sushi Corner,Sos do gyozy,30 ml,40.0,1.0,3.0,2.0
-Sushi Corner,Sos kabyaki,30 ml,133.0,1.0,0.0,30.0
-Sushi Corner,Sos spicy mayo,30 g,163.0,1.0,16.0,3.0
-Sushi Corner,Sos sweet chilli,30 g,53.0,0.0,0.0,12.0
-Sushi Corner,Imbir marynowany,30 g,2.0,0.0,0.0,0.0
+Sushi Corner,Vege Yasai,,240.0,4.0,2.0,51.0
+Sushi Corner,Vege banana,,318.0,6.0,8.0,56.0
+Sushi Corner,Vege banana GF,,307.0,6.0,9.0,50.0
+Sushi Corner,Vege tamagoyaki,,518.0,14.0,16.0,76.0
+Sushi Corner,Vege tamagoyaki awokado,,331.0,8.0,11.0,48.0
+Sushi Corner,Vege w naleśniku,,247.0,6.0,5.0,45.0
+Sushi Corner,Vege w naleśniku GF,,238.0,6.0,5.0,41.0
+Sushi Corner,Warzywa Japońskie,,124.0,7.0,5.0,10.0
 Sushi Corner,Wasabi,30g,58.0,3.0,1.0,8.0
-Sushi Corner,Sos sojowy,30 ml,26.0,3.0,0.0,2.0
-Sushi Corner,Sos sojowy GF,30 ml,17.0,3.0,0.0,1.0
-Sushi Corner,Onigiri łosoś,,356.0,11.0,5.0,64.0
-Sushi Corner,Onigiri łosoś pieczony,,390.0,11.0,7.0,69.0
-Sushi Corner,Onigiri tuńczyk,,373.0,13.0,7.0,64.0
-Sushi Corner,Inari łosoś,,392.0,20.0,15.0,44.0
-Sushi Corner,Inari kukurydza,,382.0,15.0,14.0,51.0
-Sushi Corner,Inari krewetka,,431.0,17.0,21.0,45.0
-Wrap Me!,Kebab Kurczak/Kebab Chicken,,205.0,12.9,5.7,23.6
-Wrap Me!,Kebab Halloumi,,230.0,9.0,11.6,24.3
-Wrap Me!,Kebab Gyros,,225.0,12.1,8.9,22.9
-Wrap Me!,Kebab z mięsem/Kebab with meat,,250.0,13.5,11.2,24.0
-Wrap Me!,California Chicken Bakon,,229.0,11.7,10.8,24.0
-Wrap Me!,Jamaica Chicken Wrap,,219.0,13.0,7.9,24.7
-Wrap Me!,Greek Chicken,,235.0,12.2,10.9,23.2
-Wrap Me!,Korean Beef,,234.0,12.0,11.1,23.0
-Wrap Me!,Mey Burrito,,232.0,12.6,10.4,23.7
-Wrap Me!,Siciliano,,229.0,12.4,10.1,23.5
-Wrap Me!,Kebab Kurczak Box/Kebab Chicken Box,,183.0,13.1,4.2,22.1
-Wrap Me!,Kebab Halloumi Box,,200.0,8.8,8.9,23.0
-Wrap Me!,Kebab Gyros Box,,195.0,11.7,6.7,22.4
-Wrap Me!,Kebab z mięsem Box / Kebab with non-meat Box,,198.0,11.3,7.1,22.8
-Wrap Me!,Frytki,,105.0,2.1,3.8,16.0
-Wrap Me!,Nachos,,351.0,7.0,13.0,49.0
+Sushi Corner,Węgorz,,271.0,10.0,9.0,36.0
+Sushi Corner,Węgorz,,74.0,3.0,3.0,9.0
+Sushi Corner,Węgorz unagi kabayaki,,554.0,17.0,24.0,67.0
+Sushi Corner,Węgorz z mango,,425.0,12.0,15.0,59.0
+Sushi Corner,Węgorz z tykwą w tempurze,,453.0,12.0,19.0,56.0
+Sushi Corner,Yaki udon,,406.0,13.0,2.0,82.0
+Sushi Corner,Zenbu,,5696.0,222.0,192.0,747.0
+Sushi Corner,Łosoś,,232.0,11.0,6.0,32.0
+Sushi Corner,Łosoś,,75.0,4.0,3.0,8.0
+Sushi Corner,Łosoś,,109.0,11.0,7.0,0.0
+Sushi Corner,Łosoś pieczony,,272.0,10.0,8.0,38.0
+Sushi Corner,Łosoś pieczony GF,,271.0,10.0,8.0,37.0
+Sushi Corner,Łosoś surowy,,261.0,11.0,10.0,32.0
+Sushi Corner,Łosoś w migdałach,,609.0,24.0,31.0,55.0
+Sushi Corner,Łosoś w panko,,409.0,14.0,14.0,54.0
+Wrap Me!,"Ananas, Mango/Pineapple, Mango",,52.0,0.4,0.1,12.8
 Wrap Me!,Avo Green Goddess,,131.0,0.7,12.0,5.5
 Wrap Me!,BBQ,,118.0,0.8,0.5,27.0
+Wrap Me!,Bubble Tea Jagoda-Liczi / Bubble Tea Blueberry-Litchi,,110.0,0.1,1.1,24.0
+Wrap Me!,Bubble Tea Mango-Marakuja / Bubble Tea Mango-Passion Fruit,,111.0,0.1,1.1,24.0
+Wrap Me!,California Chicken Bakon,,229.0,11.7,10.8,24.0
 Wrap Me!,Fistaszkowy/Peanut,,210.0,8.1,15.2,9.8
+Wrap Me!,Frytki,,105.0,2.1,3.8,16.0
+Wrap Me!,Greek Chicken,,235.0,12.2,10.9,23.2
+Wrap Me!,Jamaica Chicken Wrap,,219.0,13.0,7.9,24.7
 Wrap Me!,Jogurtowy/Yoghurt,,77.0,3.0,1.6,11.9
+Wrap Me!,Kebab Gyros,,225.0,12.1,8.9,22.9
+Wrap Me!,Kebab Gyros Box,,195.0,11.7,6.7,22.4
+Wrap Me!,Kebab Halloumi,,230.0,9.0,11.6,24.3
+Wrap Me!,Kebab Halloumi Box,,200.0,8.8,8.9,23.0
+Wrap Me!,Kebab Kurczak Box/Kebab Chicken Box,,183.0,13.1,4.2,22.1
+Wrap Me!,Kebab Kurczak/Kebab Chicken,,205.0,12.9,5.7,23.6
+Wrap Me!,Kebab z mięsem Box / Kebab with non-meat Box,,198.0,11.3,7.1,22.8
+Wrap Me!,Kebab z mięsem/Kebab with meat,,250.0,13.5,11.2,24.0
+Wrap Me!,Ketchup,,89.0,1.0,0.2,20.8
+Wrap Me!,Korean Beef,,234.0,12.0,11.1,23.0
+Wrap Me!,Lemoniada Cytryna-Marakuja/Lemon-Passion Fruit,,56.0,0.0,0.0,13.8
+Wrap Me!,Limonkowa Mex/Lime Mex,,60.0,0.0,0.0,14.8
 Wrap Me!,Mango-Ananas/Mango-Pineapple,,95.0,0.4,0.1,23.4
+Wrap Me!,Mey Burrito,,232.0,12.6,10.4,23.7
 Wrap Me!,Musztardowo-Miodowy/Mustard and honey,,144.0,0.4,7.8,19.9
+Wrap Me!,Nachos,,351.0,7.0,13.0,49.0
 Wrap Me!,Orientalne chilli/Oriental chilli,,123.0,0.7,1.2,28.1
+Wrap Me!,Owocowe Cudo/Fruity Miracle,,48.0,0.3,0.1,11.7
 Wrap Me!,Pomidorowy/Tomato,,63.0,0.9,0.1,14.2
 Wrap Me!,Serowy/Cheese,,155.0,6.2,12.0,3.2
-Wrap Me!,Vegan aioli,,102.0,0.5,7.5,8.4
-Wrap Me!,Ketchup,,89.0,1.0,0.2,20.8
-Wrap Me!,"Ananas, Mango/Pineapple, Mango",,52.0,0.4,0.1,12.8
-Wrap Me!,Owocowe Cudo/Fruity Miracle,,48.0,0.3,0.1,11.7
-Wrap Me!,Warzywny Detoks/Vegetable Detox,,49.0,0.5,0.2,11.4
-Wrap Me!,Zielona Energia/Green Energy,,55.0,0.3,0.2,13.1
-Wrap Me!,Lemoniada Cytryna-Marakuja/Lemon-Passion Fruit,,56.0,0.0,0.0,13.8
-Wrap Me!,Truskawkowa Margarita/Strawberry Margarita,,55.0,0.0,0.0,13.7
-Wrap Me!,Limonkowa Mex/Lime Mex,,60.0,0.0,0.0,14.8
-Wrap Me!,Bubble Tea Mango-Marakuja / Bubble Tea Mango-Passion Fruit,,111.0,0.1,1.1,24.0
-Wrap Me!,Bubble Tea Jagoda-Liczi / Bubble Tea Blueberry-Litchi,,110.0,0.1,1.1,24.0
+Wrap Me!,Siciliano,,229.0,12.4,10.1,23.5
 Wrap Me!,Smoothie mango-banan / Smoothie mango-banana,,75.0,1.0,0.3,16.0
 Wrap Me!,Smoothie truskawka-banan / Smoothie strawberry-banana,,72.0,1.0,0.3,15.0
-Pasibus,Awokadus,burger z wołowiną,1003.0,37.0,73.0,48.0
-Pasibus,Bebek,burger z wołowiną,882.0,36.0,58.0,53.0
-Pasibus,Gonzales,burger z wołowiną,854.0,27.0,55.0,59.0
-Pasibus,Standard,burger z wołowiną,789.0,32.0,52.0,47.0
-Pasibus,Włoski Pastuch,burger z wołowiną,920.0,37.0,59.0,47.0
-Pasibus,Chesse Boss,burger z wołowiną,1451.0,59.0,103.0,70.0
-Pasibus,Klasyk,burger z wołowiną,616.0,29.0,33.0,50.0
-Pasibus,Ave Cezar Chicken,burger z kurczakiem,1012.0,34.0,71.0,58.0
-Pasibus,Barney Chicken,burger z kurczakiem,788.0,33.0,49.0,61.0
-Pasibus,Sunset Chicken,burger z kurczakiem,790.0,27.0,49.0,60.0
-Pasibus,Original Chicken,burger z kurczakiem,638.0,27.0,35.0,53.0
-Pasibus,Wege Burger,burger wege,617.0,14.0,33.0,63.0
-Pasibus,Cheese Boss Wege,burger wege,890.0,27.0,65.0,50.0
-Pasibus,Awokadus,burger podwójne z wołowiną,1295.0,57.0,96.0,48.0
-Pasibus,Bebek,burger podwójne z wołowiną,1174.0,56.0,82.0,53.0
-Pasibus,Gonzales,burger podwójne z wołowiną,1146.0,47.0,78.0,59.0
-Pasibus,Standard,burger podwójne z wołowiną,1081.0,52.0,76.0,47.0
-Pasibus,Włoski Pastuch,burger podwójne z wołowiną,1212.0,57.0,83.0,47.0
-Pasibus,Cheese Boss,burger podwójne z wołowiną,1743.0,79.0,126.0,70.0
-Pasibus,Klasyk,burger podwójne z wołowiną,908.0,49.0,56.0,50.0
-Pasibus,Ave Cezar Chicken,burger podwójne z kurczakiem,1212.0,54.0,82.0,65.0
-Pasibus,Barney Chicken,burger podwójne z kurczakiem,988.0,53.0,59.0,68.0
-Pasibus,Sunset Chicken,burger podwójne z kurczakiem,990.0,47.0,59.0,67.0
-Pasibus,Original Chicken,burger podwójne z kurczakiem,838.0,47.0,45.0,60.0
-Pasibus,Potrójny Smash Classic,potrójne smashe,777.0,32.0,51.0,43.0
-Pasibus,Potrójny Smash Cheese,potrójne smashe,665.0,33.0,37.0,45.0
-Pasibus,Potrójny Smash BBQ,potrójne smashe,736.0,33.0,45.0,47.0
-Pasibus,Potrójny Smash Truflowy,potrójne smashe,800.0,33.0,53.0,44.0
-Pasibus,Jalapeno Pasik,wypasik,458.0,14.0,16.0,29.0
-Pasibus,Cheese Pasik,wypasik,516.0,17.0,37.0,28.0
-Pasibus,BBQ Pasik,wypasik,452.0,17.0,28.0,34.0
-Pasibus,BBQ Chicken Pasik,wypasik,416.0,19.0,21.0,38.0
-Pasibus,Honey Chicken Pasik,wypasik,497.0,19.0,29.0,38.0
-Pasibus,Wege Pasik,wypasik,479.0,9.0,29.0,44.0
-Pasibus,Gonzo Wrap,wrapy,491.0,22.0,15.0,49.0
-Pasibus,Standard Wrap,wrapy,449.0,22.0,23.0,37.0
-Pasibus,Potrójny Smash BBQ,,736.0,45.0,19.0,47.0
-Pasibus,Potrójny Smash Truflowy,,800.0,53.0,19.0,44.0
-Pasibus,Jalapeno Pasik,,458.0,16.0,8.0,29.0
-Pasibus,Cheese Pasik,,516.0,37.0,11.0,28.0
-Pasibus,BBQ Pasik,,452.0,28.0,10.0,34.0
-Pasibus,BBQ Chicken Pasik,,416.0,21.0,3.0,38.0
-Pasibus,Honey Chicken Pasik,,497.0,29.0,4.0,38.0
-Pasibus,Wege Pasik,,479.0,29.0,3.0,44.0
-Pasibus,Gonzo Włap,,491.0,15.0,4.0,49.0
-Pasibus,Standard Włap,,449.0,23.0,5.0,37.0
-Pasibus,Smash,,375.0,23.0,8.0,28.0
-Pasibus,Cziks,,357.0,19.0,3.0,32.0
-Pasibus,Właps,,278.0,13.0,3.0,28.0
-Pasibus,Boczuś,,612.0,41.0,18.0,35.0
-Pasibus,Świeżak,,410.0,17.0,7.0,35.0
-Pasibus,Włap Boczuś,,550.0,34.0,9.0,38.0
-Pasibus,Włap Świeżak,,435.0,23.0,6.0,40.0
-Pasibus,Sałatka Cezar,,730.0,58.0,10.0,19.0
-Pasibus,Czeko Pączki,,316.0,13.0,3.0,45.0
-Pasibus,Małe Frytki,,238.0,13.0,1.0,27.0
-Pasibus,Średnie Frytki,,356.0,19.0,2.0,40.0
-Pasibus,Duże Frytki,,519.0,28.0,2.0,59.0
-Pasibus,Bataty,,439.0,28.0,3.0,39.0
-Pasibus,Nachosy,,397.0,20.0,2.0,45.0
-Pasibus,Czerwona Surówka,,28.0,0.0,0.0,7.0
-Pasibus,Kulki ostre 4szt.,,277.0,20.0,11.0,10.0
-Pasibus,Kulki serowe 4szt.,,302.0,22.0,13.0,8.0
-Pasibus,Stripsy z frytkami,,495.0,31.0,4.0,32.0
-Pasibus,Popsy 3 szt.,,123.0,7.0,1.0,7.0
-Pasibus,Kroks 1 szt.,,67.0,3.0,2.0,6.0
-Pasibus,Sos różowy,,93.0,1.0,8.0,5.0
-Pasibus,Sos biały,,163.0,1.0,17.0,2.0
-Pasibus,Sos BBQ,,55.0,0.0,0.0,13.0
-Pasibus,Sos jalapeno-majo,,179.0,1.0,19.0,0.0
-Pasibus,Sos musztardowo-miodowy,,201.0,1.0,19.0,6.0
-Pasibus,Sos majo truflowy,,198.0,2.0,21.0,1.0
-Pasibus,Sos cezar,,205.0,2.0,21.0,1.0
-Pasibus,Sos majo chili limonka,,198.0,1.0,20.0,5.0
-Pasibus,Guacamole,,65.0,6.0,1.0,2.0
-Pasibus,Extra boczek,,79.0,6.0,3.0,0.0
-Pasibus,Extra cheddar,,37.0,3.0,2.0,0.0
-Pasibus,Extra Grana Padano,,60.0,4.0,3.0,0.0
-Pasibus,Extra jajo,,119.0,10.0,2.0,0.0
-Pasibus,Extra relish ogórkowy,,58.0,4.0,1.0,6.0
-Pasibus,Extra ogórek pikla,,13.0,0.0,0.0,3.0
-Pasibus,Extra czerwona cebula pikla,,42.0,0.0,0.0,8.0
-Pasibus,Sos jalapeno-majo,,179.0,4.0,19.0,1.0
-Pasibus,Sos musztardowo-miodowy,,201.0,4.0,19.0,17.0
-Pasibus,Sos majo truflowy,,198.0,6.0,21.0,4.0
-Pasibus,Sos cezar,,205.0,6.0,21.0,4.0
-Pasibus,Sos majo chili limonka,,198.0,4.0,20.0,15.0
-Pasibus,Guacamole,,65.0,2.0,6.0,5.0
-Pasibus,Extra boczek,,79.0,25.0,6.0,3.0
-Pasibus,Extra cheddar,,37.0,18.0,3.0,2.0
-Pasibus,Extra Grana Padano,,60.0,18.0,4.0,0.0
-Pasibus,Extra jajo,,119.0,3.0,10.0,0.0
-Pasibus,Extra relish ogórkowy,,58.0,1.0,4.0,16.0
-Pasibus,Extra ogórek pikla,,13.0,0.0,0.0,9.0
-Pasibus,Extra czerwona cebula pikla,,42.0,0.0,0.0,17.0
-Pasibus,Extra nachosy,,99.0,3.0,5.0,57.0
-Pasibus,Extra grzanki zioł.-czosnk.,,39.0,1.0,1.0,67.0
-Pasibus,Kotlet wołowy,burger,292.0,13.0,23.0,0.0
-Pasibus,Kotlet wołowy,wypasik,146.0,13.0,12.0,0.0
-Pasibus,Kotlet wołowy,smash,97.0,13.0,8.0,0.0
-Pasibus,Kurczak,burger,200.0,1.0,10.0,7.0
-Pasibus,Kurczak,wypasik/wrap,152.0,1.0,8.0,7.0
-Pasibus,Kotlet wege,burger,164.0,1.0,9.0,14.0
-Pasibus,Kotlet wege,wypasik/wrap,127.0,1.0,7.0,14.0
-Pasibus,Seruś,,482.0,13.0,32.0,17.0
-Pasibus,Bułka sezam,burger,225.0,5.0,7.0,54.0
-Pasibus,Bułka maślana,burger,239.0,6.0,8.0,58.0
-Pasibus,Bułka maślana,wypasik,155.0,4.0,8.0,55.0
-Pasibus,Bułka typu brioche,smash,155.0,4.0,9.0,57.0
-Pasibus,Pasi Ice-tea,Duża,71.0,0.0,0.0,17.0
-Pasibus,Pasi Ice-Tea,Mała,45.0,0.0,0.0,11.0
-Pasibus,Pasi Lemoniada,Duża,156.0,0.0,0.0,38.0
-Pasibus,Pasi Lemoniada,Mała,98.0,0.0,0.0,25.0
-Pasibus,Bubble Lemo marakuja,,360.0,0.0,0.0,43.0
-Pasibus,Bubble Lemo jagodowe,,192.0,0.0,0.0,43.0
-Pasibus,Bubble Tea marakuja,,284.0,0.0,0.0,26.0
-Pasibus,Bubble Tea jagodowe,,260.0,0.0,0.0,62.0
-Pasibus,Americano,,3.0,0.0,0.0,0.0
-Pasibus,Americano White,,91.0,1.0,5.0,2.0
-Pasibus,Cappuccino,,133.0,2.0,7.0,4.0
-Pasibus,Espresso,,1.0,0.0,0.0,0.0
-Pasibus,Flat White,,109.0,1.0,6.0,3.0
-Pasibus,Latte,,156.0,2.0,8.0,4.0
-Pasibus,Ice Latte,,91.0,2.0,5.0,4.0
-Pasibus,Ice Latte Caramel,,119.0,2.0,5.0,7.0
-Pasibus,Mangoczi Burger,burger podwójny,1203.0,55.0,84.0,55.0
-Pasibus,Mangoczi Burger,burger,853.0,29.0,57.0,54.0
-Pasibus,Mangoczi Wrap,wrap,469.0,21.0,27.0,36.0
-Pasibus,Mangoczi Frytki,,731.0,6.0,47.0,69.0
-Pasibus,Mangoczi Bataty,,573.0,3.0,43.0,42.0
-Pasibus,Dip Majo Sriracha,,197.0,0.0,21.0,2.0
-Pasibus,Dip Mango Chili,,24.0,0.0,1.0,4.0
-LUCA,A delicacy with delicate vanilla cream,135 g,398.25,6.08,21.6,47.25
-LUCA,Bagel with apple and cinnamon filling,110 g,279.4,6.27,5.28,51.7
-LUCA,Butter and cinnamon spiral,110 g,397.1,6.93,16.5,55.0
-LUCA,Cheese-filled pretzel,85 g,255.0,8.5,8.42,35.7
-LUCA,Cherry-filled pretzel,110 g,291.5,6.27,5.28,55.0
-LUCA,Combo (Nutella pretzel + Pizza Campus slice),,851.85,25.69,29.86,120.25
-LUCA,CovriLUCA,120 g,322.8,11.4,13.2,39.6
-LUCA,Happy LUCA,150 g,406.5,18.0,19.5,40.5
-LUCA,"LUCA Croissant with cocoa filling and forest nuts, chocolate flakes",75 g,348.0,6.15,18.75,36.75
-LUCA,LUCA Haiducesc,120 g,427.2,9.84,19.2,55.2
-LUCA,LUCA sandwich with chicken (spicy sauce),270 g,540.0,27.0,22.14,56.7
-LUCA,LUCA sandwich with chicken (sweet sauce),270 g,526.5,27.0,20.52,56.7
-LUCA,LUCA sandwich with schnitzel,290 g,580.0,34.8,23.2,58.0
-LUCA,LUCA Spicy,140 g,414.4,10.5,23.8,39.2
-LUCA,LUCA strudel with cinnamon apple filling,90 g,225.0,3.24,10.8,29.7
-LUCA,LUCA strudel with creamy yogurt filling,90 g,246.6,3.87,12.6,31.5
-LUCA,LUCA strudel with sour cherry filling,90 g,219.6,3.06,10.8,28.8
-LUCA,LUCA strudel with sweet cheese and raisins,90 g,233.1,7.74,10.8,26.1
-LUCA,LUCA Traditional,120 g,300.0,13.2,9.96,39.6
-LUCA,Merdenea LUCA,135 g,382.05,9.99,22.95,35.1
-LUCA,Pizza Campus (slice),140 g,345.8,15.4,12.46,43.4
-LUCA,Pizza Campus (whole pizza),1100 g,2717.0,121.0,97.9,341.0
-LUCA,Pizza LUCA (40 cm),950 g,2422.5,104.5,104.5,275.5
-LUCA,Pizza LUCA (slice),140 g,357.0,15.4,15.4,40.6
-LUCA,Pizza LUCA Margherita,120 g,307.2,14.4,11.64,37.2
-LUCA,Pizza z Salami,120 g,320.4,15.6,14.4,32.4
-LUCA,Pizza z Szynką i Pieczarkami,120 g,276.0,14.4,11.88,28.8
-LUCA,Poppy Seed pretzel,110 g,401.5,11.0,7.59,70.4
-LUCA,Pretzel with Nutella,145 g,506.05,10.29,17.4,76.85
-LUCA,Sesame seeds pretzel,110 g,410.3,12.1,10.23,66.0
-LUCA,Sunflower seed pretzel,110 g,447.7,12.1,15.4,63.8
-LUCA,Sweet Cheese and Butter Pie,120 g,372.0,10.2,16.8,44.4
-LUCA,Vanilla Cream Crown,85 g,322.15,4.84,21.25,27.2
+Wrap Me!,Truskawkowa Margarita/Strawberry Margarita,,55.0,0.0,0.0,13.7
+Wrap Me!,Vegan aioli,,102.0,0.5,7.5,8.4
+Wrap Me!,Warzywny Detoks/Vegetable Detox,,49.0,0.5,0.2,11.4
+Wrap Me!,Zielona Energia/Green Energy,,55.0,0.3,0.2,13.1

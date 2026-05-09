@@ -25,7 +25,6 @@ export interface SearchParams {
   min_protein: number;
   restaurant_id?: number | null;
   low_kcal_included?: boolean;
-  limit?: number;
   sort_by?: SortBy;
 }
 
@@ -40,15 +39,50 @@ interface RawFood {
   carbs: number;
 }
 
-// ── Singleton data cache ───────────────────────────────────────
+// ── Singleton data cache (stale-while-revalidate) ─────────────
+const LS_KEY = "wmf-foods-cache";
 let _cache: RawFood[] | null = null;
+
+async function fetchFresh(): Promise<RawFood[]> {
+  const res = await fetch("/data/foods.json");
+  if (!res.ok) throw new Error(`Failed to load data (${res.status})`);
+  const data = (await res.json()) as RawFood[];
+  _cache = data;
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify(data));
+  } catch {
+    // quota exceeded — silently ignore
+  }
+  return data;
+}
 
 async function loadFoods(signal?: AbortSignal): Promise<RawFood[]> {
   if (_cache) return _cache;
+
+  // Try localStorage for instant reload
+  try {
+    const stored = localStorage.getItem(LS_KEY);
+    if (stored) {
+      _cache = JSON.parse(stored) as RawFood[];
+      // Background refresh for next visit
+      fetchFresh();
+      return _cache;
+    }
+  } catch {
+    // parse error — fall through to network
+  }
+
+  // No cache at all — fetch from network (skeleton will show)
   const res = await fetch("/data/foods.json", { signal });
   if (!res.ok) throw new Error(`Failed to load data (${res.status})`);
-  _cache = (await res.json()) as RawFood[];
-  return _cache;
+  const data = (await res.json()) as RawFood[];
+  _cache = data;
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify(data));
+  } catch {
+    // quota exceeded
+  }
+  return data;
 }
 
 function proteinPer100(kcal: number, protein: number): number {
@@ -104,11 +138,7 @@ export async function searchFoods(
       );
   }
 
-  // Limit
-  const limit = params.limit ?? 10;
-  const sliced = filtered.slice(0, limit);
-
-  return sliced.map((f) => ({
+  return filtered.map((f) => ({
     ...f,
     protein_per_100_kcal: Math.round(proteinPer100(f.kcal, f.protein) * 100) / 100,
   }));
@@ -117,6 +147,11 @@ export async function searchFoods(
 function uniqueRestaurants(foods: RawFood[]): Restaurant[] {
   const names = [...new Set(foods.map((f) => f.restaurant_name))].sort();
   return names.map((name, i) => ({ id: i + 1, name }));
+}
+
+export async function countAllFoods(signal?: AbortSignal): Promise<number> {
+  const foods = await loadFoods(signal);
+  return foods.length;
 }
 
 export async function listRestaurants(
