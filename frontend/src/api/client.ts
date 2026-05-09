@@ -82,7 +82,7 @@ export async function searchFoods(
   if (params.sort_by) {
     search.set("sort_by", params.sort_by);
   }
-  return request<FoodSearchResult[]>(`/foods/search?${search.toString()}`, {
+  return request<FoodSearchResult[]>(`/api/foods/search?${search.toString()}`, {
     signal,
   });
 }
@@ -90,7 +90,7 @@ export async function searchFoods(
 export async function listRestaurants(
   signal?: AbortSignal,
 ): Promise<Restaurant[]> {
-  return request<Restaurant[]>("/restaurants", { signal });
+  return request<Restaurant[]>("/api/restaurants", { signal });
 }
 
 export { ApiError };
