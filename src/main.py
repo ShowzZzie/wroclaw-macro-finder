@@ -1,14 +1,16 @@
+"""Entrypoint: Vercel imports `app`; CLI runs `main()`."""
+
 import argparse
 
 from sqlmodel import Session
 
+from app.api import app  # noqa: F401 — Vercel FastAPI entrypoint
 from app.db import create_db_and_tables, engine, list_restaurants
 from app.ingest import import_foods, import_restaurants
 from app.search import find_foods
 
 
 def main(args):
-
     create_db_and_tables()
 
     if args.reingest_database:
@@ -26,7 +28,7 @@ def main(args):
             min_protein=float(input("Minimum PROTEIN: ")),
             restaurant_id=int(s)
             if (s := input("Any specific restaurant? (enter to skip): ").strip())
-            else None,  # 📝 TO-DO: implement list of ints logic
+            else None,
             low_kcal_included=bool(
                 int(
                     input(
@@ -40,7 +42,8 @@ def main(args):
             else None,
             sort_by=input(
                 "Sorting type "
-                "(protein_ratio_desc, protein_desc, kcal_asc, kcal_desc), "
+                "(protein_ratio_desc, protein_desc, "
+                "kcal_asc, kcal_desc), "
                 "default = protein_ratio_desc: "
             ),
         )
@@ -49,8 +52,10 @@ def main(args):
     print("restaurant_name | food_name | size | kcal | protein | protein_per_100_kcal")
     for i in good_foods:
         print(
-            f"{restaurant_names[i.restaurant_id]} | {i.food_name} | {i.size} | "
-            f"{i.kcal_in_portion} | {i.protein_in_portion} | "
+            f"{restaurant_names[i.restaurant_id]} "
+            f"| {i.food_name} | {i.size} | "
+            f"{i.kcal_in_portion} "
+            f"| {i.protein_in_portion} | "
             f"{round(i.protein_in_portion / i.kcal_in_portion * 100, 2)}"
         )
     print("Items found:", len(good_foods))
@@ -61,7 +66,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--reingest-database",
         action="store_true",
-        help="Use if you want to re-import CSVs into database",
+        help="Re-import CSVs into database",
     )
     args = parser.parse_args()
     main(args)
