@@ -4,8 +4,6 @@ Find high-protein, low-kcal items at restaurants around Wrocław. Filter by max 
 
 **Live demo:** https://wroclaw-macro-finder.vercel.app
 
-> Update the link above if your Vercel URL is different.
-
 ## Screenshots
 
 | Desktop | Tablet |
