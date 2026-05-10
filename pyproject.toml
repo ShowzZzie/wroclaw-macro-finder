@@ -23,13 +23,6 @@ dependencies = [
 [tool.setuptools.packages.find]
 where = ["src"]
 
-# Vercel FastAPI: https://vercel.com/docs/frameworks/backend/fastapi
-[tool.vercel]
-entrypoint = "app.api:app"
-
-[tool.vercel.scripts]
-build = "python scripts/vercel_build.py"
-
 [project.optional-dependencies]
 dev = ["ruff", "mypy", "pre-commit", "pytest"]
 extract = ["pytesseract>=0.3.10", "Pillow>=10.0.0"]

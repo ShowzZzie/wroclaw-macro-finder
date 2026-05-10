@@ -1,43 +1,99 @@
 # Wrocław Macro Finder
 
-Search and filter restaurant nutrition data around Wrocław: interactive CLI queries and a small **FastAPI** service over **SQLite** (via **SQLModel**). Source CSVs live under `data/`; macro tables for many chains are scraped or extracted separately.
+Find high-protein, low-kcal items at restaurants around Wrocław. Filter by max kcal, min protein, restaurant, and sort by protein density or total protein per portion.
 
-## Requirements
+**Live demo:** https://wroclaw-macro-finder.vercel.app
 
-- **Python 3.11+**
-- Optional: **[OpenAI API key]** only if you run the PDF extraction script (`OPENAI_SECRET_KEY` in `.env`)
+> Update the link above if your Vercel URL is different.
 
-## Setup
+## Screenshots
 
-From the repository root:
+| Desktop | Tablet |
+|---|---|
+| ![Desktop](docs/screenshots/desktop.png) | ![Tablet](docs/screenshots/tablet.png) |
 
-```bash
-python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -e .
+| Mobile · default | Mobile · filter sheet |
+|---|---|
+| ![Mobile](docs/screenshots/mobile.png) | ![Mobile sheet](docs/screenshots/mobile-sheet.png) |
+
+On mobile, the filter controls collapse into a chunky bottom pill (`FILTERS · ≤800 · ≥30g · all`) that opens a full-screen sheet — every control stays under thumb, and the sort options spell out exactly what they do (protein per 100 kcal, protein in portion, kcal ascending, kcal descending).
+
+## Overview
+
+Two parts in this repo:
+
+- **Static SPA (`frontend/`)** — Vite + React + TypeScript. The deployed app is purely static: it loads a single bundled JSON file at runtime and filters in-browser.
+- **Python toolkit (`src/`, `scripts/`)** — interactive CLI, FastAPI dev server, deterministic macro extractors (HTML scrapers + PDF parsing), and the SQLite database the frontend's JSON is exported from.
+
+You only need Python locally if you are refreshing data or running the API/CLI. The deployed site needs nothing beyond static hosting.
+
+## Data
+
+Macros come from each restaurant's public sources via a deterministic pipeline (HTML scrapers + PDF parsing). Refreshes are manual today; automated cadence is on the roadmap.
+
+## Data flow
+
 ```
-
-Create a `.env` file when using OpenAI-backed tooling:
-
-```env
-OPENAI_SECRET_KEY=sk-...
+sources.csv ──▶ extractors ──▶ macros.csv ──▶ ingest ──▶ SQLite
+                                                            │
+                                            export_static_json.py
+                                                            ▼
+                                          frontend/public/data/foods.json
+                                                            │
+                                                       npm run build
+                                                            ▼
+                                                Vercel static deploy
 ```
-
-The app loads it with `python-dotenv` where needed (e.g. `app/api_pdfs.py`). `.env` is gitignored.
 
 ## Data layout
 
 | Path | Role |
 |------|------|
 | `data/sources.csv` | Restaurants, links to macro sources, formats, notes |
-| `data/macros.csv` | Per-item nutrition (typically produced before or alongside DB ingest) |
-| `data/main_database.db` | SQLite database (paths are resolved relative to project root inside `app/db.py`) |
+| `data/macros.csv` | Per-item nutrition (produced before or alongside DB ingest) |
+| `data/main_database.db` | SQLite database (paths resolved relative to project root in `app/db.py`) |
+| `frontend/public/data/foods.json` | Static export consumed by the deployed SPA |
 
-Some extraction flows reference extra assets (for example PDFs under `data/`).
+## Run the frontend
 
-## Run the interactive CLI
+The deployed app is fully static — no backend required.
 
-Commands assume the **`src`** directory is on `PYTHONPATH` (simplest: run from `src`).
+Requirements: **Node.js 20+**, **npm**.
+
+```bash
+cd frontend
+npm install
+npm run dev          # http://localhost:5173
+```
+
+The dev server serves `frontend/public/data/foods.json` directly. To regenerate that file from SQLite, see [Refresh the data](#refresh-the-data).
+
+Production build:
+
+```bash
+npm run build        # static files in frontend/dist/
+npm run preview
+```
+
+## Run the Python toolkit
+
+For the interactive CLI, the FastAPI dev server, and the macro extractors.
+
+Requirements: **Python 3.11+**.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate    # Windows: .venv\Scripts\activate
+pip install -e .
+```
+
+Optional `.env` (only needed for OpenAI-backed PDF extraction):
+
+```env
+OPENAI_SECRET_KEY=sk-...
+```
+
+### Interactive CLI
 
 ```bash
 cd src
@@ -51,9 +107,11 @@ cd src
 python main.py --reingest-database
 ```
 
-The CLI prompts for max kcal, min protein, optional restaurant id, inclusion of low-kcal add-ons, result limit, and sort mode.
+The CLI prompts for max kcal, min protein, optional restaurant id, low-kcal add-on inclusion, result limit, and sort mode.
 
-## Run the HTTP API
+### HTTP API (development only)
+
+Useful for poking at the data with curl or via http://127.0.0.1:8000/docs.
 
 ```bash
 cd src
@@ -66,45 +124,29 @@ Example:
 GET /foods/search?max_kcal=800&min_protein=40&limit=10&sort_by=protein_ratio_desc
 ```
 
-Interactive docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+The API also exposes `GET /restaurants`. **Note:** the deployed frontend does not use this API — it reads `foods.json` directly. The API exists for local tooling and exploratory work.
 
-The API also exposes `GET /restaurants` (returns `[{id, name}]`) which the frontend uses to populate the restaurant filter, and is CORS-enabled for `http://localhost:5173` (the Vite dev origin).
+### Refresh the data
 
-## Run the frontend
-
-A modern Vite + React + TypeScript SPA lives in `frontend/`. It talks to the FastAPI backend running on `127.0.0.1:8000` via a Vite dev proxy, so no CORS dance is needed in dev.
-
-Requirements: **Node.js 20+** and **npm**.
+After re-extracting or re-ingesting, re-export the static JSON the SPA consumes:
 
 ```bash
-cd frontend
-npm install
-npm run dev
+python scripts/export_static_json.py
 ```
 
-Then open [http://localhost:5173](http://localhost:5173). Make sure the FastAPI server (above) is running in another terminal.
+Then commit the updated `frontend/public/data/foods.json` (and `data/main_database.db` per the [MVP Data Policy](#mvp-data-policy)).
 
-Production build:
+## Extract macros
 
-```bash
-cd frontend
-npm run build      # outputs static files to frontend/dist/
-npm run preview    # preview the built bundle locally
-```
-
-For a single-deployable setup, you can later mount the build directly inside FastAPI with `app.mount("/", StaticFiles(directory="frontend/dist", html=True))`.
-
-## Extract macros (deterministic by default)
-
-Reads `data/sources.csv` and updates **`data/macros.csv`**. By default this uses **HTTP + HTML parsing** (no billable API) for chains like HulThai, MAX Burgers, LUCA, Pan Precel, Shrimp House, Pizzatopia; **merges** into the existing CSV so other restaurants are left untouched.
+Reads `data/sources.csv` and updates `data/macros.csv`. By default uses HTTP + HTML parsing (no billable API) for chains like HulThai, MAX Burgers, LUCA, Pan Precel, Shrimp House, Pizzatopia, and merges into the existing CSV so other restaurants are left untouched.
 
 ```bash
 cd src
 python -m app.extract_macros --only "HulThai" "MAX Burgers"
 ```
 
-- **`--no-merge`**: write only rows produced in this run (overwrites unrelated restaurants’ rows in the output file).
-- **`--use-openai`** or **`MACRO_USE_OPENAI=1`**: run the OpenAI Responses flow for supported PDFs (requires **`OPENAI_SECRET_KEY`**). Without this, PDF rows are skipped unless you extend `app.macro_extract.pdf_local`.
+- `--no-merge`: write only rows produced in this run (overwrites unrelated restaurants' rows in the output file).
+- `--use-openai` or `MACRO_USE_OPENAI=1`: run the OpenAI Responses flow for supported PDFs (requires `OPENAI_SECRET_KEY`). Without this, PDF rows are skipped unless you extend `app.macro_extract.pdf_local`.
 
 Legacy PDF-only OpenAI run (full rewrite, no merge):
 
@@ -112,6 +154,15 @@ Legacy PDF-only OpenAI run (full rewrite, no merge):
 cd src
 python -m app.api_pdfs
 ```
+
+## Deployment
+
+Deployed to Vercel as static files (`vercel.json`):
+
+- Build command: `cd frontend && npm ci && npm run build`
+- Output: `frontend/dist/`
+
+No Python runs in production.
 
 ## Development
 
@@ -121,26 +172,15 @@ Optional quality checks (install tools in your venv if missing):
 ruff check .
 ruff format --check .
 mypy src/
+pytest
 ```
 
-Install **`pytest`** to run tests (e.g. under `tests/`) once you add or expand cases.
+## MVP Data Policy
 
+`data/main_database.db` is **intentionally tracked in Git** so the static export can be regenerated from any clone without rebuilding the data pipeline. This is an MVP-stage decision — once the data layer is hosted elsewhere, the file will be re-ignored in `.gitignore`.
 
-## MVP Data Policy (SQLite in Git)
-
-For MVP deployment, `data/main_database.db` is **intentionally tracked in Git** so the static site can ship with pre-seeded data.
-
-### Why this is intentional
-- The current hosting setup needs a ready-to-use local SQLite file.
-- Keeping the DB in the repo makes MVP deployment simple and repeatable.
-
-### Temporary tradeoff
-This is an MVP-only decision. Before production hardening, we should move data storage out of Git (e.g. managed DB or external storage), then re-enable ignoring `data/main_database.db` in `.gitignore`.
-
-### Contributor note
-If you update `data/main_database.db`, make sure changes are expected for MVP data refreshes and do not include sensitive information.
-
+If you update the DB, make sure changes are intentional and don't include sensitive information.
 
 ## License / status
 
-Early-stage personal project; behavior and data coverage may change.
+Early-stage personal project; behaviour and data coverage may change.
