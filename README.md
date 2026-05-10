@@ -1,4 +1,5 @@
 # Wrocław Macro Finder
+[![CI](https://github.com/ShowzZzie/wroclaw-macro-finder/actions/workflows/ci.yml/badge.svg)](https://github.com/ShowzZzie/wroclaw-macro-finder/actions/workflows/ci.yml)
 
 Find high-protein, low-kcal items at restaurants around Wrocław. Filter by max kcal, min protein, restaurant, and sort by protein density or total protein per portion.
 
