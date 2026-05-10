@@ -183,7 +183,9 @@ If you update the DB, make sure changes are intentional and don't include sensit
 
 ## How this was built
 
-I designed the data model, ingest pipeline, search/sort logic, API, and tests. AI coding agents accelerated the frontend, per-restaurant extraction adapters, UI polish, and deployment wiring; I reviewed and integrated the output.
+I first built the Python core myself: the data model, ingest pipeline, search/sort logic, FastAPI service, CLI flow, and initial search tests. That baseline is preserved at git tag [`mvp-self-snapshot-v1`](https://github.com/ShowzZzie/wroclaw-macro-finder/tree/mvp-self-snapshot-v1).
+
+After the core was working, I used AI coding tools (Claude Code and Cursor) to accelerate frontend implementation, source-specific extraction adapters under `src/app/macro_extract/`, UI polish, deployment wiring, and follow-up refinements. I reviewed, tested, and integrated the generated changes.
 
 ## License / status
 
