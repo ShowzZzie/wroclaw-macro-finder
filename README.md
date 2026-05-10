@@ -181,6 +181,10 @@ pytest
 
 If you update the DB, make sure changes are intentional and don't include sensitive information.
 
+## How this was built
+
+I designed the data model, ingest pipeline, search/sort logic, API, and tests. AI coding agents accelerated the frontend, per-restaurant extraction adapters, UI polish, and deployment wiring; I reviewed and integrated the output.
+
 ## License / status
 
 Early-stage personal project; behaviour and data coverage may change.
