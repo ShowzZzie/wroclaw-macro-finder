@@ -72,30 +72,43 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground">
-      <div className="container py-6 md:py-8">
+      <div className="container pb-[calc(env(safe-area-inset-bottom)+5rem)] pt-4 md:py-8 md:pb-8">
         {/* ── Header ── */}
-        <header className="brutal-border brutal-shadow mb-4 bg-primary px-5 py-5 md:mb-6 md:px-7 md:py-6">
-          <h1 className="text-2xl font-bold uppercase tracking-tight md:text-[32px]">
-            Wroclaw Macro Finder
-          </h1>
-          <p className="mt-0.5 text-sm font-medium md:text-base">
-            High-protein menu items, fast.
-          </p>
+        <header className="brutal-border brutal-shadow mb-4 bg-primary px-4 py-3 text-primary-foreground md:mb-6 md:px-7 md:py-6">
+          <div className="flex items-baseline justify-between gap-3">
+            <div className="min-w-0">
+              <h1 className="truncate text-xl font-bold uppercase tracking-tight md:text-[32px]">
+                Wroclaw Macro Finder
+              </h1>
+              <p className="mt-0.5 hidden text-sm font-medium opacity-80 md:block md:text-base">
+                High-protein menu items, fast.
+              </p>
+            </div>
+            {/* Mobile: count moves into the header so the body starts with results. */}
+            <div className="flex items-baseline gap-1.5 md:hidden">
+              <span className="brutal-border bg-accent px-2 py-0.5 font-mono text-base font-bold text-accent-foreground">
+                {search.isLoading ? "…" : formatInt(totalShown)}
+              </span>
+              <span className="text-[11px] font-semibold opacity-80">
+                /{formatInt(totalAll)}
+              </span>
+            </div>
+          </div>
         </header>
 
-        {/* ── Filters ── */}
-        <section
-          aria-label="Filters"
-          className="sticky top-0 z-40 -mx-4 border-b-2 border-border bg-background px-4 pb-2 pt-2 md:static md:mx-0 md:border-b-0 md:p-0 md:mb-6"
-        >
-          <Filters values={filters} onChange={setFilters} />
+        {/* ── Filters (desktop inline + mobile pill/sheet handled inside) ── */}
+        <section aria-label="Filters" className="md:mb-6">
+          <Filters
+            values={filters}
+            onChange={setFilters}
+            totalShown={totalShown}
+            totalAll={totalAll}
+            isLoading={search.isLoading}
+          />
         </section>
 
-        {/* ── Sort bar ── */}
-        {/* (Sort is inside Filters) */}
-
-        {/* ── Results count ── */}
-        <div className="mb-3 flex items-center gap-2">
+        {/* ── Results count (desktop only — mobile shows it in header + pill) ── */}
+        <div className="mb-3 hidden items-center gap-2 md:flex">
           <span className="brutal-border bg-accent px-3 py-1 font-mono text-2xl font-bold text-accent-foreground">
             {search.isLoading ? "…" : formatInt(totalShown)}
           </span>

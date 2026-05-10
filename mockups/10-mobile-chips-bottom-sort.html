@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMF — Mobile · Chips + Bottom Sort</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #fffef5;
+    --ink: #1a1a1a;
+    --lime: #c6f542;
+    --magenta: #ff6b9d;
+    --kcal-bg: #fff0f0;  --kcal-fg: #e11d48;
+    --prot-bg: #c6f542;  --prot-fg: #1a1a1a;
+    --fats-bg: #fff7e0;  --fats-fg: #d97706;
+    --carb-bg: #e0f2fe;  --carb-fg: #0369a1;
+    --muted: #71717a;
+    --hairline: rgba(26,26,26,0.12);
+  }
+
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: #2a2a2e;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(198,245,66,0.06), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(255,107,157,0.06), transparent 40%);
+    color: var(--cream);
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+    display: flex; flex-direction: column; align-items: center; gap: 28px;
+  }
+
+  .label-row { display: flex; gap: 10px; align-items: baseline; max-width: 900px; width: 100%; padding: 0 12px; }
+  .label-num { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--lime); font-weight: 700; letter-spacing: 1.5px; }
+  .label-title { font-size: 13px; font-weight: 700; }
+  .label-sub { font-size: 11px; color: #a1a1aa; margin-left: auto; }
+
+  .stage {
+    display: flex; flex-wrap: wrap; gap: 36px; justify-content: center;
+  }
+  .stage-col { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .stage-cap {
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: var(--lime);
+    font-family: 'Space Mono', monospace;
+  }
+  .stage-cap .arrow { color: var(--magenta); margin: 0 6px; }
+
+  /* Phone frame */
+  .phone {
+    width: 390px; height: 844px;
+    background: #0d0d0d;
+    border-radius: 56px;
+    padding: 11px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5),
+                0 0 0 1px rgba(255,255,255,0.06) inset;
+    position: relative; flex-shrink: 0;
+  }
+  .screen {
+    width: 100%; height: 100%;
+    background: var(--cream);
+    border-radius: 46px;
+    overflow: hidden;
+    position: relative;
+    color: var(--ink);
+    display: flex; flex-direction: column;
+  }
+  .island {
+    position: absolute;
+    top: 11px; left: 50%; transform: translateX(-50%);
+    width: 124px; height: 36px;
+    background: #000; border-radius: 22px;
+    z-index: 30;
+  }
+  .status-bar {
+    position: relative; z-index: 5;
+    height: 54px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 36px 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; font-weight: 700;
+  }
+  .status-bar .right { display: flex; gap: 6px; align-items: center; font-size: 11px; }
+  .home-indicator {
+    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    width: 134px; height: 5px; background: var(--ink); border-radius: 3px; opacity: 0.85;
+    z-index: 30;
+  }
+
+  /* ─── Top: brand row ─── */
+  .top-bar {
+    border-bottom: 3px solid var(--ink);
+    padding: 8px 18px 9px;
+    display: flex; align-items: center; gap: 10px;
+    flex-shrink: 0;
+  }
+  .brand {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .brand .dot { color: var(--magenta); margin: 0 4px; }
+  .count-pill {
+    margin-left: auto;
+    background: var(--magenta); color: white;
+    border: 2.5px solid var(--ink);
+    padding: 1px 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; font-weight: 700;
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .count-of { font-size: 11px; font-weight: 600; color: var(--muted); }
+
+  /* ─── Chips row ─── */
+  .chips {
+    display: flex; gap: 8px;
+    padding: 9px 14px;
+    overflow-x: auto;
+    border-bottom: 2.5px solid var(--ink);
+    background: var(--cream);
+    flex-shrink: 0;
+    scrollbar-width: none;
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip {
+    flex-shrink: 0;
+    border: 2.5px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+    padding: 5px 10px;
+    font-size: 12px; font-weight: 700;
+    background: white;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .chip.kcal-chip { background: var(--kcal-bg); }
+  .chip.prot-chip { background: var(--prot-bg); }
+  .chip .v {
+    font-family: 'Space Mono', monospace;
+    color: var(--ink);
+  }
+  .chip .lbl {
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.6px;
+    color: var(--muted); font-weight: 700;
+  }
+  .chip.muted { color: var(--muted); background: var(--cream); border-style: dashed; box-shadow: none; }
+  .chip-active::before {
+    content: ''; width: 6px; height: 6px;
+    background: var(--magenta);
+    border: 1.5px solid var(--ink);
+    display: inline-block;
+  }
+
+  /* ─── Results scroll ─── */
+  .results-zone {
+    flex: 1;
+    overflow: hidden;
+    padding: 10px 14px 14px;
+    display: flex; flex-direction: column; gap: 8px;
+    position: relative;
+  }
+  .card {
+    border: 2.5px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+    background: white;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    flex-shrink: 0;
+  }
+  .rank {
+    background: var(--ink); color: var(--lime);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; font-weight: 700;
+  }
+  .card-body { padding: 8px 10px 9px; }
+  .card-row1 {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  }
+  .food-name { font-size: 13px; font-weight: 700; letter-spacing: -0.2px; line-height: 1.15; }
+  .ratio {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; font-weight: 700;
+    background: var(--ink); color: var(--lime);
+    padding: 1px 6px; flex-shrink: 0;
+  }
+  .restaurant { font-size: 10px; color: var(--muted); margin-top: 2px; font-weight: 500; }
+  .macros {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    margin-top: 6px;
+    border-top: 1.5px solid var(--hairline);
+    padding-top: 5px; gap: 0;
+  }
+  .m { text-align: center; }
+  .m-num { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; }
+  .m-lbl { font-size: 8px; color: var(--muted); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }
+  .m.kcal .m-num { color: var(--kcal-fg); }
+  .m.prot .m-num { color: var(--prot-fg); background: var(--prot-bg); padding: 0 4px; }
+  .m.fats .m-num { color: var(--fats-fg); }
+  .m.carb .m-num { color: var(--carb-fg); }
+
+  .fade {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 32px;
+    background: linear-gradient(to bottom, transparent, var(--cream));
+    pointer-events: none;
+  }
+
+  /* ─── Bottom sort bar ─── */
+  .sort-dock {
+    flex-shrink: 0;
+    border-top: 3px solid var(--ink);
+    background: var(--cream);
+    padding: 8px 14px 26px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 36px;
+    gap: 4px;
+  }
+  .sort-opt {
+    border: 2.5px solid var(--ink);
+    padding: 9px 4px;
+    text-align: center;
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    background: white;
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .sort-opt.active { background: var(--ink); color: var(--lime); }
+  .icon-btn {
+    border: 2.5px solid var(--ink);
+    background: white;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 2px 2px 0 var(--ink);
+    font-size: 13px;
+  }
+
+  /* ─── State 2: chip-tapped sheet ─── */
+  .scrim {
+    position: absolute; inset: 0;
+    background: rgba(26,26,26,0.55);
+    z-index: 10;
+  }
+  .sheet {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    z-index: 20;
+    background: var(--cream);
+    border-top: 3px solid var(--ink);
+    padding: 22px 22px 30px;
+    box-shadow: 0 -10px 0 0 var(--lime), 0 -13px 0 0 var(--ink);
+  }
+  .sheet-handle {
+    width: 56px; height: 5px;
+    background: var(--ink);
+    margin: -8px auto 18px;
+  }
+  .sheet-title {
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--muted);
+  }
+  .sheet-value-row {
+    display: flex; align-items: baseline; gap: 8px;
+    margin: 6px 0 22px;
+  }
+  .sheet-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 56px; font-weight: 700;
+    line-height: 1;
+    background: var(--magenta);
+    color: white;
+    padding: 0 14px;
+    border: 3px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .sheet-unit {
+    font-family: 'Space Mono', monospace;
+    font-size: 16px; font-weight: 700;
+    text-transform: uppercase; color: var(--ink);
+  }
+  .big-slider {
+    position: relative; height: 14px;
+    border: 3px solid var(--ink);
+    background: white;
+    margin-bottom: 10px;
+  }
+  .big-slider .fill {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    background: var(--lime);
+  }
+  .big-slider .thumb {
+    position: absolute; top: 50%;
+    width: 28px; height: 28px;
+    background: var(--magenta);
+    border: 3px solid var(--ink);
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .scale-row {
+    display: flex; justify-content: space-between;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 22px;
+  }
+  .sheet-actions {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  .btn-primary, .btn-ghost {
+    border: 3px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+    padding: 14px 0;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    font-size: 13px;
+    text-align: center;
+  }
+  .btn-primary { background: var(--ink); color: var(--lime); }
+  .btn-ghost { background: white; color: var(--ink); }
+
+  /* footer */
+  footer {
+    color: #71717a; font-size: 11px;
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.6;
+  }
+  footer code { font-family: 'Space Mono', monospace; color: var(--lime); }
+  .back {
+    color: var(--lime); text-decoration: none;
+    font-size: 12px; font-weight: 600;
+  }
+  .back:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="label-row">
+  <a class="back" href="index.html">← back</a>
+</div>
+
+<div class="label-row">
+  <span class="label-num">10 · MOBILE</span>
+  <span class="label-title">Chips + Bottom Sort</span>
+  <span class="label-sub">Compact summary chips · giant per-filter sheet · sort docked at bottom</span>
+</div>
+
+<div class="stage">
+
+  <!-- ──────── PHONE 1 — DEFAULT ──────── -->
+  <div class="stage-col">
+    <div class="stage-cap">DEFAULT <span class="arrow">→</span> tap a chip</div>
+    <div class="phone">
+      <div class="island"></div>
+      <div class="screen">
+        <div class="status-bar">
+          <span>9:41</span>
+          <span class="right">●●●● 100%</span>
+        </div>
+
+        <div class="top-bar">
+          <span class="brand">WMF<span class="dot">·</span>WROCŁAW</span>
+          <span class="count-pill">247</span>
+          <span class="count-of">/ 412</span>
+        </div>
+
+        <div class="chips">
+          <div class="chip kcal-chip chip-active">
+            <span class="lbl">kcal ≤</span>
+            <span class="v">800</span>
+          </div>
+          <div class="chip prot-chip chip-active">
+            <span class="lbl">prot ≥</span>
+            <span class="v">30g</span>
+          </div>
+          <div class="chip">
+            <span class="lbl">resto</span>
+            <span class="v">All</span>
+          </div>
+          <div class="chip muted">
+            <span class="lbl">Add-ons off</span>
+          </div>
+        </div>
+
+        <div class="results-zone">
+          <div class="card">
+            <div class="rank">01</div>
+            <div class="card-body">
+              <div class="card-row1">
+                <div class="food-name">HULTHAISKI BOWL — KURCZAK</div>
+                <div class="ratio">6.6</div>
+              </div>
+              <div class="restaurant">HulThai</div>
+              <div class="macros">
+                <div class="m kcal"><div class="m-num">777</div><div class="m-lbl">kcal</div></div>
+                <div class="m prot"><div class="m-num">51</div><div class="m-lbl">protein</div></div>
+                <div class="m fats"><div class="m-num">13</div><div class="m-lbl">fats</div></div>
+                <div class="m carb"><div class="m-num">112</div><div class="m-lbl">carbs</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="rank">02</div>
+            <div class="card-body">
+              <div class="card-row1">
+                <div class="food-name">PAD THAI KRÓLEWSKI</div>
+                <div class="ratio">6.6</div>
+              </div>
+              <div class="restaurant">HulThai · Królewski</div>
+              <div class="macros">
+                <div class="m kcal"><div class="m-num">1221</div><div class="m-lbl">kcal</div></div>
+                <div class="m prot"><div class="m-num">81</div><div class="m-lbl">protein</div></div>
+                <div class="m fats"><div class="m-num">42</div><div class="m-lbl">fats</div></div>
+                <div class="m carb"><div class="m-num">128</div><div class="m-lbl">carbs</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="rank">03</div>
+            <div class="card-body">
+              <div class="card-row1">
+                <div class="food-name">PAD THAI — KURCZAK</div>
+                <div class="ratio">5.0</div>
+              </div>
+              <div class="restaurant">HulThai</div>
+              <div class="macros">
+                <div class="m kcal"><div class="m-num">837</div><div class="m-lbl">kcal</div></div>
+                <div class="m prot"><div class="m-num">42</div><div class="m-lbl">protein</div></div>
+                <div class="m fats"><div class="m-num">17</div><div class="m-lbl">fats</div></div>
+                <div class="m carb"><div class="m-num">127</div><div class="m-lbl">carbs</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="rank">04</div>
+            <div class="card-body">
+              <div class="card-row1">
+                <div class="food-name">HUTHAISKI RAMEN — KURCZAK</div>
+                <div class="ratio">5.5</div>
+              </div>
+              <div class="restaurant">HulThai</div>
+              <div class="macros">
+                <div class="m kcal"><div class="m-num">513</div><div class="m-lbl">kcal</div></div>
+                <div class="m prot"><div class="m-num">28</div><div class="m-lbl">protein</div></div>
+                <div class="m fats"><div class="m-num">23</div><div class="m-lbl">fats</div></div>
+                <div class="m carb"><div class="m-num">53</div><div class="m-lbl">carbs</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="rank">05</div>
+            <div class="card-body">
+              <div class="card-row1">
+                <div class="food-name">BANGKOK NOODLES — KURCZAK</div>
+                <div class="ratio">3.6</div>
+              </div>
+              <div class="restaurant">HulThai</div>
+              <div class="macros">
+                <div class="m kcal"><div class="m-num">1070</div><div class="m-lbl">kcal</div></div>
+                <div class="m prot"><div class="m-num">38</div><div class="m-lbl">protein</div></div>
+                <div class="m fats"><div class="m-num">48</div><div class="m-lbl">fats</div></div>
+                <div class="m carb"><div class="m-num">120</div><div class="m-lbl">carbs</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade"></div>
+        </div>
+
+        <div class="sort-dock">
+          <div class="sort-opt active">P/100</div>
+          <div class="sort-opt">P↑</div>
+          <div class="sort-opt">KC↑</div>
+          <div class="sort-opt">KC↓</div>
+          <div class="icon-btn">☼</div>
+        </div>
+
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ──────── PHONE 2 — CHIP TAPPED ──────── -->
+  <div class="stage-col">
+    <div class="stage-cap">KCAL CHIP TAPPED <span class="arrow">→</span> sheet</div>
+    <div class="phone">
+      <div class="island"></div>
+      <div class="screen">
+        <div class="status-bar">
+          <span>9:41</span>
+          <span class="right">●●●● 100%</span>
+        </div>
+
+        <div class="top-bar">
+          <span class="brand">WMF<span class="dot">·</span>WROCŁAW</span>
+          <span class="count-pill">247</span>
+          <span class="count-of">/ 412</span>
+        </div>
+
+        <div class="chips">
+          <div class="chip kcal-chip chip-active" style="outline: 3px solid var(--magenta); outline-offset: 2px;">
+            <span class="lbl">kcal ≤</span>
+            <span class="v">800</span>
+          </div>
+          <div class="chip prot-chip chip-active">
+            <span class="lbl">prot ≥</span>
+            <span class="v">30g</span>
+          </div>
+          <div class="chip">
+            <span class="lbl">resto</span>
+            <span class="v">All</span>
+          </div>
+        </div>
+
+        <div class="results-zone" style="opacity: 0.5;">
+          <div class="card">
+            <div class="rank">01</div>
+            <div class="card-body">
+              <div class="card-row1">
+                <div class="food-name">HULTHAISKI BOWL — KURCZAK</div>
+                <div class="ratio">6.6</div>
+              </div>
+              <div class="restaurant">HulThai</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="rank">02</div>
+            <div class="card-body">
+              <div class="card-row1">
+                <div class="food-name">PAD THAI KRÓLEWSKI</div>
+                <div class="ratio">6.6</div>
+              </div>
+              <div class="restaurant">HulThai · Królewski</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scrim"></div>
+
+        <div class="sheet">
+          <div class="sheet-handle"></div>
+          <div class="sheet-title">Max Kcal</div>
+          <div class="sheet-value-row">
+            <div class="sheet-value">800</div>
+            <div class="sheet-unit">kcal</div>
+          </div>
+          <div class="big-slider">
+            <div class="fill" style="width: 32%"></div>
+            <div class="thumb" style="left: 32%"></div>
+          </div>
+          <div class="scale-row">
+            <span>0 (off)</span>
+            <span>1250</span>
+            <span>2500</span>
+          </div>
+          <div class="sheet-actions">
+            <div class="btn-primary">Apply</div>
+            <div class="btn-ghost">Turn off</div>
+          </div>
+        </div>
+
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Chip strip stays glanceable · per-filter sheet has room for a giant draggable slider with explicit <code>0 = off</code><br>
+  Sort tabs pinned to bottom (always thumb-reachable). One extra tap to adjust filters vs direction 9.
+</footer>
+
+</body>
+</html>

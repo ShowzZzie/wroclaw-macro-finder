@@ -97,11 +97,10 @@ export async function searchFoods(
 ): Promise<FoodSearchResult[]> {
   const foods = await loadFoods(signal);
 
-  // Filter
+  // Filter — 0 means "off" for the kcal cap (protein >= 0 is naturally a no-op)
+  const kcalCap = params.max_kcal > 0 ? params.max_kcal : Infinity;
   let filtered = foods.filter(
-    (f) =>
-      f.kcal <= params.max_kcal &&
-      f.protein >= params.min_protein,
+    (f) => f.kcal <= kcalCap && f.protein >= params.min_protein,
   );
 
   if (!params.low_kcal_included) {

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMF — Mobile · Inverted Brutalist</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #fffef5;
+    --ink: #1a1a1a;
+    --lime: #c6f542;
+    --magenta: #ff6b9d;
+    --kcal-bg: #fff0f0;  --kcal-fg: #e11d48;
+    --prot-bg: #c6f542;  --prot-fg: #1a1a1a;
+    --fats-bg: #fff7e0;  --fats-fg: #d97706;
+    --carb-bg: #e0f2fe;  --carb-fg: #0369a1;
+    --muted:  #71717a;
+    --hairline: rgba(26,26,26,0.12);
+  }
+
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: #2a2a2e;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(198,245,66,0.06), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(255,107,157,0.06), transparent 40%);
+    color: var(--cream);
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+    display: flex; flex-direction: column; align-items: center; gap: 28px;
+  }
+
+  .label-row { display: flex; gap: 10px; align-items: baseline; max-width: 420px; width: 100%; padding: 0 12px; }
+  .label-num { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--lime); font-weight: 700; letter-spacing: 1.5px; }
+  .label-title { font-size: 13px; font-weight: 700; letter-spacing: -0.2px; }
+  .label-sub { font-size: 11px; color: #a1a1aa; margin-left: auto; }
+
+  /* Phone frame */
+  .phone {
+    width: 390px; height: 844px;
+    background: #0d0d0d;
+    border-radius: 56px;
+    padding: 11px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5),
+                0 0 0 1px rgba(255,255,255,0.06) inset;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .screen {
+    width: 100%; height: 100%;
+    background: var(--cream);
+    border-radius: 46px;
+    overflow: hidden;
+    position: relative;
+    color: var(--ink);
+    display: flex; flex-direction: column;
+  }
+  .island {
+    position: absolute;
+    top: 11px; left: 50%; transform: translateX(-50%);
+    width: 124px; height: 36px;
+    background: #000; border-radius: 22px;
+    z-index: 30;
+  }
+  .status-bar {
+    position: relative; z-index: 5;
+    height: 54px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 36px 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; font-weight: 700;
+  }
+  .status-bar .right { display: flex; gap: 6px; align-items: center; font-size: 11px; }
+  .home-indicator {
+    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    width: 134px; height: 5px; background: var(--ink); border-radius: 3px; opacity: 0.85;
+    z-index: 30;
+  }
+
+  /* ─── Top brand bar ─── */
+  .top-bar {
+    flex-shrink: 0;
+    border-bottom: 3px solid var(--ink);
+    padding: 8px 18px 10px;
+    display: flex; align-items: center; gap: 10px;
+    background: var(--cream);
+  }
+  .brand {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .brand .dot { color: var(--magenta); margin: 0 4px; }
+  .count-pill {
+    margin-left: auto;
+    background: var(--magenta); color: white;
+    border: 2.5px solid var(--ink);
+    padding: 1px 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; font-weight: 700;
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .count-of { font-size: 11px; font-weight: 600; color: var(--muted); }
+
+  /* ─── Results scroll ─── */
+  .results-zone {
+    flex: 1;
+    overflow: hidden;
+    padding: 10px 14px 8px;
+    display: flex; flex-direction: column; gap: 8px;
+    position: relative;
+  }
+  .card {
+    border: 2.5px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+    background: white;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    flex-shrink: 0;
+  }
+  .rank {
+    background: var(--ink); color: var(--lime);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; font-weight: 700;
+  }
+  .card-body { padding: 8px 10px 9px; }
+  .card-row1 {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  }
+  .food-name { font-size: 13px; font-weight: 700; letter-spacing: -0.2px; line-height: 1.15; }
+  .ratio {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; font-weight: 700;
+    background: var(--ink); color: var(--lime);
+    padding: 1px 6px; flex-shrink: 0;
+  }
+  .restaurant { font-size: 10px; color: var(--muted); margin-top: 2px; font-weight: 500; }
+  .macros {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    margin-top: 6px;
+    border-top: 1.5px solid var(--hairline);
+    padding-top: 5px;
+    gap: 0;
+  }
+  .m { text-align: center; }
+  .m-num { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; }
+  .m-lbl { font-size: 8px; color: var(--muted); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }
+  .m.kcal .m-num   { color: var(--kcal-fg); }
+  .m.prot .m-num   { color: var(--prot-fg); background: var(--prot-bg); padding: 0 4px; }
+  .m.fats .m-num   { color: var(--fats-fg); }
+  .m.carb .m-num   { color: var(--carb-fg); }
+
+  .fade {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 32px;
+    background: linear-gradient(to bottom, transparent, var(--cream));
+    pointer-events: none;
+  }
+
+  /* ─── BOTTOM CONTROL PANEL (the centerpiece) ─── */
+  .panel {
+    flex-shrink: 0;
+    background: var(--ink);
+    border-top: 3px solid var(--ink);
+    padding: 14px 14px 30px;
+    color: var(--cream);
+    position: relative;
+  }
+  .panel::before {
+    content: '';
+    position: absolute;
+    top: -3px; left: -3px; right: -3px; height: 6px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--lime) 0 8px,
+      var(--ink) 8px 16px
+    );
+  }
+
+  .slider-row {
+    display: grid;
+    grid-template-columns: 56px 1fr 64px;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 10px;
+    border: 2.5px solid var(--cream);
+    background: rgba(255,255,254,0.04);
+    margin-bottom: 8px;
+  }
+  .slider-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--lime);
+  }
+  .slider-track {
+    position: relative; height: 8px;
+    background: rgba(255,254,245,0.18);
+    border: 1.5px solid var(--cream);
+  }
+  .slider-fill {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    background: var(--lime);
+  }
+  .slider-thumb {
+    position: absolute; top: 50%;
+    width: 18px; height: 18px;
+    background: var(--magenta);
+    border: 2.5px solid var(--cream);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 2px var(--ink);
+  }
+  .slider-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px; font-weight: 700;
+    color: var(--cream);
+    text-align: right;
+  }
+  .slider-value .unit {
+    font-size: 9px; color: var(--lime);
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-left: 2px; font-weight: 700;
+  }
+
+  /* sort + extras row */
+  .sort-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 2.5px solid var(--cream);
+    margin-top: 10px;
+  }
+  .sort-opt {
+    padding: 7px 0;
+    text-align: center;
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.7px;
+    border-right: 1.5px solid var(--cream);
+    color: var(--cream);
+  }
+  .sort-opt:last-child { border-right: none; }
+  .sort-opt.active { background: var(--lime); color: var(--ink); }
+
+  .extra-row {
+    display: grid;
+    grid-template-columns: 1fr auto 28px 28px;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+  }
+  .pill {
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 10px;
+    border: 2.5px solid var(--cream);
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    color: var(--cream);
+    background: rgba(255,254,245,0.04);
+  }
+  .pill .chev { font-size: 9px; opacity: 0.6; margin-left: auto; }
+  .toggle {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    color: var(--cream);
+  }
+  .toggle .switch {
+    width: 28px; height: 16px;
+    background: var(--lime);
+    border: 2px solid var(--cream);
+    position: relative;
+  }
+  .toggle .switch::after {
+    content: '';
+    position: absolute; top: 50%; right: 1px;
+    width: 9px; height: 9px;
+    transform: translateY(-50%);
+    background: var(--ink);
+  }
+  .icon-btn {
+    width: 28px; height: 28px;
+    border: 2.5px solid var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--cream);
+    font-size: 12px;
+    background: rgba(255,254,245,0.04);
+  }
+
+  /* page meta */
+  footer {
+    color: #71717a; font-size: 11px;
+    text-align: center;
+    max-width: 420px;
+    line-height: 1.6;
+  }
+  footer code { font-family: 'Space Mono', monospace; color: var(--lime); }
+  .back {
+    color: var(--lime); text-decoration: none;
+    font-size: 12px; font-weight: 600;
+    display: inline-block;
+  }
+  .back:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="label-row">
+  <a class="back" href="index.html">← back</a>
+</div>
+
+<div class="label-row">
+  <span class="label-num">09 · MOBILE</span>
+  <span class="label-title">Inverted Brutalist</span>
+  <span class="label-sub">Always-visible bottom panel · max thumb reach</span>
+</div>
+
+<div class="phone">
+  <div class="island"></div>
+  <div class="screen">
+    <div class="status-bar">
+      <span>9:41</span>
+      <span class="right">●●●● 100%</span>
+    </div>
+
+    <!-- ── Top brand bar ── -->
+    <div class="top-bar">
+      <span class="brand">WMF<span class="dot">·</span>WROCŁAW</span>
+      <span class="count-pill">247</span>
+      <span class="count-of">/ 412</span>
+    </div>
+
+    <!-- ── Results ── -->
+    <div class="results-zone">
+      <div class="card">
+        <div class="rank">01</div>
+        <div class="card-body">
+          <div class="card-row1">
+            <div class="food-name">HULTHAISKI BOWL — KURCZAK</div>
+            <div class="ratio">6.6</div>
+          </div>
+          <div class="restaurant">HulThai</div>
+          <div class="macros">
+            <div class="m kcal"><div class="m-num">777</div><div class="m-lbl">kcal</div></div>
+            <div class="m prot"><div class="m-num">51</div><div class="m-lbl">protein</div></div>
+            <div class="m fats"><div class="m-num">13</div><div class="m-lbl">fats</div></div>
+            <div class="m carb"><div class="m-num">112</div><div class="m-lbl">carbs</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rank">02</div>
+        <div class="card-body">
+          <div class="card-row1">
+            <div class="food-name">PAD THAI KRÓLEWSKI</div>
+            <div class="ratio">6.6</div>
+          </div>
+          <div class="restaurant">HulThai · Królewski</div>
+          <div class="macros">
+            <div class="m kcal"><div class="m-num">1221</div><div class="m-lbl">kcal</div></div>
+            <div class="m prot"><div class="m-num">81</div><div class="m-lbl">protein</div></div>
+            <div class="m fats"><div class="m-num">42</div><div class="m-lbl">fats</div></div>
+            <div class="m carb"><div class="m-num">128</div><div class="m-lbl">carbs</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rank">03</div>
+        <div class="card-body">
+          <div class="card-row1">
+            <div class="food-name">PAD THAI — KURCZAK</div>
+            <div class="ratio">5.0</div>
+          </div>
+          <div class="restaurant">HulThai</div>
+          <div class="macros">
+            <div class="m kcal"><div class="m-num">837</div><div class="m-lbl">kcal</div></div>
+            <div class="m prot"><div class="m-num">42</div><div class="m-lbl">protein</div></div>
+            <div class="m fats"><div class="m-num">17</div><div class="m-lbl">fats</div></div>
+            <div class="m carb"><div class="m-num">127</div><div class="m-lbl">carbs</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rank">04</div>
+        <div class="card-body">
+          <div class="card-row1">
+            <div class="food-name">HUTHAISKI RAMEN — KURCZAK</div>
+            <div class="ratio">5.5</div>
+          </div>
+          <div class="restaurant">HulThai</div>
+          <div class="macros">
+            <div class="m kcal"><div class="m-num">513</div><div class="m-lbl">kcal</div></div>
+            <div class="m prot"><div class="m-num">28</div><div class="m-lbl">protein</div></div>
+            <div class="m fats"><div class="m-num">23</div><div class="m-lbl">fats</div></div>
+            <div class="m carb"><div class="m-num">53</div><div class="m-lbl">carbs</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade"></div>
+    </div>
+
+    <!-- ── BOTTOM CONTROL PANEL ── -->
+    <div class="panel">
+      <div class="slider-row">
+        <span class="slider-label">Kcal ≤</span>
+        <div class="slider-track">
+          <div class="slider-fill" style="width: 32%"></div>
+          <div class="slider-thumb" style="left: 32%"></div>
+        </div>
+        <div class="slider-value">800<span class="unit">kcal</span></div>
+      </div>
+      <div class="slider-row">
+        <span class="slider-label">Prot ≥</span>
+        <div class="slider-track">
+          <div class="slider-fill" style="width: 25%"></div>
+          <div class="slider-thumb" style="left: 25%"></div>
+        </div>
+        <div class="slider-value">30<span class="unit">g</span></div>
+      </div>
+
+      <div class="sort-bar">
+        <div class="sort-opt active">P/100</div>
+        <div class="sort-opt">P↑</div>
+        <div class="sort-opt">KC↑</div>
+        <div class="sort-opt">KC↓</div>
+      </div>
+
+      <div class="extra-row">
+        <div class="pill">All restaurants <span class="chev">▾</span></div>
+        <div class="toggle"><span class="switch"></span>Add-ons</div>
+        <div class="icon-btn">⟲</div>
+        <div class="icon-btn">☼</div>
+      </div>
+    </div>
+
+    <div class="home-indicator"></div>
+  </div>
+</div>
+
+<footer>
+  Every control under the thumb · sliders re-render live · header drops to a one-line strip.<br>
+  Trade-off: panel takes ~36% of the screen permanently.<br>
+  ↑ <code>0</code> on either slider switches it off (Pan Precel-style items pass through).
+</footer>
+
+</body>
+</html>

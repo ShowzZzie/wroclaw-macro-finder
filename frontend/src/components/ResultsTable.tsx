@@ -38,7 +38,7 @@ export function ResultsTable({
       <EmptyState
         icon={<Inbox className="h-5 w-5 text-muted-foreground" />}
         title="No items match"
-        description="Try loosening your filters — e.g. raise max kcal, lower min protein, or include add-ons."
+        description="Try loosening your filters — drag a slider to 0 to turn it off, or include add-ons."
       />
     );
   }
@@ -60,7 +60,7 @@ export function ResultsTable({
             {/* Mobile: stacked. Desktop: single row */}
             <div className="flex flex-col md:flex-row md:items-stretch">
               {/* Rank */}
-              <div className="hidden w-12 shrink-0 items-center justify-center border-r border-border bg-foreground font-mono text-lg font-bold text-primary md:flex">
+              <div className="hidden w-12 shrink-0 items-center justify-center border-r border-border bg-foreground font-mono text-lg font-bold text-primary dark:bg-primary/15 dark:text-primary md:flex">
                 {String(idx + 1).padStart(2, "0")}
               </div>
 

@@ -8,12 +8,12 @@ const tile = cva(
   {
     variants: {
       tone: {
-        neutral: "bg-red-50 dark:bg-red-950/80",
-        protein: "bg-primary",
-        fats: "bg-amber-100 dark:bg-amber-950/80",
-        carbs: "bg-sky-100 dark:bg-sky-950/80",
+        neutral: "bg-red-50 dark:bg-rose-500/10",
+        protein: "bg-primary dark:bg-primary/15",
+        fats: "bg-amber-100 dark:bg-amber-500/10",
+        carbs: "bg-sky-100 dark:bg-sky-500/10",
         primary:
-          "bg-foreground text-primary",
+          "bg-foreground text-primary dark:bg-primary/15",
       },
       size: {
         md: "min-w-0 flex-1 py-1.5 md:flex-none md:w-[68px] md:py-2",
@@ -36,7 +36,7 @@ const valueText = cva("font-mono font-bold leading-none tabular-nums", {
 
 const valueColor = {
   neutral: "text-rose-600 dark:text-rose-400",
-  protein: "text-foreground",
+  protein: "text-foreground dark:text-primary",
   fats: "text-amber-700 dark:text-amber-300",
   carbs: "text-sky-700 dark:text-sky-300",
   primary: "text-primary",
